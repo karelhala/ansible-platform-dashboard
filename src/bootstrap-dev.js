@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './AppEntry';
+import AppEntry from './AppEntry';
 
-console.log('Debug - bootstrap-dev');
+const root = document.getElementById('root');
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<AppEntry />, root, () =>
+  root.setAttribute('data-ouia-safe', true)
+);

@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './AppEntry';
+import AppEntry from './AppEntry';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = document.getElementById('root');
+
+ReactDOM.render(<AppEntry />, root, () =>
+  root.setAttribute('data-ouia-safe', true)
+);
