@@ -1,42 +1,42 @@
-import PropTypes from 'prop-types';
-import React, { Fragment, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { Routes } from './Routes';
-import './App.scss';
-
-import { getRegistry } from '@redhat-cloud-services/frontend-components-utilities/Registry';
+import React, { useState, useEffect, Suspense } from 'react';
+import { Main } from '@redhat-cloud-services/frontend-components/Main';
 import NotificationsPortal from '@redhat-cloud-services/frontend-components-notifications/NotificationPortal';
-import { notificationsReducer } from '@redhat-cloud-services/frontend-components-notifications/redux';
+import { Routes } from './Routes';
+// react-int eng locale data
+import { IntlProvider } from 'react-intl';
 
-const App = (props) => {
+import './App.scss';
+import AppPlaceholder from './components/shared/loader-placeholders';
+
+const pathName = window.location.pathname.split('/');
+
+pathName.shift();
+
+const App = () => {
+  const [ auth, setAuth ] = useState(false);
+
   useEffect(() => {
-    const registry = getRegistry();
-    registry.register({ notifications: notificationsReducer });
     insights.chrome.init();
-
-    // TODO change this to your appname
-    insights.chrome.identifyApp('insights');
-    return insights.chrome.on('APP_NAVIGATION', (event) =>
-      this.props.history.push(`/${event.navId}`)
-    );
+    insights.chrome.auth.getUser().then(() => setAuth(true));
+    insights.chrome.identifyApp('ansible-dashboard');
   }, []);
 
+  if (!auth) {
+    return <AppPlaceholder />;
+  }
+
   return (
-    <Fragment>
-      <NotificationsPortal />
-      <Routes childProps={props} />
-    </Fragment>
+    <Suspense fallback={ <AppPlaceholder /> }>
+      <IntlProvider locale="en">
+        <React.Fragment>
+          <NotificationsPortal />
+          <Main className="pf-u-p-0 pf-u-ml-0">
+            <Routes />
+          </Main>
+        </React.Fragment>
+      </IntlProvider>
+    </Suspense>
   );
 };
 
-App.propTypes = {
-  history: PropTypes.object,
-};
-
-/**
- * withRouter: https://reacttraining.com/react-router/web/api/withRouter
- * connect: https://github.com/reactjs/react-redux/blob/master/docs/api.md
- *          https://reactjs.org/docs/higher-order-components.html
- */
-export default withRouter(connect()(App));
+export default App;

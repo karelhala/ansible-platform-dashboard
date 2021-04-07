@@ -1,2 +1,62 @@
-// Importing Global Variables
-@import "~@redhat-cloud-services/frontend-components-utilities/styles/_all";
+@import '~@redhat-cloud-services/frontend-components/index.css';
+
+.detail-pane {
+  background-color: var(--pf-global--BackgroundColor--100);
+}
+
+.detail-pane, .info-bar {
+  min-height: 100%;
+  @supports not (overflow-wrap: anywhere) {
+    word-break: break-all;
+  }
+  @supports (overflow-wrap: anywhere) {
+    overflow-wrap: anywhere;
+  }
+}
+
+.destructive-color {
+  &:not(:disabled) {
+    color: var(--pf-chart-color-red-100) !important;
+  }
+}
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.icon-danger-fill {
+  fill: var(--pf-global--danger-color--100)
+}
+
+.icon-info-fill {
+  fill: var(--pf-global--info-color--100)
+}
+
+.icon-success-fill {
+  fill: var(--pf-global--success-color--100)
+}
+
+.font-14{
+  font-size: 14px;
+  color: var(--pf-global--Color--100);
+  font-weight: bold;
+}
+
+.ins-c-primary-toolbar .ins-c-primary-toolbar__group-filter {
+   margin-right: 7px;
+ }
+
+.span-block {
+  display: block;
+}
+
+.group-label {
+  max-width: 256px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pf-c-table.vertical-align-inherit tbody > tr > * {
+  vertical-align: inherit !important;
+}
