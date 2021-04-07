@@ -1,6 +1,6 @@
 import {
   BackgroundImage,
-  Button, Level, LevelItem, PageSection, Text, TextContent
+  Button, PageSection, Text, TextContent
 } from '@patternfly/react-core';
 import { Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
 import React from 'react';
@@ -36,7 +36,7 @@ const NoAppState = () => {
                    Try it free
                   </Button>
                 </FlexItem>
-                <LevelItem>
+                <FlexItem>
                   <Button
                     component='a'
                     isLarge
@@ -47,7 +47,7 @@ const NoAppState = () => {
                     Learn more &nbsp;
                     <ArrowRightIcon />
                   </Button>
-                </LevelItem>
+                </FlexItem>
               </Flex>
             </FlexItem>
           </Flex>
