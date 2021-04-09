@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 set -x
 
-NODE_ENV=production npm run build
-
 if [ "${TRAVIS_BRANCH}" = "master" ]
 then
-    for env in ci
+    for env in ci qa
     do
         echo "PUSHING ${env}-beta"
         rm -rf ./dist/.git
