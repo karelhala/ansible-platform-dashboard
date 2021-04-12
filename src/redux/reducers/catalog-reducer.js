@@ -1,4 +1,4 @@
-import { FETCH_ORDERS, SET_LOADING_STATE } from '../action-types';
+import { FETCH_ORDERS, SET_CATALOG_LOADING_STATE } from '../action-types';
 
 import { defaultSettings } from '../../helpers/shared/pagination';
 // Initial State
@@ -20,7 +20,7 @@ const setOrders = (state, { payload }) => ({
 });
 
 export default {
-  [SET_LOADING_STATE]: setLoadingState,
+  [SET_CATALOG_LOADING_STATE]: setLoadingState,
   [`${FETCH_ORDERS}_FULFILLED`]: setOrders,
   [`${FETCH_ORDERS}_PENDING`]: setLoadingState
 };

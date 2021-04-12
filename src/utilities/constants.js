@@ -1,2 +1,4 @@
 export const CATALOG_API_BASE = `${process.env.BASE_PATH}/catalog/v1.3`;
-export const SOURCES_API_BASE = `${process.env.BASE_PATH}/sources/v1.0`;
+export const AUTOMATION_HUB_API_BASE = `${process.env.BASE_PATH}/automation-hub/_ui/v1`;
+export const ANALYTICS_API_BASE = `${process.env.BASE_PATH}/tower-analytics/v1`;
+
