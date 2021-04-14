@@ -10,7 +10,7 @@ const initialState = {
   isFetching: true
 };
 
-const analyticsSatate = (state, action) => {
+const analyticsState = (state, action) => {
   switch (action.type) {
     case 'setFetching':
       return { ...state, isFetching: action.payload };
@@ -20,7 +20,7 @@ const analyticsSatate = (state, action) => {
 };
 
 const AnalyticsCard = () => {
-  const [{ isFetching }, stateDispatch ] = useReducer(analyticsSatate, initialState);
+  const [{ isFetching }, stateDispatch ] = useReducer(analyticsState, initialState);
 
   const { clusters, criticalNotifications, warningNotifications } = useSelector(
     ({
@@ -80,7 +80,7 @@ const AnalyticsCard = () => {
   return (
     <Fragment>
       <Title headingLevel={ 'h3' }>
-        { intl.formatMessage(messages.AnalyticsTitle) }
+        { intl.formatMessage(messages.analyticsTitle) }
       </Title>
       <Section type="content">
         <Grid hasGutter>

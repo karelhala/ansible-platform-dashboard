@@ -31,17 +31,21 @@ const setLoadingState = (state, { payload = true }) => ({
   isLoading: payload
 });
 
-const setClusters = (state, { payload }) => ({
-  ...state,
-  clusters: payload
-});
+const setClusters = (state, payload) => {
+  console.log('Debug - state, payload', state, payload);
 
-const setNotifications = (state, { payload }) => ({
+  return ({
+    ...state,
+    clusters: payload
+  });
+};
+
+const setNotifications = (state, payload) => ({
   ...state,
   notifications: payload
 });
 
-const setJobs = (state, { payload }) => ({
+const setJobs = (state, payload) => ({
   ...state,
   jobs: payload
 });
