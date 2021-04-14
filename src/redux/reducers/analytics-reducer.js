@@ -1,5 +1,6 @@
 import { FETCH_CLUSTERS,
-  FETCH_NOTIFICATIONS,
+  FETCH_ERROR_NOTIFICATIONS,
+  FETCH_WARNING_NOTIFICATIONS,
   FETCH_JOBS,
   SET_ANALYTICS_LOADING_STATE } from '../action-types';
 
@@ -11,7 +12,11 @@ export const analyticsInitialState = {
     data: [],
     meta: { ...defaultSettings }
   },
-  notifications: {
+  errorNotifications: {
+    data: [],
+    meta: { ...defaultSettings }
+  },
+  warningNotifications: {
     data: [],
     meta: { ...defaultSettings }
   },
@@ -45,8 +50,10 @@ export default {
   [SET_ANALYTICS_LOADING_STATE]: setLoadingState,
   [`${FETCH_CLUSTERS}_FULFILLED`]: setClusters(),
   [`${FETCH_CLUSTERS}_PENDING`]: setLoadingState,
-  [`${FETCH_NOTIFICATIONS}_FULFILLED`]: setNotifications(),
-  [`${FETCH_NOTIFICATIONS}_PENDING`]: setLoadingState,
+  [`${FETCH_ERROR_NOTIFICATIONS}_FULFILLED`]: setNotifications(),
+  [`${FETCH_ERROR_NOTIFICATIONS}_PENDING`]: setLoadingState,
+  [`${FETCH_WARNING_NOTIFICATIONS}_FULFILLED`]: setNotifications(),
+  [`${FETCH_WARNING_NOTIFICATIONS}_PENDING`]: setLoadingState,
   [`${FETCH_JOBS}_FULFILLED`]: setJobs(),
   [`${FETCH_JOBS}_PENDING`]: setLoadingState
 };

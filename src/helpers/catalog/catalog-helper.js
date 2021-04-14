@@ -44,3 +44,15 @@ export const getOrders = (filter = '', pagination = defaultSettings) =>
       })
     )
   );
+
+export const listPortfolios = () =>
+  axiosInstance.get(
+    `${CATALOG_API_BASE}/portfolios`);
+
+export const getPortfolioItems = () =>
+  axiosInstance.get(
+    `${CATALOG_API_BASE}/portfolio_items`);
+
+export const getPlatforms = () =>
+  axiosInstance.get(
+    `${CATALOG_API_BASE}/platforms`);
