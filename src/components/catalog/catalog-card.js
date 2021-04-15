@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -57,13 +57,13 @@ const CatalogCard = () => {
     }
     else {
       return (
-        <Card>
-          <GridItem md={ 4 } lg={ 3 }>
+        <Grid>
+          <GridItem>
             <Text>
-                Collect and distribute automation content, govern content by approval processes and assure sin-off by assigned groups.
+              { intl.formatMessage(messages.catalogCardDescription) }
             </Text>
           </GridItem>
-          <GridItem md={ 8 } lg={ 9 }>
+          <GridItem>
             <Stack>
               <StackItem>
                 { portfolioItems?.meta?.count } Products
@@ -76,21 +76,23 @@ const CatalogCard = () => {
               { platforms?.meta?.count } Platforms
             </StackItem>
           </GridItem>
-        </Card>
+        </Grid>
       );
     }
   };
 
   return (
     <Fragment>
-      <Title headingLevel={ 'h3' }>
-        { intl.formatMessage(messages.catalogTitle) }
-      </Title>
-      <Section type="content">
-        <Grid hasGutter>
-          { renderCatalogCards() }
-        </Grid>
-      </Section>
+      <Card className='ins-c-dashboard__card'>
+        <CardTitle className="pf-u-py-sm">
+          { intl.formatMessage(messages.catalogTitle) }
+        </CardTitle>
+        <Section type="content">
+          <Grid hasGutter>
+            { renderCatalogCards() }
+          </Grid>
+        </Section>
+      </Card>
     </Fragment>
   );
 };

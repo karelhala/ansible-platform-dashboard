@@ -11,17 +11,23 @@ const Dashboard = () => {
     <NoAppState />
     <Divider component="div" />
     <PageSection>
-      <Flex>
-        <FlexItem>
+      <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
+        <FlexItem spacer={ { default: 'spacerLg' } }>
           <AnalyticsCard/>
         </FlexItem>
-        <FlexItem>
+      </Flex>
+      <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
+        <FlexItem spacer={ { default: 'spacerLg' } }>
           <CatalogCard/>
         </FlexItem>
-        <FlexItem>
+      </Flex>
+      <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
+        <FlexItem spacer={ { default: 'spacerLg' } }>
           <HubCard/>
         </FlexItem>
-        <FlexItem>
+      </Flex>
+      <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
+        <FlexItem spacer={ { default: 'spacerLg' } }>
           <ErrorCard appName={ 'Test' }/>
         </FlexItem>
       </Flex>

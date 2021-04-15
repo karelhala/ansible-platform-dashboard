@@ -15,13 +15,26 @@ const messages = defineMessages({
     id: 'analytics.title',
     defaultMessage: 'Insights Analytics'
   },
+  analyticsCardDescription: {
+    id: 'analytics.description',
+    defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics calculate ' +
+        'your return on investment and explore automation processes details.'
+  },
   catalogTitle: {
     id: 'catalog.title',
     defaultMessage: 'Automation Services Catalog'
   },
+  catalogCardDescription: {
+    id: 'catalog.description',
+    defaultMessage: 'Collect and distribute automation content, govern content by approval processes and assure sin-off by assigned groups.'
+  },
   hubTitle: {
     id: 'hub.title',
     defaultMessage: 'Automation Hub'
+  },
+  hubCardDescription: {
+    id: 'hub.description',
+    defaultMessage: 'Find and use content that is supported by Red Hat and our partners to deliver reassurance for the most demanding environments'
   }
 });
 

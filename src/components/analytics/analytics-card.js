@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -50,14 +50,13 @@ const AnalyticsCard = () => {
     }
     else {
       return (
-        <Card>
-          <GridItem md={ 4 } lg={ 3 }>
+        <Grid>
+          <GridItem>
             <Text>
-              Gain insights into your deployments through visual dashboards and organization statistics,
-              calculate your return on investment and explore automation processes details.
+              { intl.formatMessage(messages.catalogCardDescription) }
             </Text>
           </GridItem>
-          <GridItem md={ 8 } lg={ 9 }>
+          <GridItem>
             <Stack>
               <StackItem>
                 { clusters?.meta?.count } Total Clusters
@@ -72,21 +71,23 @@ const AnalyticsCard = () => {
               </StackItem>
             </Stack>
           </GridItem>
-        </Card>
+        </Grid>
       );
     }
   };
 
   return (
     <Fragment>
-      <Title headingLevel={ 'h3' }>
-        { intl.formatMessage(messages.analyticsTitle) }
-      </Title>
-      <Section type="content">
-        <Grid hasGutter>
-          { renderAnalyticsCards() }
-        </Grid>
-      </Section>
+      <Card className='ins-c-dashboard__card'>
+        <CardTitle className="pf-u-py-sm">
+          { intl.formatMessage(messages.analyticsTitle) }
+        </CardTitle>
+        <Section type="content">
+          <Grid hasGutter>
+            { renderAnalyticsCards() }
+          </Grid>
+        </Section>
+      </Card>
     </Fragment>
   );
 };

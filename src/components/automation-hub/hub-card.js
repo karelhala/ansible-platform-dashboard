@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -49,13 +49,13 @@ const HubCard = () => {
     }
     else {
       return (
-        <Card>
-          <GridItem md={ 4 } lg={ 3 }>
+        <Grid>
+          <GridItem>
             <Text>
-            Find and use content that is supported by Red Hat and our partners to deliver reassurance for the most demanding environments
+              { intl.formatMessage(messages.hubCardDescription) }
             </Text>
           </GridItem>
-          <GridItem md={ 8 } lg={ 9 }>
+          <GridItem>
             <Stack>
               <StackItem>
                 { partners?.meta?.count } Partners
@@ -68,21 +68,23 @@ const HubCard = () => {
               { collections?.meta?.count } Collections set to sync
             </StackItem>
           </GridItem>
-        </Card>
+        </Grid>
       );
     }
   };
 
   return (
     <Fragment>
-      <Title headingLevel={ 'h3' }>
-        { intl.formatMessage(messages.hubTitle) }
-      </Title>
-      <Section type="content">
-        <Grid hasGutter>
-          { renderHubCards() }
-        </Grid>
-      </Section>
+      <Card className='ins-c-dashboard__card'>
+        <CardTitle className="pf-u-py-sm">
+          { intl.formatMessage(messages.hubTitle) }
+        </CardTitle>
+        <Section type="content">
+          <Grid hasGutter>
+            { renderHubCards() }
+          </Grid>
+        </Section>
+      </Card>
     </Fragment>
   );
 };
