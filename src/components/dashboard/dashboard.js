@@ -11,11 +11,11 @@ const Dashboard = () => {
     <NoAppState />
     <Divider component="div" />
     <PageSection>
-      <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
+      { 0 && <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
         <FlexItem spacer={ { default: 'spacerLg' } }>
           <AnalyticsCard/>
         </FlexItem>
-      </Flex>
+      </Flex> }
       <Flex spaceItems={ { modifier: 'spaceItemsXl' } }>
         <FlexItem spacer={ { default: 'spacerLg' } }>
           <CatalogCard/>

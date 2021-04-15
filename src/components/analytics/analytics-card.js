@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -50,28 +50,28 @@ const AnalyticsCard = () => {
     }
     else {
       return (
-        <Grid>
-          <GridItem>
+        <Stack>
+          <StackItem>
             <Text>
               { intl.formatMessage(messages.catalogCardDescription) }
             </Text>
-          </GridItem>
-          <GridItem>
+          </StackItem>
+          <StackItem>
             <Stack>
               <StackItem>
-                { clusters?.meta?.count } Total Clusters
+                { clusters?.meta?.count } { intl.formatMessage(messages.totalClusters) }
               </StackItem>
             </Stack>
-            <Stack>
-              <StackItem>
-                { criticalNotifications?.meta?.count } Critical
-              </StackItem>
-              <StackItem>
-                { warningNotifications?.meta?.count } Warning
-              </StackItem>
-            </Stack>
-          </GridItem>
-        </Grid>
+          </StackItem>
+          <StackItem>
+            <StackItem>
+              { criticalNotifications?.meta?.count } { intl.formatMessage(messages.critical) }
+            </StackItem>
+            <StackItem>
+              { warningNotifications?.meta?.count } { intl.formatMessage(messages.warning) }
+            </StackItem>
+          </StackItem>
+        </Stack>
       );
     }
   };
@@ -82,11 +82,9 @@ const AnalyticsCard = () => {
         <CardTitle className="pf-u-py-sm">
           { intl.formatMessage(messages.analyticsTitle) }
         </CardTitle>
-        <Section type="content">
-          <Grid hasGutter>
-            { renderAnalyticsCards() }
-          </Grid>
-        </Section>
+        <CardBody>
+          { renderAnalyticsCards() }
+        </CardBody>
       </Card>
     </Fragment>
   );

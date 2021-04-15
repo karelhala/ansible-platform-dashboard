@@ -64,7 +64,7 @@ export const fetchPortfolios = (options) => (
 export const fetchPortfolioItems = () => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_PORTFOLIO_ITEMS,
-    payload: CatalogHelper.getPlatforms()
+    payload: CatalogHelper.getPortfolioItems()
   });
 };
 

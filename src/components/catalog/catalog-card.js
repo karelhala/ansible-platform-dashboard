@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
-import { fetchPortfolioItems, fetchPortfolios } from '../../redux/actions/catalog-actions';
+import { fetchPlatforms, fetchPortfolioItems, fetchPortfolios } from '../../redux/actions/catalog-actions';
 
 const initialState = {
   isFetching: true
@@ -43,7 +43,7 @@ const CatalogCard = () => {
   const intl = useIntl();
 
   useEffect(() => {
-    Promise.all([ dispatch(fetchPortfolioItems()), dispatch(fetchPortfolios()) ])
+    Promise.all([ dispatch(fetchPortfolioItems()), dispatch(fetchPortfolios(), dispatch(fetchPlatforms())) ])
     .then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
 
@@ -57,26 +57,26 @@ const CatalogCard = () => {
     }
     else {
       return (
-        <Grid>
-          <GridItem>
+        <Stack>
+          <StackItem>
             <Text>
               { intl.formatMessage(messages.catalogCardDescription) }
             </Text>
-          </GridItem>
-          <GridItem>
+          </StackItem>
+          <StackItem>
             <Stack>
               <StackItem>
-                { portfolioItems?.meta?.count } Products
+                { portfolioItems?.meta?.count } { intl.formatMessage(messages.products) }
               </StackItem>
             </Stack>
-            <StackItem>
-              { portfolios?.meta?.count } Portfolios
-            </StackItem>
-            <StackItem>
-              { platforms?.meta?.count } Platforms
-            </StackItem>
-          </GridItem>
-        </Grid>
+          </StackItem>
+          <StackItem>
+            { portfolios?.meta?.count } { intl.formatMessage(messages.portfolios) }
+          </StackItem>
+          <StackItem>
+            { platforms?.meta?.count } { intl.formatMessage(messages.platforms) }
+          </StackItem>
+        </Stack>
       );
     }
   };
@@ -87,11 +87,9 @@ const CatalogCard = () => {
         <CardTitle className="pf-u-py-sm">
           { intl.formatMessage(messages.catalogTitle) }
         </CardTitle>
-        <Section type="content">
-          <Grid hasGutter>
-            { renderCatalogCards() }
-          </Grid>
-        </Section>
+        <CardBody>
+          { renderCatalogCards() }
+        </CardBody>
       </Card>
     </Fragment>
   );

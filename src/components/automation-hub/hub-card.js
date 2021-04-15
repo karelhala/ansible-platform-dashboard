@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardTitle, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -49,26 +49,26 @@ const HubCard = () => {
     }
     else {
       return (
-        <Grid>
-          <GridItem>
+        <Stack>
+          <StackItem>
             <Text>
               { intl.formatMessage(messages.hubCardDescription) }
             </Text>
-          </GridItem>
-          <GridItem>
+          </StackItem>
+          <StackItem>
             <Stack>
               <StackItem>
-                { partners?.meta?.count } Partners
+                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
               </StackItem>
             </Stack>
             <StackItem>
-              { collections?.meta?.count } Collections
+              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
             </StackItem>
             <StackItem>
-              { collections?.meta?.count } Collections set to sync
+              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
             </StackItem>
-          </GridItem>
-        </Grid>
+          </StackItem>
+        </Stack>
       );
     }
   };
@@ -79,11 +79,9 @@ const HubCard = () => {
         <CardTitle className="pf-u-py-sm">
           { intl.formatMessage(messages.hubTitle) }
         </CardTitle>
-        <Section type="content">
-          <Grid hasGutter>
-            { renderHubCards() }
-          </Grid>
-        </Section>
+        <CardBody>
+          { renderHubCards() }
+        </CardBody>
       </Card>
     </Fragment>
   );
