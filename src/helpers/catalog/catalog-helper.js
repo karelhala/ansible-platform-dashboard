@@ -21,10 +21,10 @@ const getOrderPortfolioItems = (itemIds) =>
     .join('&')}`
   );
 
-export const getOrders = (filter = '', pagination = defaultSettings) =>
+export const getOrders = () =>
   axiosInstance
   .get(
-    `${CATALOG_API_BASE}/orders?${filter}&limit=${pagination.limit}&offset=${pagination.offset}`
+    `${CATALOG_API_BASE}/orders?&limit=2`
   ) // eslint-disable-line max-len
   .then((orders) =>
     getOrderItems(orders.data.map(({ id }) => id)).then((orderItems) =>

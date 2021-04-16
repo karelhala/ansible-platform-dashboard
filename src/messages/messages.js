@@ -52,6 +52,10 @@ const messages = defineMessages({
     id: 'catalog.platforms',
     defaultMessage: 'Platforms'
   },
+  latestOrderTitle: {
+    id: 'catalog.latestOrder',
+    defaultMessage: 'Latest orders'
+  },
   hubTitle: {
     id: 'hub.title',
     defaultMessage: 'Automation Hub'
