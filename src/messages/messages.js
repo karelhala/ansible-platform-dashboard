@@ -120,7 +120,7 @@ const messages = defineMessages({
   configureCatalogDescription: {
     id: 'configure.catalog.description',
     defaultMessage: 'Use Automation Services Catalog to collect and distribute automation content, govern your content by designing ' +
-        'and attaching approval processes, and ensure required sign-off is obtained by assigned organizational groups'
+        'and attaching approval processes, and ensure required sign-off is obtained by assigned organizational groups.'
   },
   configureAnalyticsLink: {
     id: 'configure.analytics.link',

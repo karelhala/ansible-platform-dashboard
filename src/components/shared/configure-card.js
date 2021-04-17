@@ -2,21 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../App.scss';
 import {
+  Bullseye,
   Card,
-  CardBody,
-  CardTitle
+  CardBody, CardFooter,
+  CardTitle,
+  Flex,
+  FlexItem,
+  Title
 } from '@patternfly/react-core';
+import Truncate from 'react-truncate';
 
 const ConfigureCard = ({ title, description, renderButtons }) => {
   return (
     <Card className='config_card'>
-      <CardTitle className="pf-u-py-sm">
-        { title }
+      <CardTitle>
+        <Title headingLevel="h3">
+          { title }
+        </Title>
       </CardTitle>
       <CardBody>
-        { description }
-        { renderButtons() }
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem>
+            <Truncate lines={ 3 } ellipsis={ <span>... </span> }>
+              { description }
+            </Truncate>
+          </FlexItem>
+        </Flex>
       </CardBody>
+      <CardFooter>
+        <Bullseye>
+          { renderButtons() }
+        </Bullseye>
+      </CardFooter>
     </Card>
   );
 };
