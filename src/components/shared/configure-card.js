@@ -4,36 +4,39 @@ import '../../App.scss';
 import {
   Bullseye,
   Card,
-  CardBody, CardFooter,
+  CardBody,
   CardTitle,
-  Flex,
-  FlexItem,
+  Stack,
+  StackItem,
   Title
 } from '@patternfly/react-core';
 import Truncate from 'react-truncate';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import { bottom } from '@patternfly/react-core/dist/js/helpers/Popper/thirdparty/popper-core';
 
 const ConfigureCard = ({ title, description, renderButtons }) => {
   return (
-    <Card className='config_card'>
+    <Card className='config_card' >
       <CardTitle>
         <Title headingLevel="h3">
           { title }
         </Title>
       </CardTitle>
-      <CardBody>
-        <Flex direction={ { default: 'column' } }>
-          <FlexItem>
+      <CardBody className={ 'pf-u-mb-0-pb-0' }>
+        <Stack>
+          <StackItem isFilled>
             <Truncate lines={ 3 } ellipsis={ <span>... </span> }>
               { description }
             </Truncate>
-          </FlexItem>
-        </Flex>
+          </StackItem>
+          <StackItem style={ { marginBottom: 0, paddingBottom: 0 } }>
+            <Bullseye>
+              { renderButtons() }
+              <ExternalLinkAltIcon />
+            </Bullseye>
+          </StackItem>
+        </Stack>
       </CardBody>
-      <CardFooter>
-        <Bullseye>
-          { renderButtons() }
-        </Bullseye>
-      </CardFooter>
     </Card>
   );
 };

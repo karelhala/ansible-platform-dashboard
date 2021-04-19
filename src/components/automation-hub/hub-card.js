@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
+import { Card, CardBody, CardTitle, Flex, FlexItem, Grid, GridItem, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -31,6 +31,14 @@ const HubCard = () => {
     }) => ({ collections, partners })
   );
 
+  const {
+    userIdentity: {
+      identity: {
+        user: { account }
+      }
+    }
+  } = useContext(UserContext);
+
   const dispatch = useDispatch();
   const intl = useIntl();
 
@@ -40,6 +48,7 @@ const HubCard = () => {
   }, []);
 
   const renderHubCards = () => {
+    console.log('Debug - collections: ', collections);
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
@@ -49,13 +58,11 @@ const HubCard = () => {
     }
     else {
       return (
-        <Stack>
-          <StackItem>
-            <Text>
+        <Flex flex={ { default: 'flex_1' } }>
+          <FlexItem>
+            <Text style={ { width: '300px' } }>
               { intl.formatMessage(messages.hubCardDescription) }
             </Text>
-          </StackItem>
-          <StackItem>
             <Stack>
               <StackItem>
                 { partners?.meta?.count } { intl.formatMessage(messages.partners) }
@@ -67,8 +74,40 @@ const HubCard = () => {
             <StackItem>
               { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
             </StackItem>
-          </StackItem>
-        </Stack>
+          </FlexItem>
+          <FlexItem>
+            <Text style={ { width: '300px' } }>
+              { intl.formatMessage(messages.hubCardDescription) }
+            </Text>
+            <Stack>
+              <StackItem>
+                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
+              </StackItem>
+            </Stack>
+            <StackItem>
+              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
+            </StackItem>
+            <StackItem>
+              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
+            </StackItem>
+          </FlexItem>
+          <FlexItem>
+            <Text style={ { width: '300px' } }>
+              { intl.formatMessage(messages.hubCardDescription) }
+            </Text>
+            <Stack>
+              <StackItem>
+                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
+              </StackItem>
+            </Stack>
+            <StackItem>
+              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
+            </StackItem>
+            <StackItem>
+              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
+            </StackItem>
+          </FlexItem>
+        </Flex>
       );
     }
   };

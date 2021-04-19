@@ -4,6 +4,7 @@ import { Button, Flex, FlexItem, Grid, GridItem, PageSection, Stack, StackItem }
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import ConfigureCard from '../shared/configure-card';
+import HubCard from '../automation-hub/hub-card';
 
 const renderButtons = (intl) => (
   <React.Fragment>
@@ -65,18 +66,23 @@ const ConfigureAppPage = () => {
     <PageSection>
       <Stack hasGutter="md">
         <StackItem>
-          <Grid hasGutter="md">
+          <Grid hasGutter="xl">
             <GridItem span={ 6 }>
-              <ConfigureCard title={ intl.formatMessage(messages.configureAnalyticsTitle) }
+              <ConfigureCard
+                title={ intl.formatMessage(messages.configureAnalyticsTitle) }
                 description={ intl.formatMessage(messages.configureAnalyticsDescription) }
                 renderButtons={ () => renderAnalyticsConfigButton(intl) }/>
             </GridItem>
             <GridItem span={ 6 }>
-              <ConfigureCard title={ intl.formatMessage(messages.configureCatalogTitle) }
+              <ConfigureCard
+                title={ intl.formatMessage(messages.configureCatalogTitle) }
                 description={ intl.formatMessage(messages.configureCatalogDescription) }
                 renderButtons={ () => renderCatalogConfigButton(intl) }/>
             </GridItem>
           </Grid>
+        </StackItem>
+        <StackItem>
+          <HubCard/>
         </StackItem>
       </Stack>
     </PageSection>
