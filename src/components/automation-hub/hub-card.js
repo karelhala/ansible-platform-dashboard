@@ -1,10 +1,11 @@
-import React, { Fragment, useEffect, useReducer } from 'react';
+import React, {Fragment, useContext, useEffect, useReducer} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card, CardBody, CardTitle, Flex, FlexItem, Grid, GridItem, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import { fetchCollections, fetchPartners } from '../../redux/actions/hub-actions';
+import UserContext from '../../user-context';
 
 const initialState = {
   isFetching: true
@@ -43,7 +44,7 @@ const HubCard = () => {
   const intl = useIntl();
 
   useEffect(() => {
-    Promise.all([ dispatch(fetchCollections()), dispatch(fetchPartners()) ])
+    Promise.all([ dispatch(fetchCollections()), dispatch(fetchPartners()), dispatch(fetchSyncCollections(account)) ])
     .then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
 

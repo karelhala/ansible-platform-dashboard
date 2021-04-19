@@ -1,5 +1,6 @@
 import { FETCH_COLLECTIONS,
   FETCH_PARTNERS,
+  FETCH_SYNC_COLLECTIONS,
   SET_HUB_LOADING_STATE } from '../action-types';
 
 import { defaultSettings } from '../../helpers/shared/pagination';
@@ -11,6 +12,10 @@ export const hubInitialState = {
     meta: { ...defaultSettings }
   },
   partners: {
+    data: [],
+    meta: { ...defaultSettings }
+  },
+  sync_collections: {
     data: [],
     meta: { ...defaultSettings }
   }
@@ -31,10 +36,16 @@ const setPartners = (state, { payload }) => ({
   partners: payload
 });
 
+const setSyncCollections = (state, { payload }) => ({
+  ...state,
+  collections: payload
+});
+
 export default {
   [SET_HUB_LOADING_STATE]: setLoadingState,
   [`${FETCH_COLLECTIONS}_FULFILLED`]: setCollections,
   [`${FETCH_COLLECTIONS}_PENDING`]: setLoadingState,
   [`${FETCH_PARTNERS}_FULFILLED`]: setPartners,
+  [`${FETCH_SYNC_COLLECTIONS}_FULFILLED`]: setSyncCollections,
   [`${FETCH_PARTNERS}_PENDING`]: setLoadingState
 };

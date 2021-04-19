@@ -15,3 +15,10 @@ export const fetchPartners = () => (dispatch) => {
   });
 };
 
+export const fetchSyncCollections = () => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.FETCH_SYNC_COLLECTIONS,
+    payload: HubHelper.getSyncCollections()
+  });
+};
+
