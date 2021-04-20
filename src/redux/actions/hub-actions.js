@@ -8,10 +8,10 @@ export const fetchCollections = () => (dispatch) => {
   });
 };
 
-export const fetchCollection = (name, namespace) => (dispatch) => {
+export const fetchCollection = (offset) => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_COLLECTION,
-    payload: HubHelper.getCollection(name, namespace)
+    payload: HubHelper.getCollection(offset)
   });
 };
 

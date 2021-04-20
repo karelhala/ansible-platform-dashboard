@@ -22,6 +22,7 @@ import messages from '../../messages/messages';
 import { fetchCollection, fetchCollections, fetchPartners, fetchSyncCollections } from '../../redux/actions/hub-actions';
 import UserContext from '../../user-context';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import { FeaturedCollection } from './featured_collection';
 
 const initialState = {
   isFetching: true
@@ -63,12 +64,15 @@ const HubCard = () => {
   }, []);
 
   useEffect(() => {
-    console.log('Debug effect - collections?.data?.length', collections?.data?.length);
-    console.log('Debug effect - collection', collections?.data[collections?.data?.length - 1]);
     stateDispatch({ type: 'setFetching', payload: true });
-    if (collections?.data?.length > 0) {
-      dispatch(fetchCollection(collections.data[collections?.data?.length - 1].name,
-        collections.data[collections?.data?.length - 1].namespace)).then(() => stateDispatch({ type: 'setFetching', payload: false }));
+    if (collections?.meta?.count > 0) {
+      const d = new Date();
+      const day = d.getDate();
+      const count = collections?.meta?.count;
+
+      console.log('Debug - day, length -- count:', day, count);
+      dispatch(fetchCollection(count <= day ? count : day - 1)).then(() =>
+        stateDispatch({ type: 'setFetching', payload: false }));
     }
   }, [ collections ]);
 
@@ -102,18 +106,14 @@ const HubCard = () => {
   );
 
   const renderHubFeaturedCollection = () => {
-    console.log('Debug - collection, collections', collection, collections);
+    console.log('Debug - collection', collection);
     return (
       <Fragment>
         <Title headingLevel="h4" style={ { width: '400px' } }>
           { intl.formatMessage(messages.hubCardFeaturedCollectionTitle) }
         </Title>
         <br/>
-        <Stack>
-          <StackItem>
-            { collection.name } { intl.formatMessage(messages.collections) }
-          </StackItem>
-        </Stack>
+        <FeaturedCollection collection={ collection?.data[0] }/>
       </Fragment>);
   };
 
