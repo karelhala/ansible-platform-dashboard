@@ -4,7 +4,7 @@ import NotificationsPortal from '@redhat-cloud-services/frontend-components-noti
 import { Routes } from './Routes';
 // react-int eng locale data
 import { IntlProvider } from 'react-intl';
-import { UserContext } from './user-context';
+import UserContext from './user-context';
 
 import './App.scss';
 import AppPlaceholder from './components/shared/loader-placeholders';

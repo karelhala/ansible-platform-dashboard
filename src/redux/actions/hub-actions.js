@@ -8,6 +8,13 @@ export const fetchCollections = () => (dispatch) => {
   });
 };
 
+export const fetchCollection = (name, namespace) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.FETCH_COLLECTION,
+    payload: HubHelper.getCollection(name, namespace)
+  });
+};
+
 export const fetchPartners = () => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_PARTNERS,
@@ -15,10 +22,10 @@ export const fetchPartners = () => (dispatch) => {
   });
 };
 
-export const fetchSyncCollections = () => (dispatch) => {
+export const fetchSyncCollections = (account) => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_SYNC_COLLECTIONS,
-    payload: HubHelper.getSyncCollections()
+    payload: HubHelper.getSyncCollections(account)
   });
 };
 

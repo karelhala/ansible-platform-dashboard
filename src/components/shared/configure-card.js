@@ -11,8 +11,6 @@ import {
   Title
 } from '@patternfly/react-core';
 import Truncate from 'react-truncate';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import { bottom } from '@patternfly/react-core/dist/js/helpers/Popper/thirdparty/popper-core';
 
 const ConfigureCard = ({ title, description, renderButtons }) => {
   return (
@@ -32,7 +30,6 @@ const ConfigureCard = ({ title, description, renderButtons }) => {
           <StackItem style={ { marginBottom: 0, paddingBottom: 0 } }>
             <Bullseye>
               { renderButtons() }
-              <ExternalLinkAltIcon />
             </Bullseye>
           </StackItem>
         </Stack>

@@ -64,6 +64,20 @@ const messages = defineMessages({
     id: 'hub.description',
     defaultMessage: 'Find and use content that is supported by Red Hat and our partners to deliver reassurance for the most demanding environments'
   },
+  hubCardCertifiedCollectionTitle: {
+    id: 'hub.certified.title',
+    defaultMessage: 'Certified Ansible Collections'
+  },
+  hubCardCertifiedCollectionDescription: {
+    id: 'hub.certified.description',
+    defaultMessage: 'View Ansible Content Collections certified and supported by Red Hat. ' +
+        'Download collections or sync them to your local repositories.'
+  },
+  hubCardFeaturedCollectionTitle: {
+    id: 'hub.featured.title',
+    defaultMessage: 'Featured collection'
+  },
+
   partners: {
     id: 'hub.partners',
     defaultMessage: 'Partners'

@@ -6,8 +6,15 @@ const axiosInstance = getAxiosInstance();
 
 export const getCollections = () =>
   axiosInstance.get(
-    `${AUTOMATION_HUB_UI_API_BASE}/repo/published/?deprecated=false&&limit=1`
+    `${AUTOMATION_HUB_UI_API_BASE}/collections?deprecated=false&&limit=30`
   );
+
+export const getCollection = (name, namespace) => {
+  console.log('Debug, name, namespace', name, namespace);
+  return axiosInstance.get(
+    `${AUTOMATION_HUB_UI_API_BASE}/collections/${namespace}/${name}`
+  );
+};
 
 export const getPartners = () =>
   axiosInstance.get(

@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import ConfigureCard from '../shared/configure-card';
 import HubCard from '../automation-hub/hub-card';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 const renderButtons = (intl) => (
   <React.Fragment>
@@ -27,12 +28,12 @@ const renderAnalyticsConfigButton = (intl) => (
     <Flex>
       <FlexItem>
         <Button
-          isLarge
           component='a'
           variant='link'
           href={ `https://access.redhat.com/documentation/en-us/
           red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
-          { intl.formatMessage(messages.configureAnalyticsLink) }
+          { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
+          <ExternalLinkAltIcon />
         </Button>
       </FlexItem>
     </Flex>
@@ -44,12 +45,12 @@ const renderCatalogConfigButton = (intl) => (
     <Flex>
       <FlexItem>
         <Button
-          isLarge
           component='a'
           variant='link'
           href={ `https://access.redhat.com/documentation/en-us/
           red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
-          { intl.formatMessage(messages.configureCatalogLink) }
+          { intl.formatMessage(messages.configureCatalogLink) }&nbsp;
+          <ExternalLinkAltIcon />
         </Button>
       </FlexItem>
     </Flex>

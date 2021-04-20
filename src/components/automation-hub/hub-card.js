@@ -1,11 +1,27 @@
-import React, {Fragment, useContext, useEffect, useReducer} from 'react';
+import React, { Fragment, useContext, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardBody, CardTitle, Flex, FlexItem, Grid, GridItem, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
+import {
+  Bullseye,
+  Button,
+  Card,
+  CardBody,
+  CardTitle, Divider,
+  Flex,
+  FlexItem,
+  Grid,
+  GridItem,
+  Spinner,
+  Stack,
+  StackItem,
+  Text,
+  Title
+} from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
-import { fetchCollections, fetchPartners } from '../../redux/actions/hub-actions';
+import { fetchCollection, fetchCollections, fetchPartners, fetchSyncCollections } from '../../redux/actions/hub-actions';
 import UserContext from '../../user-context';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 const initialState = {
   isFetching: true
@@ -23,37 +39,113 @@ const hubState = (state, action) => {
 const HubCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(hubState, initialState);
 
-  const { collections, partners } = useSelector(
+  const { collection, collections, partners } = useSelector(
     ({
       hubReducer: {
+        collection,
         collections,
         partners
       }
-    }) => ({ collections, partners })
+    }) => ({ collection, collections, partners })
   );
 
   const {
-    userIdentity: {
-      identity: {
-        user: { account }
-      }
-    }
+    userIdentity
   } = useContext(UserContext);
 
   const dispatch = useDispatch();
   const intl = useIntl();
 
   useEffect(() => {
-    Promise.all([ dispatch(fetchCollections()), dispatch(fetchPartners()), dispatch(fetchSyncCollections(account)) ])
+    stateDispatch({ type: 'setFetching', payload: true });
+    Promise.all([ dispatch(fetchCollections()), dispatch(fetchPartners()), dispatch(fetchSyncCollections(userIdentity?.identity?.account_number)) ])
     .then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
+
+  useEffect(() => {
+    console.log('Debug effect - collections?.data?.length', collections?.data?.length);
+    console.log('Debug effect - collection', collections?.data[collections?.data?.length - 1]);
+    stateDispatch({ type: 'setFetching', payload: true });
+    if (collections?.data?.length > 0) {
+      dispatch(fetchCollection(collections.data[collections?.data?.length - 1].name,
+        collections.data[collections?.data?.length - 1].namespace)).then(() => stateDispatch({ type: 'setFetching', payload: false }));
+    }
+  }, [ collections ]);
+
+  const renderHubInfo = () => (
+    <React.Fragment>
+      <Text style={ { width: '400px' } }>
+        { intl.formatMessage(messages.hubCardDescription) }
+      </Text>
+      <br/>
+      <Grid>
+        <GridItem span="2">
+          { partners?.meta?.count }
+        </GridItem>
+        <GridItem span="10">
+          { intl.formatMessage(messages.partners) }
+        </GridItem>
+        <GridItem span="2">
+          { collections?.meta?.count }
+        </GridItem>
+        <GridItem span="10">
+          { intl.formatMessage(messages.collections) }
+        </GridItem>
+        <GridItem span="2">
+          { collections?.meta?.count }
+        </GridItem>
+        <GridItem span="10">
+          { intl.formatMessage(messages.syncCollections) }
+        </GridItem>
+      </Grid>
+    </React.Fragment>
+  );
+
+  const renderHubFeaturedCollection = () => {
+    console.log('Debug - collection, collections', collection, collections);
+    return (
+      <Fragment>
+        <Title headingLevel="h4" style={ { width: '400px' } }>
+          { intl.formatMessage(messages.hubCardFeaturedCollectionTitle) }
+        </Title>
+        <br/>
+        <Stack>
+          <StackItem>
+            { collection.name } { intl.formatMessage(messages.collections) }
+          </StackItem>
+        </Stack>
+      </Fragment>);
+  };
+
+  const renderHubOther = () => {
+    return (<Fragment>
+      <Title headingLevel="h4">
+        { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
+      </Title>
+      <br/>
+      <Text style={ { width: '500px' } }>
+        { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
+      </Text>
+      <br/>
+      <Button
+        component='a'
+        variant='link'
+        href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
+        /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
+        { intl.formatMessage(messages.learnMoreButton) }&nbsp;
+        <ExternalLinkAltIcon />
+      </Button>
+    </Fragment>);
+  };
 
   const renderHubCards = () => {
     console.log('Debug - collections: ', collections);
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
-          <Spinner isSVG />
+          <Bullseye>
+            <Spinner isSVG />
+          </Bullseye>
         </Section>
       );
     }
@@ -61,52 +153,15 @@ const HubCard = () => {
       return (
         <Flex flex={ { default: 'flex_1' } }>
           <FlexItem>
-            <Text style={ { width: '300px' } }>
-              { intl.formatMessage(messages.hubCardDescription) }
-            </Text>
-            <Stack>
-              <StackItem>
-                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
-              </StackItem>
-            </Stack>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
-            </StackItem>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
-            </StackItem>
+            { renderHubInfo() }
           </FlexItem>
+          <Divider isVertical/>
           <FlexItem>
-            <Text style={ { width: '300px' } }>
-              { intl.formatMessage(messages.hubCardDescription) }
-            </Text>
-            <Stack>
-              <StackItem>
-                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
-              </StackItem>
-            </Stack>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
-            </StackItem>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
-            </StackItem>
+            { renderHubFeaturedCollection() }
           </FlexItem>
+          <Divider isVertical/>
           <FlexItem>
-            <Text style={ { width: '300px' } }>
-              { intl.formatMessage(messages.hubCardDescription) }
-            </Text>
-            <Stack>
-              <StackItem>
-                { partners?.meta?.count } { intl.formatMessage(messages.partners) }
-              </StackItem>
-            </Stack>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.collections) }
-            </StackItem>
-            <StackItem>
-              { collections?.meta?.count } { intl.formatMessage(messages.syncCollections) }
-            </StackItem>
+            { renderHubOther() }
           </FlexItem>
         </Flex>
       );
@@ -117,7 +172,9 @@ const HubCard = () => {
     <Fragment>
       <Card className='ins-c-dashboard__card'>
         <CardTitle className="pf-u-py-sm">
-          { intl.formatMessage(messages.hubTitle) }
+          <Title headingLevel="h3">
+            { intl.formatMessage(messages.hubTitle) }
+          </Title>
         </CardTitle>
         <CardBody>
           { renderHubCards() }
