@@ -71,7 +71,6 @@ const HubCard = () => {
       const day = d.getDate();
       const count = collections?.meta?.count;
 
-      console.log('Debug - day, length -- count:', day, count);
       dispatch(fetchCollection(count <= day ? count : day - 1)).then(() =>
         stateDispatch({ type: 'setFetching', payload: false }));
     }
@@ -139,12 +138,10 @@ const HubCard = () => {
   );
 
   const renderHubFeaturedCollection = () => {
-    console.log('Debug - collection', collection);
     const featuredCollection = collection?.data ? collection?.data[0] : null;
     const content = featuredCollection ? contentCounts(
       featuredCollection.latest_version?.metadata?.contents
     ) : undefined;
-    console.log('Debug - contents --- content', featuredCollection?.latest_version?.metadata?.contents, content);
     return (
       <Fragment>
         <Title headingLevel="h4" style={ { width: '350px' } }>
@@ -247,7 +244,6 @@ const HubCard = () => {
   };
 
   const renderHubCards = () => {
-    console.log('Debug - collections: ', collections);
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>

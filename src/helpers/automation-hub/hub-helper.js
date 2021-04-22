@@ -10,7 +10,6 @@ export const getCollections = () =>
   );
 
 export const getCollection = (offset) => {
-  console.log('Debug - offset', offset);
   return axiosInstance.get(
     `${AUTOMATION_HUB_UI_API_BASE}/repo/published/?deprecated=false&offset=${offset}&limit=1`
   );

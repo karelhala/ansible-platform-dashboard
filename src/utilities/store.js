@@ -11,7 +11,6 @@ import hubReducer, { hubInitialState } from '../redux/reducers/hub-reducer';
 import analyticsReducer, { analyticsInitialState } from '../redux/reducers/analytics-reducer';
 
 const getStore = (middlewares = []) => {
-  console.log('Debug - middlewares', middlewares);
   const registry = new ReducerRegistry({}, [
     thunk,
     promiseMiddleware,
