@@ -2,8 +2,6 @@
 set -e
 set -x
 
-NODE_ENV=production npm run build
-
 if [ "${TRAVIS_BRANCH}" = "main" ]
 then
     for env in ci qa
