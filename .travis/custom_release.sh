@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 set -x
+
+NODE_ENV=production npm run build
 
 if [ "${TRAVIS_BRANCH}" = "main" ]
 then
