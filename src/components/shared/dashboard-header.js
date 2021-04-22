@@ -1,5 +1,5 @@
 import {
-  PageSection, Text, TextContent, Title
+  PageSection, Text, Title
 } from '@patternfly/react-core';
 import { Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
 import React from 'react';
