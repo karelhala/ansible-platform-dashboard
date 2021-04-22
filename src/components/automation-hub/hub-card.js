@@ -24,6 +24,7 @@ import UserContext from '../../user-context';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { contentCounts } from './content-counts';
 import { Logo } from './logo';
+import { release } from '../../utilities/app-history';
 
 const initialState = {
   isFetching: true
@@ -96,7 +97,7 @@ const HubCard = () => {
             className="pf-u-p-0"
             component='a'
             variant='link'
-            href={ `/automation-hub/partners` }>
+            href={ `${release}ansible/automation-hub/partners` }>
             { intl.formatMessage(messages.partners) }
           </Button>
         </GridItem>
@@ -113,7 +114,7 @@ const HubCard = () => {
             className="pf-u-p-0"
             component='a'
             variant='link'
-            href={ `/automation-hub` }>
+            href={ `${release}ansible/automation-hub` }>
             { intl.formatMessage(messages.collections) }
           </Button>
         </GridItem>
