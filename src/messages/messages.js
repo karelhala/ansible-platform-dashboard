@@ -77,7 +77,6 @@ const messages = defineMessages({
     id: 'hub.featured.title',
     defaultMessage: 'Featured collection'
   },
-
   partners: {
     id: 'hub.partners',
     defaultMessage: 'Partners'
@@ -89,6 +88,18 @@ const messages = defineMessages({
   syncCollections: {
     id: 'hub.syncCollections',
     defaultMessage: 'Collections set to sync'
+  },
+  modules: {
+    id: 'hub.modules',
+    defaultMessage: 'Modules'
+  },
+  roles: {
+    id: 'hub.roles',
+    defaultMessage: 'Roles'
+  },
+  plugins: {
+    id: 'hub.plugins',
+    defaultMessage: 'Plugins'
   },
   noAppTitle: {
     id: 'no.app.title',

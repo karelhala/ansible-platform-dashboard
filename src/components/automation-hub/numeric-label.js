@@ -23,8 +23,8 @@ const roundNumber = (n) => {
   return '1B+';
 };
 
-export const NumericLabel = () => {
-  const { number, label, hideNumber } = this.props;
+export const NumericLabel = (props) => {
+  const { number, label, hideNumber } = props;
   let convertedNum;
 
   if (typeof number === 'string') {

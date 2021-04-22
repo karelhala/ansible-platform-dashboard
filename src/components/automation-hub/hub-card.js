@@ -9,11 +9,11 @@ import {
   Flex,
   FlexItem,
   Grid,
-  GridItem,
+  GridItem, Label, Level, LevelItem,
   Spinner,
   Stack,
   StackItem,
-  Text,
+  Text, TextContent, TextVariants,
   Title
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
@@ -22,7 +22,8 @@ import messages from '../../messages/messages';
 import { fetchCollection, fetchCollections, fetchPartners, fetchSyncCollections } from '../../redux/actions/hub-actions';
 import UserContext from '../../user-context';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import { FeaturedCollection } from './featured_collection';
+import { contentCounts } from './content-counts';
+import { Logo } from './logo';
 
 const initialState = {
   isFetching: true
@@ -78,28 +79,60 @@ const HubCard = () => {
 
   const renderHubInfo = () => (
     <React.Fragment>
-      <Text style={ { width: '400px' } }>
+      <Text style={ { width: '350px' } }>
         { intl.formatMessage(messages.hubCardDescription) }
       </Text>
       <br/>
-      <Grid>
+      <Grid hasGutter="md">
         <GridItem span="2">
-          { partners?.meta?.count }
+          <TextContent>
+            <Text component={ TextVariants.h1 }>
+              { partners?.meta?.count }
+            </Text>
+          </TextContent>
         </GridItem>
         <GridItem span="10">
-          { intl.formatMessage(messages.partners) }
+          <Button
+            isLarge
+            className="pf-u-p-0"
+            component='a'
+            variant='link'
+            href={ `/automation-hub/partners` }>
+            { intl.formatMessage(messages.partners) }
+          </Button>
         </GridItem>
         <GridItem span="2">
-          { collections?.meta?.count }
+          <TextContent>
+            <Text component={ TextVariants.h1 }>
+              { collections?.meta?.count }
+            </Text>
+          </TextContent>
         </GridItem>
         <GridItem span="10">
-          { intl.formatMessage(messages.collections) }
+          <Button
+            isLarge
+            className="pf-u-p-0"
+            component='a'
+            variant='link'
+            href={ `/automation-hub` }>
+            { intl.formatMessage(messages.collections) }
+          </Button>
         </GridItem>
         <GridItem span="2">
-          { collections?.meta?.count }
+          <TextContent>
+            <Text component={ TextVariants.h1 }>
+              { collections?.meta?.count }
+            </Text>
+          </TextContent>
         </GridItem>
         <GridItem span="10">
-          { intl.formatMessage(messages.syncCollections) }
+          <Button
+            className="pf-u-p-0"
+            isLarge
+            variant='link'
+          >
+            { intl.formatMessage(messages.syncCollections) }
+          </Button>
         </GridItem>
       </Grid>
     </React.Fragment>
@@ -107,35 +140,110 @@ const HubCard = () => {
 
   const renderHubFeaturedCollection = () => {
     console.log('Debug - collection', collection);
+    const featuredCollection = collection?.data ? collection?.data[0] : null;
+    const content = featuredCollection ? contentCounts(
+      featuredCollection.latest_version?.metadata?.contents
+    ) : undefined;
+    console.log('Debug - contents --- content', featuredCollection?.latest_version?.metadata?.contents, content);
     return (
       <Fragment>
-        <Title headingLevel="h4" style={ { width: '400px' } }>
+        <Title headingLevel="h4" style={ { width: '350px' } }>
           { intl.formatMessage(messages.hubCardFeaturedCollectionTitle) }
         </Title>
         <br/>
-        <FeaturedCollection collection={ collection?.data[0] }/>
+        {  featuredCollection &&
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem style={ { width: '350px' } }>
+            <Level hasGutter="md">
+              <LevelItem>
+                <Logo
+                  alt={ featuredCollection?.namespace?.company + ' logo' }
+                  image={ featuredCollection?.namespace.avatar_url }
+                  size='50px'
+                />
+              </LevelItem>
+              <LevelItem>
+                <Label>Certified</Label>
+              </LevelItem>
+            </Level>
+            <TextContent>
+              <Text component={ TextVariants.small }>Provided by { featuredCollection?.namespace?.company
+                  || featuredCollection?.namespace?.name }</Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem>
+            <TextContent>
+              <Text component={ TextVariants.p }>
+                { featuredCollection?.latest_version?.metadata?.description }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem>
+            <Grid hasGutter="md" style={ { width: '350px' } }>
+              <GridItem span="4">
+                { content?.modules || '0' }
+              </GridItem>
+              <GridItem span="4">
+                { content?.roles || 0 }
+              </GridItem>
+              <GridItem span="4">
+                { content?.plugins || 0 }
+              </GridItem>
+              <GridItem span="4">
+                <TextContent>
+                  <Text component={ TextVariants.small }>
+                    { intl.formatMessage(messages.modules) }
+                  </Text>
+                </TextContent>
+              </GridItem>
+              <GridItem span="4">
+                <TextContent>
+                  <Text component={ TextVariants.small }>
+                    { intl.formatMessage(messages.roles) }
+                  </Text>
+                </TextContent>
+              </GridItem>
+              <GridItem span="4">
+                <TextContent>
+                  <Text component={ TextVariants.small }>
+                    { intl.formatMessage(messages.plugins) }
+                  </Text>
+                </TextContent>
+              </GridItem>
+            </Grid>
+          </FlexItem>
+        </Flex> }
       </Fragment>);
   };
 
   const renderHubOther = () => {
-    return (<Fragment>
-      <Title headingLevel="h4">
-        { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
-      </Title>
-      <br/>
-      <Text style={ { width: '500px' } }>
-        { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
-      </Text>
-      <br/>
-      <Button
-        component='a'
-        variant='link'
-        href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
+    return (
+      <Stack hasGutter="lg" style={ { minHeight: '250px' } }>
+        <StackItem>
+          <Title headingLevel="h4">
+            { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
+          </Title>
+        </StackItem>
+        <StackItem isFilled>
+          <Text style={ { width: '400px' } }>
+            { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
+          </Text>
+        </StackItem>
+        <StackItem>
+          <Flex justifyContent={ { default: 'justifyContentFlexEnd' } }>
+            <FlexItem>
+              <Button
+                component='a'
+                variant='link'
+                href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
         /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
-        { intl.formatMessage(messages.learnMoreButton) }&nbsp;
-        <ExternalLinkAltIcon />
-      </Button>
-    </Fragment>);
+                { intl.formatMessage(messages.learnMoreButton) }&nbsp;
+                <ExternalLinkAltIcon />
+              </Button>
+            </FlexItem>
+          </Flex>
+        </StackItem>
+      </Stack>);
   };
 
   const renderHubCards = () => {

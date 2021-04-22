@@ -1,9 +1,10 @@
 import * as React from 'react';
 // had to declare *.svg in src/index.d.ts
 import DefaultLogo from '../../images/default-logo.svg';
+import PropTypes from 'prop-types';
 
-export const Logo = () => {
-  const { size, image, alt, className, unlockWidth } = this.props;
+export const Logo = (props) => {
+  const { size, image, alt, className } = props;
 
   const style = {
     height: size,
@@ -11,12 +12,6 @@ export const Logo = () => {
     justifyContent: 'center',
     alignItems: 'center'
   };
-
-  if (unlockWidth) {
-    style.minWidth = size;
-  } else {
-    style.width = size;
-  }
 
   // use inline css so we can set size
   return (
@@ -29,3 +24,12 @@ export const Logo = () => {
     </div>
   );
 };
+
+Logo.propTypes = {
+  size: PropTypes.string,
+  image: PropTypes.string,
+  alt: PropTypes.string,
+  className: PropTypes.any
+};
+export default Logo;
+
