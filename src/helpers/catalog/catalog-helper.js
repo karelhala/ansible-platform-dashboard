@@ -1,6 +1,6 @@
 /* eslint camelcase: 0 */
 import { getAxiosInstance } from '../shared/user-login';
-import { CATALOG_API_BASE } from '../../utilities/constants';
+import { CATALOG_API_BASE, SOURCES_API_BASE } from '../../utilities/constants';
 import { defaultSettings } from '../shared/pagination';
 
 const axiosInstance = getAxiosInstance();
@@ -21,10 +21,10 @@ const getOrderPortfolioItems = (itemIds) =>
     .join('&')}`
   );
 
-export const getOrders = (filter = '', pagination = defaultSettings) =>
+export const getOrders = () =>
   axiosInstance
   .get(
-    `${CATALOG_API_BASE}/orders?${filter}&limit=${pagination.limit}&offset=${pagination.offset}`
+    `${CATALOG_API_BASE}/orders?&limit=2`
   ) // eslint-disable-line max-len
   .then((orders) =>
     getOrderItems(orders.data.map(({ id }) => id)).then((orderItems) =>
@@ -55,4 +55,4 @@ export const getPortfolioItems = () =>
 
 export const getPlatforms = () =>
   axiosInstance.get(
-    `${CATALOG_API_BASE}/platforms`);
+    `${SOURCES_API_BASE}/sources`);

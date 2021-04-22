@@ -32,8 +32,6 @@ const setLoadingState = (state, { payload = true }) => ({
 });
 
 const setClusters = (state, payload) => {
-  console.log('Debug - state, payload', state, payload);
-
   return ({
     ...state,
     clusters: payload

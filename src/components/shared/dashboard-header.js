@@ -1,32 +1,34 @@
 import {
-  PageSection, Text, TextContent
+  PageSection, Text, Title
 } from '@patternfly/react-core';
 import { Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
 import React from 'react';
 import PropTypes from 'prop-types';
 import AutomationIcon from '../../images/Headers-Red_Hat-White_Automation.svg';
+import { useIntl } from 'react-intl';
 
-const DashboardHeader = ({ renderButtons }) => {
+const DashboardHeader = ({ title, description, renderButtons }) => {
+  const intl = useIntl();
+
   return (<React.Fragment>
-    <PageSection style={ { backgroundImage: `url(${AutomationIcon})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat',
-      marginTop: '0px', marginBottom: '0px', marginRight: '0px',
-      backgroundPositionX: '0px', backgroundPositionY: '0px' } }>
+    <PageSection style={ { backgroundImage: `url(${AutomationIcon})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', paddingTop: '32px' } }>
       <Grid>
         <GridItem>
-          <Flex direction={ { default: 'column' } }>
-            <FlexItem spacer={ { default: 'spacer2xl' } }>
-              <TextContent>
-                <Text component="h1">Get started with Red Hat Ansible Automation Platform</Text>
-                <br/>
-                <Text component="p">
-                  Red Hat Ansible Automation Platform simplifies the development and operation of automation<br/>
-                  workloads across diverse hybrid environments using Ansible Tower, certified and supported content <br/>
-                  collections, and the hosted services on cloud.redhat.com
-                </Text>
-              </TextContent>
+          <Flex direction={ { default: 'column' } } spaceItems={ { modifier: 'spaceItemsXl' } }>
+            <FlexItem>
+              <Title headingLevel="h1">{ title }</Title>
             </FlexItem>
             <FlexItem>
-              { renderButtons() }
+              <Grid>
+                <GridItem span={ 7 }>
+                  <Text component="p">
+                    { description }
+                  </Text>
+                </GridItem>
+              </Grid>
+            </FlexItem>
+            <FlexItem>
+              { renderButtons(intl) }
             </FlexItem>
           </Flex>
         </GridItem>
@@ -36,6 +38,8 @@ const DashboardHeader = ({ renderButtons }) => {
 };
 
 DashboardHeader.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
   renderButtons: PropTypes.func.isRequired
 };
 

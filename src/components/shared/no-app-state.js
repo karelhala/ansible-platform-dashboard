@@ -2,8 +2,10 @@ import React from 'react';
 import DashboardHeader from './dashboard-header';
 import { Button, Flex, FlexItem } from '@patternfly/react-core';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import messages from '../../messages/messages';
+import { useIntl } from 'react-intl';
 
-const renderButtons = () => (
+const renderButtons = (intl) => (
   <React.Fragment>
     <Flex>
       <FlexItem>
@@ -12,7 +14,7 @@ const renderButtons = () => (
           component='a'
           variant='primary'
           href={ `https://www.redhat.com/en/technologies/management/ansible/try-it` }>
-          Try it free
+          { intl.formatMessage(messages.tryItButton) }
         </Button>
       </FlexItem>
       <FlexItem>
@@ -23,7 +25,7 @@ const renderButtons = () => (
           target='_blank'
           rel='noreferrer'
           href='https://www.redhat.com/en/technologies/management/ansible'>
-          Learn more &nbsp;
+          { intl.formatMessage(messages.learnMoreButton) } &nbsp;
           <ArrowRightIcon />
         </Button>
       </FlexItem>
@@ -32,8 +34,12 @@ const renderButtons = () => (
 );
 
 const NoAppState = () => {
+  const intl = useIntl();
+
   return <React.Fragment>
-    <DashboardHeader renderButtons={ renderButtons } />
+    <DashboardHeader title={ intl.formatMessage(messages.noAppTitle) }
+      description={ intl.formatMessage(messages.noAppDescription) }
+      renderButtons={ renderButtons } />
   </React.Fragment>;
 };
 

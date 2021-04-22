@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, Grid, GridItem, Spinner, Stack, StackItem, Text, Title } from '@patternfly/react-core';
+import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
@@ -50,43 +50,42 @@ const AnalyticsCard = () => {
     }
     else {
       return (
-        <Card>
-          <GridItem md={ 4 } lg={ 3 }>
+        <Stack>
+          <StackItem>
             <Text>
-              Gain insights into your deployments through visual dashboards and organization statistics,
-              calculate your return on investment and explore automation processes details.
+              { intl.formatMessage(messages.catalogCardDescription) }
             </Text>
-          </GridItem>
-          <GridItem md={ 8 } lg={ 9 }>
+          </StackItem>
+          <StackItem>
             <Stack>
               <StackItem>
-                { clusters?.meta?.count } Total Clusters
+                { clusters?.meta?.count } { intl.formatMessage(messages.totalClusters) }
               </StackItem>
             </Stack>
-            <Stack>
-              <StackItem>
-                { criticalNotifications?.meta?.count } Critical
-              </StackItem>
-              <StackItem>
-                { warningNotifications?.meta?.count } Warning
-              </StackItem>
-            </Stack>
-          </GridItem>
-        </Card>
+          </StackItem>
+          <StackItem>
+            <StackItem>
+              { criticalNotifications?.meta?.count } { intl.formatMessage(messages.critical) }
+            </StackItem>
+            <StackItem>
+              { warningNotifications?.meta?.count } { intl.formatMessage(messages.warning) }
+            </StackItem>
+          </StackItem>
+        </Stack>
       );
     }
   };
 
   return (
     <Fragment>
-      <Title headingLevel={ 'h3' }>
-        { intl.formatMessage(messages.analyticsTitle) }
-      </Title>
-      <Section type="content">
-        <Grid hasGutter>
+      <Card className='ins-c-dashboard__card'>
+        <CardTitle className="pf-u-py-sm">
+          { intl.formatMessage(messages.analyticsTitle) }
+        </CardTitle>
+        <CardBody>
           { renderAnalyticsCards() }
-        </Grid>
-      </Section>
+        </CardBody>
+      </Card>
     </Fragment>
   );
 };

@@ -8,10 +8,24 @@ export const fetchCollections = () => (dispatch) => {
   });
 };
 
+export const fetchCollection = (offset) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.FETCH_COLLECTION,
+    payload: HubHelper.getCollection(offset)
+  });
+};
+
 export const fetchPartners = () => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_PARTNERS,
     payload: HubHelper.getPartners()
+  });
+};
+
+export const fetchSyncCollections = (account) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.FETCH_SYNC_COLLECTIONS,
+    payload: HubHelper.getSyncCollections(account)
   });
 };
 
