@@ -79,7 +79,7 @@ const HubCard = () => {
 
   const renderHubInfo = () => (
     <React.Fragment>
-      <Text style={ { width: '350px' } }>
+      <Text>
         { intl.formatMessage(messages.hubCardDescription) }
       </Text>
       <br/>
@@ -145,13 +145,13 @@ const HubCard = () => {
     ) : undefined;
     return (
       <Fragment>
-        <Title headingLevel="h4" style={ { width: '350px' } }>
+        <Title headingLevel="h4">
           { intl.formatMessage(messages.hubCardFeaturedCollectionTitle) }
         </Title>
         <br/>
         {  featuredCollection &&
         <Flex direction={ { default: 'column' } }>
-          <FlexItem style={ { width: '350px' } }>
+          <FlexItem>
             <Level hasGutter="md">
               <LevelItem>
                 <Logo
@@ -177,7 +177,7 @@ const HubCard = () => {
             </TextContent>
           </FlexItem>
           <FlexItem>
-            <Grid hasGutter="md" style={ { width: '350px' } }>
+            <Grid hasGutter="md" >
               <GridItem span="4">
                 { content?.modules || '0' }
               </GridItem>
@@ -223,7 +223,7 @@ const HubCard = () => {
           </Title>
         </StackItem>
         <StackItem isFilled>
-          <Text style={ { width: '400px' } }>
+          <Text>
             { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
           </Text>
         </StackItem>
@@ -257,15 +257,15 @@ const HubCard = () => {
     else {
       return (
         <Flex flex={ { default: 'flex_1' } }>
-          <FlexItem>
+          <FlexItem  style={ { width: '30%' } }>
             { renderHubInfo() }
           </FlexItem>
           <Divider isVertical/>
-          <FlexItem>
+          <FlexItem  style={ { width: '30%' } }>
             { renderHubFeaturedCollection() }
           </FlexItem>
           <Divider isVertical/>
-          <FlexItem>
+          <FlexItem style={ { width: '30%' } }>
             { renderHubOther() }
           </FlexItem>
         </Flex>
