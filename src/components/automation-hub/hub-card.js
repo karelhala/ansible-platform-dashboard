@@ -216,7 +216,7 @@ const HubCard = () => {
 
   const renderHubOther = () => {
     return (
-      <Stack hasGutter="lg" style={ { minHeight: '250px'} }>
+      <Stack hasGutter="lg" style={ { minHeight: '250px' } }>
         <StackItem>
           <Title headingLevel="h4">
             { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
