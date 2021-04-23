@@ -68,13 +68,13 @@ const ConfigureAppPage = () => {
       <Stack hasGutter="md">
         <StackItem>
           <Grid hasGutter="xl">
-            <GridItem span={ 6 }>
+            <GridItem md={ 6 } sm={ 12 } >
               <ConfigureCard
                 title={ intl.formatMessage(messages.configureAnalyticsTitle) }
                 description={ intl.formatMessage(messages.configureAnalyticsDescription) }
                 renderButtons={ () => renderAnalyticsConfigButton(intl) }/>
             </GridItem>
-            <GridItem span={ 6 }>
+            <GridItem md={ 6 } sm={ 12 } >
               <ConfigureCard
                 title={ intl.formatMessage(messages.configureCatalogTitle) }
                 description={ intl.formatMessage(messages.configureCatalogDescription) }
