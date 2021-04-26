@@ -70,12 +70,11 @@ const HubCard = () => {
   }, []);
 
   useEffect(() => {
-    stateDispatch({ type: 'setFetching', payload: true });
     if (collections?.meta?.count > 0) {
       const d = new Date();
       const day = d.getDate();
       const count = collections?.meta?.count;
-
+      stateDispatch({ type: 'setFetching', payload: true });
       dispatch(fetchCollection(count <= day ? count : day - 1)).then(() =>
         stateDispatch({ type: 'setFetching', payload: false }));
     }

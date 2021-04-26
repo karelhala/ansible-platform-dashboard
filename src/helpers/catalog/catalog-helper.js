@@ -56,3 +56,50 @@ export const getPortfolioItems = () =>
 export const getPlatforms = () =>
   axiosInstance.get(
     `${SOURCES_API_BASE}/sources`);
+
+export const listPortfolioItems = (
+  limit = 1
+) => {
+  return axiosInstance
+  .get(
+    `${CATALOG_API_BASE}/portfolio_items?limit=${limit}`
+  )
+  .then(
+    (portfolioItems) => {
+      const portfolioReference = portfolioItems.data.reduce(
+        (acc, curr, index) =>
+          curr.portfolio_id
+            ? {
+              ...acc,
+              [curr.portfolio_id]: acc[curr.portfolio_id]
+                ? [ ...acc[curr.portfolio_id], index ]
+                : [ index ]
+            }
+            : acc,
+        {}
+      );
+      return axiosInstance
+      .get(
+        `${CATALOG_API_BASE}/portfolios?${Object.keys(portfolioReference)
+        .map((id) => `filter[id][]=${id}`)
+        .join('&')}`
+      )
+      .then(({ data }) => ({
+        portfolioItems,
+        portfolioReference,
+        portfolios: data
+      }));
+    }
+  )
+  .then(({ portfolioItems, portfolioReference, portfolios }) => {
+    portfolios.forEach(
+      ({ id, name }) =>
+        id &&
+          portfolioReference[id] &&
+          portfolioReference[id].forEach((portfolioItemIndex) => {
+            portfolioItems.data[portfolioItemIndex].portfolioName = name;
+          })
+    );
+    return portfolioItems;
+  });
+};

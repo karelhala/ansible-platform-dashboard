@@ -6,6 +6,7 @@ import messages from '../../messages/messages';
 import ConfigureCard from '../shared/configure-card';
 import HubCard from '../automation-hub/hub-card';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import CatalogCard from '../catalog/catalog-card';
 
 const renderButtons = (intl) => (
   <React.Fragment>
@@ -84,6 +85,9 @@ const ConfigureAppPage = () => {
         </StackItem>
         <StackItem>
           <HubCard/>
+        </StackItem>
+        <StackItem>
+          <CatalogCard/>
         </StackItem>
       </Stack>
     </PageSection>
