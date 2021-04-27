@@ -6,6 +6,10 @@ import {
   Card,
   CardBody,
   CardTitle, Divider,
+  DescriptionList,
+  DescriptionListDescription,
+  DescriptionListGroup,
+  DescriptionListTerm,
   Flex,
   FlexItem,
   Grid,
@@ -83,58 +87,45 @@ const HubCard = () => {
         { intl.formatMessage(messages.hubCardDescription) }
       </Text>
       <br/>
-      <Grid hasGutter="md">
-        <GridItem span="2">
-          <TextContent>
-            <Text component={ TextVariants.h1 }>
-              { partners?.meta?.count }
-            </Text>
-          </TextContent>
-        </GridItem>
-        <GridItem span="10">
-          <Button
-            isLarge
-            className="pf-u-p-0"
-            component='a'
-            variant='link'
-            href={ `${release}ansible/automation-hub/partners` }>
-            { intl.formatMessage(messages.partners) }
-          </Button>
-        </GridItem>
-        <GridItem span="2">
-          <TextContent>
-            <Text component={ TextVariants.h1 }>
-              { collections?.meta?.count }
-            </Text>
-          </TextContent>
-        </GridItem>
-        <GridItem span="10">
-          <Button
-            isLarge
-            className="pf-u-p-0"
-            component='a'
-            variant='link'
-            href={ `${release}ansible/automation-hub` }>
-            { intl.formatMessage(messages.collections) }
-          </Button>
-        </GridItem>
-        <GridItem span="2">
-          <TextContent>
-            <Text component={ TextVariants.h1 }>
-              { collections?.meta?.count }
-            </Text>
-          </TextContent>
-        </GridItem>
-        <GridItem span="10">
-          <Button
-            className="pf-u-p-0"
-            isLarge
-            variant='link'
-          >
-            { intl.formatMessage(messages.syncCollections) }
-          </Button>
-        </GridItem>
-      </Grid>
+
+      <DescriptionList isHorizontal>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { partners?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/automation-hub/partners` }>
+              { intl.formatMessage(messages.partners) }
+            </Button>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { collections?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/automation-hub` }>
+              { intl.formatMessage(messages.collections) }
+            </Button>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { collections?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Button variant='link' >
+              { intl.formatMessage(messages.syncCollections) }
+            </Button>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+      </DescriptionList>
     </React.Fragment>
   );
 
@@ -216,7 +207,7 @@ const HubCard = () => {
 
   const renderHubOther = () => {
     return (
-      <Stack hasGutter="lg" style={ { minHeight: '250px' } }>
+      <Stack hasGutter="lg">
         <StackItem>
           <Title headingLevel="h4">
             { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
@@ -256,16 +247,16 @@ const HubCard = () => {
     }
     else {
       return (
-        <Flex flex={ { default: 'flex_1' } }>
-          <FlexItem  style={ { width: '30%' } }>
+        <Flex className="automation-hub_card" >
+          <FlexItem>
             { renderHubInfo() }
           </FlexItem>
-          <Divider isVertical/>
-          <FlexItem  style={ { width: '30%' } }>
+          <Divider/>
+          <FlexItem>
             { renderHubFeaturedCollection() }
           </FlexItem>
-          <Divider isVertical/>
-          <FlexItem style={ { width: '30%' } }>
+          <Divider/>
+          <FlexItem>
             { renderHubOther() }
           </FlexItem>
         </Flex>
@@ -276,7 +267,7 @@ const HubCard = () => {
   return (
     <Fragment>
       <Card className='ins-c-dashboard__card'>
-        <CardTitle className="pf-u-py-sm">
+        <CardTitle>
           <Title headingLevel="h3">
             { intl.formatMessage(messages.hubTitle) }
           </Title>
