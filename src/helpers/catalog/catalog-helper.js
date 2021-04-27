@@ -62,7 +62,7 @@ export const listPortfolioItems = (
 ) => {
   return axiosInstance
   .get(
-    `${CATALOG_API_BASE}/portfolio_items?limit=${limit}`
+    `${CATALOG_API_BASE}/portfolio_items?sort_by=id:desc&limit=${limit}`
   )
   .then(
     (portfolioItems) => {

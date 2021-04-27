@@ -10,7 +10,7 @@ import {
   Flex,
   FlexItem,
   Grid,
-  GridItem, Level, LevelItem,
+  GridItem, Label, Level, LevelItem,
   Spinner,
   Stack,
   StackItem,
@@ -28,6 +28,8 @@ import {
 import UserContext from '../../user-context';
 import { Logo } from '../automation-hub/logo';
 import { release } from '../../utilities/app-history';
+import { CATALOG_API_BASE } from '../../utilities/constants';
+import DefaultLogo from '../../images/default-logo.svg';
 
 const initialState = {
   isFetching: true
@@ -74,7 +76,10 @@ const CatalogCard = () => {
   }, []);
 
   console.log('Debug - permissions', permissions);
-  console.log('Debug - products, platforms, portfolios, orders', portfolioItems, platforms, portfolios, orders);
+  console.log('Debug - products', portfolioItems);
+  console.log('Debug - platforms', platforms);
+  console.log('Debug - portfolios', portfolios);
+  console.log('Debug - orders', orders);
 
   const renderCatalogInfo = () => (
     <React.Fragment>
@@ -142,6 +147,7 @@ const CatalogCard = () => {
 
   const renderCatalogFeaturedProduct = () => {
     const featuredProduct = portfolioItems?.data ? portfolioItems?.data[0] : null;
+    console.log('Debug - featuredProduct', featuredProduct);
     return (
       <Fragment>
         <Title headingLevel="h4">
@@ -151,19 +157,19 @@ const CatalogCard = () => {
         {  featuredProduct &&
           <Flex direction={ { default: 'column' } }>
             <FlexItem>
-              <Level hasGutter="md">
-                <LevelItem>
-                  <Logo
-                    alt={ featuredProduct?.name }
-                    image={ featuredProduct?.icon }
-                    size='50px'
+              <Stack hasGutter="md">
+                <StackItem>
+                  <img
+                    style={ { objectFit: 'contain', maxHeight: 50 } }
+                    src={ `${CATALOG_API_BASE}/portfolio_items/${featuredProduct.id}/icon` || DefaultLogo }
                   />
-                </LevelItem>
-              </Level>
-              <TextContent>
-                <Text component={ TextVariants.small }>Provided by { featuredProduct?.owner
-                || featuredProduct?.name }</Text>
-              </TextContent>
+                </StackItem>
+                <StackItem>
+                  <TextContent component={ TextVariants.p }>
+                    { featuredProduct?.name }
+                  </TextContent>
+                </StackItem>
+              </Stack>
             </FlexItem>
             <FlexItem>
               <TextContent>
@@ -177,19 +183,38 @@ const CatalogCard = () => {
   };
 
   const renderCatalogOther = () => {
+    console.log('Debug - orders count', orders?.meta?.count);
     return (
       <Stack hasGutter="lg" style={ { minHeight: '250px' } }>
         <StackItem>
-          <Level>
-            <LevelItem>
+          <Flex>
+            <FlexItem>
               <Title headingLevel="h4">
                 { intl.formatMessage(messages.catalogCardLatestOrdersTitle) }
               </Title>
+            </FlexItem>
+            <FlexItem>
+              <Badge>{ orders?.meta?.count }</Badge>
+            </FlexItem>
+          </Flex>
+        </StackItem>
+        <StackItem>
+          <Level>
+            <LevelItem>
+              { orders.data[0]?.orderItems[0]?.id }
             </LevelItem>
             <LevelItem>
-              <Badge>{ orders?.metadata?.count }</Badge>
+              { orders.data[0]?.orderItems[0]?.name }
+            </LevelItem>
+            <LevelItem>
+              <Label>
+                { orders.data[0]?.orderItems[0]?.state }
+              </Label>
             </LevelItem>
           </Level>
+        </StackItem>
+        <StackItem>
+          { orders.data[1]?.orderItems[0]?.name }
         </StackItem>
         <StackItem>
           <Flex justifyContent={ { default: 'justifyContentSpaceBetween' } }>
