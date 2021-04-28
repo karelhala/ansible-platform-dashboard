@@ -147,6 +147,18 @@ const messages = defineMessages({
     defaultMessage: 'Use Automation Services Catalog to collect and distribute automation content, govern your content by designing ' +
         'and attaching approval processes, and ensure required sign-off is obtained by assigned organizational groups.'
   },
+  catalogCardLatestOrdersTitle: {
+    id: 'catalog.card.orders.title',
+    defaultMessage: 'Latest orders'
+  },
+  catalogCardFeaturedProduct: {
+    id: 'catalog.card.featured.title',
+    defaultMessage: 'Latest created product'
+  },
+  viewMore: {
+    id: 'labels.view.more',
+    defaultMessage: 'View more'
+  },
   configureAnalyticsLink: {
     id: 'configure.analytics.link',
     defaultMessage: 'Configure Insights Analytics'

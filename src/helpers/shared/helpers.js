@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { DateFormat } from '@redhat-cloud-services/frontend-components/DateFormat';
 
@@ -8,9 +9,9 @@ export const scrollToTop = () =>
     left: 0
   });
 
-export const TimeAgo = (date) => (
+export const TimeAgo = ({ date }) => (
   <span key={ date }>
-    <DateFormat date={ date } type="relative" />
+    <DateFormat date={ date } type="relative"/>
   </span>
 );
 

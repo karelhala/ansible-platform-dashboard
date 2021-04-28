@@ -1,9 +1,9 @@
 import React from 'react';
-import ConfigureAppPage from './configure-app-page';
+import PlatformPage from './platform-page';
 
 const Dashboard = () => {
   return <React.Fragment>
-    <ConfigureAppPage />
+    <PlatformPage />
   </React.Fragment>;
 };
 

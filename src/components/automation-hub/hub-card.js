@@ -70,12 +70,11 @@ const HubCard = () => {
   }, []);
 
   useEffect(() => {
-    stateDispatch({ type: 'setFetching', payload: true });
     if (collections?.meta?.count > 0) {
       const d = new Date();
       const day = d.getDate();
       const count = collections?.meta?.count;
-
+      stateDispatch({ type: 'setFetching', payload: true });
       dispatch(fetchCollection(count <= day ? count : day - 1)).then(() =>
         stateDispatch({ type: 'setFetching', payload: false }));
     }
@@ -219,18 +218,16 @@ const HubCard = () => {
           </Text>
         </StackItem>
         <StackItem>
-          <Flex justifyContent={ { default: 'justifyContentFlexEnd' } }>
-            <FlexItem>
-              <Button
-                component='a'
-                variant='link'
-                href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
-        /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
-                { intl.formatMessage(messages.learnMoreButton) }&nbsp;
-                <ExternalLinkAltIcon />
-              </Button>
-            </FlexItem>
-          </Flex>
+          <Bullseye>
+            <Button
+              component='a'
+              variant='link'
+              href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
+              /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
+              { intl.formatMessage(messages.learnMoreButton) }&nbsp;
+              <ExternalLinkAltIcon />
+            </Button>
+          </Bullseye>
         </StackItem>
       </Stack>);
   };
