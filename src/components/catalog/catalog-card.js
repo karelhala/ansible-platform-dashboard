@@ -160,9 +160,36 @@ const CatalogCard = () => {
       </Fragment>);
   };
 
+  const orderRow = (order) => {
+    return <Grid hasGutter="md">
+      <GridItem span={ 2 } className="pf-u-m-0">
+        <Button
+          className="pf-u-p-0"
+          component='a'
+          variant='link'
+          href={ `${release}ansible/catalog/orders/${order?.id}` }>
+          { order?.id }
+        </Button>
+      </GridItem>
+      <GridItem span={ 6 }>
+        { order?.orderItems[0]?.name }
+      </GridItem>
+      <GridItem span={ 4 }>
+        <Label { ...orderStatusMapper[order?.state] } variant="outline">
+          { order?.state }
+        </Label>
+      </GridItem>
+      <GridItem span={ 12 }>
+        <TextContent>
+          <Text component={ TextVariants.small }>Last updated &nbsp;
+            <TimeAgo date={ order?.created_at }/>
+          </Text>
+        </TextContent>
+      </GridItem>
+    </Grid>;
+  };
+
   const renderCatalogOther = () => {
-    const order0 = orders.data[0];
-    const order1 = orders.data[1];
     return (
       <Flex direction={ { default: 'column' } }>
         <FlexItem>
@@ -177,70 +204,14 @@ const CatalogCard = () => {
             </FlexItem>
           </Flex>
         </FlexItem>
-        <FlexItem>
-          <Flex direction={ { default: 'column' } }>
-            <FlexItem>
-              <Grid hasGutter="md">
-                <GridItem span={ 2 } className="pf-u-m-0">
-                  <Button
-                    className="pf-u-p-0"
-                    component='a'
-                    variant='link'
-                    href={ `${release}ansible/catalog/orders/${order0?.id}` }>
-                    { order0?.id }
-                  </Button>
-                </GridItem>
-                <GridItem span={ 6 }>
-                  { order0?.orderItems[0]?.name }
-                </GridItem>
-                <GridItem span={ 4 }>
-                  <Label { ...orderStatusMapper[order0?.state] } variant="outline">
-                    { order0?.state }
-                  </Label>
-                </GridItem>
-                <GridItem span={ 12 }>
-                  <TextContent>
-                    <Text component={ TextVariants.small }>Last updated &nbsp;
-                      <TimeAgo date={ order1?.created_at }/>
-                    </Text>
-                  </TextContent>
-                </GridItem>
-              </Grid>
-            </FlexItem>
-          </Flex>
-        </FlexItem>
-        <FlexItem>
-          <Flex direction={ { default: 'column' } }>
-            <FlexItem>
-              <Grid hasGutter="md">
-                <GridItem span={ 2 } className="pf-u-m-0">
-                  <Button
-                    className="pf-u-p-0"
-                    component='a'
-                    variant='link'
-                    href={ `${release}ansible/catalog/orders/order?order=${order1?.id}` }>
-                    { order1?.id }
-                  </Button>
-                </GridItem>
-                <GridItem span={ 6 }>
-                  { order1?.orderItems[0]?.name || `Order ${order1?.id}` }
-                </GridItem>
-                <GridItem span={ 4 }>
-                  <Label { ...orderStatusMapper[order1?.state] } variant="outline">
-                    { order1?.state }
-                  </Label>
-                </GridItem>
-                <GridItem span={ 12 }>
-                  <TextContent>
-                    <Text component={ TextVariants.small }>Last updated &nbsp;
-                      <TimeAgo date={ order1?.created_at }/>
-                    </Text>
-                  </TextContent>
-                </GridItem>
-              </Grid>
-            </FlexItem>
-          </Flex>
-        </FlexItem>
+        { orders?.data?.map((order) => (
+          <FlexItem key={ order?.id }>
+            <Flex direction={ { default: 'column' } }>
+              <FlexItem>
+                { orderRow(order) }
+              </FlexItem>
+            </Flex>
+          </FlexItem>)) }
         <FlexItem>
           <Bullseye>
             <Button
