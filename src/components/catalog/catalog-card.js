@@ -31,6 +31,8 @@ import UserContext from '../../user-context';
 import { release } from '../../utilities/app-history';
 import { CATALOG_API_BASE } from '../../utilities/constants';
 import CardIcon from '../shared/card-icon';
+import orderStatusMapper from '../shared/order-status-mapper';
+import { TimeAgo } from '../../helpers/shared/helpers';
 
 const initialState = {
   isFetching: true
@@ -75,12 +77,6 @@ const CatalogCard = () => {
 
     return Promise.all(promiseList.map(fn => dispatch(fn()))).then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
-
-  console.log('Debug - permissions', permissions);
-  console.log('Debug - products', portfolioItems);
-  console.log('Debug - platforms', platforms);
-  console.log('Debug - portfolios', portfolios);
-  console.log('Debug - orders', orders);
 
   const renderCatalogInfo = () => (
     <React.Fragment>
@@ -134,7 +130,6 @@ const CatalogCard = () => {
 
   const renderCatalogFeaturedProduct = () => {
     const featuredProduct = portfolioItems?.data ? portfolioItems?.data[0] : null;
-    console.log('Debug - featuredProduct', featuredProduct);
     return (
       <Fragment>
         <Title headingLevel="h4">
@@ -166,7 +161,8 @@ const CatalogCard = () => {
   };
 
   const renderCatalogOther = () => {
-    console.log('Debug - orders count', orders?.meta?.count);
+    const order0 = orders.data[0];
+    const order1 = orders.data[1];
     return (
       <Flex direction={ { default: 'column' } }>
         <FlexItem>
@@ -177,7 +173,7 @@ const CatalogCard = () => {
               </Title>
             </FlexItem>
             <FlexItem>
-              <Badge>{ orders?.meta?.count }</Badge>
+              <Badge isRead>{ orders?.meta?.count }</Badge>
             </FlexItem>
           </Flex>
         </FlexItem>
@@ -185,51 +181,78 @@ const CatalogCard = () => {
           <Flex direction={ { default: 'column' } }>
             <FlexItem>
               <Grid hasGutter="md">
-                <GridItem span={ 2 }>
-                  { orders.data[0]?.id }
+                <GridItem span={ 2 } className="pf-u-m-0">
+                  <Button
+                    className="pf-u-p-0"
+                    component='a'
+                    variant='link'
+                    href={ `${release}ansible/catalog/orders/${order0?.id}` }>
+                    { order0?.id }
+                  </Button>
                 </GridItem>
                 <GridItem span={ 6 }>
-                  { orders.data[0]?.orderItems[0]?.name }
+                  { order0?.orderItems[0]?.name }
                 </GridItem>
                 <GridItem span={ 4 }>
-                  <Label>
-                    { orders.data[0]?.state }
+                  <Label { ...orderStatusMapper[order0?.state] } variant="outline">
+                    { order0?.state }
                   </Label>
+                </GridItem>
+                <GridItem span={ 12 }>
+                  <TextContent>
+                    <Text component={ TextVariants.small }>Last updated &nbsp;
+                      <TimeAgo date={ order1?.created_at }/>
+                    </Text>
+                  </TextContent>
                 </GridItem>
               </Grid>
             </FlexItem>
           </Flex>
         </FlexItem>
-        <Flex direction={ { default: 'column' } }>
-          <FlexItem>
-            <Grid hasGutter="md">
-              <GridItem span={ 2 }>
-                { orders.data[1]?.id }
-              </GridItem>
-              <GridItem span={ 6 }>
-                { orders.data[1]?.orderItems[0]?.name || `Order ${orders?.data[1]?.id}` }
-              </GridItem>
-              <GridItem span={ 4 }>
-                <Label>
-                  { orders.data[1]?.state }
-                </Label>
-              </GridItem>
-            </Grid>
-          </FlexItem>
-        </Flex>
-        <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfFlexEnd' } }>
-          <FlexItem>
-            <Bullseye>
-              <Button
-                component='a'
-                variant='link'
-                href={ `${release}ansible/catalog/orders` }>
-                { intl.formatMessage(messages.viewMore) }&nbsp;
-              </Button>
-            </Bullseye>
-          </FlexItem>
-        </Flex>
-      </Flex>);
+        <FlexItem>
+          <Flex direction={ { default: 'column' } }>
+            <FlexItem>
+              <Grid hasGutter="md">
+                <GridItem span={ 2 } className="pf-u-m-0">
+                  <Button
+                    className="pf-u-p-0"
+                    component='a'
+                    variant='link'
+                    href={ `${release}ansible/catalog/orders/order?order=${order1?.id}` }>
+                    { order1?.id }
+                  </Button>
+                </GridItem>
+                <GridItem span={ 6 }>
+                  { order1?.orderItems[0]?.name || `Order ${order1?.id}` }
+                </GridItem>
+                <GridItem span={ 4 }>
+                  <Label { ...orderStatusMapper[order1?.state] } variant="outline">
+                    { order1?.state }
+                  </Label>
+                </GridItem>
+                <GridItem span={ 12 }>
+                  <TextContent>
+                    <Text component={ TextVariants.small }>Last updated &nbsp;
+                      <TimeAgo date={ order1?.created_at }/>
+                    </Text>
+                  </TextContent>
+                </GridItem>
+              </Grid>
+            </FlexItem>
+          </Flex>
+        </FlexItem>
+        <FlexItem>
+          <Bullseye>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/catalog/orders` }>
+              { intl.formatMessage(messages.viewMore) }&nbsp;
+            </Button>
+          </Bullseye>
+        </FlexItem>
+      </Flex>
+    );
   };
 
   const renderCatalogCards = () => {
