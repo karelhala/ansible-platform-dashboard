@@ -7,13 +7,15 @@ import {
   Card,
   CardBody,
   CardTitle, Divider,
+  DescriptionList,
+  DescriptionListDescription,
+  DescriptionListGroup,
+  DescriptionListTerm,
   Flex,
   FlexItem,
   Grid,
-  GridItem, Label, Level, LevelItem,
+  GridItem, Label,
   Spinner,
-  Stack,
-  StackItem,
   Text, TextContent, TextVariants,
   Title
 } from '@patternfly/react-core';
@@ -26,10 +28,9 @@ import {
   fetchPortfolios
 } from '../../redux/actions/catalog-actions';
 import UserContext from '../../user-context';
-import { Logo } from '../automation-hub/logo';
 import { release } from '../../utilities/app-history';
 import { CATALOG_API_BASE } from '../../utilities/constants';
-import DefaultLogo from '../../images/default-logo.svg';
+import CardIcon from '../shared/card-icon';
 
 const initialState = {
   isFetching: true
@@ -87,61 +88,47 @@ const CatalogCard = () => {
         { intl.formatMessage(messages.catalogCardDescription) }
       </Text>
       <br/>
-      <Grid hasGutter="md">
-        <GridItem span="2">
-          <TextContent>
-            <Text component={ TextVariants.h1 }>
-              { portfolioItems?.meta?.count }
-            </Text>
-          </TextContent>
-        </GridItem>
-        <GridItem span="10">
-          <Button
-            isLarge
-            className="pf-u-p-0"
-            component='a'
-            variant='link'
-            href={ `${release}ansible/catalog/portfolio-items` }>
-            { intl.formatMessage(messages.products) }
-          </Button>
-        </GridItem>
-        <GridItem span="2">
-          <TextContent>
-            <Text component={ TextVariants.h1 }>
-              { portfolios?.meta?.count }
-            </Text>
-          </TextContent>
-        </GridItem>
-        <GridItem span="10">
-          <Button
-            isLarge
-            className="pf-u-p-0"
-            component='a'
-            variant='link'
-            href={ `${release}ansible/catalog` }>
-            { intl.formatMessage(messages.portfolios) }
-          </Button>
-        </GridItem>
+      <DescriptionList isHorizontal>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { portfolioItems?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/catalog/portfolio-items` }>
+              { intl.formatMessage(messages.products) }
+            </Button>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { portfolios?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/catalog` }>
+              { intl.formatMessage(messages.portfolios) }
+            </Button>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
         { permissions &&
         <Fragment>
-          <GridItem span="2">
-            <TextContent>
-              <Text component={ TextVariants.h1 }>
-                { platforms?.meta?.count }
-              </Text>
-            </TextContent>
-          </GridItem>
-          <GridItem span="10">
-            <Button
-              className="pf-u-p-0"
-              isLarge
-              variant='link'
-            >
-              { intl.formatMessage(messages.platforms) }
-            </Button>
-          </GridItem>
+          <DescriptionListGroup>
+            <DescriptionListTerm>
+              { platforms?.meta?.count }
+            </DescriptionListTerm>
+            <DescriptionListDescription>
+              <Button variant='link'>
+                { intl.formatMessage(messages.platforms) }
+              </Button>
+            </DescriptionListDescription>
+          </DescriptionListGroup>
         </Fragment> }
-      </Grid>
+      </DescriptionList>
     </React.Fragment>
   );
 
@@ -157,19 +144,15 @@ const CatalogCard = () => {
         {  featuredProduct &&
           <Flex direction={ { default: 'column' } }>
             <FlexItem>
-              <Stack hasGutter="md">
-                <StackItem>
-                  <img
-                    style={ { objectFit: 'contain', maxHeight: 50 } }
-                    src={ `${CATALOG_API_BASE}/portfolio_items/${featuredProduct.id}/icon` || DefaultLogo }
-                  />
-                </StackItem>
-                <StackItem>
-                  <TextContent component={ TextVariants.p }>
-                    { featuredProduct?.name }
-                  </TextContent>
-                </StackItem>
-              </Stack>
+              <CardIcon
+                height={ 40 }
+                src={ `${CATALOG_API_BASE}/portfolio_items/${featuredProduct.id}/icon` }
+              />
+            </FlexItem>
+            <FlexItem>
+              <TextContent component={ TextVariants.p }>
+                { featuredProduct?.name }
+              </TextContent>
             </FlexItem>
             <FlexItem>
               <TextContent>
@@ -185,8 +168,8 @@ const CatalogCard = () => {
   const renderCatalogOther = () => {
     console.log('Debug - orders count', orders?.meta?.count);
     return (
-      <Stack hasGutter="lg" style={ { minHeight: '250px' } }>
-        <StackItem>
+      <Flex direction={ { default: 'column' } }>
+        <FlexItem>
           <Flex>
             <FlexItem>
               <Title headingLevel="h4">
@@ -197,38 +180,56 @@ const CatalogCard = () => {
               <Badge>{ orders?.meta?.count }</Badge>
             </FlexItem>
           </Flex>
-        </StackItem>
-        <StackItem>
-          <Level>
-            <LevelItem>
-              { orders.data[0]?.orderItems[0]?.id }
-            </LevelItem>
-            <LevelItem>
-              { orders.data[0]?.orderItems[0]?.name }
-            </LevelItem>
-            <LevelItem>
-              <Label>
-                { orders.data[0]?.orderItems[0]?.state }
-              </Label>
-            </LevelItem>
-          </Level>
-        </StackItem>
-        <StackItem>
-          { orders.data[1]?.orderItems[0]?.name }
-        </StackItem>
-        <StackItem>
-          <Flex justifyContent={ { default: 'justifyContentSpaceBetween' } }>
+        </FlexItem>
+        <FlexItem>
+          <Flex direction={ { default: 'column' } }>
             <FlexItem>
+              <Grid hasGutter="md">
+                <GridItem span={ 2 }>
+                  { orders.data[0]?.id }
+                </GridItem>
+                <GridItem span={ 6 }>
+                  { orders.data[0]?.orderItems[0]?.name }
+                </GridItem>
+                <GridItem span={ 4 }>
+                  <Label>
+                    { orders.data[0]?.state }
+                  </Label>
+                </GridItem>
+              </Grid>
+            </FlexItem>
+          </Flex>
+        </FlexItem>
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem>
+            <Grid hasGutter="md">
+              <GridItem span={ 2 }>
+                { orders.data[1]?.id }
+              </GridItem>
+              <GridItem span={ 6 }>
+                { orders.data[1]?.orderItems[0]?.name || `Order ${orders?.data[1]?.id}` }
+              </GridItem>
+              <GridItem span={ 4 }>
+                <Label>
+                  { orders.data[1]?.state }
+                </Label>
+              </GridItem>
+            </Grid>
+          </FlexItem>
+        </Flex>
+        <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfFlexEnd' } }>
+          <FlexItem>
+            <Bullseye>
               <Button
                 component='a'
                 variant='link'
                 href={ `${release}ansible/catalog/orders` }>
                 { intl.formatMessage(messages.viewMore) }&nbsp;
               </Button>
-            </FlexItem>
-          </Flex>
-        </StackItem>
-      </Stack>);
+            </Bullseye>
+          </FlexItem>
+        </Flex>
+      </Flex>);
   };
 
   const renderCatalogCards = () => {
@@ -243,16 +244,16 @@ const CatalogCard = () => {
     }
     else {
       return (
-        <Flex flex={ { default: 'flex_1' } }>
-          <FlexItem  style={ { width: '30%' } }>
+        <Flex className="automation-hub_card" >
+          <FlexItem>
             { renderCatalogInfo() }
           </FlexItem>
-          <Divider isVertical/>
-          <FlexItem  style={ { width: '30%' } }>
+          <Divider/>
+          <FlexItem>
             { renderCatalogFeaturedProduct() }
           </FlexItem>
-          <Divider isVertical/>
-          <FlexItem style={ { width: '30%' } }>
+          <Divider/>
+          <FlexItem>
             { renderCatalogOther() }
           </FlexItem>
         </Flex>
@@ -263,7 +264,7 @@ const CatalogCard = () => {
   return (
     <Fragment>
       <Card className='ins-c-dashboard__card'>
-        <CardTitle className="pf-u-py-sm">
+        <CardTitle>
           <Title headingLevel="h3">
             { intl.formatMessage(messages.catalogTitle) }
           </Title>

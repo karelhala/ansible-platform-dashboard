@@ -45,24 +45,20 @@ export const getOrders = () =>
     )
   );
 
-export const listPortfolios = () =>
+export const listPortfolios = (limit = 1) =>
   axiosInstance.get(
-    `${CATALOG_API_BASE}/portfolios`);
+    `${CATALOG_API_BASE}/portfolios?limit=${limit}`);
 
-export const getPortfolioItems = () =>
+export const getPlatforms = (limit = 1) =>
   axiosInstance.get(
-    `${CATALOG_API_BASE}/portfolio_items`);
-
-export const getPlatforms = () =>
-  axiosInstance.get(
-    `${SOURCES_API_BASE}/sources`);
+    `${SOURCES_API_BASE}/sources?limit=${limit}`);
 
 export const listPortfolioItems = (
   limit = 1
 ) => {
   return axiosInstance
   .get(
-    `${CATALOG_API_BASE}/portfolio_items?sort_by=id:desc&limit=${limit}`
+    `${CATALOG_API_BASE}/portfolio_items?sort_by=created_at:desc&limit=${limit}`
   )
   .then(
     (portfolioItems) => {
