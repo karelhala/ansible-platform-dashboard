@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import HubCard from '../automation-hub/hub-card';
 import CatalogCard from '../catalog/catalog-card';
+import JobsChart from '../analytics/jobs-chart';
 
 const renderButtons = (intl) => (
   <React.Fragment>
@@ -27,6 +28,9 @@ const PlatformPage = () => {
       renderButtons={ () => renderButtons(intl) } />
     <PageSection>
       <Stack hasGutter="md">
+        <StackItem>
+          <JobsChart/>
+        </StackItem>
         <StackItem>
           <HubCard/>
         </StackItem>
