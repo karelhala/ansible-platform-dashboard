@@ -4,10 +4,11 @@ import { ANALYTICS_API_BASE } from '../../utilities/constants';
 
 const axiosInstance = getAxiosInstance();
 
-export const getClusters = () =>
-  axiosInstance.get(
+export const getClusters = () => {
+  return axiosInstance.post(
     `${ANALYTICS_API_BASE}/clusters?limit=1`
   );
+};
 
 export const getNotifications = (severity = 'error') =>
   axiosInstance.get(
