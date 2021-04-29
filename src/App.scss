@@ -3,6 +3,12 @@
 
 .ins-c-ansible-dashboard {
 
+  .pf-c-page__main-section {
+    .pf-l-stack {
+      max-width: var(--pf-c-page--section--m-limit-width--MaxWidth);
+    }
+  }
+
   .automation-hub_card {
     display: grid;
     grid-template-columns: 1fr 1px 1fr 1px 1fr;
