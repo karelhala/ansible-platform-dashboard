@@ -6,6 +6,7 @@ import messages from '../../messages/messages';
 import HubCard from '../automation-hub/hub-card';
 import CatalogCard from '../catalog/catalog-card';
 import JobsChart from '../analytics/jobs-chart';
+import AnalyticsCard from '../analytics/analytics-card';
 
 const renderButtons = (intl) => (
   <React.Fragment>
@@ -29,7 +30,7 @@ const PlatformPage = () => {
     <PageSection>
       <Stack hasGutter="md">
         <StackItem>
-          <JobsChart/>
+          <AnalyticsCard/>
         </StackItem>
         <StackItem>
           <HubCard/>

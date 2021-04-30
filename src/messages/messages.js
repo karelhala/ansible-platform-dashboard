@@ -20,6 +20,10 @@ const messages = defineMessages({
     defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics calculate ' +
         'your return on investment and explore automation processes details.'
   },
+  analyticsCardNotificationsTitle: {
+    id: 'analytics.notifications.title',
+    defaultMessage: 'Notifications'
+  },
   totalClusters: {
     id: 'analytics.clusters',
     defaultMessage: 'totalClusters'

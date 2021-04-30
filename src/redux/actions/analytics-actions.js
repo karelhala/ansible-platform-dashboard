@@ -22,9 +22,9 @@ export const fetchErrorNotifications = () => (dispatch) => {
   });
 };
 
-export const fetchJobs = () => (dispatch) => {
+export const fetchJobsData = () => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_JOBS,
-    payload: AnalyticsHelper.getJobs()
+    payload: AnalyticsHelper.getJobsData()
   });
 };
