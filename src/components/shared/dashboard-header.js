@@ -1,31 +1,35 @@
-import {
-  PageSection, Text, Title
-} from '@patternfly/react-core';
-import { Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
+import { Grid, GridItem, Flex, FlexItem, Title  } from '@patternfly/react-core';
 import React from 'react';
 import PropTypes from 'prop-types';
-import AutomationIcon from '../../images/Headers-Red_Hat-White_Automation.svg';
 import { useIntl } from 'react-intl';
+import MarketingBanner from './marketing-banner';
 
 const DashboardHeader = ({ title, description, renderButtons }) => {
   const intl = useIntl();
 
   return (<React.Fragment>
-    <PageSection style={ { backgroundImage: `url(${AutomationIcon})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', paddingTop: '32px' } }>
+    <MarketingBanner
+      hasGraphic
+      graphicRight
+      light1000
+      fullBleed
+
+      style={ {
+        '--ins-c-marketing-banner--graphic--width-on-md': '200px',
+        '--ins-c-marketing-banner--graphic--width-on-xl': '400px'
+      } }>
       <Grid>
         <GridItem>
-          <Flex direction={ { default: 'column' } } spaceItems={ { modifier: 'spaceItemsXl' } }>
+          <Flex direction={ { default: 'column' } }>
             <FlexItem>
-              <Title headingLevel="h1">{ title }</Title>
+              <Title headingLevel='h1' size='2xl'>
+                { title }
+              </Title>
             </FlexItem>
-            <FlexItem>
-              <Grid>
-                <GridItem span={ 7 }>
-                  <Text component="p">
-                    { description }
-                  </Text>
-                </GridItem>
-              </Grid>
+            <FlexItem spacer={ { default: 'spacer2xl' } }>
+              <div className='ins-c-width-limiter' style={ { '--ins-c-width-limiter--MaxWidth': '600px' } }>
+                <p className='ins-c-text--black-400'>{ description }</p>
+              </div>
             </FlexItem>
             <FlexItem>
               { renderButtons(intl) }
@@ -33,7 +37,7 @@ const DashboardHeader = ({ title, description, renderButtons }) => {
           </Flex>
         </GridItem>
       </Grid>
-    </PageSection>
+    </MarketingBanner>
   </React.Fragment>);
 };
 

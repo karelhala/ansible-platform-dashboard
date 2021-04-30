@@ -2,8 +2,10 @@
 @import '~@patternfly/patternfly/sass-utilities/_all';
 
 .ins-c-ansible-dashboard {
-
   .pf-c-page__main-section {
+    &.pf-m-light-1000 {
+      --pf-c-page__main-section--BackgroundColor: var(--pf-global--BackgroundColor--100);
+    }
     .pf-l-stack {
       max-width: var(--pf-c-page--section--m-limit-width--MaxWidth);
     }
