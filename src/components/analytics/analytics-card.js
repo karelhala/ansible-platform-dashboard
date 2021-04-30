@@ -80,7 +80,7 @@ const AnalyticsCard = () => {
               isTruncated
               href={ `${release}ansible/automation-analytics/notifications` }
             >
-              { intl.formatMessage(messages.errorNotifications) }
+              { intl.formatMessage(messages.critical) }
             </Label>
           </DescriptionListDescription>
         </DescriptionListGroup>
@@ -90,12 +90,12 @@ const AnalyticsCard = () => {
           </DescriptionListTerm>
           <DescriptionListDescription>
             <Label
-              color="red"
+              color="orange"
               icon={ <WarningTriangleIcon /> }
               isTruncated
               href={ `${release}ansible/automation-analytics/notifications` }
             >
-              { intl.formatMessage(messages.errorNotifications) }
+              { intl.formatMessage(messages.warning) }
             </Label>
           </DescriptionListDescription>
         </DescriptionListGroup>

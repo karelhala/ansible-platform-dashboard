@@ -16,9 +16,11 @@ export const fetchWarningNotifications = () => (dispatch) => {
 };
 
 export const fetchErrorNotifications = () => (dispatch) => {
+  const load = AnalyticsHelper.getNotifications('error');
+  console.log('Debug - analytics error notifications load', load);
   return dispatch({
     type: ActionTypes.FETCH_ERROR_NOTIFICATIONS,
-    payload: AnalyticsHelper.getNotifications('error')
+    payload: load
   });
 };
 

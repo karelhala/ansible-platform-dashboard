@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import { stringify } from 'query-string';
+import {getAxiosInstance} from '../shared/user-login';
 /* v0 endpoints */
 const clustersEndpoint = `/api/tower-analytics/v0/clusters/`;
 const notificationsEndpoint = `/api/tower-analytics/v0/notifications/`;
@@ -17,6 +18,8 @@ const jobExplorerOptionsEndpoint =
 const ROITemplatesOptionsEndpoint = '/api/tower-analytics/v1/roi_templates_options/';
 const orgOptionsEndpoint = '/api/tower-analytics/v1/dashboard_organization_statistics_options/';
 const clustersOptionsEndpoint = '/api/tower-analytics/v1/dashboard_clusters_options/';
+
+const axiosInstance = getAxiosInstance();
 
 function handleResponse(response) {
   return response.json().then(json => {
@@ -41,7 +44,7 @@ function handleResponse(response) {
 }
 
 function authenticatedFetch(endpoint, options) {
-  return window.insights.chrome.auth.getUser().then(() => fetch(endpoint, options));
+  return window.insights.chrome.auth.getUser().then(() => axiosInstance.get(endpoint, options));
 }
 
 export const preflightRequest = () => {

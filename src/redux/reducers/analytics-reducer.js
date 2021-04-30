@@ -13,11 +13,11 @@ export const analyticsInitialState = {
     meta: { ...defaultSettings }
   },
   errorNotifications: {
-    data: [],
+    notifications: [],
     meta: { ...defaultSettings }
   },
   warningNotifications: {
-    data: [],
+    notifications: [],
     meta: { ...defaultSettings }
   },
   jobsData: {
@@ -31,12 +31,10 @@ const setLoadingState = (state, { payload = true }) => ({
   isLoading: payload
 });
 
-const setClusters = (state, payload) => {
-  return ({
-    ...state,
-    clusters: payload
-  });
-};
+const setClusters = (state, payload) => ({
+  ...state,
+  clusters: payload
+});
 
 const setErrorNotifications = (state, payload) => ({
   ...state,
@@ -55,12 +53,12 @@ const setJobsData = (state, payload) => ({
 
 export default {
   [SET_ANALYTICS_LOADING_STATE]: setLoadingState,
-  [`${FETCH_CLUSTERS}_FULFILLED`]: setClusters(),
+  [`${FETCH_CLUSTERS}_FULFILLED`]: setClusters,
   [`${FETCH_CLUSTERS}_PENDING`]: setLoadingState,
-  [`${FETCH_ERROR_NOTIFICATIONS}_FULFILLED`]: setErrorNotifications(),
+  [`${FETCH_ERROR_NOTIFICATIONS}_FULFILLED`]: setErrorNotifications,
   [`${FETCH_ERROR_NOTIFICATIONS}_PENDING`]: setLoadingState,
-  [`${FETCH_WARNING_NOTIFICATIONS}_FULFILLED`]: setWarningNotifications(),
+  [`${FETCH_WARNING_NOTIFICATIONS}_FULFILLED`]: setWarningNotifications,
   [`${FETCH_WARNING_NOTIFICATIONS}_PENDING`]: setLoadingState,
-  [`${FETCH_JOBS}_FULFILLED`]: setJobsData(),
+  [`${FETCH_JOBS}_FULFILLED`]: setJobsData,
   [`${FETCH_JOBS}_PENDING`]: setLoadingState
 };
