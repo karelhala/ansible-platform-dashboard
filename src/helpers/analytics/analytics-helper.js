@@ -139,9 +139,9 @@ export const getClusters = () => {
   return authenticatedFetch(clustersEndpoint);
 };
 
-export const getNotifications = ({ params = {}}) => {
+export const getNotifications = (severity = 'error') => {
   const url = new URL(notificationsEndpoint, window.location.origin);
-  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+  url.searchParams.append('severity', severity);
   return authenticatedFetch(url);
 };
 
