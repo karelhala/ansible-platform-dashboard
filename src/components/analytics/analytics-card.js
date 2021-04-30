@@ -1,10 +1,29 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, CardBody, CardTitle, Spinner, Stack, StackItem, Text } from '@patternfly/react-core';
+import {
+  Bullseye,
+  Card,
+  CardBody,
+  CardTitle, Divider,
+  DescriptionList,
+  DescriptionListDescription,
+  DescriptionListGroup,
+  DescriptionListTerm,
+  Flex,
+  FlexItem,
+  Label,
+  Spinner,
+  Text,
+  Title
+} from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
-import { fetchClusters, fetchWarningNotifications, fetchErrorNotifications } from '../../redux/actions/analytics-actions';
+import { fetchClusters, fetchErrorNotifications, fetchWarningNotifications, fetchJobsData } from '../../redux/actions/analytics-actions';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
+import JobsChart from './jobs-chart';
+import { release } from '../../utilities/app-history';
 
 const initialState = {
   isFetching: true
@@ -22,56 +41,107 @@ const analyticsState = (state, action) => {
 const AnalyticsCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(analyticsState, initialState);
 
-  const { clusters, criticalNotifications, warningNotifications } = useSelector(
+  const { clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
     ({
       analyticsReducer: {
         clusters,
-        criticalNotifications,
-        warningNotifications
+        errorNotifications,
+        warningNotifications,
+        jobsData
       }
-    }) => ({ clusters, criticalNotifications, warningNotifications })
+    }) => ({ clusters, errorNotifications, warningNotifications, jobsData })
   );
 
   const dispatch = useDispatch();
   const intl = useIntl();
 
   useEffect(() => {
-    Promise.all([ dispatch(fetchClusters()), dispatch(fetchWarningNotifications()), dispatch(fetchErrorNotifications()) ])
+    stateDispatch({ type: 'setFetching', payload: true });
+    Promise.all([ dispatch(fetchClusters()), dispatch(fetchErrorNotifications()), dispatch(fetchWarningNotifications()), dispatch(fetchJobsData()) ])
     .then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
+
+  const renderAnalyticsNotifications = () => (
+    <React.Fragment>
+      <Text>
+        { intl.formatMessage(messages.analyticsCardDescription) }
+      </Text>
+      <br/>
+
+      <DescriptionList>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { errorNotifications?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Label
+              color="red"
+              icon={ <InfoCircleIcon /> }
+              isTruncated
+              href={ `${release}ansible/automation-analytics/notifications` }
+            >
+              { intl.formatMessage(messages.errorNotifications) }
+            </Label>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { warningNotifications?.meta?.count }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Label
+              color="red"
+              icon={ <WarningTriangleIcon /> }
+              isTruncated
+              href={ `${release}ansible/automation-analytics/notifications` }
+            >
+              { intl.formatMessage(messages.errorNotifications) }
+            </Label>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+      </DescriptionList>
+    </React.Fragment>
+  );
+
+  const renderAnalyticsInfo = () => {
+    return (
+      <Fragment>
+        <Title headingLevel="h4">
+          { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
+        </Title>
+        <br/>
+      </Fragment>);
+  };
+
+  const renderAnalyticsOther = () => {
+    return (<JobsChart/>);
+  };
 
   const renderAnalyticsCards = () => {
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
-          <Spinner isSVG />
+          <Bullseye>
+            <Spinner isSVG />
+          </Bullseye>
         </Section>
       );
     }
     else {
       return (
-        <Stack>
-          <StackItem>
-            <Text>
-              { intl.formatMessage(messages.catalogCardDescription) }
-            </Text>
-          </StackItem>
-          <StackItem>
-            <Stack>
-              <StackItem>
-                { clusters?.meta?.count } { intl.formatMessage(messages.totalClusters) }
-              </StackItem>
-            </Stack>
-          </StackItem>
-          <StackItem>
-            <StackItem>
-              { criticalNotifications?.meta?.count } { intl.formatMessage(messages.critical) }
-            </StackItem>
-            <StackItem>
-              { warningNotifications?.meta?.count } { intl.formatMessage(messages.warning) }
-            </StackItem>
-          </StackItem>
-        </Stack>
+        <Flex className="automation-analytics_card" >
+          <FlexItem>
+            { renderAnalyticsInfo() }
+          </FlexItem>
+          <Divider/>
+          <FlexItem>
+            { renderAnalyticsNotifications() }
+          </FlexItem>
+          <Divider/>
+          <FlexItem>
+            { renderAnalyticsOther() }
+          </FlexItem>
+        </Flex>
       );
     }
   };
@@ -79,8 +149,10 @@ const AnalyticsCard = () => {
   return (
     <Fragment>
       <Card className='ins-c-dashboard__card'>
-        <CardTitle className="pf-u-py-sm">
-          { intl.formatMessage(messages.analyticsTitle) }
+        <CardTitle>
+          <Title headingLevel="h3">
+            { intl.formatMessage(messages.analyticsTitle) }
+          </Title>
         </CardTitle>
         <CardBody>
           { renderAnalyticsCards() }
