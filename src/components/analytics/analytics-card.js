@@ -64,51 +64,54 @@ const AnalyticsCard = () => {
   const renderAnalyticsNotifications = () => (
     <React.Fragment>
       <Text>
-        { intl.formatMessage(messages.analyticsCardDescription) }
+        { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
       </Text>
       <br/>
-
-      <DescriptionList>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { errorNotifications?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
-            <Label
-              color="red"
-              icon={ <InfoCircleIcon /> }
-              isTruncated
-              href={ `${release}ansible/automation-analytics/notifications` }
-            >
-              { intl.formatMessage(messages.critical) }
-            </Label>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { warningNotifications?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
-            <Label
-              color="orange"
-              icon={ <WarningTriangleIcon /> }
-              isTruncated
-              href={ `${release}ansible/automation-analytics/notifications` }
-            >
-              { intl.formatMessage(messages.warning) }
-            </Label>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-      </DescriptionList>
+      <Flex>
+        <FlexItem>
+          <DescriptionList>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                { errorNotifications?.meta?.count }
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                <Label
+                  color="red"
+                  icon={ <InfoCircleIcon /> }
+                  isTruncated
+                  href={ `${release}ansible/automation-analytics/notifications` }
+                >
+                  { intl.formatMessage(messages.critical) }
+                </Label>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                { warningNotifications?.meta?.count }
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                <Label
+                  color="orange"
+                  icon={ <WarningTriangleIcon /> }
+                  isTruncated
+                  href={ `${release}ansible/automation-analytics/notifications` }
+                >
+                  { intl.formatMessage(messages.warning) }
+                </Label>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </FlexItem>
+      </Flex>
     </React.Fragment>
   );
 
   const renderAnalyticsInfo = () => {
     return (
       <Fragment>
-        <Title headingLevel="h4">
-          { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
-        </Title>
+        <Text>
+          { intl.formatMessage(messages.hubCardDescription) }
+        </Text>
         <br/>
       </Fragment>);
   };
@@ -129,17 +132,22 @@ const AnalyticsCard = () => {
     }
     else {
       return (
-        <Flex className="automation-analytics_card" >
+        <Flex direction={ { default: 'column' } }>
           <FlexItem>
-            { renderAnalyticsInfo() }
+            <Flex className="automation-analytics_card">
+              <FlexItem>
+                { renderAnalyticsInfo() }
+              </FlexItem>
+              <Divider/>
+              <FlexItem>
+                { renderAnalyticsNotifications() }
+              </FlexItem>
+            </Flex>
           </FlexItem>
-          <Divider/>
           <FlexItem>
-            { renderAnalyticsNotifications() }
-          </FlexItem>
-          <Divider/>
-          <FlexItem>
-            { renderAnalyticsOther() }
+            <FlexItem>
+              { renderAnalyticsOther() }
+            </FlexItem>
           </FlexItem>
         </Flex>
       );

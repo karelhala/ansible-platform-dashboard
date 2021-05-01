@@ -40,6 +40,35 @@
     }
   }
 
+  .automation-analytics_card {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr;
+    column-gap: var(--pf-global--spacer--xl);
+    .pf-l-stack {
+      min-height: 250px;
+    }
+    .pf-c-divider {
+      flex-direction: column;
+    }
+    p {
+      font-size: var(--pf-global--FontSize--sm);
+    }
+    .pf-c-description-list {
+      --pf-c-description-list--RowGap: var(--pf-global--spacer--md);
+      --pf-c-description-list__group--ColumnGap: var(--pf-global--spacer--0);
+      --pf-c-description-list__group--GridTemplateColumns: 60px auto;
+      display: flex;
+      flex-direction: column;
+      &__term {
+        font-size: var(--pf-global--FontSize--2xl);
+        padding-right: var(--pf-global--spacer--sm);
+        text-align: right;
+      }
+      &__description {
+      }
+    }
+  }
+
   @media only screen and (max-width: $pf-global--breakpoint--md) {
     .automation-hub_card {
       display: grid;
@@ -60,6 +89,25 @@
     }
   }
 
+  @media only screen and (max-width: $pf-global--breakpoint--md) {
+    .automation-analytics_card {
+      display: grid;
+      grid-template-columns: 1fr;
+      .pf-c-title {
+        padding-top: var(--pf-global--spacer--md);
+      }
+      .pf-l-stack {
+        min-height: auto;
+      }
+      .pf-c-content {
+        display: inline;
+      }
+      .pf-c-divider {
+        flex-direction: row;
+        padding-top: var(--pf-global--spacer--md);
+      }
+    }
+  }
   .detail-pane {
     background-color: var(--pf-global--BackgroundColor--100);
   }

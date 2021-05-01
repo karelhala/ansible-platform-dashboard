@@ -105,6 +105,10 @@ const messages = defineMessages({
     id: 'hub.plugins',
     defaultMessage: 'Plugins'
   },
+  overview: {
+    id: 'ansible.overview',
+    defaultMessage: 'Overview'
+  },
   noAppTitle: {
     id: 'no.app.title',
     defaultMessage: 'Get started with Red Hat Ansible Automation Platform'

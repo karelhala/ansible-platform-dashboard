@@ -31,9 +31,10 @@ const DashboardHeader = ({ title, description, renderButtons }) => {
                 <p className='ins-c-text--black-400'>{ description }</p>
               </div>
             </FlexItem>
-            <FlexItem>
+            { renderButtons ? <FlexItem>
               { renderButtons(intl) }
-            </FlexItem>
+            </FlexItem> : null
+            }
           </Flex>
         </GridItem>
       </Grid>
