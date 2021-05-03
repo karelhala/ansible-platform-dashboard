@@ -40,8 +40,79 @@
     }
   }
 
+  .automation-analytics_card {
+    display: grid;
+    grid-template-columns: 2fr 1px 1fr;
+    column-gap: var(--pf-global--spacer--xl);
+    .pf-l-stack {
+      min-height: 250px;
+    }
+    .pf-c-divider {
+      flex-direction: column;
+    }
+    p {
+      font-size: var(--pf-global--FontSize--sm);
+    }
+    .pf-c-description-list {
+      --pf-c-description-list__group--GridTemplateRow: auto auto;
+      padding-left: var(--pf-global--spacer--2xl);
+      padding-right: var(--pf-global--spacer--2xl);
+      &__term {
+        font-size: var(--pf-global--FontSize--2xl);
+        padding-left: var(--pf-global--spacer--xl);
+        display: flex;
+      }
+      &__description {
+      }
+    }
+  }
+
+  .automation-analytics_info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: var(--pf-global--spacer--xl);
+    .pf-l-stack {
+      min-height: 250px;
+    }
+    p {
+      font-size: var(--pf-global--FontSize--sm);
+    }
+    .pf-c-description-list {
+      --pf-c-description-list__group--GridTemplateRow: auto;
+      padding-left: var(--pf-global--spacer--2xl);
+      padding-right: var(--pf-global--spacer--2xl);
+      &__term {
+        font-size: var(--pf-global--FontSize--2xl);
+        padding-left: var(--pf-global--spacer--2xl);
+        display: flex;
+      }
+      &__description {
+      }
+    }
+  }
+
   @media only screen and (max-width: $pf-global--breakpoint--md) {
     .automation-hub_card {
+      display: grid;
+      grid-template-columns: 1fr;
+      .pf-c-title {
+        padding-top: var(--pf-global--spacer--md);
+      }
+      .pf-l-stack {
+        min-height: auto;
+      }
+      .pf-c-content {
+        display: inline;
+      }
+      .pf-c-divider {
+        flex-direction: row;
+        padding-top: var(--pf-global--spacer--md);
+      }
+    }
+  }
+
+  @media only screen and (max-width: $pf-global--breakpoint--md) {
+    .automation-analytics_card {
       display: grid;
       grid-template-columns: 1fr;
       .pf-c-title {

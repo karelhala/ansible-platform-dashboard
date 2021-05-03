@@ -16,15 +16,16 @@ export const fetchWarningNotifications = () => (dispatch) => {
 };
 
 export const fetchErrorNotifications = () => (dispatch) => {
+  const load = AnalyticsHelper.getNotifications('error');
   return dispatch({
     type: ActionTypes.FETCH_ERROR_NOTIFICATIONS,
-    payload: AnalyticsHelper.getNotifications('error')
+    payload: load
   });
 };
 
-export const fetchJobs = () => (dispatch) => {
+export const fetchJobsData = () => (dispatch) => {
   return dispatch({
     type: ActionTypes.FETCH_JOBS,
-    payload: AnalyticsHelper.getJobs()
+    payload: AnalyticsHelper.getJobsData()
   });
 };

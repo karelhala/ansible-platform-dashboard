@@ -1,5 +1,5 @@
 {
-	"parser": "babel-eslint",
+	"parser": "@babel/eslint-parser",
 	"env": {
 		"browser": true,
 		"es6": true,
@@ -36,14 +36,7 @@
 		"React": true
 	},
 	"rules": {
-		"array-bracket-spacing": [
-			"error",
-			"always",
-			{
-				"objectsInArrays": false
-			}
-		],
-		"comma-dangle": 2,
+	  "comma-dangle": 2,
 		"comma-spacing": [
 			2,
 			{

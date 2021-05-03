@@ -20,9 +20,17 @@ const messages = defineMessages({
     defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics calculate ' +
         'your return on investment and explore automation processes details.'
   },
+  analyticsCardNotificationsTitle: {
+    id: 'analytics.notifications.title',
+    defaultMessage: 'Notifications'
+  },
   totalClusters: {
-    id: 'analytics.clusters',
-    defaultMessage: 'totalClusters'
+    id: 'analytics.total.clusters',
+    defaultMessage: 'Total clusters'
+  },
+  clusterTitle: {
+    id: 'analytics.clusters.title',
+    defaultMessage: 'Clusters'
   },
   critical: {
     id: 'analytics.critical',
@@ -30,7 +38,7 @@ const messages = defineMessages({
   },
   warning: {
     id: 'analytics.warning',
-    defaultMessage: 'Warning'
+    defaultMessage: 'Warnings'
   },
   catalogTitle: {
     id: 'catalog.title',
@@ -100,6 +108,10 @@ const messages = defineMessages({
   plugins: {
     id: 'hub.plugins',
     defaultMessage: 'Plugins'
+  },
+  overview: {
+    id: 'ansible.overview',
+    defaultMessage: 'Overview'
   },
   noAppTitle: {
     id: 'no.app.title',

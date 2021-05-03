@@ -87,7 +87,7 @@ const HubCard = () => {
       </Text>
       <br/>
 
-      <DescriptionList isHorizontal>
+      <DescriptionList isHorizontal isAutoFit autoFitModifier={ { md: '100px', lg: '150px', xl: '200px', '2xl': '300px' } }>
         <DescriptionListGroup>
           <DescriptionListTerm>
             { partners?.meta?.count }

@@ -2,9 +2,10 @@ import * as ActionTypes from '../action-types';
 import * as HubHelper from '../../helpers/automation-hub/hub-helper';
 
 export const fetchCollections = () => (dispatch) => {
+  const load = HubHelper.getCollections();
   return dispatch({
     type: ActionTypes.FETCH_COLLECTIONS,
-    payload: HubHelper.getCollections()
+    payload: load
   });
 };
 
