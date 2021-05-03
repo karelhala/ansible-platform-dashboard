@@ -21,9 +21,9 @@ const PlatformPage = () => {
         <StackItem>
           <HubCard/>
         </StackItem>
-        { 0 && <StackItem>
+        <StackItem>
           <CatalogCard/>
-        </StackItem> }
+        </StackItem>
       </Stack>
     </PageSection>
   </React.Fragment>;
