@@ -1,6 +1,6 @@
 import React from 'react';
 import DashboardHeader from '../shared/dashboard-header';
-import { Button, PageSection, Stack, StackItem } from '@patternfly/react-core';
+import { PageSection, Stack, StackItem } from '@patternfly/react-core';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import HubCard from '../automation-hub/hub-card';

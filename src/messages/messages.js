@@ -25,8 +25,12 @@ const messages = defineMessages({
     defaultMessage: 'Notifications'
   },
   totalClusters: {
-    id: 'analytics.clusters',
-    defaultMessage: 'totalClusters'
+    id: 'analytics.total.clusters',
+    defaultMessage: 'Total clusters'
+  },
+  clusterTitle: {
+    id: 'analytics.clusters.title',
+    defaultMessage: 'Clusters'
   },
   critical: {
     id: 'analytics.critical',
@@ -34,7 +38,7 @@ const messages = defineMessages({
   },
   warning: {
     id: 'analytics.warning',
-    defaultMessage: 'Warning'
+    defaultMessage: 'Warnings'
   },
   catalogTitle: {
     id: 'catalog.title',

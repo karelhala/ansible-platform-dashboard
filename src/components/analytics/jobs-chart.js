@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
-const JobsChart = () => {
+import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_green_400';
+import chart_color_red_300 from '@patternfly/react-tokens/dist/js/chart_color_red_300';
+
+const JobsChart = (data) => {
   const [ width, setWidth ] = useState(0);
   const containerRef = React.createRef();
-
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
       setWidth(containerRef.current.clientWidth);
@@ -12,82 +14,72 @@ const JobsChart = () => {
   }, []);
 
   const bars = [];
-  for (let i = 1; i < 32; i++) {
-    bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
-  }
+  data?.items?.map((item, idx) => bars.push({ x: `${idx}`, y: item }));
 
-  const renderSocketBars = () => {
-    const socketBars = bars.map((tick) => {
+  const renderSuccessfulJobs = () => {
+    const successBars = bars.map((tick) => {
       return {
         x: tick.x,
-        y: tick.y,
-        name: 'Sockets',
-        label: `${tick.x} Sockets: ${tick.y}`
+        y: tick.y.successful_count,
+        name: 'Successful',
+        label: `${tick.x} Successful: ${tick.y.successful_count}`
       };
     });
-    return <ChartBar data={ socketBars } labelComponent={ <ChartTooltip constrainToVisibleArea /> } />;
+    return <ChartBar data={ successBars }
+      style={ { fill: chart_color_green_400.value } }
+      labelComponent={ <ChartTooltip constrainToVisibleArea /> } />;
   };
 
-  const renderCoresBars = () => {
-    const coresBars = bars.map((tick) => {
+  const renderFailedJobs = () => {
+    const failBars = bars.map((tick) => {
       return {
         x: tick.x,
-        y: tick.y,
-        name: 'Cores',
-        label: `${tick.x} Cores: ${tick.y}`
+        y: tick.y.failed_count,
+        name: 'Failed',
+        label: `${tick.x} Successful: ${tick.y.failed_count}`
       };
     });
-    return <ChartBar data={ coresBars } labelComponent={ <ChartTooltip constrainToVisibleArea /> } />;
+    return <ChartBar data={ failBars }
+      style={ { fill: chart_color_red_300.value } }
+      labelComponent={ <ChartTooltip constrainToVisibleArea /> } />;
   };
 
-  const renderNodesBars = () => {
-    const nodesBars = bars.map((tick, index) => {
-      return {
-        key: index,
-        x: tick.x,
-        y: tick.y,
-        name: 'Nodes',
-        label: `${tick.x} Nodes: ${tick.y}`
-      };
-    });
-    return <ChartBar data={ nodesBars } labelComponent={ <ChartTooltip constrainToVisibleArea /> } />;
-  };
-
-  const getTickValues = (offset = 2) => {
+  const getTickValues = () => {
     const tickValues = [];
-    for (let i = 1; i < 32; i++) {
-      if (i % offset === 0) {
-        tickValues.push(`Aug. ${i}`);
-      }
+    for (let i = 0; i < bars.length; i++) {
+      tickValues.push(`${i}`);
     }
 
     return tickValues;
   };
 
+  const colorScaleArray = [
+    chart_color_red_300.value,
+    chart_color_green_400.value
+  ];
   return (
     <div ref={ containerRef }>
       <div style={ { height: '225px' } }>
         <Chart
-          ariaDesc="Stack Chart with monthly metric data"
-          ariaTitle="Monthly Stack Chart"
+          ariaDesc="Jobs across clusters"
+          ariaTitle="Jobs across clusters"
           domainPadding={ { x: [ 30, 25 ]} }
-          legendData={ [{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }] }
           legendPosition="bottom"
+          barRatio={ 1 }
           height={ 225 }
           padding={ {
-            bottom: 75, // Adjusted to accommodate legend
+            bottom: 60,
             left: 50,
-            right: 50,
-            top: 50
+            right: 20,
+            top: 20
           } }
           width={ width }
         >
           <ChartAxis tickValues={ getTickValues() } fixLabelOverlap />
           <ChartAxis dependentAxis showGrid />
-          <ChartStack domainPadding={ { x: [ 10, 2 ]} }>
-            { renderSocketBars() }
-            { renderCoresBars() }
-            { renderNodesBars() }
+          <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
+            { renderFailedJobs() }
+            { renderSuccessfulJobs() }
           </ChartStack>
         </Chart>
       </div>

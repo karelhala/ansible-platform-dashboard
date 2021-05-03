@@ -3,7 +3,6 @@ import * as HubHelper from '../../helpers/automation-hub/hub-helper';
 
 export const fetchCollections = () => (dispatch) => {
   const load = HubHelper.getCollections();
-  console.log('Debug - hub collections load', load);
   return dispatch({
     type: ActionTypes.FETCH_COLLECTIONS,
     payload: load

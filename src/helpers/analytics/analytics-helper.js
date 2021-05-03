@@ -1,6 +1,6 @@
 /* eslint camelcase: 0 */
 import { stringify } from 'query-string';
-import {getAxiosInstance} from '../shared/user-login';
+import { getAxiosInstance } from '../shared/user-login';
 /* v0 endpoints */
 const clustersEndpoint = `/api/tower-analytics/v0/clusters/`;
 const notificationsEndpoint = `/api/tower-analytics/v0/notifications/`;
@@ -52,16 +52,24 @@ export const preflightRequest = () => {
 };
 
 export const getJobsData = () => {
-  const paginationParams = {
+  const params = {
+    status: [ 'successful', 'failed' ],
+    quick_date_range: 'last_30_days',
+    job_type: [ 'workflowjob', 'job' ],
+    group_by_time: true,
+    org_id: [],
+    cluster_id: [],
+    template_id: [],
+    only_root_workflows_and_standalone_jobs: false,
     limit: 1,
     offset: 0
   };
-  const qs = stringify(paginationParams);
+  const qs = stringify(params);
   const url = new URL(jobExplorerEndpoint, window.location.origin);
   url.search = qs;
   return authenticatedFetch(url, {
     method: 'POST',
-    body: JSON.stringify(paginationParams)
+    body: JSON.stringify(params)
   });
 };
 

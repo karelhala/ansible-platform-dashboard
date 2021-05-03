@@ -54,15 +54,37 @@
       font-size: var(--pf-global--FontSize--sm);
     }
     .pf-c-description-list {
-      --pf-c-description-list--RowGap: var(--pf-global--spacer--md);
-      --pf-c-description-list__group--ColumnGap: var(--pf-global--spacer--0);
-      --pf-c-description-list__group--GridTemplateColumns: 60px auto;
-      display: flex;
-      flex-direction: column;
+      --pf-c-description-list__group--GridTemplateRow: auto auto;
+      padding-left: var(--pf-global--spacer--2xl);
+      padding-right: var(--pf-global--spacer--2xl);
       &__term {
         font-size: var(--pf-global--FontSize--2xl);
-        padding-right: var(--pf-global--spacer--sm);
-        text-align: right;
+        padding-left: var(--pf-global--spacer--xl);
+        display: flex;
+      }
+      &__description {
+      }
+    }
+  }
+
+  .automation-analytics_info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: var(--pf-global--spacer--xl);
+    .pf-l-stack {
+      min-height: 250px;
+    }
+    p {
+      font-size: var(--pf-global--FontSize--sm);
+    }
+    .pf-c-description-list {
+      --pf-c-description-list__group--GridTemplateRow: auto;
+      padding-left: var(--pf-global--spacer--2xl);
+      padding-right: var(--pf-global--spacer--2xl);
+      &__term {
+        font-size: var(--pf-global--FontSize--2xl);
+        padding-left: var(--pf-global--spacer--2xl);
+        display: flex;
       }
       &__description {
       }
@@ -108,6 +130,7 @@
       }
     }
   }
+
   .detail-pane {
     background-color: var(--pf-global--BackgroundColor--100);
   }
