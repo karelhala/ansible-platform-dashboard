@@ -1,6 +1,14 @@
-import { FETCH_ORDERS, FETCH_PLATFORMS, FETCH_PORTFOLIO_ITEMS, FETCH_PORTFOLIOS, SET_CATALOG_LOADING_STATE } from '../action-types';
+import {
+  FETCH_ORDERS,
+  FETCH_PLATFORMS,
+  FETCH_PORTFOLIO_ITEMS,
+  FETCH_PORTFOLIOS,
+  SET_CATALOG_AVAILABILITY,
+  SET_CATALOG_LOADING_STATE
+} from '../action-types';
 
 import { defaultSettings } from '../../helpers/shared/pagination';
+
 // Initial State
 export const catalogInitialState = {
   isLoading: false,
@@ -19,12 +27,18 @@ export const catalogInitialState = {
   platforms: {
     data: [],
     meta: { ...defaultSettings }
-  }
+  },
+  isAvailable: true
 };
 
 const setLoadingState = (state, { payload = true }) => ({
   ...state,
   isLoading: payload
+});
+
+const setAvailabilityState = (state, { payload = true }) => ({
+  ...state,
+  isAvailable: payload
 });
 
 const setOrders = (state, { payload }) => ({
@@ -49,6 +63,7 @@ const setPlatforms = (state, { payload }) => ({
 
 export default {
   [SET_CATALOG_LOADING_STATE]: setLoadingState,
+  [SET_CATALOG_AVAILABILITY]: setAvailabilityState,
   [`${FETCH_ORDERS}_FULFILLED`]: setOrders,
   [`${FETCH_ORDERS}_PENDING`]: setLoadingState,
   [`${FETCH_PORTFOLIOS}_FULFILLED`]: setPortfolios,

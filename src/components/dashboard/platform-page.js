@@ -9,7 +9,6 @@ import AnalyticsCard from '../analytics/analytics-card';
 
 const PlatformPage = () => {
   const intl = useIntl();
-
   return <React.Fragment>
     <DashboardHeader title={ intl.formatMessage(messages.overview) }
       description={ '' }/>

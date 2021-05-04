@@ -2,27 +2,44 @@
 import { getAxiosInstance } from '../shared/user-login';
 import { CATALOG_API_BASE, SOURCES_API_BASE } from '../../utilities/constants';
 import { defaultSettings } from '../shared/pagination';
+import { setCatalogAvailability } from '../../redux/actions/catalog-actions';
 
 const axiosInstance = getAxiosInstance();
 
-const getOrderItems = (orderIds) =>
-  axiosInstance.get(
+const getOrderItems = (orderIds) => {
+  return axiosInstance.get(
     `${CATALOG_API_BASE}/order_items?limit=${
       orderIds.length * 3 || defaultSettings.limit
     }${orderIds.length ? '&' : ''}${orderIds
     .map((orderId) => `filter[order_id][]=${orderId}`)
     .join('&')}`
+  ).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    } else {
+      throw (err);
+    }
+  }
   );
+};
 
-const getOrderPortfolioItems = (itemIds) =>
-  axiosInstance.get(
+const getOrderPortfolioItems = (itemIds) => {
+  return axiosInstance.get(
     `${CATALOG_API_BASE}/portfolio_items?${itemIds
     .map((itemId) => `filter[id][]=${itemId}`)
     .join('&')}`
+  ).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    } else {
+      throw (err);
+    }
+  }
   );
+};
 
-export const getOrders = () =>
-  axiosInstance
+export const getOrders = () => {
+  return axiosInstance
   .get(
     `${CATALOG_API_BASE}/orders?&limit=2`
   ) // eslint-disable-line max-len
@@ -43,15 +60,39 @@ export const getOrders = () =>
         };
       })
     )
+  ).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    } else {
+      throw (err);
+    }
+  }
   );
+};
 
-export const listPortfolios = (limit = 1) =>
-  axiosInstance.get(
-    `${CATALOG_API_BASE}/portfolios?limit=${limit}`);
+export const listPortfolios = (limit = 1) => {
+  return axiosInstance.get(
+    `${CATALOG_API_BASE}/portfolios?limit=${limit}`).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    } else {
+      throw (err);
+    }
+  }
+  );
+};
 
-export const getPlatforms = (limit = 1) =>
-  axiosInstance.get(
-    `${SOURCES_API_BASE}/sources?limit=${limit}`);
+export const getPlatforms = (limit = 1) => {
+  return axiosInstance.get(
+    `${SOURCES_API_BASE}/sources?limit=${limit}`).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    } else {
+      throw (err);
+    }
+  }
+  );
+};
 
 export const listPortfolioItems = (
   limit = 1
@@ -97,5 +138,12 @@ export const listPortfolioItems = (
           })
     );
     return portfolioItems;
-  });
+  }).catch((err) => {
+    if (err.status === 404) {
+      setCatalogAvailability(false);
+    }
+    else {
+      throw (err);
+    }}
+  );
 };

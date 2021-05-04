@@ -24,6 +24,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 import JobsChart from './jobs-chart';
 import { release } from '../../utilities/app-history';
+import ErrorCard from '../shared/error-card';
 
 const initialState = {
   isFetching: true
@@ -41,15 +42,16 @@ const analyticsState = (state, action) => {
 const AnalyticsCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(analyticsState, initialState);
 
-  const { clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
+  const { isAvailable, clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
     ({
       analyticsReducer: {
+        isAvailable,
         clusters,
         errorNotifications,
         warningNotifications,
         jobsData
       }
-    }) => ({ clusters, errorNotifications, warningNotifications, jobsData })
+    }) => ({ isAvailable, clusters, errorNotifications, warningNotifications, jobsData })
   );
 
   const dispatch = useDispatch();
@@ -62,7 +64,7 @@ const AnalyticsCard = () => {
   }, []);
 
   const renderAnalyticsNotifications = () => {
-    return (
+    return (!isAvailable ? <ErrorCard appName={ 'Analytics' }/> :
       <React.Fragment>
         <Title headingLevel="h4">
           { intl.formatMessage(messages.analyticsCardNotificationsTitle) }

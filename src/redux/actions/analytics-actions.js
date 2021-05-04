@@ -29,3 +29,10 @@ export const fetchJobsData = () => (dispatch) => {
     payload: AnalyticsHelper.getJobsData()
   });
 };
+
+export const setAnalyticsAvailability = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_ANALYTICS_AVAILABILITY,
+    payload: value
+  });
+};
