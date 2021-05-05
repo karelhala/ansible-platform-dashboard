@@ -45,3 +45,9 @@ export const setCatalogAvailability = (value = true) => (dispatch) => {
   });
 };
 
+export const setCatalogError = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_CATALOG_ERROR,
+    payload: value
+  });
+};

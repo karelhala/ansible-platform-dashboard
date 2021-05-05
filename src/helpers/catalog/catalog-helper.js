@@ -2,7 +2,7 @@
 import { getAxiosInstance } from '../shared/user-login';
 import { CATALOG_API_BASE, SOURCES_API_BASE } from '../../utilities/constants';
 import { defaultSettings } from '../shared/pagination';
-import { setCatalogAvailability } from '../../redux/actions/catalog-actions';
+import { setCatalogAvailability, setCatalogError } from '../../redux/actions/catalog-actions';
 
 const axiosInstance = getAxiosInstance();
 
@@ -17,7 +17,7 @@ const getOrderItems = (orderIds) => {
     if (err.status === 404) {
       setCatalogAvailability(false);
     } else {
-      throw (err);
+      setCatalogError(true);
     }
   }
   );
@@ -32,7 +32,7 @@ const getOrderPortfolioItems = (itemIds) => {
     if (err.status === 404) {
       setCatalogAvailability(false);
     } else {
-      throw (err);
+      setCatalogError(true);
     }
   }
   );
@@ -64,7 +64,7 @@ export const getOrders = () => {
     if (err.status === 404) {
       setCatalogAvailability(false);
     } else {
-      throw (err);
+      setCatalogError(true);
     }
   }
   );
@@ -76,7 +76,7 @@ export const listPortfolios = (limit = 1) => {
     if (err.status === 404) {
       setCatalogAvailability(false);
     } else {
-      throw (err);
+      setCatalogError(true);
     }
   }
   );
@@ -88,7 +88,7 @@ export const getPlatforms = (limit = 1) => {
     if (err.status === 404) {
       setCatalogAvailability(false);
     } else {
-      throw (err);
+      setCatalogError(true);
     }
   }
   );
@@ -143,7 +143,7 @@ export const listPortfolioItems = (
       setCatalogAvailability(false);
     }
     else {
-      throw (err);
+      setCatalogError(true);
     }}
   );
 };

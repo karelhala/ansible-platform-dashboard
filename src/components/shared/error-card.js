@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../../App.scss';
 import {
   Card,
-  CardTitle,
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
@@ -16,15 +15,10 @@ import { ExclamationCircleIcon } from '@patternfly/react-icons/dist/js/icons/exc
 
 const Br = () => <br />;
 
-const ErrorCard = ({ appName }) => {
-
+const ErrorCard = () => {
   const intl = useIntl();
-
   return (
     <Card className='ins-c-dashboard__card'>
-      <CardTitle className="pf-u-py-sm">
-        { appName }
-      </CardTitle>
       <EmptyState variant={ 'full' } className='ins-c-dashboard__error-state'>
         <div>
           <EmptyStateIcon

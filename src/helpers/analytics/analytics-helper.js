@@ -1,7 +1,7 @@
 /* eslint camelcase: 0 */
 import { stringify } from 'query-string';
 import { getAxiosInstance } from '../shared/user-login';
-import { setAnalyticsAvailability } from '../../redux/actions/analytics-actions';
+import { setAnalyticsAvailability, setAnalyticsError } from '../../redux/actions/analytics-actions';
 /* v0 endpoints */
 const clustersEndpoint = `/api/tower-analytics/v0/clusters/`;
 const notificationsEndpoint = `/api/tower-analytics/v0/notifications/`;
@@ -13,12 +13,11 @@ const axiosInstance = getAxiosInstance();
 
 function authenticatedFetch(endpoint, options) {
   return window.insights.chrome.auth.getUser().then(() => axiosInstance.get(endpoint, options)).catch((err) => {
-    console.log('debug - analytics err', err);
     if (err.status === 404) {
       setAnalyticsAvailability(false);
     }
     else {
-      throw (err);
+      setAnalyticsError(true);
     }}
   );;
 }

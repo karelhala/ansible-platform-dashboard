@@ -36,3 +36,11 @@ export const setAnalyticsAvailability = (value = true) => (dispatch) => {
     payload: value
   });
 };
+
+export const setAnalyticsError = (value = false) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_ANALYTICS_ERROR,
+    payload: value
+  });
+};
+

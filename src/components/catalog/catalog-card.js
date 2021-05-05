@@ -33,6 +33,8 @@ import { CATALOG_API_BASE } from '../../utilities/constants';
 import CardIcon from '../shared/card-icon';
 import orderStatusMapper from '../shared/order-status-mapper';
 import { TimeAgo } from '../../helpers/shared/helpers';
+import ErrorCard from '../shared/error-card';
+import ConfigureCatalogCard from './configure-catalog_card';
 
 const initialState = {
   isFetching: true
@@ -50,16 +52,17 @@ const catalogState = (state, action) => {
 const CatalogCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(catalogState, initialState);
 
-  const { isAvailable, portfolioItems, portfolios, platforms, orders } = useSelector(
+  const { isAvailable, isError, portfolioItems, portfolios, platforms, orders } = useSelector(
     ({
       catalogReducer: {
         isAvailable,
+        isError,
         portfolioItems,
         portfolios,
         platforms,
         orders
       }
-    }) => ({ isAvailable, portfolioItems, portfolios, platforms, orders })
+    }) => ({ isAvailable, isError, portfolioItems, portfolios, platforms, orders })
   );
 
   const {
@@ -228,7 +231,13 @@ const CatalogCard = () => {
   };
 
   const renderCatalogCards = () => {
-    if (isFetching) {
+    if (!isAvailable) {
+      return <ConfigureCatalogCard/>;
+    }
+    if (isError) {
+      return <ErrorCard/>;
+    }
+    else if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
           <Bullseye>

@@ -24,6 +24,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 import JobsChart from './jobs-chart';
 import { release } from '../../utilities/app-history';
+import ConfigureAnalyticsCard from './configure-analytics-card';
 import ErrorCard from '../shared/error-card';
 
 const initialState = {
@@ -42,16 +43,17 @@ const analyticsState = (state, action) => {
 const AnalyticsCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(analyticsState, initialState);
 
-  const { isAvailable, clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
+  const { isAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
     ({
       analyticsReducer: {
         isAvailable,
+        isError,
         clusters,
         errorNotifications,
         warningNotifications,
         jobsData
       }
-    }) => ({ isAvailable, clusters, errorNotifications, warningNotifications, jobsData })
+    }) => ({ isAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData })
   );
 
   const dispatch = useDispatch();
@@ -64,48 +66,46 @@ const AnalyticsCard = () => {
   }, []);
 
   const renderAnalyticsNotifications = () => {
-    return (!isAvailable ? <ErrorCard appName={ 'Analytics' }/> :
-      <React.Fragment>
-        <Title headingLevel="h4">
-          { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
-        </Title>
-        <br/>
-        <DescriptionList className="pf-c-description-list.pf-m-vertical" columnModifier={ {
-          default: '2Col'
-        } }>
-          <DescriptionListGroup>
-            <DescriptionListTerm>
-              { errorNotifications?.payload?.meta?.count || 0 }
-            </DescriptionListTerm>
-            <DescriptionListDescription>
-              <Label
-                color="red"
-                icon={ <InfoCircleIcon/> }
-                isTruncated
-                href={ `${release}ansible/automation-analytics/notifications` }
-              >
-                { intl.formatMessage(messages.critical) }
-              </Label>
-            </DescriptionListDescription>
-          </DescriptionListGroup>
-          <DescriptionListGroup>
-            <DescriptionListTerm>
-              { warningNotifications?.payload?.meta?.count || 0 }
-            </DescriptionListTerm>
-            <DescriptionListDescription>
-              <Label
-                color="orange"
-                icon={ <WarningTriangleIcon/> }
-                isTruncated
-                href={ `${release}ansible/automation-analytics/notifications` }
-              >
-                { intl.formatMessage(messages.warning) }
-              </Label>
-            </DescriptionListDescription>
-          </DescriptionListGroup>
-        </DescriptionList>
-      </React.Fragment>
-    );
+    return <React.Fragment>
+      <Title headingLevel="h4">
+        { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
+      </Title>
+      <br/>
+      <DescriptionList className="pf-c-description-list.pf-m-vertical" columnModifier={ {
+        default: '2Col'
+      } }>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { errorNotifications?.payload?.meta?.count || 0 }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Label
+              color="red"
+              icon={ <InfoCircleIcon/> }
+              isTruncated
+              href={ `${release}ansible/automation-analytics/notifications` }
+            >
+              { intl.formatMessage(messages.critical) }
+            </Label>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+        <DescriptionListGroup>
+          <DescriptionListTerm>
+            { warningNotifications?.payload?.meta?.count || 0 }
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <Label
+              color="orange"
+              icon={ <WarningTriangleIcon/> }
+              isTruncated
+              href={ `${release}ansible/automation-analytics/notifications` }
+            >
+              { intl.formatMessage(messages.warning) }
+            </Label>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+      </DescriptionList>
+    </React.Fragment>;
   };
 
   const renderAnalyticsInfo = () => {
@@ -150,7 +150,13 @@ const AnalyticsCard = () => {
   };
 
   const renderAnalyticsCards = () => {
-    if (isFetching) {
+    if (!isAvailable) {
+      return <ConfigureAnalyticsCard/>;
+    }
+    if (isError) {
+      return <ErrorCard/>;
+    }
+    else if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
           <Bullseye>
