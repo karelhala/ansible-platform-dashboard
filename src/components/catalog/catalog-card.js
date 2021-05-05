@@ -234,6 +234,7 @@ const CatalogCard = () => {
     if (!isAvailable) {
       return <ConfigureCatalogCard/>;
     }
+
     if (isError) {
       return <ErrorCard/>;
     }

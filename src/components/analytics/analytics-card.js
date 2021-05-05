@@ -153,6 +153,7 @@ const AnalyticsCard = () => {
     if (!isAvailable) {
       return <ConfigureAnalyticsCard/>;
     }
+
     if (isError) {
       return <ErrorCard/>;
     }

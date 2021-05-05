@@ -19,7 +19,7 @@ function authenticatedFetch(endpoint, options) {
     else {
       setAnalyticsError(true);
     }}
-  );;
+  );
 }
 
 export const getJobsData = () => {

@@ -11,6 +11,8 @@ import { defaultSettings } from '../../helpers/shared/pagination';
 // Initial State
 export const analyticsInitialState = {
   isLoading: false,
+  isAvailable: true,
+  isError: false,
   clusters: {
     data: [],
     meta: { ...defaultSettings }
@@ -34,7 +36,7 @@ const setLoadingState = (state, { payload = true }) => ({
   isLoading: payload
 });
 
-const setAnalyticsAvailability = (state, { payload = true }) => ({
+const setAnalyticsAvailability = (state, { payload = false }) => ({
   ...state,
   isAvailable: payload
 });
