@@ -5,22 +5,6 @@ import messages from '../../messages/messages';
 import ConfigureCard from '../shared/configure-card';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
-const renderButtons = (intl) => (
-  <React.Fragment>
-    <Flex>
-      <FlexItem>
-        <Button
-          isLarge
-          component='a'
-          variant='primary'
-          href={ `https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html` }>
-          { intl.formatMessage(messages.configureLink) }
-        </Button>
-      </FlexItem>
-    </Flex>
-  </React.Fragment>
-);
-
 const renderCatalogConfigButton = (intl) => (
   <React.Fragment>
     <Flex>

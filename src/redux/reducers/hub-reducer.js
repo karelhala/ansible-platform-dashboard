@@ -3,12 +3,17 @@ import {
   FETCH_COLLECTIONS,
   FETCH_PARTNERS,
   FETCH_SYNC_COLLECTIONS,
-  SET_HUB_LOADING_STATE } from '../action-types';
+  SET_HUB_AVAILABILITY,
+  SET_HUB_ERROR,
+  SET_HUB_LOADING_STATE
+} from '../action-types';
 
 import { defaultSettings } from '../../helpers/shared/pagination';
 // Initial State
 export const hubInitialState = {
   isLoading: false,
+  isAvailable: true,
+  isError: false,
   collection: {},
   collections: {
     data: [],
@@ -29,6 +34,15 @@ const setLoadingState = (state, { payload = true }) => ({
   isLoading: payload
 });
 
+const setAvailabilityState = (state, { payload = true }) => ({
+  ...state,
+  isAvailable: payload
+});
+
+const setErrorState = (state, { payload = true }) => ({
+  ...state,
+  isError: payload
+});
 const setCollections = (state, { payload }) => ({
   ...state,
   collections: payload
@@ -51,6 +65,8 @@ const setSyncCollections = (state, { payload }) => ({
 
 export default {
   [SET_HUB_LOADING_STATE]: setLoadingState,
+  [SET_HUB_AVAILABILITY]: setAvailabilityState,
+  [SET_HUB_ERROR]: setErrorState,
   [`${FETCH_COLLECTION}_PENDING`]: setLoadingState,
   [`${FETCH_COLLECTION}_FULFILLED`]: setCollection,
   [`${FETCH_COLLECTIONS}_FULFILLED`]: setCollections,

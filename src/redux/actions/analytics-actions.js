@@ -31,13 +31,14 @@ export const fetchJobsData = () => (dispatch) => {
 };
 
 export const setAnalyticsAvailability = (value = true) => (dispatch) => {
+  console.log('Debug - dispatch: ', value);
   return dispatch({
     type: ActionTypes.SET_ANALYTICS_AVAILABILITY,
     payload: value
   });
 };
 
-export const setAnalyticsError = (value = false) => (dispatch) => {
+export const setAnalyticsError = (value = true) => (dispatch) => {
   return dispatch({
     type: ActionTypes.SET_ANALYTICS_ERROR,
     payload: value

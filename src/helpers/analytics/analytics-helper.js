@@ -13,7 +13,9 @@ const axiosInstance = getAxiosInstance();
 
 function authenticatedFetch(endpoint, options) {
   return window.insights.chrome.auth.getUser().then(() => axiosInstance.get(endpoint, options)).catch((err) => {
+    console.log('Debug - analytics err', err);
     if (err.status === 404) {
+      console.log('Debug - analytics 404');
       setAnalyticsAvailability(false);
     }
     else {

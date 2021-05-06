@@ -31,17 +31,17 @@ export const analyticsInitialState = {
   }
 };
 
-const setLoadingState = (state, { payload = true }) => ({
+const setLoadingState = (state, payload = true) => ({
   ...state,
   isLoading: payload
 });
 
-const setAnalyticsAvailability = (state, { payload = false }) => ({
+const setAvailabilityState = (state, { payload = true }) => ({
   ...state,
   isAvailable: payload
 });
 
-const setAnalyticsError = (state, { payload = true }) => ({
+const setErrorState = (state, { payload = true }) => ({
   ...state,
   isError: payload
 });
@@ -68,8 +68,8 @@ const setJobsData = (state, payload) => ({
 
 export default {
   [SET_ANALYTICS_LOADING_STATE]: setLoadingState,
-  [SET_ANALYTICS_AVAILABILITY]: setAnalyticsAvailability,
-  [SET_ANALYTICS_ERROR]: setAnalyticsError,
+  [SET_ANALYTICS_AVAILABILITY]: setAvailabilityState,
+  [SET_ANALYTICS_ERROR]: setErrorState,
   [`${FETCH_CLUSTERS}_FULFILLED`]: setClusters,
   [`${FETCH_CLUSTERS}_PENDING`]: setLoadingState,
   [`${FETCH_ERROR_NOTIFICATIONS}_FULFILLED`]: setErrorNotifications,

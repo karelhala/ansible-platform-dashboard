@@ -150,6 +150,7 @@ const AnalyticsCard = () => {
   };
 
   const renderAnalyticsCards = () => {
+    console.log('Debug - analytics render - isAvailable', isAvailable);
     if (!isAvailable) {
       return <ConfigureAnalyticsCard/>;
     }
