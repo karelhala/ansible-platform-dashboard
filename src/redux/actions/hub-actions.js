@@ -30,3 +30,16 @@ export const fetchSyncCollections = (account) => (dispatch) => {
   });
 };
 
+export const setHubAvailability = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_HUB_AVAILABILITY,
+    payload: value
+  });
+};
+
+export const setHubError = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_HUB_ERROR,
+    payload: value
+  });
+};

@@ -2,12 +2,17 @@ import { FETCH_CLUSTERS,
   FETCH_ERROR_NOTIFICATIONS,
   FETCH_WARNING_NOTIFICATIONS,
   FETCH_JOBS,
-  SET_ANALYTICS_LOADING_STATE } from '../action-types';
+  SET_ANALYTICS_LOADING_STATE,
+  SET_ANALYTICS_AVAILABILITY,
+  SET_ANALYTICS_ERROR
+} from '../action-types';
 
 import { defaultSettings } from '../../helpers/shared/pagination';
 // Initial State
 export const analyticsInitialState = {
   isLoading: false,
+  isAvailable: true,
+  isError: false,
   clusters: {
     data: [],
     meta: { ...defaultSettings }
@@ -26,9 +31,19 @@ export const analyticsInitialState = {
   }
 };
 
-const setLoadingState = (state, { payload = true }) => ({
+const setLoadingState = (state, payload = true) => ({
   ...state,
   isLoading: payload
+});
+
+const setAvailabilityState = (state, { payload = true }) => ({
+  ...state,
+  isAvailable: payload
+});
+
+const setErrorState = (state, { payload = true }) => ({
+  ...state,
+  isError: payload
 });
 
 const setClusters = (state, payload) => ({
@@ -53,6 +68,8 @@ const setJobsData = (state, payload) => ({
 
 export default {
   [SET_ANALYTICS_LOADING_STATE]: setLoadingState,
+  [SET_ANALYTICS_AVAILABILITY]: setAvailabilityState,
+  [SET_ANALYTICS_ERROR]: setErrorState,
   [`${FETCH_CLUSTERS}_FULFILLED`]: setClusters,
   [`${FETCH_CLUSTERS}_PENDING`]: setLoadingState,
   [`${FETCH_ERROR_NOTIFICATIONS}_FULFILLED`]: setErrorNotifications,

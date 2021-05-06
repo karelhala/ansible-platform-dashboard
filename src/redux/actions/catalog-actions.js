@@ -37,3 +37,17 @@ export const fetchPlatforms = () => (dispatch) => {
     payload: CatalogHelper.getPlatforms()
   });
 };
+
+export const setCatalogAvailability = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_CATALOG_AVAILABILITY,
+    payload: value
+  });
+};
+
+export const setCatalogError = (value = true) => (dispatch) => {
+  return dispatch({
+    type: ActionTypes.SET_CATALOG_ERROR,
+    payload: value
+  });
+};
