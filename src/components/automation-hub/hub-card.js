@@ -238,6 +238,7 @@ const HubCard = () => {
     if (isError) {
       return <ErrorCard/>;
     }
+
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
