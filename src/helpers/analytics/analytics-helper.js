@@ -1,7 +1,6 @@
 /* eslint camelcase: 0 */
 import { stringify } from 'query-string';
 import { getAxiosInstance } from '../shared/user-login';
-import { setAnalyticsAvailability, setAnalyticsError } from '../../redux/actions/analytics-actions';
 /* v0 endpoints */
 const clustersEndpoint = `/api/tower-analytics/v0/clusters/`;
 const notificationsEndpoint = `/api/tower-analytics/v0/notifications/`;
@@ -10,18 +9,8 @@ const notificationsEndpoint = `/api/tower-analytics/v0/notifications/`;
 const jobExplorerEndpoint = '/api/tower-analytics/v1/job_explorer/';
 
 const axiosInstance = getAxiosInstance();
-
 function authenticatedFetch(endpoint, options) {
-  return window.insights.chrome.auth.getUser().then(() => axiosInstance.get(endpoint, options)).catch((err) => {
-    console.log('Debug - analytics err', err);
-    if (err.status === 404) {
-      console.log('Debug - analytics 404');
-      setAnalyticsAvailability(false);
-    }
-    else {
-      setAnalyticsError(true);
-    }}
-  );
+  return window.insights.chrome.auth.getUser().then(() => axiosInstance.get(endpoint, options));
 }
 
 export const getJobsData = () => {
