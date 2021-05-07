@@ -14,7 +14,11 @@ const JobsChart = (data) => {
   }, []);
 
   const bars = [];
-  data?.items?.map((item, idx) => bars.push({ x: `${idx}`, y: item }));
+  data?.items?.map((item) => {
+    const date = new Date(item.created_date);
+    const x = `${date.getMonth()}/${date.getDate()}`;
+    return bars.push({ x, y: item });
+  });
 
   const renderSuccessfulJobs = () => {
     const successBars = bars.map((tick) => {
@@ -45,9 +49,11 @@ const JobsChart = (data) => {
   };
 
   const getTickValues = () => {
+    console.log('Debug - bars', bars);
     const tickValues = [];
     for (let i = 0; i < bars.length; i++) {
-      tickValues.push(`${i}`);
+      const date = new Date(bars[i].y.created_date);
+      tickValues.push(`${date.getMonth()}/${date.getDate()}`);
     }
 
     return tickValues;
@@ -64,7 +70,7 @@ const JobsChart = (data) => {
           ariaDesc="Jobs across clusters"
           ariaTitle="Jobs across clusters"
           domainPadding={ { x: [ 30, 25 ]} }
-          legendPosition="bottom"
+          legendData={ [{ name: 'Successful' }, { name: 'Failed' }] }
           barRatio={ 1 }
           height={ 225 }
           padding={ {
