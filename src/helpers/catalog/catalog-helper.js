@@ -2,7 +2,6 @@
 import { getAxiosInstance } from '../shared/user-login';
 import { CATALOG_API_BASE, SOURCES_API_BASE } from '../../utilities/constants';
 import { defaultSettings } from '../shared/pagination';
-import { setCatalogAvailability, setCatalogError } from '../../redux/actions/catalog-actions';
 
 const axiosInstance = getAxiosInstance();
 
@@ -13,13 +12,6 @@ const getOrderItems = (orderIds) => {
     }${orderIds.length ? '&' : ''}${orderIds
     .map((orderId) => `filter[order_id][]=${orderId}`)
     .join('&')}`
-  ).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    } else {
-      setCatalogError(true);
-    }
-  }
   );
 };
 
@@ -28,13 +20,6 @@ const getOrderPortfolioItems = (itemIds) => {
     `${CATALOG_API_BASE}/portfolio_items?${itemIds
     .map((itemId) => `filter[id][]=${itemId}`)
     .join('&')}`
-  ).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    } else {
-      setCatalogError(true);
-    }
-  }
   );
 };
 
@@ -60,38 +45,17 @@ export const getOrders = () => {
         };
       })
     )
-  ).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    } else {
-      setCatalogError(true);
-    }
-  }
   );
 };
 
 export const listPortfolios = (limit = 1) => {
   return axiosInstance.get(
-    `${CATALOG_API_BASE}/portfolios?limit=${limit}`).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    } else {
-      setCatalogError(true);
-    }
-  }
-  );
+    `${CATALOG_API_BASE}/portfolios?limit=${limit}`);
 };
 
 export const getPlatforms = (limit = 1) => {
   return axiosInstance.get(
-    `${SOURCES_API_BASE}/sources?limit=${limit}`).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    } else {
-      setCatalogError(true);
-    }
-  }
-  );
+    `${SOURCES_API_BASE}/sources?limit=${limit}`);
 };
 
 export const listPortfolioItems = (
@@ -138,12 +102,5 @@ export const listPortfolioItems = (
           })
     );
     return portfolioItems;
-  }).catch((err) => {
-    if (err.status === 404) {
-      setCatalogAvailability(false);
-    }
-    else {
-      setCatalogError(true);
-    }}
-  );
+  });
 };

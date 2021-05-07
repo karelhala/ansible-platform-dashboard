@@ -29,6 +29,7 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-
 import { contentCounts } from './content-counts';
 import { Logo } from './logo';
 import { release } from '../../utilities/app-history';
+import ErrorCard from '../shared/error-card';
 
 const initialState = {
   isFetching: true
@@ -46,14 +47,15 @@ const hubState = (state, action) => {
 const HubCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(hubState, initialState);
 
-  const { collection, collections, partners } = useSelector(
+  const { isError, collection, collections, partners } = useSelector(
     ({
       hubReducer: {
+        isError,
         collection,
         collections,
         partners
       }
-    }) => ({ collection, collections, partners })
+    }) => ({ isError, collection, collections, partners })
   );
 
   const {
@@ -233,6 +235,9 @@ const HubCard = () => {
   };
 
   const renderHubCards = () => {
+    if (isError) {
+      return <ErrorCard/>;
+    }
     if (isFetching) {
       return (
         <Section style={ { backgroundColor: 'white', minHeight: '100%' } }>
