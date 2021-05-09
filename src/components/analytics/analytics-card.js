@@ -14,7 +14,7 @@ import {
   Label,
   Spinner,
   Text,
-  Title, Button
+  Title, Button, TextContent, TextVariants, Stack, StackItem, SplitItem, Split
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -145,9 +145,49 @@ const AnalyticsCard = () => {
       </Fragment>);
   };
 
-  const renderAnalyticsOther = () => {
-    return (<JobsChart items={ jobsData?.payload?.items }/>);
-  };
+  const renderAnalyticsOther = () =>
+    <Fragment>
+      <Title headingLevel="h4">
+        { intl.formatMessage(messages.analyticsJobTitle) }
+      </Title>
+      <br/>
+      <Stack direction={ { default: 'column' } }>
+        <StackItem>
+          <Split automation-analytics_other>
+            <SplitItem>
+              <TextContent>
+                <Text style={ { 'writing-mode': 'vertical-lr', paddingBottom: 20,
+                  transform: 'rotate(180deg)' } }>
+                  { intl.formatMessage(messages.jobsAcrossClusters) }
+                </Text>
+              </TextContent>
+            </SplitItem>
+            <SplitItem isFilled>
+              <JobsChart items={ jobsData?.payload?.items }/>
+            </SplitItem>
+          </Split>
+        </StackItem>
+        <StackItem>
+          <Bullseye>
+            <TextContent>
+              <Text component={ TextVariants.small }>
+                { intl.formatMessage(messages.timeDayLegend) }
+              </Text>
+            </TextContent>
+          </Bullseye>
+        </StackItem>
+        <StackItem>
+          <Bullseye>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/insights/job-explorer` }>
+              { intl.formatMessage(messages.jobsExplorer) }
+            </Button>
+          </Bullseye>
+        </StackItem>
+      </Stack>
+    </Fragment>;
 
   const renderAnalyticsCards = () => {
     if (!isAvailable) {

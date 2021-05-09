@@ -91,6 +91,11 @@
     }
   }
 
+  .automation-analytics_other {
+    display: grid;
+    grid-template-columns: 20px 3fr;
+  }
+
   @media only screen and (max-width: $pf-global--breakpoint--md) {
     .automation-hub_card {
       display: grid;
