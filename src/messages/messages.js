@@ -20,6 +20,10 @@ const messages = defineMessages({
     defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics calculate ' +
         'your return on investment and explore automation processes details.'
   },
+  analyticsJobTitle: {
+    id: 'analytics.jobs.title',
+    defaultMessage: 'Job status'
+  },
   analyticsCardNotificationsTitle: {
     id: 'analytics.notifications.title',
     defaultMessage: 'Notifications'
@@ -27,6 +31,18 @@ const messages = defineMessages({
   totalClusters: {
     id: 'analytics.total.clusters',
     defaultMessage: 'Total clusters'
+  },
+  jobsExplorer: {
+    id: 'analytics.jobs.explorer',
+    defaultMessage: 'View Job Explorer'
+  },
+  timeDayLegend: {
+    id: 'analytics.time.day.legend',
+    defaultMessage: 'Time: Day'
+  },
+  jobsAcrossClusters: {
+    id: 'analytics.jobs.across.clusters',
+    defaultMessage: 'Jobs across clusters'
   },
   clusterTitle: {
     id: 'analytics.clusters.title',
