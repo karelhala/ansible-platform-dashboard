@@ -12,7 +12,7 @@ import { defaultSettings } from '../../helpers/shared/pagination';
 // Initial State
 export const hubInitialState = {
   isLoading: false,
-  isAvailable: true,
+  isHubAvailable: true,
   isError: false,
   collection: {},
   collections: {
@@ -36,7 +36,7 @@ const setLoadingState = (state, { payload = true }) => ({
 
 const setAvailabilityState = (state, { payload = true }) => ({
   ...state,
-  isAvailable: payload
+  isHubAvailable: payload
 });
 
 const setErrorState = (state, { payload = true }) => ({

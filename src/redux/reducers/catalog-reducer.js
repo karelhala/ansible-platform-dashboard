@@ -29,7 +29,7 @@ export const catalogInitialState = {
     data: [],
     meta: { ...defaultSettings }
   },
-  isAvailable: true,
+  isCatalogAvailable: true,
   isError: false
 };
 
@@ -40,7 +40,7 @@ const setLoadingState = (state, { payload = true }) => ({
 
 const setAvailabilityState = (state, { payload = true }) => ({
   ...state,
-  isAvailable: payload
+  isCatalogAvailable: payload
 });
 
 const setErrorState = (state, { payload = true }) => ({

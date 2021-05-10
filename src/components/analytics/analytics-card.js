@@ -43,17 +43,17 @@ const analyticsState = (state, action) => {
 const AnalyticsCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(analyticsState, initialState);
 
-  const { isAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
+  const { isAnalyticsAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData } = useSelector(
     ({
       analyticsReducer: {
-        isAvailable,
+        isAnalyticsAvailable,
         isError,
         clusters,
         errorNotifications,
         warningNotifications,
         jobsData
       }
-    }) => ({ isAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData })
+    }) => ({ isAnalyticsAvailable, isError, clusters, errorNotifications, warningNotifications, jobsData })
   );
 
   const dispatch = useDispatch();
@@ -190,7 +190,7 @@ const AnalyticsCard = () => {
     </Fragment>;
 
   const renderAnalyticsCards = () => {
-    if (!isAvailable) {
+    if (!isAnalyticsAvailable) {
       return <ConfigureAnalyticsCard/>;
     }
 
