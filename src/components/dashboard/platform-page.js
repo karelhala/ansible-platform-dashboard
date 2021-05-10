@@ -12,7 +12,7 @@ import NoAppState from '../shared/no-app-state';
 
 const PlatformPage = () => {
   const intl = useIntl();
-  const isAnalyticsAvailable = useSelector(
+  const { isAnalyticsAvailable } = useSelector(
     ({
       analyticsReducer: {
         isAnalyticsAvailable
@@ -20,7 +20,7 @@ const PlatformPage = () => {
     }) => ({ isAnalyticsAvailable })
   );
 
-  const isHubAvailable = useSelector(
+  const { isHubAvailable } = useSelector(
     ({
       hubReducer: {
         isHubAvailable: isHubAvailable
@@ -28,15 +28,13 @@ const PlatformPage = () => {
     }) => ({ isHubAvailable })
   );
 
-  const isCatalogAvailable = useSelector(
+  const { isCatalogAvailable } = useSelector(
     ({
       catalogReducer: {
         isCatalogAvailable
       }
     }) => ({ isCatalogAvailable })
   );
-
-  console.log('Debug - isAnalyticsAvailable, isHubAvailable, isCatalogAvailable', isAnalyticsAvailable, isHubAvailable, isCatalogAvailable);
 
   if (!isAnalyticsAvailable && !isHubAvailable && !isCatalogAvailable) {
     return <NoAppState/>;
