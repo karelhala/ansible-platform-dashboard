@@ -6,7 +6,6 @@ import promiseMiddleware from 'redux-promise-middleware';
 import { MemoryRouter } from 'react-router-dom';
 import notificationsMiddleware from '@redhat-cloud-services/frontend-components-notifications/notificationsMiddleware';
 import catalogReducer, { catalogInitialState } from '../../../redux/reducers/catalog-reducer';
-import AnalyticsCard from '../../../components/catalog/catalog-card';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { shallowToJson } from 'enzyme-to-json';
