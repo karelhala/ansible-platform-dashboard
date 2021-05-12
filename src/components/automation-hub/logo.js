@@ -1,4 +1,6 @@
 import * as React from 'react';
+// had to declare *.svg in src/index.d.ts
+import DefaultLogo from '../../../static/images/default-logo.svg';
 import PropTypes from 'prop-types';
 
 export const Logo = (props) => {
@@ -10,13 +12,13 @@ export const Logo = (props) => {
     justifyContent: 'center',
     alignItems: 'center'
   };
-
+  const imgSrc = image ? image : DefaultLogo;
   // use inline css so we can set size
   return (
     <div className={ className } style={ style }>
       <img
         style={ { objectFit: 'contain', maxHeight: size } }
-        src={ image || '../../images/default-logo.svg' }
+        src={ imgSrc }
         alt={ alt }
       />
     </div>
