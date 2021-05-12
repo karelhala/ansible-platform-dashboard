@@ -72,10 +72,12 @@ const CatalogCard = () => {
   const dispatch = useDispatch();
   const intl = useIntl();
 
+  const isCatalogAdmin = permissions.find((permission) => permission.permission === 'catalog:portfolios:create');
+
   useEffect(() => {
     stateDispatch({ type: 'setFetching', payload: true });
     const promiseList = [ fetchPortfolios, fetchPortfolioItems, fetchOrders ];
-    if (permissions) {
+    if (isCatalogAdmin) {
       promiseList.push(fetchPlatforms);
     }
 
@@ -115,7 +117,7 @@ const CatalogCard = () => {
             </Button>
           </DescriptionListDescription>
         </DescriptionListGroup>
-        { permissions &&
+        { isCatalogAdmin &&
         <Fragment>
           <DescriptionListGroup>
             <DescriptionListTerm>

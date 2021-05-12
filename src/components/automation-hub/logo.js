@@ -1,6 +1,18 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
+export const IconPlaceholder = ({
+  height = 40
+}) => (
+  <svg height={ height } width={ height }>
+    <circle cx={ height / 2 } cy={ height / 2 } r={ height / 2 } fill="#ecebeb" />
+  </svg>
+);
+
+IconPlaceholder.propTypes = {
+  height: PropTypes.number
+};
+
 export const Logo = (props) => {
   const { size, image, alt, className } = props;
 
@@ -10,15 +22,15 @@ export const Logo = (props) => {
     justifyContent: 'center',
     alignItems: 'center'
   };
-
   // use inline css so we can set size
   return (
     <div className={ className } style={ style }>
-      <img
-        style={ { objectFit: 'contain', maxHeight: size } }
-        src={ image || '../../images/default-logo.svg' }
-        alt={ alt }
-      />
+      { image ?
+        <img
+          style={ { objectFit: 'contain', maxHeight: size } }
+          src={ image }
+          alt={ alt }
+        /> :  <IconPlaceholder/> }
     </div>
   );
 };
