@@ -76,13 +76,14 @@ const CatalogCard = () => {
 
   useEffect(() => {
     stateDispatch({ type: 'setFetching', payload: true });
-    const promiseList = [ fetchPortfolios, fetchPortfolioItems, fetchOrders ];
+    const promiseList = [ fetchPortfolioItems, fetchPortfolios, fetchOrders ];
     if (isCatalogAdmin) {
       promiseList.push(fetchPlatforms);
     }
-
     return Promise.all(promiseList.map(fn => dispatch(fn()))).then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
+
+  console.log('Debug - portfolios', portfolios);
 
   const renderCatalogInfo = () => (
     <React.Fragment>
