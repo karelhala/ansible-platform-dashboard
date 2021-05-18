@@ -31,7 +31,7 @@ export const fetchOrders = () => (dispatch) => {
 
 export const fetchPortfolios = (options) => (dispatch) => {
   return dispatch({
-    type: ActionTypes.FETCH_PLATFORMS,
+    type: ActionTypes.FETCH_PORTFOLIOS,
     payload: CatalogHelper.listPortfolios(options).catch((err) => {
       if (err.status === 404) {
         setCatalogAvailability(dispatch, false);
