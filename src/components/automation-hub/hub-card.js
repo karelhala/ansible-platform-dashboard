@@ -18,7 +18,7 @@ import {
   Stack,
   StackItem,
   Text, TextContent, TextVariants,
-  Title
+  Title, Tooltip
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -30,6 +30,7 @@ import { contentCounts } from './content-counts';
 import { Logo } from './logo';
 import { release } from '../../utilities/app-history';
 import ErrorCard from '../shared/error-card';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-question-circle-icon';
 
 const initialState = {
   isFetching: true
@@ -121,9 +122,17 @@ const HubCard = () => {
             { collections?.meta?.count }
           </DescriptionListTerm>
           <DescriptionListDescription>
-            <Button variant='link' >
-              { intl.formatMessage(messages.syncCollections) }
-            </Button>
+            { intl.formatMessage(messages.syncCollections) }
+            <Tooltip
+              position="top"
+              content={
+                <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div>
+              }
+            >
+              <span aria-label={ intl.formatMessage(messages.syncCollectionsTooltip) } tabIndex="0">
+                <OutlinedQuestionCircleIcon />
+              </span>
+            </Tooltip>
           </DescriptionListDescription>
         </DescriptionListGroup>
       </DescriptionList>

@@ -113,6 +113,11 @@ const messages = defineMessages({
     id: 'hub.syncCollections',
     defaultMessage: 'Collections set to sync'
   },
+  syncCollectionsTooltip: {
+    id: 'hub.syncCollectionsTooltip',
+    defaultMessage: 'This is the number of collections that your organization will sync if you have connected to Private Hub.'
+  },
+
   modules: {
     id: 'hub.modules',
     defaultMessage: 'Modules'
