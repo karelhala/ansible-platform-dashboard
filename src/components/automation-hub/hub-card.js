@@ -144,7 +144,7 @@ const HubCard = () => {
         {  featuredCollection &&
         <Flex direction={ { default: 'column' } }>
           <FlexItem>
-            <Level hasGutter="md">
+            <Level hasGutter="xl">
               <LevelItem>
                 <Logo
                   alt={ featuredCollection?.namespace?.company + ' logo' }
@@ -156,6 +156,8 @@ const HubCard = () => {
                 <Label>Certified</Label>
               </LevelItem>
             </Level>
+          </FlexItem>
+          <FlexItem>
             <TextContent>
               <Text component={ TextVariants.small }>Provided by { featuredCollection?.namespace?.company
                   || featuredCollection?.namespace?.name }</Text>
@@ -224,6 +226,8 @@ const HubCard = () => {
             <Button
               component='a'
               variant='link'
+              target="_blank"
+              rel="noopener noreferrer"
               href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
               /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
               { intl.formatMessage(messages.learnMoreButton) }&nbsp;
