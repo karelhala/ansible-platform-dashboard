@@ -121,15 +121,14 @@ const HubCard = () => {
           <DescriptionListTerm>
             { collections?.meta?.count }
           </DescriptionListTerm>
-          <DescriptionListDescription>
-            { intl.formatMessage(messages.syncCollections) }
+          <DescriptionListDescription className="padded_text">
+            { intl.formatMessage(messages.syncCollections) } &nbsp;
             <Tooltip
               position="top"
               content={
                 <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div>
               }
-            >
-              <span aria-label={ intl.formatMessage(messages.syncCollectionsTooltip) } tabIndex="0">
+            > <span aria-label={ intl.formatMessage(messages.syncCollectionsTooltip) } tabIndex="0">
                 <OutlinedQuestionCircleIcon />
               </span>
             </Tooltip>
