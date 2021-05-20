@@ -18,7 +18,7 @@ import {
   Stack,
   StackItem,
   Text, TextContent, TextVariants,
-  Title, Tooltip
+  Title, Popover, Tooltip
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -122,15 +122,14 @@ const HubCard = () => {
             { collections?.meta?.count }
           </DescriptionListTerm>
           <DescriptionListDescription className="padded_text">
-            { intl.formatMessage(messages.syncCollections) } &nbsp;
             <Tooltip
-              position="top"
-              content={
-                <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div>
-              }
-            > <span aria-label={ intl.formatMessage(messages.syncCollectionsTooltip) } tabIndex="0">
+              headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
+              bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
+            >
+              <div>
+                { intl.formatMessage(messages.syncCollections) }
                 <OutlinedQuestionCircleIcon />
-              </span>
+              </div>
             </Tooltip>
           </DescriptionListDescription>
         </DescriptionListGroup>
