@@ -122,15 +122,23 @@ const HubCard = () => {
             { collections?.meta?.count }
           </DescriptionListTerm>
           <DescriptionListDescription className="padded_text">
-            <Tooltip
-              headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
-              bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
-            >
-              <div>
-                { intl.formatMessage(messages.syncCollections) }
-                <OutlinedQuestionCircleIcon />
-              </div>
-            </Tooltip>
+            <Level hasGutter>
+              <LevelItem>
+                <div>
+                  { intl.formatMessage(messages.syncCollections) }
+                </div>
+              </LevelItem>
+              <LevelItem>
+                <Popover
+                  headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
+                  bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
+                >
+                  <div>
+                    <OutlinedQuestionCircleIcon />
+                  </div>
+                </Popover>
+              </LevelItem>
+            </Level>
           </DescriptionListDescription>
         </DescriptionListGroup>
       </DescriptionList>
