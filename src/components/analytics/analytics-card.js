@@ -190,10 +190,6 @@ const AnalyticsCard = () => {
     </Fragment>;
 
   const renderAnalyticsCards = () => {
-    if (!isAnalyticsAvailable) {
-      return <ConfigureAnalyticsCard/>;
-    }
-
     if (isError) {
       return <ErrorCard/>;
     }
@@ -231,18 +227,20 @@ const AnalyticsCard = () => {
   };
 
   return (
-    <Fragment>
-      <Card className='ins-c-dashboard__card'>
-        <CardTitle>
-          <Title headingLevel="h3">
-            { intl.formatMessage(messages.analyticsTitle) }
-          </Title>
-        </CardTitle>
-        <CardBody>
-          { renderAnalyticsCards() }
-        </CardBody>
-      </Card>
-    </Fragment>
+    !isAnalyticsAvailable ?
+      <ConfigureAnalyticsCard/> :
+      <Fragment>
+        <Card className='ins-c-dashboard__card'>
+          <CardTitle>
+            <Title headingLevel="h3">
+              { intl.formatMessage(messages.analyticsTitle) }
+            </Title>
+          </CardTitle>
+          <CardBody>
+            { renderAnalyticsCards() }
+          </CardBody>
+        </Card>
+      </Fragment>
   );
 };
 

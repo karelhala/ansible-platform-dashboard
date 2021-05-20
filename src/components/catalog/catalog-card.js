@@ -80,10 +80,9 @@ const CatalogCard = () => {
     if (isCatalogAdmin) {
       promiseList.push(fetchPlatforms);
     }
+
     return Promise.all(promiseList.map(fn => dispatch(fn()))).then(() => stateDispatch({ type: 'setFetching', payload: false }));
   }, []);
-
-  console.log('Debug - portfolios', portfolios);
 
   const renderCatalogInfo = () => (
     <React.Fragment>

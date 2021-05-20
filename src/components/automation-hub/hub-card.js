@@ -18,7 +18,7 @@ import {
   Stack,
   StackItem,
   Text, TextContent, TextVariants,
-  Title
+  Title, Popover
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -30,6 +30,7 @@ import { contentCounts } from './content-counts';
 import { Logo } from './logo';
 import { release } from '../../utilities/app-history';
 import ErrorCard from '../shared/error-card';
+import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-question-circle-icon';
 
 const initialState = {
   isFetching: true
@@ -120,10 +121,24 @@ const HubCard = () => {
           <DescriptionListTerm>
             { collections?.meta?.count }
           </DescriptionListTerm>
-          <DescriptionListDescription>
-            <Button variant='link' >
-              { intl.formatMessage(messages.syncCollections) }
-            </Button>
+          <DescriptionListDescription className="padded_text">
+            <Level hasGutter>
+              <LevelItem>
+                <div>
+                  { intl.formatMessage(messages.syncCollections) }
+                </div>
+              </LevelItem>
+              <LevelItem>
+                <Popover
+                  headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
+                  bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
+                >
+                  <div>
+                    <OutlinedQuestionCircleIcon />
+                  </div>
+                </Popover>
+              </LevelItem>
+            </Level>
           </DescriptionListDescription>
         </DescriptionListGroup>
       </DescriptionList>
@@ -144,7 +159,7 @@ const HubCard = () => {
         {  featuredCollection &&
         <Flex direction={ { default: 'column' } }>
           <FlexItem>
-            <Level hasGutter="md">
+            <Level hasGutter="xl">
               <LevelItem>
                 <Logo
                   alt={ featuredCollection?.namespace?.company + ' logo' }
@@ -156,6 +171,8 @@ const HubCard = () => {
                 <Label>Certified</Label>
               </LevelItem>
             </Level>
+          </FlexItem>
+          <FlexItem>
             <TextContent>
               <Text component={ TextVariants.small }>Provided by { featuredCollection?.namespace?.company
                   || featuredCollection?.namespace?.name }</Text>
@@ -224,6 +241,8 @@ const HubCard = () => {
             <Button
               component='a'
               variant='link'
+              target="_blank"
+              rel="noopener noreferrer"
               href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html
               /managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
               { intl.formatMessage(messages.learnMoreButton) }&nbsp;

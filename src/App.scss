@@ -27,13 +27,13 @@
     .pf-c-description-list {
       --pf-c-description-list--RowGap: var(--pf-global--spacer--md);
       --pf-c-description-list__group--ColumnGap: var(--pf-global--spacer--0);
-      --pf-c-description-list__group--GridTemplateColumns: 100px auto;
+      --pf-c-description-list__group--GridTemplateColumns: 80px auto;
       display: flex;
       flex-direction: column;
       &__term {
         font-size: var(--pf-global--FontSize--2xl);
         padding-right: var(--pf-global--spacer--sm);
-        text-align: right;
+        text-align: left;
       }
       &__description {
       }
@@ -247,5 +247,13 @@
     --pf-c-card--child--PaddingRight: calc(var(--pf-c-card--child--PaddingRight) * -1);
     --pf-c-card--child--PaddingLeft: calc(var(--pf-c-card--child--PaddingLeft) * -1);
     --pf-c-card--BoxShadow: none;
+  }
+
+  .padded_text {
+    padding-left: var(--pf-global--spacer--md) !important;
+  }
+
+  .md_font {
+    font-size: var(--pf-global--FontSize--md);
   }
 }

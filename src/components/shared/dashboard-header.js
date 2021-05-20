@@ -26,11 +26,11 @@ const DashboardHeader = ({ title, description, renderButtons }) => {
                 { title }
               </Title>
             </FlexItem>
-            <FlexItem spacer={ { default: 'spacer2xl' } }>
+            { (description && description !== '') && <FlexItem spacer={ { default: 'spacer2xl' } }>
               <div className='ins-c-width-limiter' style={ { '--ins-c-width-limiter--MaxWidth': '600px' } }>
                 <p className='ins-c-text--black-400'>{ description }</p>
               </div>
-            </FlexItem>
+            </FlexItem> }
             { renderButtons ? <FlexItem>
               { renderButtons(intl) }
             </FlexItem> : null

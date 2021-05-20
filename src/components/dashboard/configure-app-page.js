@@ -15,6 +15,8 @@ const renderButtons = (intl) => (
           isLarge
           component='a'
           variant='primary'
+          target="_blank"
+          rel="noopener noreferrer"
           href={ `https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html` }>
           { intl.formatMessage(messages.configureLink) }
         </Button>
@@ -30,6 +32,8 @@ const renderAnalyticsConfigButton = (intl) => (
         <Button
           component='a'
           variant='link'
+          target="_blank"
+          rel="noopener noreferrer"
           href={ `https://access.redhat.com/documentation/en-us/
           red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
           { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
