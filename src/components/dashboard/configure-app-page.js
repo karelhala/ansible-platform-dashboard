@@ -34,8 +34,8 @@ const renderAnalyticsConfigButton = (intl) => (
           variant='link'
           target="_blank"
           rel="noopener noreferrer"
-          href={ `https://access.redhat.com/documentation/en-us/
-          red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
+          href={ `https://access.redhat.com/documentation/en-us/` +
+          `red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
           { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
           <ExternalLinkAltIcon />
         </Button>
@@ -51,8 +51,10 @@ const renderCatalogConfigButton = (intl) => (
         <Button
           component='a'
           variant='link'
-          href={ `https://access.redhat.com/documentation/en-us/
-          red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
+          target="_blank"
+          rel="noopener noreferrer"
+          href={ `https://access.redhat.com/documentation/en-us/` +
+          `red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
           { intl.formatMessage(messages.configureCatalogLink) }&nbsp;
           <ExternalLinkAltIcon />
         </Button>
