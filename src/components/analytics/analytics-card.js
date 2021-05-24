@@ -176,7 +176,7 @@ const AnalyticsCard = () => {
             </TextContent>
           </Bullseye>
         </StackItem>
-        <StackItem>
+        <StackItem className="pf-u-pt-sm pf-u-pb-0">
           <Bullseye>
             <Button
               component='a'
@@ -236,7 +236,7 @@ const AnalyticsCard = () => {
               { intl.formatMessage(messages.analyticsTitle) }
             </Title>
           </CardTitle>
-          <CardBody>
+          <CardBody className="pf-u-pb-sm">
             { renderAnalyticsCards() }
           </CardBody>
         </Card>
