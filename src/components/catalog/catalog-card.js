@@ -17,7 +17,7 @@ import {
   GridItem, Label,
   Spinner,
   Text, TextContent, TextVariants,
-  Title, LevelItem, Level, Split, SplitItem
+  Title, Split, SplitItem
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -168,10 +168,11 @@ const CatalogCard = () => {
 
   const orderRow = (order) => {
     return <Grid hasGutter="md">
-      <GridItem span={ 9 }>
-        <Split hasGutter="sm">
+      <GridItem span={ 9 } className="pf-u-pt-sm">
+        <Split>
           <SplitItem>
             <Button
+              className="pf-u-pl-0 pf-u-pt-0"
               component='a'
               variant='link'
               href={ `${release}ansible/catalog/orders/${order?.id}` }>
@@ -192,7 +193,7 @@ const CatalogCard = () => {
           </Text>
         </TextContent>
       </GridItem>
-      <GridItem span={ 3 }>
+      <GridItem span={ 3 } className="pf-u-pt-sm">
         <Label { ...orderStatusMapper[order?.state] } variant="outline">
           { order?.state }
         </Label>
