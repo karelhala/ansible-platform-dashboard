@@ -17,7 +17,7 @@ import {
   GridItem, Label,
   Spinner,
   Text, TextContent, TextVariants,
-  Title
+  Title, LevelItem, Level, Split, SplitItem
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -168,29 +168,34 @@ const CatalogCard = () => {
 
   const orderRow = (order) => {
     return <Grid hasGutter="md">
-      <GridItem span={ 2 } className="pf-u-m-0">
-        <Button
-          className="pf-u-p-0"
-          component='a'
-          variant='link'
-          href={ `${release}ansible/catalog/orders/${order?.id}` }>
-          { order?.id }
-        </Button>
-      </GridItem>
-      <GridItem span={ 6 }>
-        { order?.orderItems[0]?.name }
-      </GridItem>
-      <GridItem span={ 4 }>
-        <Label { ...orderStatusMapper[order?.state] } variant="outline">
-          { order?.state }
-        </Label>
-      </GridItem>
-      <GridItem span={ 12 }>
+      <GridItem span={ 9 }>
+        <Split hasGutter="sm">
+          <SplitItem>
+            <Button
+              component='a'
+              variant='link'
+              href={ `${release}ansible/catalog/orders/${order?.id}` }>
+              { order?.id }
+            </Button>
+          </SplitItem>
+          <SplitItem>
+            <TextContent>
+              <Text component={ TextVariants.p }>
+                { order?.orderItems[0]?.name }
+              </Text>
+            </TextContent>
+          </SplitItem>
+        </Split>
         <TextContent>
           <Text component={ TextVariants.small }>Last updated &nbsp;
             <TimeAgo date={ order?.created_at }/>
           </Text>
         </TextContent>
+      </GridItem>
+      <GridItem span={ 3 }>
+        <Label { ...orderStatusMapper[order?.state] } variant="outline">
+          { order?.state }
+        </Label>
       </GridItem>
     </Grid>;
   };
