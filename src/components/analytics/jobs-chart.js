@@ -5,11 +5,11 @@ import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_
 import chart_color_red_300 from '@patternfly/react-tokens/dist/js/chart_color_red_300';
 
 const JobsChart = (data) => {
-  const [ width, setWidth ] = useState(window.innerWidth * 0.8);
+  const [ width, setWidth ] = useState(window.innerWidth * 0.7);
   const containerRef = React.createRef();
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(window.innerWidth * 0.8);
+      setWidth(window.innerWidth * 0.7);
     }
   }, []);
 

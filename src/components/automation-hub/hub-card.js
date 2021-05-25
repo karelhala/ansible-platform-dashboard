@@ -18,7 +18,7 @@ import {
   Stack,
   StackItem,
   Text, TextContent, TextVariants,
-  Title, Popover
+  Title, Popover, SplitItem, Split
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -147,6 +147,8 @@ const HubCard = () => {
 
   const renderHubFeaturedCollection = () => {
     const featuredCollection = collection?.data ? collection?.data[0] : null;
+    console.log('Debug - featured collection: ', featuredCollection);
+
     const content = featuredCollection ? contentCounts(
       featuredCollection.latest_version?.metadata?.contents
     ) : undefined;
@@ -159,7 +161,7 @@ const HubCard = () => {
         {  featuredCollection &&
         <Flex direction={ { default: 'column' } }>
           <FlexItem>
-            <Level hasGutter="xl">
+            <Level hasGutter="sm">
               <LevelItem>
                 <Logo
                   alt={ featuredCollection?.namespace?.company + ' logo' }
@@ -173,10 +175,22 @@ const HubCard = () => {
             </Level>
           </FlexItem>
           <FlexItem>
-            <TextContent>
-              <Text component={ TextVariants.small }>Provided by { featuredCollection?.namespace?.company
+            <Split hasGutter="sm">
+              <SplitItem>
+                <Button
+                  component='a'
+                  variant='link'
+                  className="pf-u-p-0"
+                  href={ `${release}ansible/automation-hub/repo/published/${featuredCollection?.namespace?.name}/` +
+                  `${featuredCollection?.latest_version?.name || featuredCollection?.name}` }>
+                  { featuredCollection?.latest_version?.name || featuredCollection?.name }
+                </Button>
+              </SplitItem>
+              <SplitItem>
+                <Text component={ TextVariants.small }> Provided by { featuredCollection?.namespace?.company
                   || featuredCollection?.namespace?.name }</Text>
-            </TextContent>
+              </SplitItem>
+            </Split>
           </FlexItem>
           <FlexItem>
             <TextContent>
