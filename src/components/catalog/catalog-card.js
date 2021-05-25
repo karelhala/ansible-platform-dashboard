@@ -99,7 +99,7 @@ const CatalogCard = () => {
             <Button
               component='a'
               variant='link'
-              href={ `${release}ansible/catalog/portfolio-items` }>
+              href={ `${release}ansible/catalog/products` }>
               { intl.formatMessage(messages.products) }
             </Button>
           </DescriptionListDescription>
@@ -112,7 +112,7 @@ const CatalogCard = () => {
             <Button
               component='a'
               variant='link'
-              href={ `${release}ansible/catalog` }>
+              href={ `${release}ansible/catalog/portfolios` }>
               { intl.formatMessage(messages.portfolios) }
             </Button>
           </DescriptionListDescription>
@@ -124,7 +124,9 @@ const CatalogCard = () => {
               { platforms?.meta?.count }
             </DescriptionListTerm>
             <DescriptionListDescription>
-              <Button variant='link'>
+              <Button variant='link'
+                component='a'
+                href={ `${release}ansible/catalog/platforms` }>
                 { intl.formatMessage(messages.platforms) }
               </Button>
             </DescriptionListDescription>
@@ -151,9 +153,14 @@ const CatalogCard = () => {
               />
             </FlexItem>
             <FlexItem>
-              <TextContent component={ TextVariants.p }>
+              <Button
+                className="pf-u-pl-0 pf-u-pt-0"
+                component='a'
+                variant='link'
+                href={ `${release}ansible/catalog/products?portfolio=${featuredProduct?.portfolio_id}` +
+                `&portfolio-item=${featuredProduct.id}&source=${featuredProduct.service_offering_source_ref}` }>
                 { featuredProduct?.name }
-              </TextContent>
+              </Button>
             </FlexItem>
             <FlexItem>
               <TextContent>
