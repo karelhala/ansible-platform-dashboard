@@ -176,6 +176,7 @@ const HubCard = () => {
           </FlexItem>
           <FlexItem>
             <TextContent>
+              <Text component={ TextVariants.small }>{ featuredCollection?.latest_version?.name || featuredCollection?.name }</Text>
               <Text component={ TextVariants.small }>Provided by { featuredCollection?.namespace?.company
                   || featuredCollection?.namespace?.name }</Text>
             </TextContent>
