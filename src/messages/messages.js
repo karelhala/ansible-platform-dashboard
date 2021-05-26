@@ -141,8 +141,8 @@ const messages = defineMessages({
   noAppDescription: {
     id: 'no.app.description',
     defaultMessage: 'Red Hat Ansible Automation Platform simplifies the development and operation of automation' +
-        '                  workloads across diverse hybrid environments using Ansible Tower, certified and supported content' +
-        '                  collections, and the hosted services on cloud.redhat.com'
+        ' workloads across diverse hybrid environments using the Automation Controller, certified and supported content' +
+        ' collections, and the hosted services on cloud.redhat.com'
   },
   configureLink: {
     id: 'configure.button',
