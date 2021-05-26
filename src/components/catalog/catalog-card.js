@@ -17,7 +17,7 @@ import {
   GridItem, Label,
   Spinner,
   Text, TextContent, TextVariants,
-  Title
+  Title, Split, SplitItem
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -99,7 +99,7 @@ const CatalogCard = () => {
             <Button
               component='a'
               variant='link'
-              href={ `${release}ansible/catalog/portfolio-items` }>
+              href={ `${release}ansible/catalog/products` }>
               { intl.formatMessage(messages.products) }
             </Button>
           </DescriptionListDescription>
@@ -112,7 +112,7 @@ const CatalogCard = () => {
             <Button
               component='a'
               variant='link'
-              href={ `${release}ansible/catalog` }>
+              href={ `${release}ansible/catalog/portfolios` }>
               { intl.formatMessage(messages.portfolios) }
             </Button>
           </DescriptionListDescription>
@@ -124,7 +124,9 @@ const CatalogCard = () => {
               { platforms?.meta?.count }
             </DescriptionListTerm>
             <DescriptionListDescription>
-              <Button variant='link'>
+              <Button variant='link'
+                component='a'
+                href={ `${release}ansible/catalog/platforms` }>
                 { intl.formatMessage(messages.platforms) }
               </Button>
             </DescriptionListDescription>
@@ -151,9 +153,14 @@ const CatalogCard = () => {
               />
             </FlexItem>
             <FlexItem>
-              <TextContent component={ TextVariants.p }>
+              <Button
+                className="pf-u-pl-0 pf-u-pt-0"
+                component='a'
+                variant='link'
+                href={ `${release}ansible/catalog/products?portfolio=${featuredProduct?.portfolio_id}` +
+                `&portfolio-item=${featuredProduct.id}&source=${featuredProduct.service_offering_source_ref}` }>
                 { featuredProduct?.name }
-              </TextContent>
+              </Button>
             </FlexItem>
             <FlexItem>
               <TextContent>
@@ -168,29 +175,35 @@ const CatalogCard = () => {
 
   const orderRow = (order) => {
     return <Grid hasGutter="md">
-      <GridItem span={ 2 } className="pf-u-m-0">
-        <Button
-          className="pf-u-p-0"
-          component='a'
-          variant='link'
-          href={ `${release}ansible/catalog/orders/${order?.id}` }>
-          { order?.id }
-        </Button>
-      </GridItem>
-      <GridItem span={ 6 }>
-        { order?.orderItems[0]?.name }
-      </GridItem>
-      <GridItem span={ 4 }>
-        <Label { ...orderStatusMapper[order?.state] } variant="outline">
-          { order?.state }
-        </Label>
-      </GridItem>
-      <GridItem span={ 12 }>
+      <GridItem span={ 9 } className="pf-u-pt-sm">
+        <Split>
+          <SplitItem>
+            <Button
+              className="pf-u-pl-0 pf-u-pt-0"
+              component='a'
+              variant='link'
+              href={ `${release}ansible/catalog/orders/${order?.id}` }>
+              { order?.id }
+            </Button>
+          </SplitItem>
+          <SplitItem>
+            <TextContent>
+              <Text component={ TextVariants.p }>
+                { order?.orderItems[0]?.name }
+              </Text>
+            </TextContent>
+          </SplitItem>
+        </Split>
         <TextContent>
           <Text component={ TextVariants.small }>Last updated &nbsp;
             <TimeAgo date={ order?.created_at }/>
           </Text>
         </TextContent>
+      </GridItem>
+      <GridItem span={ 3 } className="pf-u-pt-sm">
+        <Label { ...orderStatusMapper[order?.state] } variant="outline">
+          { order?.state }
+        </Label>
       </GridItem>
     </Grid>;
   };
