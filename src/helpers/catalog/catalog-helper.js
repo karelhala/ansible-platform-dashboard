@@ -1,9 +1,50 @@
 /* eslint camelcase: 0 */
-import { getAxiosInstance } from '../shared/user-login';
-import { CATALOG_API_BASE, SOURCES_API_BASE } from '../../utilities/constants';
+import { getAxiosInstance, getGraphqlInstance } from '../shared/user-login';
+import { CATALOG_API_BASE, SOURCES_API_BASE, CATALOG_INVENTORY_API_BASE } from '../../utilities/constants';
 import { defaultSettings } from '../shared/pagination';
 
 const axiosInstance = getAxiosInstance();
+const { post } = getGraphqlInstance();
+
+const sourcesQuery = `
+query {
+  application_types (filter: { name: "/insights/platform/catalog" }) {
+    id
+    name
+    sources {
+      id
+      name
+      source_type_id
+    }
+  }
+}`;
+
+const getSourcesDetails = (
+  sourceIds
+) => {
+  return axiosInstance.get(
+    `${CATALOG_INVENTORY_API_BASE}/sources?limit=${sourceIds.length ||
+    defaultSettings.limit}${sourceIds.length ? '&' : ''}${sourceIds
+    .map((sourceId) => `filter[id][]=${sourceId}`)
+    .join('&')}`
+  );
+};
+
+export const getPlatforms = () =>
+  post(`${SOURCES_API_BASE}/graphql`, { query: sourcesQuery })
+  .then(({ data: { application_types }}) => application_types)
+  .then(([{ sources }]) => {
+    return getSourcesDetails(sources.map((source) => source.id)).then(
+      (sourceDetails) => {
+        return sources.map((source) => ({
+          ...source,
+          ...sourceDetails.data.find(
+            (sourceDetail) => sourceDetail.id === source.id
+          )
+        }));
+      }
+    );
+  });
 
 const getOrderItems = (orderIds) => {
   return axiosInstance.get(
@@ -51,11 +92,6 @@ export const getOrders = () => {
 export const listPortfolios = (limit = 1) => {
   return axiosInstance.get(
     `${CATALOG_API_BASE}/portfolios?limit=${limit}`);
-};
-
-export const getPlatforms = (limit = 1) => {
-  return axiosInstance.get(
-    `${SOURCES_API_BASE}/sources?limit=${limit}`);
 };
 
 export const listPortfolioItems = (

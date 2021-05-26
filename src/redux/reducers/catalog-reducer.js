@@ -25,7 +25,7 @@ export const catalogInitialState = {
     data: [],
     meta: { ...defaultSettings }
   },
-  platforms: {
+  sources: {
     data: [],
     meta: { ...defaultSettings }
   },
@@ -65,7 +65,7 @@ const setPortfolioItems = (state, { payload }) => ({
 
 const setPlatforms = (state, { payload }) => ({
   ...state,
-  platforms: payload
+  sources: payload
 });
 
 export default {
