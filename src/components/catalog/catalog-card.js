@@ -52,17 +52,17 @@ const catalogState = (state, action) => {
 const CatalogCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(catalogState, initialState);
 
-  const { isCatalogAvailable, isError, portfolioItems, portfolios, platforms, orders } = useSelector(
+  const { isCatalogAvailable, isError, portfolioItems, portfolios, sources, orders } = useSelector(
     ({
       catalogReducer: {
         isCatalogAvailable,
         isError,
         portfolioItems,
         portfolios,
-        platforms,
+        sources,
         orders
       }
-    }) => ({ isCatalogAvailable, isError, portfolioItems, portfolios, platforms, orders })
+    }) => ({ isCatalogAvailable, isError, portfolioItems, portfolios, sources, orders })
   );
 
   const {
@@ -121,7 +121,7 @@ const CatalogCard = () => {
         <Fragment>
           <DescriptionListGroup>
             <DescriptionListTerm>
-              { platforms?.meta?.count }
+              { sources?.length }
             </DescriptionListTerm>
             <DescriptionListDescription>
               <Button variant='link'
