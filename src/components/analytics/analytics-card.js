@@ -14,7 +14,7 @@ import {
   Label,
   Spinner,
   Text,
-  Title, Button, TextContent, TextVariants, Stack, StackItem, SplitItem, Split
+  Title, Button, Stack, StackItem
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -151,30 +151,9 @@ const AnalyticsCard = () => {
         { intl.formatMessage(messages.analyticsJobTitle) }
       </Title>
       <br/>
-      <Stack direction={ { default: 'column' } }>
+      <Stack>
         <StackItem>
-          <Split automation-analytics_other>
-            <SplitItem>
-              <TextContent>
-                <Text style={ { 'writing-mode': 'vertical-lr', paddingBottom: 20,
-                  transform: 'rotate(180deg)' } }>
-                  { intl.formatMessage(messages.jobsAcrossClusters) }
-                </Text>
-              </TextContent>
-            </SplitItem>
-            <SplitItem isFilled>
-              <JobsChart items={ jobsData?.payload?.items }/>
-            </SplitItem>
-          </Split>
-        </StackItem>
-        <StackItem>
-          <Bullseye>
-            <TextContent>
-              <Text component={ TextVariants.small }>
-                { intl.formatMessage(messages.timeDayLegend) }
-              </Text>
-            </TextContent>
-          </Bullseye>
+          <JobsChart items={ jobsData?.payload?.items }/>
         </StackItem>
         <StackItem className="pf-u-pt-sm pf-u-pb-0">
           <Bullseye>

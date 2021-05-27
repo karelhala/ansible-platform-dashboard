@@ -3,13 +3,17 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfl
 
 import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_green_400';
 import chart_color_red_300 from '@patternfly/react-tokens/dist/js/chart_color_red_300';
+import messages from '../../messages/messages';
+import { useIntl } from 'react-intl';
 
 const JobsChart = (data) => {
-  const [ width, setWidth ] = useState(window.innerWidth * 0.7);
+  const [ width, setWidth ] = useState(window.innerWidth * 0.75);
   const containerRef = React.createRef();
+  const intl = useIntl();
+
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(window.innerWidth * 0.7);
+      setWidth(containerRef.current.clientWidth);
     }
   }, []);
 
@@ -71,16 +75,16 @@ const JobsChart = (data) => {
         domainPadding={ { x: [ 30, 25 ]} }
         barRatio={ 1 }
         height={ 225 }
-        width={ width }
         padding={ {
-          bottom: 40,
-          left: 50,
+          bottom: 60,
+          left: 60,
           right: 20,
           top: 20
         } }
+        width={ width }
       >
-        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap />
-        <ChartAxis dependentAxis showGrid />
+        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } />
+        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) }/>
         <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
           { renderFailedJobs() }
           { renderSuccessfulJobs() }
