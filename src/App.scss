@@ -27,7 +27,7 @@
     .pf-c-description-list {
       --pf-c-description-list--RowGap: var(--pf-global--spacer--md);
       --pf-c-description-list__group--ColumnGap: var(--pf-global--spacer--0);
-      --pf-c-description-list__group--GridTemplateColumns: 75px auto;
+      --pf-c-description-list__group--GridTemplateColumns: 60px auto;
       display: flex;
       flex-direction: column;
       &__term {
