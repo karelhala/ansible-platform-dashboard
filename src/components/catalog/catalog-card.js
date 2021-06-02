@@ -182,7 +182,7 @@ const CatalogCard = () => {
               className="pf-u-pl-0 pf-u-pt-0"
               component='a'
               variant='link'
-              href={ `${release}ansible/catalog/orders/${order?.id}` }>
+              href={ `${release}ansible/catalog/orders/order?order=${order?.id}` }>
               { order?.id }
             </Button>
           </SplitItem>

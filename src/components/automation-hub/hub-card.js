@@ -174,22 +174,18 @@ const HubCard = () => {
             </Level>
           </FlexItem>
           <FlexItem>
-            <Split hasGutter="sm">
-              <SplitItem>
-                <Button
-                  component='a'
-                  variant='link'
-                  className="pf-u-p-0"
-                  href={ `${release}ansible/automation-hub/repo/published/${featuredCollection?.namespace?.name}/` +
+            <Button
+              component='a'
+              variant='link'
+              className="pf-u-p-0"
+              href={ `${release}ansible/automation-hub/repo/published/${featuredCollection?.namespace?.name}/` +
                   `${featuredCollection?.latest_version?.name || featuredCollection?.name}` }>
-                  { featuredCollection?.latest_version?.name || featuredCollection?.name }
-                </Button>
-              </SplitItem>
-              <SplitItem>
-                <Text component={ TextVariants.small }> Provided by { featuredCollection?.namespace?.company
+              { featuredCollection?.latest_version?.name || featuredCollection?.name }
+            </Button>
+            <TextContent>
+              <Text component={ TextVariants.small }> Provided by { featuredCollection?.namespace?.company
                   || featuredCollection?.namespace?.name }</Text>
-              </SplitItem>
-            </Split>
+            </TextContent>
           </FlexItem>
           <FlexItem>
             <TextContent>
@@ -211,21 +207,21 @@ const HubCard = () => {
               </GridItem>
               <GridItem span="4">
                 <TextContent>
-                  <Text component={ TextVariants.small }>
+                  <Text component={ TextVariants.p }>
                     { intl.formatMessage(messages.modules) }
                   </Text>
                 </TextContent>
               </GridItem>
               <GridItem span="4">
                 <TextContent>
-                  <Text component={ TextVariants.small }>
+                  <Text component={ TextVariants.p }>
                     { intl.formatMessage(messages.roles) }
                   </Text>
                 </TextContent>
               </GridItem>
               <GridItem span="4">
                 <TextContent>
-                  <Text component={ TextVariants.small }>
+                  <Text component={ TextVariants.p }>
                     { intl.formatMessage(messages.plugins) }
                   </Text>
                 </TextContent>
