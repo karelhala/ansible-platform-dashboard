@@ -134,7 +134,7 @@ const AnalyticsCard = () => {
                   <Button
                     component='a'
                     variant='link'
-                    href={ `${release}ansible/clusters` }>
+                    href={ `${release}ansible/insights/clusters` }>
                     { intl.formatMessage(messages.totalClusters) }
                   </Button>
                 </DescriptionListDescription>
