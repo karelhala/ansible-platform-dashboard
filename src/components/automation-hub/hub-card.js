@@ -18,7 +18,7 @@ import {
   Stack,
   StackItem,
   Text, TextContent, TextVariants,
-  Title, Popover, SplitItem, Split
+  Title, Popover
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
