@@ -5,7 +5,7 @@ import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_
 import chart_color_red_300 from '@patternfly/react-tokens/dist/js/chart_color_red_300';
 import messages from '../../messages/messages';
 import { useIntl } from 'react-intl';
-import chart_axis_axis_label_Padding from '@patternfly/react-tokens';
+import c_content_small_FontSize from '@patternfly/react-tokens';
 
 const JobsChart = (data) => {
   const [ width, setWidth ] = useState(window.innerWidth * 0.75);
@@ -67,6 +67,17 @@ const JobsChart = (data) => {
     chart_color_red_300.value,
     chart_color_green_400.value
   ];
+
+  const sharedAxisStyles = {
+    tickLabels: {
+      fontSize: 10
+    },
+    axisLabel: {
+      paddingLeft: 50,
+      fontSize: c_content_small_FontSize
+    }
+  };
+
   return (
 
     <div ref={ containerRef } style={ { height: '225px', width } }>
@@ -78,14 +89,15 @@ const JobsChart = (data) => {
         height={ 225 }
         padding={ {
           bottom: 60,
-          left: 60,
+          left: 80,
           right: 20,
           top: 20
         } }
         width={ width }
+        style={ { padding: 0, margin: 0 } }
       >
-        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } />
-        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ { chart_axis_axis_label_Padding: 30 } }/>
+        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ sharedAxisStyles }/>
+        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ sharedAxisStyles }/>
         <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
           { renderFailedJobs() }
           { renderSuccessfulJobs() }
