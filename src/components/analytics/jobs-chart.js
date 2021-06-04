@@ -14,7 +14,7 @@ const JobsChart = (data) => {
 
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(containerRef.current.clientWidth);
+      setWidth(window.innerWidth * 0.75);
     }
   }, []);
 
