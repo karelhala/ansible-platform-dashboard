@@ -13,7 +13,7 @@ const messages = defineMessages({
   },
   analyticsTitle: {
     id: 'analytics.title',
-    defaultMessage: 'Insights Analytics'
+    defaultMessage: 'Insights Ansible Automation Platform'
   },
   analyticsCardDescription: {
     id: 'analytics.description',
@@ -164,7 +164,7 @@ const messages = defineMessages({
   },
   configureAnalyticsTitle: {
     id: 'configure.analytics.title',
-    defaultMessage: 'Connect Insights Analytics'
+    defaultMessage: 'Connect Insights for Ansible Automation Platform'
   },
   configureAnalyticsDescription: {
     id: 'configure.analytics.description',
@@ -194,7 +194,7 @@ const messages = defineMessages({
   },
   configureAnalyticsLink: {
     id: 'configure.analytics.link',
-    defaultMessage: 'Configure Insights Analytics'
+    defaultMessage: 'Configure Insights Ansible Automation Platform'
   },
   configureCatalogLink: {
     id: 'configure.catalog.link',

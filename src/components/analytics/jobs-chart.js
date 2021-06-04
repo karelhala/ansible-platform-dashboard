@@ -8,13 +8,13 @@ import { useIntl } from 'react-intl';
 import c_content_small_FontSize from '@patternfly/react-tokens';
 
 const JobsChart = (data) => {
-  const [ width, setWidth ] = useState(window.innerWidth * 0.75);
+  const [ width, setWidth ] = useState(window.innerWidth * 0.7);
   const containerRef = React.createRef();
   const intl = useIntl();
 
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(window.innerWidth * 0.75);
+      setWidth(window.innerWidth * 0.7);
     }
   }, []);
 
@@ -43,7 +43,7 @@ const JobsChart = (data) => {
     const failBars = bars.map((tick) => {
       return {
         x: tick.x,
-        y: tick.y.failed_count,
+        y: tick.y.failed_count + 100,
         name: 'Failed',
         label: `${tick.x} Successful: ${tick.y.failed_count}`
       };
@@ -68,12 +68,22 @@ const JobsChart = (data) => {
     chart_color_green_400.value
   ];
 
-  const sharedAxisStyles = {
+  const yAxisStyles = {
     tickLabels: {
       fontSize: 10
     },
     axisLabel: {
-      paddingLeft: 50,
+      padding: 45,
+      fontSize: c_content_small_FontSize
+    }
+  };
+
+  const xAxisStyles = {
+    tickLabels: {
+      fontSize: 10
+    },
+    axisLabel: {
+      padding: 30,
       fontSize: c_content_small_FontSize
     }
   };
@@ -89,15 +99,15 @@ const JobsChart = (data) => {
         height={ 225 }
         padding={ {
           bottom: 60,
-          left: 80,
+          left: 60,
           right: 20,
           top: 20
         } }
         width={ width }
         style={ { padding: 0, margin: 0 } }
       >
-        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ sharedAxisStyles }/>
-        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ sharedAxisStyles }/>
+        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ xAxisStyles }/>
+        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ yAxisStyles }/>
         <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
           { renderFailedJobs() }
           { renderSuccessfulJobs() }
