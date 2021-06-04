@@ -36,7 +36,7 @@ SPANDX_CONFIG="./profiles/local-frontend.js" bash $PROXY_PATH/scripts/run.sh
 
 - The ansible automation platform dashboard repo uses Travis to deploy the webpack build to another Github repo defined in `.travis.yml`
   - That Github repo has the following branches:
-    - `ci-beta` (deployed by pushing to `master` or `main` on this repo)
+    - `ci-beta` (deployed by pushing to `main` or `main` on this repo)
     - `ci-stable` (deployed by pushing to `ci-stable` on this repo)
     - `prod-beta` (deployed by pushing to `prod-beta` on this repo)
     - `prod-stable` (deployed by pushing to `prod-stable` on this repo)

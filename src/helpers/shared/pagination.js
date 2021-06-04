@@ -1,5 +1,5 @@
 export const defaultSettings = {
-  limit: 50,
+  limit: 1,
   offset: 0,
   count: 0,
   filter: ''

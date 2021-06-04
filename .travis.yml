@@ -1,24 +1,21 @@
+---
 language: node_js
-sudo: false
 cache:
   directories:
-  - "$HOME/.npm"
+    - "$HOME/.npm"
 node_js:
-- '12'
+  - '12'
+install:
+  - npm install
+  - npm install -g codecov
+script:
+  - npm run travis:verify
+  - codecov
+after_success:
+  - curl -sSL https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master/src/bootstrap.sh | bash -s
 env:
   global:
-  - NODE_OPTIONS="--max-old-space-size=4096 --max_old_space_size=4096"
-install:
-- npm install
-- npm install -g codecov
-before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
-script:
-- npm run travis:verify
-- codecov
-after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-after_success:
-- curl -sSL https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master/src/bootstrap.sh | bash -s
+    - REPO="git@github.com:RedHatInsights/ansible-platform-dashboard-build"
+    - REPO_DIR="ansible-platform-dashboard-build"
+    - BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+    - NODE_OPTIONS="--max-old-space-size=4096 --max_old_space_size=4096"
