@@ -5,6 +5,7 @@ import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_
 import chart_color_red_300 from '@patternfly/react-tokens/dist/js/chart_color_red_300';
 import messages from '../../messages/messages';
 import { useIntl } from 'react-intl';
+import chart_axis_axis_label_Padding from '@patternfly/react-tokens';
 
 const JobsChart = (data) => {
   const [ width, setWidth ] = useState(window.innerWidth * 0.75);
@@ -84,7 +85,7 @@ const JobsChart = (data) => {
         width={ width }
       >
         <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } />
-        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) }/>
+        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ { chart_axis_axis_label_Padding: 30 } }/>
         <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
           { renderFailedJobs() }
           { renderSuccessfulJobs() }

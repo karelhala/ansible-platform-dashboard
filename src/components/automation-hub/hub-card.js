@@ -123,19 +123,15 @@ const HubCard = () => {
           </DescriptionListTerm>
           <DescriptionListDescription className="padded_text">
             <Level hasGutter>
-              <LevelItem>
-                <div>
-                  { intl.formatMessage(messages.syncCollections) }
-                </div>
+              <LevelItem style={ { marginRight: 8 } }>
+                { intl.formatMessage(messages.syncCollections) }
               </LevelItem>
               <LevelItem>
                 <Popover
                   headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
                   bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
                 >
-                  <div>
-                    <OutlinedQuestionCircleIcon />
-                  </div>
+                  <Button variant="link" style={ { padding: 0 } } icon={ <OutlinedQuestionCircleIcon /> }/>
                 </Popover>
               </LevelItem>
             </Level>
