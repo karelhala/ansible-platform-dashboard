@@ -43,9 +43,9 @@ const JobsChart = (data) => {
     const failBars = bars.map((tick) => {
       return {
         x: tick.x,
-        y: tick.y.failed_count + 100,
+        y: tick.y.failed_count,
         name: 'Failed',
-        label: `${tick.x} Successful: ${tick.y.failed_count}`
+        label: `${tick.x} Failed: ${tick.y.failed_count}`
       };
     });
     return <ChartBar data={ failBars }
