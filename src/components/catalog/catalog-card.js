@@ -86,10 +86,11 @@ const CatalogCard = () => {
 
   const renderCatalogInfo = () => (
     <React.Fragment>
-      <Text>
-        { intl.formatMessage(messages.catalogCardDescription) }
-      </Text>
-      <br/>
+      <TextContent>
+        <Text>
+          { intl.formatMessage(messages.catalogCardDescription) } <br/><br/>
+        </Text>
+      </TextContent>
       <DescriptionList isHorizontal>
         <DescriptionListGroup>
           <DescriptionListTerm>
@@ -139,7 +140,7 @@ const CatalogCard = () => {
   const renderCatalogFeaturedProduct = () => {
     const featuredProduct = portfolioItems?.data ? portfolioItems?.data[0] : null;
     return (
-      <Fragment>
+      <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfStretch' } }>
         <Title headingLevel="h4">
           { intl.formatMessage(messages.catalogCardFeaturedProduct) }
         </Title>
@@ -169,8 +170,9 @@ const CatalogCard = () => {
                 </Text>
               </TextContent>
             </FlexItem>
-          </Flex> }
-      </Fragment>);
+          </Flex>
+        }
+      </Flex>);
   };
 
   const orderRow = (order) => {
@@ -208,9 +210,29 @@ const CatalogCard = () => {
     </Grid>;
   };
 
+  const emptyOrdersList = () => (<Flex direction={ { default: 'column' } }>
+    <FlexItem alignSelf={ { default: 'alignSelfCenter' } }>
+      <TextContent>
+        <Text component={ TextVariants.h6 }>
+          { intl.formatMessage(messages.noOrdersTitle) }
+        </Text>
+      </TextContent>
+    </FlexItem>
+    <FlexItem  alignSelf={ { default: 'alignSelfCenter' } }>
+      <TextContent>
+        <Text component={ TextVariants.small }>
+          { intl.formatMessage(messages.noOrdersDescription) }
+        </Text>
+      </TextContent>
+    </FlexItem>
+  </Flex>);
+
   const renderCatalogOther = () => {
+    const isEmptyList = !(orders?.meta?.count > 0);
     return (
-      <Flex direction={ { default: 'column' } }>
+      <Flex direction={ { default: 'column' } }
+        justifyContent={ { default: 'justifyContentSpaceBetween' } }
+        alignSelf={ { default: 'alignSelfStretch' } }>
         <FlexItem>
           <Flex>
             <FlexItem>
@@ -218,12 +240,12 @@ const CatalogCard = () => {
                 { intl.formatMessage(messages.catalogCardLatestOrdersTitle) }
               </Title>
             </FlexItem>
-            <FlexItem>
+            { !isEmptyList && <FlexItem>
               <Badge isRead>{ orders?.meta?.count }</Badge>
-            </FlexItem>
+            </FlexItem> }
           </Flex>
         </FlexItem>
-        { orders?.data?.map((order) => (
+        { isEmptyList ? emptyOrdersList() : orders?.data?.map((order) => (
           <FlexItem key={ order?.id }>
             <Flex direction={ { default: 'column' } }>
               <FlexItem>
@@ -265,17 +287,15 @@ const CatalogCard = () => {
     else {
       return (
         <Flex className="automation-hub_card" >
-          <FlexItem>
+          <Flex>
             { renderCatalogInfo() }
-          </FlexItem>
+          </Flex>
           <Divider/>
-          <FlexItem>
+          <Flex>
             { renderCatalogFeaturedProduct() }
-          </FlexItem>
+          </Flex>
           <Divider/>
-          <FlexItem>
-            { renderCatalogOther() }
-          </FlexItem>
+          { renderCatalogOther() }
         </Flex>
       );
     }

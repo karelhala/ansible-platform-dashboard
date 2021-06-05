@@ -84,6 +84,14 @@ const messages = defineMessages({
     id: 'hub.title',
     defaultMessage: 'Automation Hub'
   },
+  noOrdersTitle: {
+    id: 'noOrders.title',
+    defaultMessage: 'No orders yet'
+  },
+  noOrdersDescription: {
+    id: 'noOrdersDescription',
+    defaultMessage: 'Orders show up here when an order is placed.'
+  },
   hubCardDescription: {
     id: 'hub.description',
     defaultMessage: 'Find and use content that is supported by Red Hat and our partners to deliver reassurance for the most demanding environments'

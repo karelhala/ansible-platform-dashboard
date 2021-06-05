@@ -8,13 +8,13 @@ import { useIntl } from 'react-intl';
 import c_content_small_FontSize from '@patternfly/react-tokens';
 
 const JobsChart = (data) => {
-  const [ width, setWidth ] = useState(window.innerWidth * 0.7);
+  const [ width, setWidth ] = useState(window.innerWidth * 0.75);
   const containerRef = React.createRef();
   const intl = useIntl();
 
   useEffect(() => {
     if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(window.innerWidth * 0.7);
+      setWidth(window.innerWidth * 0.75);
     }
   }, []);
 
