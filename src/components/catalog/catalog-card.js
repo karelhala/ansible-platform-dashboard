@@ -13,11 +13,10 @@ import {
   DescriptionListTerm,
   Flex,
   FlexItem,
-  Grid,
-  GridItem, Label,
+  Label,
   Spinner,
   Text, TextContent, TextVariants,
-  Title, Split, SplitItem
+  Title
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -176,10 +175,10 @@ const CatalogCard = () => {
   };
 
   const orderRow = (order) => {
-    return <Grid hasGutter="md">
-      <GridItem span={ 9 } className="pf-u-pt-sm">
-        <Split>
-          <SplitItem>
+    return (
+      <Flex  direction={ { default: 'column' } }>
+        <Flex className="pf-u-mb-0 pf-u-mt-md">
+          <FlexItem>
             <Button
               className="pf-u-pl-0 pf-u-pt-0"
               component='a'
@@ -187,27 +186,30 @@ const CatalogCard = () => {
               href={ `${release}ansible/catalog/orders/order?order=${order?.id}` }>
               { order?.id }
             </Button>
-          </SplitItem>
-          <SplitItem>
+          </FlexItem>
+          <FlexItem>
             <TextContent>
               <Text component={ TextVariants.p }>
                 { order?.orderItems[0]?.name }
               </Text>
             </TextContent>
-          </SplitItem>
-        </Split>
-        <TextContent>
-          <Text component={ TextVariants.small }>Last updated &nbsp;
-            <TimeAgo date={ order?.created_at }/>
-          </Text>
-        </TextContent>
-      </GridItem>
-      <GridItem span={ 3 } className="pf-u-pt-sm">
-        <Label { ...orderStatusMapper[order?.state] } variant="outline">
-          { order?.state }
-        </Label>
-      </GridItem>
-    </Grid>;
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } }>
+            <Label { ...orderStatusMapper[order?.state] } variant="outline">
+              { order?.state }
+            </Label>
+          </FlexItem>
+        </Flex>
+        <Flex>
+          <FlexItem>
+            <TextContent>
+              <Text component={ TextVariants.small }>Last updated &nbsp;
+                <TimeAgo date={ order?.created_at }/>
+              </Text>
+            </TextContent>
+          </FlexItem>
+        </Flex>
+      </Flex>);
   };
 
   const emptyOrdersList = () => (<Flex direction={ { default: 'column' } }>
@@ -246,13 +248,8 @@ const CatalogCard = () => {
           </Flex>
         </FlexItem>
         { isEmptyList ? emptyOrdersList() : orders?.data?.map((order) => (
-          <FlexItem key={ order?.id }>
-            <Flex direction={ { default: 'column' } }>
-              <FlexItem>
-                { orderRow(order) }
-              </FlexItem>
-            </Flex>
-          </FlexItem>)) }
+          orderRow(order)
+        )) }
         <FlexItem>
           <Bullseye>
             <Button
