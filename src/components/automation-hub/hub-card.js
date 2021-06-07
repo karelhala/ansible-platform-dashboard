@@ -85,11 +85,11 @@ const HubCard = () => {
 
   const renderHubInfo = () => (
     <React.Fragment>
-      <Text>
-        { intl.formatMessage(messages.hubCardDescription) }
-      </Text>
-      <br/>
-
+      <TextContent>
+        <Text>
+          { intl.formatMessage(messages.hubCardDescription) } <br/><br/>
+        </Text>
+      </TextContent>
       <DescriptionList isHorizontal isAutoFit autoFitModifier={ { md: '100px', lg: '150px', xl: '200px', '2xl': '300px' } }>
         <DescriptionListGroup>
           <DescriptionListTerm>
@@ -123,19 +123,15 @@ const HubCard = () => {
           </DescriptionListTerm>
           <DescriptionListDescription className="padded_text">
             <Level hasGutter>
-              <LevelItem>
-                <div>
-                  { intl.formatMessage(messages.syncCollections) }
-                </div>
+              <LevelItem style={ { marginRight: 8 } }>
+                { intl.formatMessage(messages.syncCollections) }
               </LevelItem>
               <LevelItem>
                 <Popover
                   headerContent={ <div>{ intl.formatMessage(messages.syncCollections) }</div> }
                   bodyContent={ <div>{ intl.formatMessage(messages.syncCollectionsTooltip) }</div> }
                 >
-                  <div>
-                    <OutlinedQuestionCircleIcon />
-                  </div>
+                  <Button variant="link" style={ { padding: 0 } } icon={ <OutlinedQuestionCircleIcon /> }/>
                 </Popover>
               </LevelItem>
             </Level>
@@ -152,7 +148,7 @@ const HubCard = () => {
       featuredCollection.latest_version?.metadata?.contents
     ) : undefined;
     return (
-      <Fragment>
+      <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfStretch' } }>
         <Title headingLevel="h4">
           { intl.formatMessage(messages.hubCardFeaturedCollectionTitle) }
         </Title>
@@ -229,23 +225,31 @@ const HubCard = () => {
             </Grid>
           </FlexItem>
         </Flex> }
-      </Fragment>);
+      </Flex>);
   };
 
   const renderHubOther = () => {
     return (
-      <Stack hasGutter="lg">
-        <StackItem>
-          <Title headingLevel="h4">
-            { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
-          </Title>
-        </StackItem>
-        <StackItem isFilled>
-          <Text>
-            { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
-          </Text>
-        </StackItem>
-        <StackItem>
+      <Flex direction={ { default: 'column' } }
+        justifyContent={ { default: 'justifyContentSpaceBetween' } }
+        alignSelf={ { default: 'alignSelfStretch' } }>
+        <FlexItem>
+          <Stack hasGutter="sm">
+            <StackItem>
+              <Title headingLevel="h4">
+                { intl.formatMessage(messages.hubCardCertifiedCollectionTitle) }
+              </Title>
+            </StackItem>
+            <StackItem>
+              <TextContent>
+                <Text component={ TextVariants.p }>
+                  { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
+                </Text>
+              </TextContent>
+            </StackItem>
+          </Stack>
+        </FlexItem>
+        <FlexItem>
           <Bullseye>
             <Button
               component='a'
@@ -258,8 +262,8 @@ const HubCard = () => {
               <ExternalLinkAltIcon />
             </Button>
           </Bullseye>
-        </StackItem>
-      </Stack>);
+        </FlexItem>
+      </Flex>);
   };
 
   const renderHubCards = () => {
@@ -279,17 +283,13 @@ const HubCard = () => {
     else {
       return (
         <Flex className="automation-hub_card" >
-          <FlexItem>
+          <Flex>
             { renderHubInfo() }
-          </FlexItem>
+          </Flex>
           <Divider/>
-          <FlexItem>
-            { renderHubFeaturedCollection() }
-          </FlexItem>
+          { renderHubFeaturedCollection() }
           <Divider/>
-          <FlexItem>
-            { renderHubOther() }
-          </FlexItem>
+          { renderHubOther() }
         </Flex>
       );
     }
