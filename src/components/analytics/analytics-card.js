@@ -14,7 +14,7 @@ import {
   Label,
   Spinner,
   Text,
-  Title, Button, Stack, StackItem
+  Title, Button
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -151,11 +151,11 @@ const AnalyticsCard = () => {
         { intl.formatMessage(messages.analyticsJobTitle) }
       </Title>
       <br/>
-      <Stack>
-        <StackItem>
+      <Flex direction={ { default: 'column' } }>
+        <FlexItem className="pf-u-m-0">
           <JobsChart items={ jobsData?.payload?.items }/>
-        </StackItem>
-        <StackItem className="pf-u-pt-sm pf-u-pb-0">
+        </FlexItem>
+        <FlexItem className="pf-u-m-0 pf-u-pt-0 pf-u-pb-0 pf-u-pl-lg" >
           <Bullseye>
             <Button
               component='a'
@@ -164,8 +164,8 @@ const AnalyticsCard = () => {
               { intl.formatMessage(messages.jobsExplorer) }
             </Button>
           </Bullseye>
-        </StackItem>
-      </Stack>
+        </FlexItem>
+      </Flex>
     </Fragment>;
 
   const renderAnalyticsCards = () => {

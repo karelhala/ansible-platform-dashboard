@@ -8,14 +8,19 @@ import { useIntl } from 'react-intl';
 import c_content_small_FontSize from '@patternfly/react-tokens';
 
 const JobsChart = (data) => {
-  const [ width, setWidth ] = useState(window.innerWidth * 0.75);
-  const containerRef = React.createRef();
+  const [ width, setWidth ] = useState(window.innerWidth);
   const intl = useIntl();
 
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
   useEffect(() => {
-    if (containerRef.current && containerRef.current.clientWidth) {
-      setWidth(window.innerWidth * 0.75);
-    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const bars = [];
@@ -43,7 +48,7 @@ const JobsChart = (data) => {
     const failBars = bars.map((tick) => {
       return {
         x: tick.x,
-        y: tick.y.failed_count,
+        y: tick.y.failed_count + 1000,
         name: 'Failed',
         label: `${tick.x} Failed: ${tick.y.failed_count}`
       };
@@ -87,33 +92,29 @@ const JobsChart = (data) => {
       fontSize: c_content_small_FontSize
     }
   };
-
   return (
-
-    <div ref={ containerRef } style={ { height: '225px', width } }>
-      <Chart
-        ariaDesc="Jobs across clusters"
-        ariaTitle="Jobs across clusters"
-        domainPadding={ { x: [ 30, 25 ]} }
-        barRatio={ 1 }
-        height={ 225 }
-        padding={ {
-          bottom: 60,
-          left: 60,
-          right: 20,
-          top: 20
-        } }
-        width={ width }
-        style={ { padding: 0, margin: 0 } }
-      >
-        <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ xAxisStyles }/>
-        <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ yAxisStyles }/>
-        <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
-          { renderFailedJobs() }
-          { renderSuccessfulJobs() }
-        </ChartStack>
-      </Chart>
-    </div>);
+    <Chart
+      ariaDesc="Jobs across clusters"
+      ariaTitle="Jobs across clusters"
+      domainPadding={ { x: [ 30, 25 ]} }
+      barRatio={ 1 }
+      height={ 225 }
+      padding={ {
+        bottom: 60,
+        left: 60,
+        right: 20,
+        top: 20
+      } }
+      width={ width }
+      style={ { padding: 0, margin: 0 } }
+    >
+      <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ xAxisStyles }/>
+      <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ yAxisStyles }/>
+      <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
+        { renderFailedJobs() }
+        { renderSuccessfulJobs() }
+      </ChartStack>
+    </Chart>);
 };
 
 export default JobsChart;
