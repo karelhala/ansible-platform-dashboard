@@ -22,5 +22,5 @@ export const getPartners = () =>
 
 export const getSyncCollections = (account) =>
   axiosInstance.get(
-    `${AUTOMATION_HUB_BASE}/content/${account}-synclist/v3/collections?limit=1`
+    `${AUTOMATION_HUB_BASE}/content/${account}-synclist/v3/collections?limit=1&deprecated=false`
   );
