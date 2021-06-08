@@ -48,15 +48,16 @@ const hubState = (state, action) => {
 const HubCard = () => {
   const [{ isFetching }, stateDispatch ] = useReducer(hubState, initialState);
 
-  const { isError, collection, collections, partners } = useSelector(
+  const { isError, collection, collections, syncCollections, partners } = useSelector(
     ({
       hubReducer: {
         isError,
         collection,
         collections,
+        syncCollections,
         partners
       }
-    }) => ({ isError, collection, collections, partners })
+    }) => ({ isError, collection, collections, syncCollections, partners })
   );
 
   const {
@@ -90,39 +91,49 @@ const HubCard = () => {
           { intl.formatMessage(messages.hubCardDescription) } <br/><br/>
         </Text>
       </TextContent>
-      <DescriptionList isHorizontal isAutoFit autoFitModifier={ { md: '100px', lg: '150px', xl: '200px', '2xl': '300px' } }>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { partners?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+      <Flex>
+        <Flex direction={ { default: 'column' } } className="pf-u-m-0 pf-u-pr-sm">
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { partners?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { collections?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { syncCollections?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+        </Flex>
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/automation-hub/partners` }>
               { intl.formatMessage(messages.partners) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { collections?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+          </FlexItem>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/automation-hub` }>
               { intl.formatMessage(messages.collections) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { collections?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription className="padded_text">
-            <Level hasGutter>
+          </FlexItem>
+          <FlexItem>
+            <Level hasGutter className="pf-u-pl-md pf-u-pt-sm">
               <LevelItem style={ { marginRight: 8 } }>
                 { intl.formatMessage(messages.syncCollections) }
               </LevelItem>
@@ -135,9 +146,9 @@ const HubCard = () => {
                 </Popover>
               </LevelItem>
             </Level>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-      </DescriptionList>
+          </FlexItem>
+        </Flex>
+      </Flex>
     </React.Fragment>
   );
 

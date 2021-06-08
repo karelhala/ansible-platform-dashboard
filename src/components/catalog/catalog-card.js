@@ -90,49 +90,59 @@ const CatalogCard = () => {
           { intl.formatMessage(messages.catalogCardDescription) } <br/><br/>
         </Text>
       </TextContent>
-      <DescriptionList isHorizontal>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { portfolioItems?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+      <Flex>
+        <Flex direction={ { default: 'column' } } className="pf-u-m-0 pf-u-pr-sm">
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { portfolioItems?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { portfolios?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          { isCatalogAdmin &&
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { sources?.length }
+              </Text>
+            </TextContent>
+          </FlexItem> }
+        </Flex>
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/catalog/products` }>
               { intl.formatMessage(messages.products) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { portfolios?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+          </FlexItem>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/catalog/portfolios` }>
               { intl.formatMessage(messages.portfolios) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        { isCatalogAdmin &&
-        <Fragment>
-          <DescriptionListGroup>
-            <DescriptionListTerm>
-              { sources?.length }
-            </DescriptionListTerm>
-            <DescriptionListDescription>
+          </FlexItem>
+          { isCatalogAdmin &&
+            <FlexItem>
               <Button variant='link'
                 component='a'
                 href={ `${release}ansible/catalog/platforms` }>
                 { intl.formatMessage(messages.platforms) }
               </Button>
-            </DescriptionListDescription>
-          </DescriptionListGroup>
-        </Fragment> }
-      </DescriptionList>
+            </FlexItem>
+          }
+        </Flex>
+      </Flex>
     </React.Fragment>
   );
 
@@ -178,7 +188,7 @@ const CatalogCard = () => {
     return (
       <Flex  direction={ { default: 'column' } }>
         <Flex className="pf-u-mb-0 pf-u-mt-md">
-          <FlexItem>
+          <FlexItem >
             <Button
               className="pf-u-pl-0 pf-u-pt-0"
               component='a'
