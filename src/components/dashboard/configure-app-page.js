@@ -34,8 +34,7 @@ const renderAnalyticsConfigButton = (intl) => (
           variant='link'
           target="_blank"
           rel="noopener noreferrer"
-          href={ `https://access.redhat.com/documentation/en-us/` +
-          `red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
+          href={ `https://docs.ansible.com/ansible-tower/latest/html/administration/usability_data_collection.html` }>
           { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
           <ExternalLinkAltIcon />
         </Button>

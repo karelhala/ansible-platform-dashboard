@@ -7,17 +7,12 @@ import {
   Card,
   CardBody,
   CardTitle, Divider,
-  DescriptionList,
-  DescriptionListDescription,
-  DescriptionListGroup,
-  DescriptionListTerm,
   Flex,
   FlexItem,
-  Grid,
-  GridItem, Label,
+  Label,
   Spinner,
   Text, TextContent, TextVariants,
-  Title, Split, SplitItem
+  Title
 } from '@patternfly/react-core';
 import { Section } from '@redhat-cloud-services/frontend-components/Section';
 import { useIntl } from 'react-intl';
@@ -86,60 +81,71 @@ const CatalogCard = () => {
 
   const renderCatalogInfo = () => (
     <React.Fragment>
-      <Text>
-        { intl.formatMessage(messages.catalogCardDescription) }
-      </Text>
-      <br/>
-      <DescriptionList isHorizontal>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { portfolioItems?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+      <TextContent>
+        <Text>
+          { intl.formatMessage(messages.catalogCardDescription) } <br/><br/>
+        </Text>
+      </TextContent>
+      <Flex>
+        <Flex direction={ { default: 'column' } } className="pf-u-m-0 pf-u-pr-sm">
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { portfolioItems?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { portfolios?.meta?.count }
+              </Text>
+            </TextContent>
+          </FlexItem>
+          { isCatalogAdmin &&
+          <FlexItem align={ { default: 'alignRight' } } className="pf-u-mb-sm pf-u-mt-md">
+            <TextContent>
+              <Text component={ TextVariants.h1 }>
+                { sources?.length }
+              </Text>
+            </TextContent>
+          </FlexItem> }
+        </Flex>
+        <Flex direction={ { default: 'column' } }>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/catalog/products` }>
               { intl.formatMessage(messages.products) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { portfolios?.meta?.count }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
+          </FlexItem>
+          <FlexItem>
             <Button
               component='a'
               variant='link'
               href={ `${release}ansible/catalog/portfolios` }>
               { intl.formatMessage(messages.portfolios) }
             </Button>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        { isCatalogAdmin &&
-        <Fragment>
-          <DescriptionListGroup>
-            <DescriptionListTerm>
-              { sources?.length }
-            </DescriptionListTerm>
-            <DescriptionListDescription>
+          </FlexItem>
+          { isCatalogAdmin &&
+            <FlexItem>
               <Button variant='link'
                 component='a'
                 href={ `${release}ansible/catalog/platforms` }>
                 { intl.formatMessage(messages.platforms) }
               </Button>
-            </DescriptionListDescription>
-          </DescriptionListGroup>
-        </Fragment> }
-      </DescriptionList>
+            </FlexItem>
+          }
+        </Flex>
+      </Flex>
     </React.Fragment>
   );
 
   const renderCatalogFeaturedProduct = () => {
     const featuredProduct = portfolioItems?.data ? portfolioItems?.data[0] : null;
     return (
-      <Fragment>
+      <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfStretch' } }>
         <Title headingLevel="h4">
           { intl.formatMessage(messages.catalogCardFeaturedProduct) }
         </Title>
@@ -169,15 +175,16 @@ const CatalogCard = () => {
                 </Text>
               </TextContent>
             </FlexItem>
-          </Flex> }
-      </Fragment>);
+          </Flex>
+        }
+      </Flex>);
   };
 
   const orderRow = (order) => {
-    return <Grid hasGutter="md">
-      <GridItem span={ 9 } className="pf-u-pt-sm">
-        <Split>
-          <SplitItem>
+    return (
+      <Flex  direction={ { default: 'column' } }>
+        <Flex className="pf-u-mb-0 pf-u-mt-md">
+          <FlexItem >
             <Button
               className="pf-u-pl-0 pf-u-pt-0"
               component='a'
@@ -185,32 +192,55 @@ const CatalogCard = () => {
               href={ `${release}ansible/catalog/orders/order?order=${order?.id}` }>
               { order?.id }
             </Button>
-          </SplitItem>
-          <SplitItem>
+          </FlexItem>
+          <FlexItem>
             <TextContent>
               <Text component={ TextVariants.p }>
                 { order?.orderItems[0]?.name }
               </Text>
             </TextContent>
-          </SplitItem>
-        </Split>
-        <TextContent>
-          <Text component={ TextVariants.small }>Last updated &nbsp;
-            <TimeAgo date={ order?.created_at }/>
-          </Text>
-        </TextContent>
-      </GridItem>
-      <GridItem span={ 3 } className="pf-u-pt-sm">
-        <Label { ...orderStatusMapper[order?.state] } variant="outline">
-          { order?.state }
-        </Label>
-      </GridItem>
-    </Grid>;
+          </FlexItem>
+          <FlexItem align={ { default: 'alignRight' } }>
+            <Label { ...orderStatusMapper[order?.state] } variant="outline">
+              { order?.state }
+            </Label>
+          </FlexItem>
+        </Flex>
+        <Flex>
+          <FlexItem>
+            <TextContent>
+              <Text component={ TextVariants.small }>Last updated &nbsp;
+                <TimeAgo date={ order?.created_at }/>
+              </Text>
+            </TextContent>
+          </FlexItem>
+        </Flex>
+      </Flex>);
   };
 
+  const emptyOrdersList = () => (<Flex direction={ { default: 'column' } }>
+    <FlexItem alignSelf={ { default: 'alignSelfCenter' } }>
+      <TextContent>
+        <Text component={ TextVariants.h6 }>
+          { intl.formatMessage(messages.noOrdersTitle) }
+        </Text>
+      </TextContent>
+    </FlexItem>
+    <FlexItem  alignSelf={ { default: 'alignSelfCenter' } }>
+      <TextContent>
+        <Text component={ TextVariants.small }>
+          { intl.formatMessage(messages.noOrdersDescription) }
+        </Text>
+      </TextContent>
+    </FlexItem>
+  </Flex>);
+
   const renderCatalogOther = () => {
+    const isEmptyList = !(orders?.meta?.count > 0);
     return (
-      <Flex direction={ { default: 'column' } }>
+      <Flex direction={ { default: 'column' } }
+        justifyContent={ { default: 'justifyContentSpaceBetween' } }
+        alignSelf={ { default: 'alignSelfStretch' } }>
         <FlexItem>
           <Flex>
             <FlexItem>
@@ -218,19 +248,14 @@ const CatalogCard = () => {
                 { intl.formatMessage(messages.catalogCardLatestOrdersTitle) }
               </Title>
             </FlexItem>
-            <FlexItem>
+            { !isEmptyList && <FlexItem>
               <Badge isRead>{ orders?.meta?.count }</Badge>
-            </FlexItem>
+            </FlexItem> }
           </Flex>
         </FlexItem>
-        { orders?.data?.map((order) => (
-          <FlexItem key={ order?.id }>
-            <Flex direction={ { default: 'column' } }>
-              <FlexItem>
-                { orderRow(order) }
-              </FlexItem>
-            </Flex>
-          </FlexItem>)) }
+        { isEmptyList ? emptyOrdersList() : orders?.data?.map((order) => (
+          orderRow(order)
+        )) }
         <FlexItem>
           <Bullseye>
             <Button
@@ -265,17 +290,15 @@ const CatalogCard = () => {
     else {
       return (
         <Flex className="automation-hub_card" >
-          <FlexItem>
+          <Flex>
             { renderCatalogInfo() }
-          </FlexItem>
+          </Flex>
           <Divider/>
-          <FlexItem>
+          <Flex>
             { renderCatalogFeaturedProduct() }
-          </FlexItem>
+          </Flex>
           <Divider/>
-          <FlexItem>
-            { renderCatalogOther() }
-          </FlexItem>
+          { renderCatalogOther() }
         </Flex>
       );
     }
