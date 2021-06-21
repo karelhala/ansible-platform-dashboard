@@ -109,7 +109,11 @@ const JobsChart = (data) => {
       style={ { padding: 0, margin: 0 } }
     >
       <ChartAxis tickValues={ getTickValues() } fixLabelOverlap label={ intl.formatMessage(messages.timeDayLegend) } style={ xAxisStyles }/>
-      <ChartAxis dependentAxis showGrid label={ intl.formatMessage(messages.jobsAcrossClusters) } style={ yAxisStyles }/>
+      <ChartAxis dependentAxis
+        showGrid
+        tickFormat={ (t) => Math.round(t) }
+        label={ intl.formatMessage(messages.jobsAcrossClusters) }
+        style={ yAxisStyles }/>
       <ChartStack colorScale={ colorScaleArray } domainPadding={ { x: [ 10, 2 ]} }>
         { renderFailedJobs() }
         { renderSuccessfulJobs() }
