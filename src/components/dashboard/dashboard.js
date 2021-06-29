@@ -1,8 +1,10 @@
 import React from 'react';
-import NoAppState from '../shared/no-app-state';
+import PlatformPage from './platform-page';
 
 const Dashboard = () => {
-  return <NoAppState />;
+  return <React.Fragment>
+    <PlatformPage />
+  </React.Fragment>;
 };
 
 export default Dashboard;
