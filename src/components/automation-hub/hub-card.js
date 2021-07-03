@@ -148,11 +148,21 @@ const HubCard = () => {
     </React.Fragment>
   );
 
+  const filterContents = (contents) => {
+    if (contents) {
+      return contents.filter(
+        item => !['doc_fragments', 'module_utils'].includes(item.content_type)
+      );
+    }
+
+    return contents;
+  };
+
   const renderHubFeaturedCollection = () => {
     const featuredCollection = collection?.data ? collection?.data[0] : null;
-
+    console.log('Debug - collections, collection', collections, collection);
     const content = featuredCollection ? contentCounts(
-      featuredCollection.latest_version?.metadata?.contents
+      filterContents(featuredCollection?.latest_version?.metadata?.contents)
     ) : undefined;
     return (
       <Flex direction={ { default: 'column' } } alignSelf={ { default: 'alignSelfStretch' } }>

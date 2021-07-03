@@ -11,6 +11,9 @@ import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
+import { defaultSettings } from '../../../helpers/shared/pagination';
+import { mockApi } from '../../../helpers/shared/__mocks__/user-login';
+import { AUTOMATION_HUB_UI_API_BASE } from '../../../utilities/constants';
 
 const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
   <IntlProvider locale="en">
@@ -69,5 +72,103 @@ describe('<AnalyticsCard />', () => {
     let wrapper;
     shallow(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ true } /></ComponentWrapper>);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should render the stats for the featured collection', async() => {
+    Date.now = jest.fn(() => new Date(Date.UTC(2021, 1, 1)).valueOf());
+    const collectionData = [
+      {
+        id: '101',
+        namespace: {
+          id: '1',
+          name: 'Test collection',
+          company: 'A company'
+        },
+        latest_version: {
+          contents: [
+            {
+              name: 'Content 1',
+              content_type: 'module'
+            },
+            {
+              name: 'Content 2 - to skip',
+              content_type: 'doc_fragments'
+            },
+            {
+              name: 'Content 3 - to skip',
+              content_type: 'module_utils'
+            },
+            {
+              name: 'Content 4',
+              content_type: 'module'
+            },
+            {
+              name: 'Content 5',
+              content_type: 'module'
+            },
+            {
+              name: 'Content 6',
+              content_type: 'role'
+            },
+            {
+              name: 'Content 7',
+              content_type: 'role'
+            },
+            {
+              name: 'Content 8',
+              content_type: 'any'
+            },
+            {
+              name: 'Content 9',
+              content_type: 'plugin'
+            },
+            {
+              name: 'Content 10',
+              content_type: 'plugin type'
+            },
+            {
+              name: 'Content 11',
+              content_type: 'foo'
+            }
+          ]
+        }
+      }];
+    const hubState = { isLoading: false,
+      isHubAvailable: true,
+      isError: false,
+      collection: {
+        data: collectionData
+      },
+      collections: {
+        data: [],
+        meta: { ...defaultSettings }
+      },
+      partners: {
+        data: [],
+        meta: { ...defaultSettings }
+      },
+      syncCollections: {
+        data: [],
+        meta: { ...defaultSettings }
+      }};
+    const featuredState = {
+      i18nReducer: {
+        formatMessage: ({ defaultMessage }) => defaultMessage
+      },
+      hubReducer: { ...hubState, isFetching: false }
+    };
+    mockApi
+    .onGet(`${AUTOMATION_HUB_UI_API_BASE}/collections?deprecated=false&&limit=31`)
+    .replyOnce(200, { data: [], meta: {}});
+    mockApi
+    .onGet(`${AUTOMATION_HUB_UI_API_BASE}//repo/published/?deprecated=false&offset=0&limit=1`)
+    .replyOnce(200, { data: [], meta: {}});
+
+    const store = mockStore(featuredState);
+    let  wrapper;
+    await act(async () => {
+      wrapper = mount(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ false }/></ComponentWrapper>);
+    });
+    expect(wrapper.find('Feature collection')).toHaveLength(1);
   });
 });

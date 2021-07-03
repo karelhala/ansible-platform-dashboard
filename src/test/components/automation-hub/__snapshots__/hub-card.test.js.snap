@@ -46,3 +46,5 @@ exports[`<AnalyticsCard /> should render correctly 1`] = `
 `;
 
 exports[`<AnalyticsCard /> should render correctly in loading state 1`] = `null`;
+
+exports[`<AnalyticsCard /> should render the stats for the featured collection 1`] = `null`;
