@@ -27,7 +27,7 @@ const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], ch
   </IntlProvider>
 );
 
-describe('<AnalyticsCard />', () => {
+describe('<HubCard />', () => {
   let initialProps;
   let initialState;
   const middlewares = [thunk, promiseMiddleware, notificationsMiddleware()];
@@ -159,16 +159,19 @@ describe('<AnalyticsCard />', () => {
     };
     mockApi
     .onGet(`${AUTOMATION_HUB_UI_API_BASE}/collections?deprecated=false&&limit=31`)
-    .replyOnce(200, { data: [], meta: {}});
+    .replyOnce(200, { data: collectionData, meta: {}});
     mockApi
-    .onGet(`${AUTOMATION_HUB_UI_API_BASE}//repo/published/?deprecated=false&offset=0&limit=1`)
-    .replyOnce(200, { data: [], meta: {}});
+    .onGet(`${AUTOMATION_HUB_UI_API_BASE}/repo/published/?deprecated=false&offset=0&limit=1`)
+    .replyOnce(200, { data: collectionData, meta: {}});
 
     const store = mockStore(featuredState);
     let  wrapper;
     await act(async () => {
       wrapper = mount(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ false }/></ComponentWrapper>);
     });
-    expect(wrapper.find('Feature collection')).toHaveLength(1);
+    await act(async () => {
+      wrapper.update();
+    });
+    expect(wrapper.find('Featured collection')).toHaveLength(1);
   });
 });

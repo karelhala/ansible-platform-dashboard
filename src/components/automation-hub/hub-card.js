@@ -160,7 +160,7 @@ const HubCard = () => {
 
   const renderHubFeaturedCollection = () => {
     const featuredCollection = collection?.data ? collection?.data[0] : null;
-    console.log('Debug - collections, collection', collections, collection);
+    console.log('Debug - collection', collection);
     const content = featuredCollection ? contentCounts(
       filterContents(featuredCollection?.latest_version?.metadata?.contents)
     ) : undefined;
