@@ -300,7 +300,7 @@ const CatalogCard = () => {
     }
     else {
       return (
-        <Flex className="automation-hub_card" >
+        <Flex className="ans-l-flex ans-l-flex-automation-hub-card" >
           <Flex>
             { renderCatalogInfo() }
           </Flex>
@@ -317,7 +317,7 @@ const CatalogCard = () => {
 
   return (
     <Fragment>
-      <Card className='ins-c-dashboard__card'>
+      <Card className='ans-c-card-dashboard'>
         <CardTitle>
           <Title headingLevel="h3">
             { intl.formatMessage(messages.catalogTitle) }
