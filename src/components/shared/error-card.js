@@ -18,8 +18,8 @@ const Br = () => <br />;
 const ErrorCard = () => {
   const intl = useIntl();
   return (
-    <Card className='ins-c-dashboard__card'>
-      <EmptyState variant={ 'full' } className='ins-c-dashboard__error-state'>
+    <Card className='ans-c-card-dashboard'>
+      <EmptyState variant={ 'full' } className='ans-c-empty-state-error'>
         <div>
           <EmptyStateIcon
             icon={ ExclamationCircleIcon }
@@ -27,7 +27,8 @@ const ErrorCard = () => {
           />
         </div>
         <Title headingLevel="h2" size="md"> { intl.formatMessage(messages.errorStateTitle) } </Title>
-        <EmptyStateBody className='ins-c-dashboard__error-state--body'>
+
+        <EmptyStateBody className='ans-c-empty-state-error__body'>
           { intl.formatMessage(messages.errorStateDescription, { supportLink: <a href={ 'https://access.redhat.com/support' }>Red Hat support</a>,
             statusLink: <a href={ 'https://status.redhat.com' }> status</a>, br: Br }) }
         </EmptyStateBody>

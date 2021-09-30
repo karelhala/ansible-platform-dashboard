@@ -14,7 +14,7 @@ import Truncate from 'react-truncate';
 
 const ConfigureCard = ({ title, description, renderButtons }) => {
   return (
-    <Card className='config_card' >
+    <Card className='ans-c-card-config' >
       <CardTitle>
         <Title headingLevel="h3">
           { title }

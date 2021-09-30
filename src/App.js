@@ -43,7 +43,7 @@ const App = () => {
         <IntlProvider locale="en">
           <React.Fragment>
             <NotificationsPortal />
-            <Main className="ins-c-ansible-dashboard pf-u-p-0 pf-u-ml-0">
+            <Main className="ans-c-dashboard pf-u-p-0 pf-u-ml-0">
               <Routes />
             </Main>
           </React.Fragment>
