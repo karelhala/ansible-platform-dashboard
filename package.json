@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "engines": {
-    "node": ">=15.0.0",
+    "node": ">=16.0.0",
     "npm": ">=7.0.0"
   },
   "dependencies": {
@@ -90,14 +90,13 @@
   },
   "scripts": {
     "analyze": "NODE_ENV=production webpack --config config/prod.webpack.config.js --env analyze=true",
-    "build": "webpack --config config/dev.webpack.config.js",
+    "build": "NODE_ENV=production webpack --config config/dev.webpack.config.js",
     "extract:messages": "npx @formatjs/cli extract 'src/**/*.{js,jsx}' --out-file ./translations/messages.json",
     "lint": "yarn eslint ./src",
     "prod": "NODE_ENV=production webpack serve --config config/prod.webpack.config.js",
     "start": "NODE_ENV=development webpack serve --config config/dev.webpack.config.js",
     "start:beta": "NODE_ENV=development BETA=true webpack serve --config config/dev.webpack.config.js",
     "test": "jest --passWithNoTests --runInBand",
-    "build:prod": "NODE_ENV=production webpack --config config/prod.webpack.config.js",
     "travis:verify": "npm-run-all build lint test",
     "verify": "npm-run-all build lint test"
   },
