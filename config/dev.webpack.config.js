@@ -3,11 +3,12 @@ const config = require('@redhat-cloud-services/frontend-components-config');
 const { config: webpackConfig, plugins } = config({
   rootFolder: resolve(__dirname, '../'),
   debug: true,
-  https: true,
-  hot: false,
   useFileHash: false,
   sassPrefix: '.ansible-dashboard, .ansibleDashboard',
-  ...(process.env.BETA && { deployment: 'beta/apps' })
+  deployment: process.env.BETA ? 'beta/apps' : 'apps',
+  useProxy: true,
+  appUrl: process.env.BETA ? '/beta/ansible/ansible-dashboard' : '/ansible/ansible-dashboard',
+  env: process.env.BETA ? 'stage-beta' : 'stage-stable',
 });
 
 plugins.push(
