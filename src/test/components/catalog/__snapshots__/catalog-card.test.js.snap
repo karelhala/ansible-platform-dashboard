@@ -1,48 +1,267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AnalyticsCard /> should render correctly 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en"
-  formats={Object {}}
-  locale="en"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <Provider
-    store={
-      Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+<DocumentFragment>
+  <article
+    class="pf-c-card ans-c-card-dashboard"
+    data-ouia-component-id="OUIA-Generated-Card-1"
+    data-ouia-component-type="PF4/Card"
+    data-ouia-safe="true"
+    id=""
   >
-    <MemoryRouter
-      initialEntries={
-        Array [
-          "/ansible-dashboard",
-        ]
-      }
+    <div
+      class="pf-c-card__title"
     >
-      <IntlProvider
-        defaultFormats={Object {}}
-        defaultLocale="en"
-        formats={Object {}}
-        locale="en"
-        messages={Object {}}
-        onError={[Function]}
-        textComponent={Symbol(react.fragment)}
+      <h3
+        class="pf-c-title pf-m-lg"
+        data-ouia-component-id="OUIA-Generated-Title-1"
+        data-ouia-component-type="PF4/Title"
+        data-ouia-safe="true"
       >
-        <CatalogCard />
-      </IntlProvider>
-    </MemoryRouter>
-  </Provider>
-</IntlProvider>
+        Automation Services Catalog
+      </h3>
+    </div>
+    <div
+      class="pf-c-card__body"
+    >
+      <div
+        class="pf-l-flex ans-l-flex ans-l-flex-automation-hub-card"
+      >
+        <div
+          class="pf-l-flex"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <p
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-1"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Collect and distribute automation content, govern content by approval processes and assure sign-off by assigned groups. 
+              <br />
+              <br />
+            </p>
+          </div>
+          <div
+            class="pf-l-flex"
+          >
+            <div
+              class="pf-l-flex pf-m-column pf-u-m-0 pf-u-pr-sm"
+            >
+              <div
+                class="pf-m-align-right pf-u-mb-sm pf-u-mt-md"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <h1
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-2"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    0
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="pf-m-align-right pf-u-mb-sm pf-u-mt-md"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <h1
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-3"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    0
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pf-l-flex pf-m-column"
+            >
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-link"
+                  data-ouia-component-id="OUIA-Generated-Button-link-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="/ansible/catalog/products"
+                >
+                  Products
+                </a>
+              </div>
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-link"
+                  data-ouia-component-id="OUIA-Generated-Button-link-2"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="/ansible/catalog/portfolios"
+                >
+                  Portfolios
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr
+          class="pf-c-divider"
+        />
+        <div
+          class="pf-l-flex"
+        >
+          <div
+            class="pf-l-flex pf-m-column pf-m-align-self-stretch"
+          >
+            <h4
+              class="pf-c-title pf-m-md"
+              data-ouia-component-id="OUIA-Generated-Title-2"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Latest created product
+            </h4>
+            <br />
+          </div>
+        </div>
+        <hr
+          class="pf-c-divider"
+        />
+        <div
+          class="pf-l-flex pf-m-column"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="pf-l-flex"
+            >
+              <div
+                class=""
+              >
+                <h4
+                  class="pf-c-title pf-m-md"
+                  data-ouia-component-id="OUIA-Generated-Title-3"
+                  data-ouia-component-type="PF4/Title"
+                  data-ouia-safe="true"
+                >
+                  Latest orders
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pf-l-flex pf-m-column"
+          >
+            <div
+              class="pf-m-align-self-center"
+            >
+              <div
+                class="pf-c-content"
+              >
+                <h6
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-4"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  No orders yet
+                </h6>
+              </div>
+            </div>
+            <div
+              class="pf-m-align-self-center"
+            >
+              <div
+                class="pf-c-content"
+              >
+                <small
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-5"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Orders show up here when an order is placed.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</DocumentFragment>
 `;
 
-exports[`<AnalyticsCard /> should render correctly in loading state 1`] = `null`;
+exports[`<AnalyticsCard /> should render correctly in loading state 1`] = `
+<DocumentFragment>
+  <article
+    class="pf-c-card ans-c-card-dashboard"
+    data-ouia-component-id="OUIA-Generated-Card-2"
+    data-ouia-component-type="PF4/Card"
+    data-ouia-safe="true"
+    id=""
+  >
+    <div
+      class="pf-c-card__title"
+    >
+      <h3
+        class="pf-c-title pf-m-lg"
+        data-ouia-component-id="OUIA-Generated-Title-4"
+        data-ouia-component-type="PF4/Title"
+        data-ouia-safe="true"
+      >
+        Automation Services Catalog
+      </h3>
+    </div>
+    <div
+      class="pf-c-card__body"
+    >
+      <section
+        class=""
+        style="background-color: white; min-height: 100%;"
+      >
+         
+        <div
+          class="pf-l-bullseye"
+        >
+          <svg
+            aria-label="Contents"
+            aria-valuetext="Loading..."
+            class="pf-c-spinner pf-m-xl"
+            role="progressbar"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              class="pf-c-spinner__path"
+              cx="50"
+              cy="50"
+              fill="none"
+              r="45"
+            />
+          </svg>
+        </div>
+         
+      </section>
+    </div>
+  </article>
+</DocumentFragment>
+`;

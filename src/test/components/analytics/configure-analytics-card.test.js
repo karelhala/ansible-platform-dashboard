@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { render, waitFor, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -9,16 +9,13 @@ import analyticsReducer, { analyticsInitialState } from '../../../redux/reducers
 import ConfigureAnalyticsCard from '../../../components/analytics/configure-analytics-card';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
 
 const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
   <IntlProvider locale="en">
     <Provider store={ store } >
       <MemoryRouter initialEntries={ initialEntries }>
-        <IntlProvider locale="en">
-          { children }
-        </IntlProvider>
+        { children }
       </MemoryRouter>
     </Provider>
   </IntlProvider>
@@ -55,12 +52,10 @@ describe('<ConfigureAnalyticsCard />', () => {
     const registry = new ReducerRegistry({}, [ thunk, promiseMiddleware ]);
     registry.register({ analyticsReducer: applyReducerHash(analyticsReducer, analyticsInitialState) });
 
-    let wrapper;
-    await act(async () => {
-      wrapper = shallow(<ComponentWrapper store={ store }><ConfigureAnalyticsCard { ...initialProps } /></ComponentWrapper>);
-    });
-    wrapper.update();
+    const { asFragment } = render(<ComponentWrapper store={ store }><ConfigureAnalyticsCard { ...initialProps } /></ComponentWrapper>);
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

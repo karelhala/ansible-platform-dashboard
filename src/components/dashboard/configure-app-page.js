@@ -8,58 +8,52 @@ import HubCard from '../automation-hub/hub-card';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 const renderButtons = (intl) => (
-  <React.Fragment>
-    <Flex>
-      <FlexItem>
-        <Button
-          isLarge
-          component='a'
-          variant='primary'
-          target="_blank"
-          rel="noopener noreferrer"
-          href={ `https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html` }>
-          { intl.formatMessage(messages.configureLink) }
-        </Button>
-      </FlexItem>
-    </Flex>
-  </React.Fragment>
+  <Flex>
+    <FlexItem>
+      <Button
+        isLarge
+        component='a'
+        variant='primary'
+        target="_blank"
+        rel="noopener noreferrer"
+        href={ `https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html` }>
+        { intl.formatMessage(messages.configureLink) }
+      </Button>
+    </FlexItem>
+  </Flex>
 );
 
 const renderAnalyticsConfigButton = (intl) => (
-  <React.Fragment>
-    <Flex>
-      <FlexItem>
-        <Button
-          component='a'
-          variant='link'
-          target="_blank"
-          rel="noopener noreferrer"
-          href={ `https://docs.ansible.com/ansible-tower/latest/html/administration/usability_data_collection.html` }>
-          { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
-          <ExternalLinkAltIcon />
-        </Button>
-      </FlexItem>
-    </Flex>
-  </React.Fragment>
+  <Flex>
+    <FlexItem>
+      <Button
+        component='a'
+        variant='link'
+        target="_blank"
+        rel="noopener noreferrer"
+        href={ `https://docs.ansible.com/ansible-tower/latest/html/administration/usability_data_collection.html` }>
+        { intl.formatMessage(messages.configureAnalyticsLink) }&nbsp;
+        <ExternalLinkAltIcon />
+      </Button>
+    </FlexItem>
+  </Flex>
 );
 
 const renderCatalogConfigButton = (intl) => (
-  <React.Fragment>
-    <Flex>
-      <FlexItem>
-        <Button
-          component='a'
-          variant='link'
-          target="_blank"
-          rel="noopener noreferrer"
-          href={ `https://access.redhat.com/documentation/en-us/` +
+  <Flex>
+    <FlexItem>
+      <Button
+        component='a'
+        variant='link'
+        target="_blank"
+        rel="noopener noreferrer"
+        href={ `https://access.redhat.com/documentation/en-us/` +
           `red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
-          { intl.formatMessage(messages.configureCatalogLink) }&nbsp;
-          <ExternalLinkAltIcon />
-        </Button>
-      </FlexItem>
-    </Flex>
-  </React.Fragment>
+        { intl.formatMessage(messages.configureCatalogLink) }&nbsp;
+        <ExternalLinkAltIcon />
+      </Button>
+    </FlexItem>
+  </Flex>
 );
 
 const ConfigureAppPage = () => {
