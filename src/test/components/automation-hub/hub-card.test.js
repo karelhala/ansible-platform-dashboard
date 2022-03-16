@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { render, waitFor, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -9,7 +9,6 @@ import hubReducer, { hubInitialState } from '../../../redux/reducers/hub-reducer
 import HubCard from '../../../components/automation-hub/hub-card';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
 import { defaultSettings } from '../../../helpers/shared/pagination';
 import { mockApi } from '../../../helpers/shared/__mocks__/user-login';
@@ -23,15 +22,13 @@ describe('<HubCard />', () => {
   let mockStore;
 
   const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
-    <IntlProvider locale="en">
-      <Provider store={ store } >
-        <MemoryRouter initialEntries={ initialEntries }>
-          <IntlProvider locale="en">
-            { children }
-          </IntlProvider>
-        </MemoryRouter>
-      </Provider>
-    </IntlProvider>
+    <Provider store={ store } >
+      <MemoryRouter initialEntries={ initialEntries }>
+        <IntlProvider locale="en">
+          { children }
+        </IntlProvider>
+      </MemoryRouter>
+    </Provider>
   );
 
   beforeEach(() => {
@@ -59,22 +56,20 @@ describe('<HubCard />', () => {
     const registry = new ReducerRegistry({}, [ thunk, promiseMiddleware ]);
     registry.register({ hubReducer: applyReducerHash(hubReducer, hubInitialState) });
 
-    let wrapper;
-    await act(async () => {
-      wrapper = shallow(<ComponentWrapper store={ store }><HubCard { ...initialProps } /></ComponentWrapper>);
-    });
-    wrapper.update();
+    const { asFragment } = render(<ComponentWrapper store={ store }><HubCard { ...initialProps } /></ComponentWrapper>);
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly in loading state', () => {
+  it('should render correctly in loading state', async () => {
     const store = mockStore(initialState);
-    let wrapper;
-    act(() => {
-      wrapper = shallow(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ true }/></ComponentWrapper>);
-    });
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+
+    const { asFragment } = render(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ true }/></ComponentWrapper>);
+    expect(asFragment()).toMatchSnapshot();
+
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
   });
 
   it('should render the stats for the featured collection', async() => {
@@ -177,9 +172,11 @@ describe('<HubCard />', () => {
     .onGet(`${AUTOMATION_HUB_API_BASE}/namespaces?limit=1`)
     .replyOnce(200, { data: [], meta: {}});
     const store = mockStore(featuredState);
-    await act(async () => {
-      mount(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ false }/></ComponentWrapper>);
-    });
+
+    render(<ComponentWrapper store={ store }><HubCard { ...initialProps } isLoading={ false }/></ComponentWrapper>);
+
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
     expect(spyHubCounts).toHaveBeenCalled();
     expect(spyHubCounts).toHaveReturnedWith(
       { contents: { module: 3, plugin: 4, role: 2 }, total_count: 9 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { render, waitFor, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -9,19 +9,16 @@ import analyticsReducer, { analyticsInitialState } from '../../../redux/reducers
 import JobsChart from '../../../components/analytics/jobs-chart';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
 
 const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
-  <IntlProvider locale="en">
-    <Provider store={ store } >
-      <MemoryRouter initialEntries={ initialEntries }>
-        <IntlProvider locale="en">
-          { children }
-        </IntlProvider>
-      </MemoryRouter>
-    </Provider>
-  </IntlProvider>
+  <Provider store={ store } >
+    <MemoryRouter initialEntries={ initialEntries }>
+      <IntlProvider locale="en">
+        { children }
+      </IntlProvider>
+    </MemoryRouter>
+  </Provider>
 );
 
 describe('<JobsChart />', () => {
@@ -55,19 +52,17 @@ describe('<JobsChart />', () => {
     const registry = new ReducerRegistry({}, [ thunk, promiseMiddleware ]);
     registry.register({ analyticsReducer: applyReducerHash(analyticsReducer, analyticsInitialState) });
 
-    let wrapper;
-    await act(async () => {
-      wrapper = shallow(<ComponentWrapper store={ store }><JobsChart { ...initialProps } /></ComponentWrapper>);
-    });
-    wrapper.update();
+    const { asFragment } = render(<ComponentWrapper store={ store }><JobsChart { ...initialProps } /></ComponentWrapper>);
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly in loading state', () => {
     const store = mockStore(initialState);
-    let wrapper;
-    shallow(<ComponentWrapper store={ store }><JobsChart { ...initialProps } isLoading={ true } /></ComponentWrapper>);
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    const { asFragment } = render(<ComponentWrapper store={ store }><JobsChart { ...initialProps } isLoading={ true } /></ComponentWrapper>);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

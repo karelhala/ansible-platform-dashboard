@@ -1,11 +1,7 @@
-import { configure, mount, render, shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
+import 'jest-canvas-mock';
 
-configure({ adapter: new Adapter() });
 React.useLayoutEffect = React.useEffect;
 
-global.shallow = shallow;
-global.render = render;
-global.mount = mount;
 global.React = React;
