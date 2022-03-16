@@ -2,6 +2,10 @@
   "name": "ansible-dashboard",
   "version": "1.0.0",
   "private": false,
+  "engines": {
+    "node": ">=15.0.0",
+    "npm": ">=7.0.0"
+  },
   "dependencies": {
     "@babel/eslint-parser": "^7.13.14",
     "@babel/types": "^7.13.17",
