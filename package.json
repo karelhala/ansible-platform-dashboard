@@ -100,7 +100,8 @@
     "start:beta": "NODE_ENV=development BETA=true webpack serve --config config/dev.webpack.config.js",
     "test": "jest --passWithNoTests --runInBand",
     "travis:verify": "npm-run-all build lint test",
-    "verify": "npm-run-all build lint test"
+    "verify": "npm-run-all build lint test",
+    "start:federated": "fec static --config config/dev.webpack.config.js"
   },
   "insights": {
     "appname": "ansible-dashboard"
