@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+
 import DashboardHeader from '../shared/dashboard-header';
 import {
   Accordion,
@@ -68,14 +70,27 @@ const Overview = () => {
               { intl.formatMessage(trialMessages.adCardHeader) }
             </CardTitle>
             <CardBody>
-              <Stack>
+              <Stack hasGutter>
                 { intl.formatMessage(trialMessages.adCardContent, {
-                  li: (chunks) => <StackItem><Text>{ chunks }</Text></StackItem>
+                  li: (chunks) => <StackItem>
+                    <div className='pf-u-display-flex'>
+                      <div>
+                        <CheckCircleIcon className="pf-u-mr-lg" size='lg' color='var(--pf-global--success-color--100)'/>
+                      </div>
+                      <div style={ { flexGrow: 1 } }>
+                        <Text>{ chunks }</Text>
+                      </div>
+                    </div>
+                  </StackItem>
                 }) }
               </Stack>
             </CardBody>
             <CardFooter>
-              { intl.formatMessage(trialMessages.adCardFooter) }
+              <TextContent>
+                <Text component='small'>
+                  { intl.formatMessage(trialMessages.adCardFooter) }
+                </Text>
+              </TextContent>
             </CardFooter>
           </Card>
         </StackItem>
