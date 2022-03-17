@@ -42,7 +42,9 @@ const Overview = () => {
     <AccordionContent
       isHidden={ activeFaq !== index }
     >
-      { intl.formatMessage(trialMessages[`faq${index}b`], values) }
+      <TextContent>
+        { intl.formatMessage(trialMessages[`faq${index}b`], values) }
+      </TextContent>
     </AccordionContent>
   </AccordionItem>);
 
@@ -77,7 +79,7 @@ const Overview = () => {
                       <div>
                         <CheckCircleIcon className="pf-u-mr-lg" size='lg' color='var(--pf-global--success-color--100)'/>
                       </div>
-                      <div style={ { flexGrow: 1 } }>
+                      <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                         <Text>{ chunks }</Text>
                       </div>
                     </div>
@@ -132,7 +134,7 @@ const Overview = () => {
             { createAccordionItem(6) }
             { createAccordionItem(7, {
               p: (chunks) => <Text>{ chunks }</Text>,
-              ol: (chunks) => <TextList >{ chunks }</TextList>,
+              ol: (chunks) => <TextList component='ol'>{ chunks }</TextList>,
               li: (chunks) => <TextListItem >{ chunks }</TextListItem>
             }) }
             { createAccordionItem(8) }
