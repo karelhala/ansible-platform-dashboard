@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
+import PropTypes from 'prop-types';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 
 import DashboardHeader from '../shared/dashboard-header';
@@ -25,6 +27,13 @@ import {
 
 import messages from '../../messages/messages';
 import trialMessages from '../../messages/trial.messages';
+
+const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
+
+Link.propTypes = {
+  link: PropTypes.string,
+  children: PropTypes.node
+};
 
 const Overview = () => {
   const [activeFaq, openFaq] = useState();
@@ -74,6 +83,7 @@ const Overview = () => {
             <CardBody>
               <Stack hasGutter>
                 { intl.formatMessage(trialMessages.adCardContent, {
+                  a: (chunks) => <Link link="http://console.redhat.com/">{ chunks }</Link>,
                   li: (chunks) => <StackItem>
                     <div className='pf-u-display-flex'>
                       <div>
@@ -90,7 +100,9 @@ const Overview = () => {
             <CardFooter>
               <TextContent>
                 <Text component='small'>
-                  { intl.formatMessage(trialMessages.adCardFooter) }
+                  { intl.formatMessage(trialMessages.adCardFooter, {
+                    a: (chunks) => <Link link="https://www.redhat.com/en/about/agreements">{ chunks }</Link>
+                  }) }
                 </Text>
               </TextContent>
             </CardFooter>
@@ -105,11 +117,16 @@ const Overview = () => {
               <Stack>
                 <StackItem>
                   { intl.formatMessage(trialMessages.reqCardRHELTitle) }
-                  { intl.formatMessage(trialMessages.reqCardRHELContent) }
+                  { intl.formatMessage(trialMessages.reqCardRHELContent, {
+                    a: (chunks) => <Link link="https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/auth?client_id=rh-product-eval&redirect_uri=https%3A%2F%2Fwww.redhat.com%2Fen%2Ftechnologies%2Flinux-platforms%2Fenterprise-linux%2Ftry-it%2Fsuccess-server&state=efc13e3d-8e01-463c-8f03-892932906f8e&response_mode=fragment&response_type=code&scope=openid&nonce=6448c8c6-364f-485b-841f-4fc9f2d19494">{ chunks }</Link>,
+                    a1: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_a_standard_rhel_installation/index">{ chunks }</Link>
+                  }) }
                 </StackItem>
                 <StackItem>
                   { intl.formatMessage(trialMessages.reqCardBreakTitle) }
-                  { intl.formatMessage(trialMessages.reqCardBreakContent) }
+                  { intl.formatMessage(trialMessages.reqCardBreakContent, {
+                    a: (chunks) => <Link link="https://cloud.redhat.com/ansible/automation-hub">{ chunks }</Link>
+                  }) }
                 </StackItem>
               </Stack>
             </CardBody>
@@ -122,25 +139,36 @@ const Overview = () => {
             </CardTitle>
           </Card>
           <Accordion isBordered displaySize="large">
-            { createAccordionItem(1) }
+            { createAccordionItem(1, {
+              a: (chunks) => <Link link="https://access.redhat.com/">{ chunks }</Link>
+            }) }
             { createAccordionItem(2) }
             { createAccordionItem(3, {
               p: (chunks) => <Text>{ chunks }</Text>,
               ul: (chunks) => <TextList >{ chunks }</TextList>,
-              li: (chunks) => <TextListItem >{ chunks }</TextListItem>
+              li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
+              a: (chunks) => <Link link="https://access.redhat.com/documentation/en-US/">{ chunks }</Link>,
+              a1: (chunks) => <Link link="https://access.redhat.com/search/#/">{ chunks }</Link>
             }) }
             { createAccordionItem(4) }
             { createAccordionItem(5) }
-            { createAccordionItem(6) }
+            { createAccordionItem(6, {
+              a: (chunks) => <Link link="https://access.redhat.com/downloads/">{ chunks }</Link>,
+              a1: (chunks) => <Link link="http://www.redhat.com/en/about/contact/sales">{ chunks }</Link>
+            }) }
             { createAccordionItem(7, {
               p: (chunks) => <Text>{ chunks }</Text>,
               ol: (chunks) => <TextList component='ol'>{ chunks }</TextList>,
-              li: (chunks) => <TextListItem >{ chunks }</TextListItem>
+              li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
+              a: (chunks) => <Link link="http://www.redhat.com/en/about/contact/sales">{ chunks }</Link>
             }) }
-            { createAccordionItem(8) }
+            { createAccordionItem(8, {
+              a: (chunks) => <Link link="http://www.redhat.com/en/about/contact/sales">{ chunks }</Link>
+            }) }
             { createAccordionItem(9, {
               ul: (chunks) => <TextList >{ chunks }</TextList>,
-              li: (chunks) => <TextListItem >{ chunks }</TextListItem>
+              li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
+              a: (chunks) => <Link link="http://www.redhat.com/en/about/contact/sales">{ chunks }</Link>
             }) }
           </Accordion>
         </StackItem>

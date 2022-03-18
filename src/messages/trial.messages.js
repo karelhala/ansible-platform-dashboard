@@ -25,11 +25,11 @@ const trialMessages = defineMessages({
 <li>A single entitlement to all available versions of this product</li>
 <li>Access to Red Hat Insights for Red Hat Ansible Automation Platform</li>
 <li>Access to Red Hat Smart Management (included with Red Hat Enterprise Linux)</li>
-<li>Access to Red Hat Ansible Automation Platform hosted services on Red Hat Hybrid Cloud Console</li>`
+<li>Access to Red Hat Ansible Automation Platform hosted services on <a>Red Hat Hybrid Cloud Console</a></li>`
   },
   adCardFooter: {
     id: 'trial.adCardFooter',
-    defaultMessage: 'This product trial is not intended for production. By proceeding, you agree to the product trial terms.'
+    defaultMessage: 'This product trial is not intended for production. By proceeding, you agree to the <a>product trial terms</a>.'
   },
   reqCardHeader: {
     id: 'trial.reqCardHeader',
@@ -41,7 +41,7 @@ const trialMessages = defineMessages({
   },
   reqCardRHELContent: {
     id: 'trial.reqCardRHELContent',
-    defaultMessage: 'You need Red Hat Enterprise Linux as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start your download now. This installation guide provides step-by-step instructions.'
+    defaultMessage: 'You need Red Hat Enterprise Linux as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start <a>your download</a> now. This <a1>installation guide</a1> provides step-by-step instructions.'
   },
   reqCardBreakTitle: {
     id: 'trial.reqCardBreakTitle',
@@ -49,7 +49,7 @@ const trialMessages = defineMessages({
   },
   reqCardBreakContent: {
     id: 'trial.reqCardBreakContent',
-    defaultMessage: 'You may need to wait up to 30 minutes to access automation hub services after the trial subscription is activated.'
+    defaultMessage: 'You may need to wait up to 30 minutes to access <a>automation hub</a> services after the trial subscription is activated.'
   },
   faq1a: {
     id: 'trial.faq1a',
@@ -57,7 +57,7 @@ const trialMessages = defineMessages({
   },
   faq1b: {
     id: 'trial.faq1b',
-    defaultMessage: 'Red Hat® product trials offer all the benefits included in a Red Hat subscription. But Red Hat product trials are more than just access to the latest code. They provide access to all versions of the software, to patches and other software updates, and to our award-winning Red Hat Customer Portal.'
+    defaultMessage: 'Red Hat® product trials offer all the benefits included in a Red Hat subscription. But Red Hat product trials are more than just access to the latest code. They provide access to all versions of the software, to patches and other software updates, and to our award-winning <a>Red Hat Customer Portal</a>.'
   },
   faq2a: {
     id: 'trial.faq2a',
@@ -79,7 +79,7 @@ const trialMessages = defineMessages({
 <li>On the Subscriptions page in Red Hat Customer Portal.</li>
 <li>By contacting Sales or Customer Service.</li>
 </ul>
-<p>Users with self-supported product trials have access to all product documentation as well as the vast Red Hat Knowledgebase.</p>`
+<p>Users with self-supported product trials have access to all <a>product documentation</a> as well as the vast Red Hat <a1>Knowledgebase</a1>.</p>`
   },
   faq4a: {
     id: 'trial.faq4a',
@@ -103,7 +103,7 @@ const trialMessages = defineMessages({
   },
   faq6b: {
     id: 'trial.faq6b',
-    defaultMessage: 'Nearly all Red Hat technologies are available for a product trial. You can find a listing of available product trials on Red Hat Customer Portal. If a trial is available for a given technology, you’ll see this noted in the "Product Trial" column. If there is a product you\'d like to try that isn’t listed, please contact Red Hat Sales.'
+    defaultMessage: 'Nearly all Red Hat technologies are available for a product trial. You can find a listing of available product trials on <a>Red Hat Customer Portal</a>. If a trial is available for a given technology, you’ll see this noted in the "Product Trial" column. If there is a product you\'d like to try that isn’t listed, please <a1>contact Red Hat Sales</a1>.'
   },
   faq7a: {
     id: 'trial.faq7a',
@@ -118,7 +118,7 @@ const trialMessages = defineMessages({
 <li>You’ve requested multiple product trials as part of a bundled SKU.</li>
 <li>Your product trial requires additional approvals before being activated.</li>
 </ol>
-Contact Red Hat Sales to try these technologies.`
+<a>Contact Red Hat Sales</a> to try these technologies.`
   },
   faq8a: {
     id: 'trial.faq8a',
@@ -126,7 +126,7 @@ Contact Red Hat Sales to try these technologies.`
   },
   faq8b: {
     id: 'trial.faq8b',
-    defaultMessage: 'There are limits to how many product trials are allowed for each product over a given time period. If you need to extend your product trial or request more trials, please contact Red Hat Sales.'
+    defaultMessage: 'There are limits to how many product trials are allowed for each product over a given time period. If you need to extend your product trial or request more trials, please <a>contact Red Hat Sales</a>.'
   },
   faq9a: {
     id: 'trial.faq9a',
@@ -137,7 +137,7 @@ Contact Red Hat Sales to try these technologies.`
     defaultMessage: `<ul>
 <li>Purchase a subscription.</li>
 <li>Renew the product trial after the expiry grace period has ended.</li>
-<li>Contact Red Hat Sales to determine if the product trial can be renewed sooner or if a similar product trial is available.</li>
+<li><a>Contact Red Hat Sales</a> to determine if the product trial can be renewed sooner or if a similar product trial is available.</li>
 </ul>`
   },
   faqTitle: {
