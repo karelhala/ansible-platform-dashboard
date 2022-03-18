@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { Link as RouterLink } from 'react-router-dom';
 
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+
 import { PageHeader } from '@redhat-cloud-services/frontend-components/PageHeader';
 import {
   TextContent,
@@ -50,6 +52,7 @@ const Success = () => {
         </Breadcrumb>
         <TextContent>
           <Text>
+            <CheckCircleIcon className="pf-u-mr-lg" size='lg' color='var(--pf-global--success-color--100)'/>
             { intl.formatMessage(successMessages.title) }
           </Text>
           <Text>
