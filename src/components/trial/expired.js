@@ -23,7 +23,10 @@ import {
   GridItem,
   CardFooter,
   Button,
-  CardTitle
+  CardTitle,
+  Title,
+  FlexItem,
+  Flex
 } from '@patternfly/react-core';
 
 import { DASHBOARD_ROUTE } from '../../constants/routes';
@@ -52,11 +55,17 @@ const Expired = () => {
           </BreadcrumbItem>
         </Breadcrumb>
         <TextContent>
-          <Text>
-            <ExclamationIcon className="pf-u-mr-lg" size='lg' color='var(--pf-global--danger-color--100)'/>
-            { intl.formatMessage(expiredMessages.title) }
-          </Text>
-          <Text>
+          <Flex spaceItems={ { default: 'spaceItemsSm' } } alignItems={ { default: 'alignItemsCenter' } }>
+            <FlexItem>
+              <ExclamationIcon size='md' color='var(--pf-global--danger-color--100)'/>
+            </FlexItem>
+            <FlexItem>
+              <Title headingLevel="h2" size="lg">
+                { intl.formatMessage(expiredMessages.title) }
+              </Title>
+            </FlexItem>
+          </Flex>
+          <Text className='pf-u-mt-md'>
             { intl.formatMessage(expiredMessages.description) }
           </Text>
         </TextContent>
@@ -67,19 +76,19 @@ const Expired = () => {
             <Card>
               <CardBody>
                 <TextContent>
-                  <Text>
+                  <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(expiredMessages.wannaTry) }
-                  </Text>
+                  </Title>
                   <Text>
                     { intl.formatMessage(expiredMessages.wannaTryText) }
                   </Text>
                 </TextContent>
-                <Divider/>
+                <Divider className='pf-u-my-lg'/>
                 <TextContent>
-                  <Text>
+                  <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(expiredMessages.readyBuy) }
-                  </Text>
-                  <Text>
+                  </Title>
+                  <Text className='pf-u-mb-lg'>
                     { intl.formatMessage(expiredMessages.readyBuyText, {
                       a: (chunks) => <Link link="https://www.redhat.com/en/about/value-of-subscription">{ chunks }</Link>
                     }) }
@@ -117,7 +126,7 @@ const Expired = () => {
                     </Card>
                   </GridItem>
                 </Grid>
-                <Divider/>
+                <Divider className='pf-u-my-lg'/>
                 <Resources />
               </CardBody>
             </Card>

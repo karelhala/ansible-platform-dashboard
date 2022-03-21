@@ -13,7 +13,10 @@ import {
   Button,
   CardFooter,
   Grid,
-  GridItem
+  GridItem,
+  Title,
+  Flex,
+  FlexItem
 } from '@patternfly/react-core';
 
 import successMessages from '../../messages/success.messages';
@@ -23,10 +26,10 @@ const Resources = () => {
 
   return <React.Fragment>
     <TextContent>
-      <Text>
+      <Title headingLevel="h2" size="xl">
         { intl.formatMessage(successMessages.resources) }
-      </Text>
-      <Text>
+      </Title>
+      <Text className='pf-u-mb-lg'>
         { intl.formatMessage(successMessages.resourcesDescription) }
       </Text>
     </TextContent>
@@ -80,12 +83,18 @@ const Resources = () => {
         </Card>
       </GridItem>
     </Grid>
-    <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials/faqs" target="_blank" rel="noopener noreferrer">
-      { intl.formatMessage(successMessages.faqLink) }
-    </Button>
-    <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials" target="_blank" rel="noopener noreferrer">
-      { intl.formatMessage(successMessages.allTrials) }
-    </Button>
+    <Flex className='pf-u-mt-lg' justifyContent={ { default: 'justifyContentCenter' } }>
+      <FlexItem>
+        <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials/faqs" target="_blank" rel="noopener noreferrer">
+          { intl.formatMessage(successMessages.faqLink) }
+        </Button>
+      </FlexItem>
+      <FlexItem>
+        <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials" target="_blank" rel="noopener noreferrer">
+          { intl.formatMessage(successMessages.allTrials) }
+        </Button>
+      </FlexItem>
+    </Flex>
   </React.Fragment>;
 };
 

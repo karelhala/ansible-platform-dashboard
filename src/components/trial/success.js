@@ -21,7 +21,10 @@ import {
   StackItem,
   Button,
   TextList,
-  TextListItem
+  TextListItem,
+  Flex,
+  FlexItem,
+  Title
 } from '@patternfly/react-core';
 
 import { DASHBOARD_ROUTE } from '../../constants/routes';
@@ -51,11 +54,17 @@ const Success = () => {
           </BreadcrumbItem>
         </Breadcrumb>
         <TextContent>
-          <Text>
-            <CheckCircleIcon className="pf-u-mr-lg" size='lg' color='var(--pf-global--success-color--100)'/>
-            { intl.formatMessage(successMessages.title) }
-          </Text>
-          <Text>
+          <Flex spaceItems={ { default: 'spaceItemsSm' } } alignItems={ { default: 'alignItemsCenter' } }>
+            <FlexItem>
+              <CheckCircleIcon size='md' color='var(--pf-global--success-color--100)'/>
+            </FlexItem>
+            <FlexItem>
+              <Title headingLevel="h2" size="lg">
+                { intl.formatMessage(successMessages.title) }
+              </Title>
+            </FlexItem>
+          </Flex>
+          <Text className='pf-u-mt-md'>
             { intl.formatMessage(successMessages.description) }
           </Text>
           <Text component='small'>
@@ -71,9 +80,9 @@ const Success = () => {
             <Card>
               <CardBody>
                 <TextContent>
-                  <Text>
+                  <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(successMessages.installation) }
-                  </Text>
+                  </Title>
                   <Button>
                     { intl.formatMessage(successMessages.startDownload) }
                   </Button>
@@ -83,13 +92,14 @@ const Success = () => {
                     }) }
                   </Text>
                 </TextContent>
-                <Divider/>
+                <Divider className='pf-u-my-lg'/>
                 <Requirements />
-                <Divider/>
+                <Divider className='pf-u-my-lg'/>
                 <TextContent>
-                  <Text>
+                  <Title headingLevel="h2" size="xl">
+
                     { intl.formatMessage(successMessages.nextSteps) }
-                  </Text>
+                  </Title>
                   <Text>
                     { intl.formatMessage(successMessages.deployAnsible) }
                   </Text>
@@ -118,14 +128,14 @@ const Success = () => {
             <Card>
               <CardBody>
                 <TextContent>
-                  <Text>
+                  <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(successMessages.support) }
-                  </Text>
+                  </Title>
                   <Text>
                     { intl.formatMessage(successMessages.supportText) }
                   </Text>
                 </TextContent>
-                <Divider/>
+                <Divider className='pf-u-my-lg'/>
                 <Resources />
               </CardBody>
             </Card>

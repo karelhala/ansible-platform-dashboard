@@ -110,7 +110,11 @@ const Overview = () => {
           </Card>
         </StackItem>
         <StackItem>
-          <Requirements />
+          <Card>
+            <CardBody>
+              <Requirements />
+            </CardBody>
+          </Card>
         </StackItem>
         <StackItem>
           <Card>
