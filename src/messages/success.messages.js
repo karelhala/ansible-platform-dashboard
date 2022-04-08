@@ -16,7 +16,7 @@ const successMessages = defineMessages({
   },
   description: {
     id: 'success.description',
-    defaultMessage: 'You have {number} days left to try Red Hat® Ansible® Automation Platform. (We’ve also emailed you this information for easy reference.)'
+    defaultMessage: 'Your Red Hat® Ansible® Automation Platform product trial will last 60 days from your initial start date. (We’ve also emailed you this information for easy reference.)'
   },
   titleFooter: {
     id: 'success.titleFooter',
@@ -56,14 +56,11 @@ const successMessages = defineMessages({
   },
   learnAnsibleText: {
     id: 'success.learnAnsibleText',
-    defaultMessage: `<ul>
-<li>Read about <a>portable execution environments</a>, a flexible foundation on which to build and deploy automation.</li>
-<li>Get an overview of Ansible Automation Platform in this <a1>quick-start video</a1>.</li>
-</ul>`
+    defaultMessage: `Read about <a>portable execution environments</a>, a flexible foundation on which to build and deploy automation.`
   },
   support: {
     id: 'success.support',
-    defaultMessage: 'Need installation support?'
+    defaultMessage: 'Need support?'
   },
   supportText: {
     id: 'success.supportText',

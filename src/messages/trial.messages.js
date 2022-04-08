@@ -8,7 +8,7 @@ const trialMessages = defineMessages({
   },
   description: {
     id: 'trial.description',
-    defaultMessage: 'See how your organization could benefit from scallable automation with a Red Hat® Ansible® Automation platform trial.'
+    defaultMessage: 'See how your organization can benefit from scallable automation with a Red Hat® Ansible® Automation platform trial.'
   },
   startButton: {
     id: 'trial.startButton',
@@ -29,7 +29,7 @@ const trialMessages = defineMessages({
   },
   adCardFooter: {
     id: 'trial.adCardFooter',
-    defaultMessage: 'This product trial is not intended for production. By proceeding, you agree to the <a>product trial terms</a>.'
+    defaultMessage: 'This product trial is not intended for production use. By proceeding, you agree to the <a>product trial terms</a>.'
   },
   reqCardHeader: {
     id: 'trial.reqCardHeader',
@@ -41,15 +41,15 @@ const trialMessages = defineMessages({
   },
   reqCardRHELContent: {
     id: 'trial.reqCardRHELContent',
-    defaultMessage: 'You need Red Hat Enterprise Linux as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start <a>your download</a> now. This <a1>installation guide</a1> provides step-by-step instructions.'
+    defaultMessage: 'You need to run Red Hat Enterprise Linux as your operating system for this product trial. We’ll provide next steps to download and install once your Ansible Automation Platform trial has been activated.'
   },
   reqCardBreakTitle: {
     id: 'trial.reqCardBreakTitle',
-    defaultMessage: 'Take a break'
+    defaultMessage: 'Start the installation'
   },
   reqCardBreakContent: {
     id: 'trial.reqCardBreakContent',
-    defaultMessage: 'You may need to wait up to 30 minutes to access <a>automation hub</a> services after the trial subscription is activated.'
+    defaultMessage: 'You may need to wait up to 30 minutes to access hosted services after the trial subscription is activated.'
   },
   faq1a: {
     id: 'trial.faq1a',
@@ -103,7 +103,7 @@ const trialMessages = defineMessages({
   },
   faq6b: {
     id: 'trial.faq6b',
-    defaultMessage: 'Nearly all Red Hat technologies are available for a product trial. You can find a listing of available product trials on <a>Red Hat Customer Portal</a>. If a trial is available for a given technology, you’ll see this noted in the "Product Trial" column. If there is a product you\'d like to try that isn’t listed, please <a1>contact Red Hat Sales</a1>.'
+    defaultMessage: 'Nearly all Red Hat technologies are available for a product trial. You can find a listing of available trials in the <a>Red Hat product trial center</a>. If there is a product you\'d like to try that isn’t listed, please <a1>contact Red Hat Sales</a1>.'
   },
   faq7a: {
     id: 'trial.faq7a',
@@ -161,7 +161,7 @@ const trialMessages = defineMessages({
   },  xxx: {
     id: 'trial.x',
     defaultMessage: 'xxx'
-  },
+  }
 });
 
 export default trialMessages;

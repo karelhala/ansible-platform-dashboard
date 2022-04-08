@@ -137,7 +137,7 @@ const Overview = () => {
             { createAccordionItem(4) }
             { createAccordionItem(5) }
             { createAccordionItem(6, {
-              a: (chunks) => <Link link="https://access.redhat.com/downloads/">{ chunks }</Link>,
+              a: (chunks) => <Link link="https://www.redhat.com/en/products/trials">{ chunks }</Link>,
               a1: (chunks) => <Link link="http://www.redhat.com/en/about/contact/sales">{ chunks }</Link>
             }) }
             { createAccordionItem(7, {
