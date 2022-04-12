@@ -107,26 +107,49 @@ const Success = () => {
                   <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(successMessages.nextSteps) }
                   </Title>
-                  <Text>
-                    { intl.formatMessage(successMessages.deployAnsible) }
-                  </Text>
-                  { intl.formatMessage(successMessages.deployAnsibleText,
-                    {
-                      ul: (chunks) => <TextList className='pf-u-ml-0'>{ chunks }</TextList>,
-                      li: (chunks) => <TextListItem className='pf-u-mt-0' >{ chunks }</TextListItem>,
-                      a: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index">{ chunks }</Link>,
-                      a1: (chunks) => <Link link="https://docs.ansible.com/automation-controller/latest/html/quickstart/index.html">{ chunks }</Link>,
-                      a2: (chunks) => <Link link="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview">{ chunks }</Link>
-                    }) }
-                  <Text>
-                    { intl.formatMessage(successMessages.learnAnsible) }
-                  </Text>
-                  { intl.formatMessage(successMessages.learnAnsibleText, {
-                    ul: (chunks) => <TextList >{ chunks }</TextList>,
-                    li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
-                    a: (chunks) => <Link link="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments">{ chunks }</Link>,
-                    a1: (chunks) => <Link link="https://www.ansible.com/resources/videos/quick-start-video">{ chunks }</Link>
-                  }) }
+                  <div className='pf-u-display-flex pf-u-mb-lg'>
+                    <div className='pf-u-mr-md'>
+                      <Title headingLevel="h2" size="2xl" className='ans-c-trial__number'>
+                        1
+                      </Title>
+                    </div>
+                    <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                      <Title headingLevel="h2" size="xl">
+                        { intl.formatMessage(successMessages.deployAnsible) }
+                      </Title>
+                      <TextContent>
+                        { intl.formatMessage(successMessages.deployAnsibleText,
+                          {
+                            ul: (chunks) => <TextList className='pf-u-ml-0'>{ chunks }</TextList>,
+                            li: (chunks) => <TextListItem className='pf-u-mt-0' >{ chunks }</TextListItem>,
+                            a: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index">{ chunks }</Link>,
+                            a1: (chunks) => <Link link="https://docs.ansible.com/automation-controller/latest/html/quickstart/index.html">{ chunks }</Link>,
+                            a2: (chunks) => <Link link="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview">{ chunks }</Link>
+                          })
+                        }
+                      </TextContent>
+                    </div>
+                  </div>
+                  <div className='pf-u-display-flex'>
+                    <div className='pf-u-mr-md'>
+                      <Title headingLevel="h2" size="2xl" className='ans-c-trial__number'>
+                        2
+                      </Title>
+                    </div>
+                    <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                      <Title headingLevel="h2" size="xl">
+                        { intl.formatMessage(successMessages.learnAnsible) }
+                      </Title>
+                      <TextContent>
+                        { intl.formatMessage(successMessages.learnAnsibleText, {
+                          ul: (chunks) => <TextList >{ chunks }</TextList>,
+                          li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
+                          a: (chunks) => <Link link="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments">{ chunks }</Link>,
+                          a1: (chunks) => <Link link="https://www.ansible.com/resources/videos/quick-start-video">{ chunks }</Link>
+                        }) }
+                      </TextContent>
+                    </div>
+                  </div>
                 </TextContent>
               </CardBody>
             </Card>
