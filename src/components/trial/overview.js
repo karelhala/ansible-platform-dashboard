@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
-import PropTypes from 'prop-types';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 
 import DashboardHeader from '../shared/dashboard-header';
@@ -28,13 +27,7 @@ import {
 import messages from '../../messages/messages';
 import trialMessages from '../../messages/trial.messages';
 import Requirements from './requirements';
-
-const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
-
-Link.propTypes = {
-  link: PropTypes.string,
-  children: PropTypes.node
-};
+import Link from './link';
 
 const Overview = () => {
   const [activeFaq, openFaq] = useState();

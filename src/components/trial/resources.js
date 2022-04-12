@@ -21,7 +21,7 @@ import {
 
 import successMessages from '../../messages/success.messages';
 
-const Resources = () => {
+const Resources = () => {
   const intl = useIntl();
 
   return <React.Fragment>

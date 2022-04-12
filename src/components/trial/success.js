@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -33,13 +32,7 @@ import successMessages from '../../messages/success.messages';
 import Requirements from './requirements';
 import Resources from './resources';
 import Logo from './logo';
-
-const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
-
-Link.propTypes = {
-  link: PropTypes.string,
-  children: PropTypes.node
-};
+import Link from './link';
 
 const Success = () => {
   const intl = useIntl();

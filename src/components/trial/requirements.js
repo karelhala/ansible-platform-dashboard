@@ -6,19 +6,12 @@ import PropTypes from 'prop-types';
 import {
   Stack,
   StackItem,
-  Text,
   TextContent,
   Title
 } from '@patternfly/react-core';
 
 import trialMessages from '../../messages/trial.messages';
-
-const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
-
-Link.propTypes = {
-  link: PropTypes.string,
-  children: PropTypes.node
-};
+import Link from './link';
 
 const Requirements = ({ afterTrial }) => {
   const intl = useIntl();
