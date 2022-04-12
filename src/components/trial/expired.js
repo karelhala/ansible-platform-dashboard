@@ -76,7 +76,7 @@ const Expired = () => {
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
                       <Text>
-                        { intl.formatMessage(expiredMessages.wannaTryText) }
+                        { intl.formatMessage(expiredMessages.wannaTryText, { date: '' }) }
                       </Text>
                     </TextContent>
                   </div>

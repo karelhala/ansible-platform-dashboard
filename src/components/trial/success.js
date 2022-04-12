@@ -137,10 +137,7 @@ const Success = () => {
                       </Title>
                       <TextContent>
                         { intl.formatMessage(successMessages.learnAnsibleText, {
-                          ul: (chunks) => <TextList >{ chunks }</TextList>,
-                          li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
                           a: (chunks) => <Link link="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments">{ chunks }</Link>,
-                          a1: (chunks) => <Link link="https://www.ansible.com/resources/videos/quick-start-video">{ chunks }</Link>
                         }) }
                       </TextContent>
                     </div>
