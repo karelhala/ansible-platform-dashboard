@@ -74,7 +74,7 @@ const Expired = () => {
         <Stack hasGutter>
           <StackItem>
             <Card>
-              <CardBody>
+              <CardBody className='pf-u-pb-0'>
                 <TextContent>
                   <Title headingLevel="h2" size="xl">
                     { intl.formatMessage(expiredMessages.wannaTry) }
@@ -84,16 +84,22 @@ const Expired = () => {
                   </Text>
                 </TextContent>
                 <Divider className='pf-u-my-lg'/>
-                <TextContent>
-                  <Title headingLevel="h2" size="xl">
-                    { intl.formatMessage(expiredMessages.readyBuy) }
-                  </Title>
-                  <Text className='pf-u-mb-lg'>
-                    { intl.formatMessage(expiredMessages.readyBuyText, {
-                      a: (chunks) => <Link link="https://www.redhat.com/en/about/value-of-subscription">{ chunks }</Link>
-                    }) }
-                  </Text>
-                </TextContent>
+                <Title headingLevel="h2" size="xl" className='pf-u-mb-md'>
+                  { intl.formatMessage(expiredMessages.readyBuy) }
+                </Title>
+                <div className='pf-u-display-flex pf-u-mb-md'>
+                  <div className='pf-u-mr-md'>
+                    <pfe-icon icon="rh-icon-support" size="xl" />
+                  </div>
+                  <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                    <TextContent>
+                      <Text>
+                        { intl.formatMessage(expiredMessages.readyBuyText, {
+                          a: (chunks) => <Link link="https://www.redhat.com/en/about/value-of-subscription">{ chunks }</Link>
+                        }) }                      </Text>
+                    </TextContent>
+                  </div>
+                </div>
                 <Grid hasGutter>
                   <GridItem md={ 6 }>
                     <Card isFlat className='pf-u-px-md pf-u-h-100'>

@@ -13,8 +13,6 @@ import {
 
 import trialMessages from '../../messages/trial.messages';
 
-import '@patternfly/pfe-icon';
-
 const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
 
 Link.propTypes = {
