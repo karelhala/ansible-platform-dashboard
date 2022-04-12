@@ -173,7 +173,7 @@ exports[`Trial pages <Expired /> renders correctly 1`] = `
               >
                 <pfe-icon
                   icon="rh-icon-support"
-                  size="xl"
+                  size="lg"
                 />
               </div>
               <div
@@ -991,7 +991,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
                   >
                     <pfe-icon
                       icon="rh-icon-install"
-                      size="xl"
+                      size="lg"
                     />
                   </div>
                   <div
@@ -1024,7 +1024,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
                   >
                     <pfe-icon
                       icon="rh-icon-clock-time-pass"
-                      size="xl"
+                      size="lg"
                     />
                   </div>
                   <div
@@ -1946,7 +1946,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
             class="pf-c-card__body"
           >
             <h2
-              class="pf-c-title pf-m-xl"
+              class="pf-c-title pf-m-xl pf-u-mb-md"
               data-ouia-component-id="OUIA-Generated-Title-14"
               data-ouia-component-type="PF4/Title"
               data-ouia-safe="true"
@@ -1961,7 +1961,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
               >
                 <pfe-icon
                   icon="rh-icon-install"
-                  size="xl"
+                  size="lg"
                 />
               </div>
               <div
@@ -2060,7 +2060,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
                   >
                     <pfe-icon
                       icon="rh-icon-install"
-                      size="xl"
+                      size="lg"
                     />
                   </div>
                   <div
@@ -2106,7 +2106,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
                   >
                     <pfe-icon
                       icon="rh-icon-clock-time-pass"
-                      size="xl"
+                      size="lg"
                     />
                   </div>
                   <div
@@ -2337,7 +2337,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
               >
                 <pfe-icon
                   icon="rh-icon-support"
-                  size="xl"
+                  size="lg"
                 />
               </div>
               <div

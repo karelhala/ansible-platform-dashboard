@@ -88,7 +88,7 @@ const Expired = () => {
                 </Title>
                 <div className='pf-u-display-flex pf-u-mb-md'>
                   <div className='pf-u-mr-md'>
-                    <pfe-icon icon="rh-icon-support" size="xl" />
+                    <pfe-icon icon="rh-icon-support" size="lg" />
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>

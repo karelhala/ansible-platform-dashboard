@@ -29,7 +29,7 @@ const Requirements = ({ afterTrial }) => {
       <StackItem>
         <div className='pf-u-display-flex'>
           <div className='pf-u-mr-md'>
-            <pfe-icon icon="rh-icon-install" size="xl" />
+            <pfe-icon icon="rh-icon-install" size="lg" />
           </div>
           <div style={ { flexGrow: 1, alignSelf: 'center' } }>
             <TextContent>
@@ -46,7 +46,7 @@ const Requirements = ({ afterTrial }) => {
       <StackItem>
         <div className='pf-u-display-flex'>
           <div className='pf-u-mr-md'>
-            <pfe-icon icon="rh-icon-clock-time-pass" size="xl" />
+            <pfe-icon icon="rh-icon-clock-time-pass" size="lg" />
           </div>
           <div style={ { flexGrow: 1, alignSelf: 'center' } }>
             <TextContent>

@@ -74,12 +74,12 @@ const Success = () => {
           <StackItem>
             <Card>
               <CardBody>
-                <Title headingLevel="h2" size="xl">
+                <Title headingLevel="h2" size="xl" className='pf-u-mb-md'>
                   { intl.formatMessage(successMessages.installation) }
                 </Title>
                 <div className='pf-u-display-flex'>
                   <div className='pf-u-mr-md'>
-                    <pfe-icon icon="rh-icon-install" size="xl" />
+                    <pfe-icon icon="rh-icon-install" size="lg" />
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
@@ -154,7 +154,7 @@ const Success = () => {
                 </Title>
                 <div className='pf-u-display-flex'>
                   <div className='pf-u-mr-md'>
-                    <pfe-icon icon="rh-icon-support" size="xl" />
+                    <pfe-icon icon="rh-icon-support" size="lg" />
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
