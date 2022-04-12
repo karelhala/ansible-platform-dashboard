@@ -6,6 +6,7 @@ import { useIntl } from 'react-intl';
 import { Link as RouterLink } from 'react-router-dom';
 
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 
 import { PageHeader } from '@redhat-cloud-services/frontend-components/PageHeader';
 import {
@@ -79,25 +80,31 @@ const Success = () => {
           <StackItem>
             <Card>
               <CardBody>
+                <Title headingLevel="h2" size="xl">
+                  { intl.formatMessage(successMessages.installation) }
+                </Title>
+                <div className='pf-u-display-flex'>
+                  <div className='pf-u-mr-md'>
+                    <pfe-icon icon="rh-icon-install" size="xl" />
+                  </div>
+                  <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                    <TextContent>
+                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md">
+                        { intl.formatMessage(successMessages.startDownload) }
+                      </Button>
+                      <Text>
+                        { intl.formatMessage(successMessages.downloadNote, {
+                          a: (chunks) => <Link link="https://access.redhat.com/downloads/content/480">{ chunks }</Link>
+                        }) }
+                      </Text>
+                    </TextContent>
+                  </div>
+                </div>
+                <Divider className='pf-u-my-lg'/>
+                <Requirements afterTrial />
+                <Divider className='pf-u-my-lg'/>
                 <TextContent>
                   <Title headingLevel="h2" size="xl">
-                    { intl.formatMessage(successMessages.installation) }
-                  </Title>
-                  <Button>
-                    { intl.formatMessage(successMessages.startDownload) }
-                  </Button>
-                  <Text>
-                    { intl.formatMessage(successMessages.downloadNote, {
-                      a: (chunks) => <Link link="https://access.redhat.com/downloads/content/480">{ chunks }</Link>
-                    }) }
-                  </Text>
-                </TextContent>
-                <Divider className='pf-u-my-lg'/>
-                <Requirements />
-                <Divider className='pf-u-my-lg'/>
-                <TextContent>
-                  <Title headingLevel="h2" size="xl">
-
                     { intl.formatMessage(successMessages.nextSteps) }
                   </Title>
                   <Text>
@@ -105,8 +112,8 @@ const Success = () => {
                   </Text>
                   { intl.formatMessage(successMessages.deployAnsibleText,
                     {
-                      ul: (chunks) => <TextList >{ chunks }</TextList>,
-                      li: (chunks) => <TextListItem >{ chunks }</TextListItem>,
+                      ul: (chunks) => <TextList className='pf-u-ml-0'>{ chunks }</TextList>,
+                      li: (chunks) => <TextListItem className='pf-u-mt-0' >{ chunks }</TextListItem>,
                       a: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index">{ chunks }</Link>,
                       a1: (chunks) => <Link link="https://docs.ansible.com/automation-controller/latest/html/quickstart/index.html">{ chunks }</Link>,
                       a2: (chunks) => <Link link="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview">{ chunks }</Link>
@@ -126,15 +133,22 @@ const Success = () => {
           </StackItem>
           <StackItem>
             <Card>
-              <CardBody>
-                <TextContent>
-                  <Title headingLevel="h2" size="xl">
-                    { intl.formatMessage(successMessages.support) }
-                  </Title>
-                  <Text>
-                    { intl.formatMessage(successMessages.supportText) }
-                  </Text>
-                </TextContent>
+              <CardBody className='pf-u-pb-0'>
+                <div className='pf-u-display-flex'>
+                  <div className='pf-u-mr-md'>
+                    <pfe-icon icon="rh-icon-support" size="xl" />
+                  </div>
+                  <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                    <TextContent>
+                      <Title headingLevel="h2" size="xl">
+                        { intl.formatMessage(successMessages.support) }
+                      </Title>
+                      <Text>
+                        { intl.formatMessage(successMessages.supportText) }
+                      </Text>
+                    </TextContent>
+                  </div>
+                </div>
                 <Divider className='pf-u-my-lg'/>
                 <Resources />
               </CardBody>

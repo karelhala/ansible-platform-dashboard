@@ -100,7 +100,7 @@ const successMessages = defineMessages({
   },
   customerServiceText: {
     id: 'success.customerServiceText',
-    defaultMessage: 'Get help starting, downloading, or installing your product trial. (Note: Customer Service doesn\'t provide break/fix or triage support for self-supported product trials.)'
+    defaultMessage: 'Get answers to questions about your trial or Red Hat products. (Note: Customer Service doesn\'t provide break/fix or triage support for self-supported product trials.)'
   },
   customrServiceLink: {
     id: 'success.customrServiceLink',

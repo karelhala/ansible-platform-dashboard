@@ -158,9 +158,14 @@ const trialMessages = defineMessages({
 <li>Complementing or supplementing third-party support services with services received through the Red Hat Product Trial Subscription program.</li>
 </ul>
 <p>By proceeding, you acknowledge that you've read and agree to the terms and conditions of the Red Hat Enterprise Agreement which governs your use.</p>`
-  },  xxx: {
-    id: 'trial.x',
-    defaultMessage: 'xxx'
+  },
+  installRHETrial: {
+    id: 'trial.installRHETrial',
+    defaultMessage: 'You need to run Red Hat Enterprise Linux® as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start your download now. This <a1>installation guide</a1> provides step-by-step instructions.'
+  },
+  startInstallTrial: {
+    id: 'trial.startInstallTrial',
+    defaultMessage: 'You may need to wait up to 30 minutes to access <a>automation hub</a> services after the trial subscription is activated.'
   }
 });
 
