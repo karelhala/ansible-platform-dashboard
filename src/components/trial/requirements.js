@@ -2,13 +2,8 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
-import ClockIcon from '@patternfly/react-icons/dist/js/icons/clock-icon';
 
 import {
-  Card,
-  CardBody,
-  CardTitle,
   Stack,
   StackItem,
   Text,
@@ -17,6 +12,8 @@ import {
 } from '@patternfly/react-core';
 
 import trialMessages from '../../messages/trial.messages';
+
+import '@patternfly/pfe-icon';
 
 const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
 
@@ -37,12 +34,12 @@ const Requirements = () => {
     <Stack>
       <StackItem>
         <div className='pf-u-display-flex'>
-          <div>
-            <DownloadIcon className="pf-u-mr-lg" size='xl'/>
+          <div className='pf-u-mr-md'>
+            <pfe-icon icon="rh-icon-install" size="xl" />
           </div>
           <div style={ { flexGrow: 1, alignSelf: 'center' } }>
             <TextContent>
-              <Title headingLevel="h2" size="lg">
+              <Title headingLevel="h2" size="lg" className='pf-u-mb-sm'>
                 { intl.formatMessage(trialMessages.reqCardRHELTitle) }
               </Title>
               { intl.formatMessage(trialMessages.reqCardRHELContent, {
@@ -55,12 +52,12 @@ const Requirements = () => {
       </StackItem>
       <StackItem>
         <div className='pf-u-display-flex'>
-          <div>
-            <ClockIcon className="pf-u-mr-lg" size='xl' />
+          <div className='pf-u-mr-md'>
+            <pfe-icon icon="rh-icon-clock-time-pass" size="xl" />
           </div>
           <div style={ { flexGrow: 1, alignSelf: 'center' } }>
             <TextContent>
-              <Title headingLevel="h2" size="lg">
+              <Title headingLevel="h2" size="lg" className='pf-u-mb-sm'>
                 { intl.formatMessage(trialMessages.reqCardBreakTitle) }
               </Title>
               { intl.formatMessage(trialMessages.reqCardBreakContent, {

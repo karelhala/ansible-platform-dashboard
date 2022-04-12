@@ -61,7 +61,7 @@ const Overview = () => {
   return <React.Fragment>
     <DashboardHeader title={ intl.formatMessage(messages.overview) }
       description={ '' }/>
-    <PageSection className='pf-u-pt-0'>
+    <PageSection className='pf-u-pt-0 pf-u-mt-xs'>
       <Stack hasGutter="md">
         <StackItem className='ans-c-trial__hero pf-u-pt-xl pf-u-pb-xl pf-u-pl-md pf-u-mb-0'>
           <Title headingLevel="h1" size="xl" className='pf-u-mb-md'>
