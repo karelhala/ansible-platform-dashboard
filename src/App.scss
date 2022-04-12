@@ -106,3 +106,16 @@
     --pf-c-card--BoxShadow: none;
   }
 }
+
+.ans-c-trial__hero {
+  background: #fff url(./images/hero.svg);
+  background-color: var(--pf-global--BackgroundColor--light-300);
+  background-size: auto 110%;
+  background-position-x: right;
+  background-position-y: 10%;
+  background-repeat: no-repeat;
+
+  .ans-c-trial__hero__description {
+    max-width: 500px;
+  }
+}

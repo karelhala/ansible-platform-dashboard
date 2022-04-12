@@ -61,18 +61,18 @@ const Overview = () => {
   return <React.Fragment>
     <DashboardHeader title={ intl.formatMessage(messages.overview) }
       description={ '' }/>
-    <PageSection>
+    <PageSection className='pf-u-pt-0'>
       <Stack hasGutter="md">
-        <StackItem>
-          <Title headingLevel="h1" size="3xl">
+        <StackItem className='ans-c-trial__hero pf-u-pt-xl pf-u-pb-xl pf-u-pl-md pf-u-mb-0'>
+          <Title headingLevel="h1" size="xl" className='pf-u-mb-md'>
             { intl.formatMessage(trialMessages.header) }
           </Title>
-          <TextContent>
+          <TextContent className='pf-u-mb-lg ans-c-trial__hero__description'>
             <Text>
               { intl.formatMessage(trialMessages.description) }
             </Text>
           </TextContent>
-          <Button>
+          <Button className='pf-u-px-xl'>
             { intl.formatMessage(trialMessages.startButton) }
           </Button>
         </StackItem>
@@ -156,14 +156,14 @@ const Overview = () => {
             }) }
           </Accordion>
         </StackItem>
-        <StackItem>
-          <Title headingLevel="h6" size="md">
+        <StackItem className='pf-u-mt-md pf-u-p-md'>
+          <Title headingLevel="h2" size="xl" className='pf-u-mb-lg'>
             { intl.formatMessage(trialMessages.footerTitle) }
           </Title>
-          <TextContent>
+          <TextContent className='pf-u-font-size-sm'>
             { intl.formatMessage(trialMessages.footerContent, {
               p: (chunks) => <Text>{ chunks }</Text>,
-              ul: (chunks) => <TextList >{ chunks }</TextList>,
+              ul: (chunks) => <TextList className='pf-u-ml-0'>{ chunks }</TextList>,
               li: (chunks) => <TextListItem >{ chunks }</TextListItem>
             }) }
           </TextContent>
