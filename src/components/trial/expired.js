@@ -32,6 +32,7 @@ import {
 import { DASHBOARD_ROUTE } from '../../constants/routes';
 import Resources from './resources';
 import expiredMessages from '../../messages/expired.messages';
+import Logo from './logo';
 
 const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
 
@@ -75,14 +76,19 @@ const Expired = () => {
           <StackItem>
             <Card>
               <CardBody className='pf-u-pb-0'>
-                <TextContent>
-                  <Title headingLevel="h2" size="xl">
-                    { intl.formatMessage(expiredMessages.wannaTry) }
-                  </Title>
-                  <Text>
-                    { intl.formatMessage(expiredMessages.wannaTryText) }
-                  </Text>
-                </TextContent>
+                <Title headingLevel="h2" size="xl">
+                  { intl.formatMessage(expiredMessages.wannaTry) }
+                </Title>
+                <div className='pf-u-display-flex'>
+                  <div style={ { flexGrow: 1, alignSelf: 'center' } }>
+                    <TextContent>
+                      <Text>
+                        { intl.formatMessage(expiredMessages.wannaTryText) }
+                      </Text>
+                    </TextContent>
+                  </div>
+                  <Logo />
+                </div>
                 <Divider className='pf-u-my-lg'/>
                 <Title headingLevel="h2" size="xl" className='pf-u-mb-md'>
                   { intl.formatMessage(expiredMessages.readyBuy) }
@@ -96,7 +102,8 @@ const Expired = () => {
                       <Text>
                         { intl.formatMessage(expiredMessages.readyBuyText, {
                           a: (chunks) => <Link link="https://www.redhat.com/en/about/value-of-subscription">{ chunks }</Link>
-                        }) }                      </Text>
+                        }) }
+                      </Text>
                     </TextContent>
                   </div>
                 </div>

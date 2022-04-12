@@ -32,6 +32,7 @@ import { DASHBOARD_ROUTE } from '../../constants/routes';
 import successMessages from '../../messages/success.messages';
 import Requirements from './requirements';
 import Resources from './resources';
+import Logo from './logo';
 
 const Link = ({ link, children }) => <Text component="a" href={ link } target="_blank" rel="noopener noreferrer">{ children }</Text>;
 
@@ -99,6 +100,7 @@ const Success = () => {
                       </Text>
                     </TextContent>
                   </div>
+                  <Logo />
                 </div>
                 <Divider className='pf-u-my-lg'/>
                 <Requirements afterTrial />
@@ -157,15 +159,15 @@ const Success = () => {
           <StackItem>
             <Card>
               <CardBody className='pf-u-pb-0'>
+                <Title headingLevel="h2" size="xl">
+                  { intl.formatMessage(successMessages.support) }
+                </Title>
                 <div className='pf-u-display-flex'>
                   <div className='pf-u-mr-md'>
                     <pfe-icon icon="rh-icon-support" size="xl" />
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
-                      <Title headingLevel="h2" size="xl">
-                        { intl.formatMessage(successMessages.support) }
-                      </Title>
                       <Text>
                         { intl.formatMessage(successMessages.supportText) }
                       </Text>

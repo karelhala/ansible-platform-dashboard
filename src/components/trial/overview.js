@@ -72,7 +72,7 @@ const Overview = () => {
               { intl.formatMessage(trialMessages.description) }
             </Text>
           </TextContent>
-          <Button className='pf-u-px-xl'>
+          <Button className='pf-u-px-xl' component="a" href="https://www.redhat.com/en/technologies/management/ansible/console-trial">
             { intl.formatMessage(trialMessages.startButton) }
           </Button>
         </StackItem>

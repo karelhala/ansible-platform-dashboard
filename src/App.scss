@@ -129,3 +129,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.ans-c-trial__logo-wrapper {
+  display: flex;
+  align-items: center;
+  border-left: 2px solid var(--pf-global--BackgroundColor--light-300);
+  min-width: 224px;
+}
+
+.ans-c-trial__ansible-logo {
+  height: 70px;
+}
