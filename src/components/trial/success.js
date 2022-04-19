@@ -33,6 +33,7 @@ import Requirements from './requirements';
 import Resources from './resources';
 import Logo from './logo';
 import Link from './link';
+import downloadTrial from './download-trial';
 
 const Success = () => {
   const intl = useIntl();
@@ -83,7 +84,7 @@ const Success = () => {
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
-                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md">
+                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md" onClick={ downloadTrial }>
                         { intl.formatMessage(successMessages.startDownload) }
                       </Button>
                       <Text>
