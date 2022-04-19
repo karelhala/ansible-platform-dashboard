@@ -28,10 +28,13 @@ import messages from '../../messages/messages';
 import trialMessages from '../../messages/trial.messages';
 import Requirements from './requirements';
 import Link from './link';
+import { TRIAL_PAGE, BETA_TRIAL_PAGE } from './constants';
 
 const Overview = () => {
   const [activeFaq, openFaq] = useState();
   const intl = useIntl();
+
+  const url = insights.chrome.isBeta() ? BETA_TRIAL_PAGE : TRIAL_PAGE;
 
   const onClick = (index) => () => activeFaq === index ? openFaq(undefined) : openFaq(index);
 
@@ -65,7 +68,7 @@ const Overview = () => {
               { intl.formatMessage(trialMessages.description) }
             </Text>
           </TextContent>
-          <Button className='pf-u-px-xl' component="a" href="https://www.redhat.com/en/technologies/management/ansible/console-trial">
+          <Button className='pf-u-px-xl' component="a" href={ url }>
             { intl.formatMessage(trialMessages.startButton) }
           </Button>
         </StackItem>

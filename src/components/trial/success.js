@@ -137,7 +137,7 @@ const Success = () => {
                       </Title>
                       <TextContent>
                         { intl.formatMessage(successMessages.learnAnsibleText, {
-                          a: (chunks) => <Link link="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments">{ chunks }</Link>,
+                          a: (chunks) => <Link link="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments">{ chunks }</Link>
                         }) }
                       </TextContent>
                     </div>
