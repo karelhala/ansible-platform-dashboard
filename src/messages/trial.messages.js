@@ -8,7 +8,7 @@ const trialMessages = defineMessages({
   },
   description: {
     id: 'trial.description',
-    defaultMessage: 'See how your organization can benefit from scallable automation with a Red Hat® Ansible® Automation platform trial.'
+    defaultMessage: 'See how your organization can benefit from scalable automation with a Red Hat® Ansible® Automation Platform trial.'
   },
   startButton: {
     id: 'trial.startButton',

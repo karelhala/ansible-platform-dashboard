@@ -639,7 +639,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
             data-ouia-safe="true"
             data-pf-content="true"
           >
-            See how your organization can benefit from scallable automation with a Red Hat® Ansible® Automation platform trial.
+            See how your organization can benefit from scalable automation with a Red Hat® Ansible® Automation Platform trial.
           </p>
         </div>
         <a
