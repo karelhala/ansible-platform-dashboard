@@ -1,0 +1,2649 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trial pages <Expired /> renders correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="pf-l-page-header pf-c-page-header pf-l-page__main-section pf-c-page__main-section pf-m-light"
+    widget-type="InsightsPageHeader"
+  >
+    <nav
+      aria-label="Breadcrumb"
+      class="pf-c-breadcrumb"
+      data-ouia-component-id="OUIA-Generated-Breadcrumb-3"
+      data-ouia-component-type="PF4/Breadcrumb"
+      data-ouia-safe="true"
+    >
+      <ol
+        class="pf-c-breadcrumb__list"
+      >
+        <li
+          class="pf-c-breadcrumb__item"
+        >
+          <a
+            class="pf-c-breadcrumb__link"
+            href="/ansible-dashboard"
+          >
+            Overview
+          </a>
+        </li>
+        <li
+          class="pf-c-breadcrumb__item"
+        >
+          <span
+            class="pf-c-breadcrumb__item-divider"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+          Trial expired
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="pf-c-content"
+    >
+      <div
+        class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center"
+      >
+        <div
+          class=""
+        >
+          <svg
+            aria-hidden="true"
+            fill="var(--pf-global--danger-color--100)"
+            height="1.5em"
+            role="img"
+            style="vertical-align: -0.1875em;"
+            viewBox="0 0 512 512"
+            width="1.5em"
+          >
+            <path
+              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+            />
+          </svg>
+        </div>
+        <div
+          class=""
+        >
+          <h2
+            class="pf-c-title pf-m-lg"
+            data-ouia-component-id="OUIA-Generated-Title-43"
+            data-ouia-component-type="PF4/Title"
+            data-ouia-safe="true"
+          >
+            Your product trial has expired
+          </h2>
+        </div>
+      </div>
+      <p
+        class="pf-u-mt-md"
+        data-ouia-component-id="OUIA-Generated-Text-99"
+        data-ouia-component-type="PF4/Text"
+        data-ouia-safe="true"
+        data-pf-content="true"
+      >
+        We hope you had a successful trial of Red Hat® Ansible® Automation Platform.
+      </p>
+    </div>
+  </section>
+  <section
+    class="pf-c-page__main-section"
+  >
+    <div
+      class="pf-l-stack pf-m-gutter"
+    >
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-22"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__body pf-u-pb-0"
+          >
+            <h2
+              class="pf-c-title pf-m-xl"
+              data-ouia-component-id="OUIA-Generated-Title-44"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Want to try this product again?
+            </h2>
+            <div
+              class="pf-u-display-flex"
+            >
+              <div
+                style="flex-grow: 1; align-self: center;"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <p
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-100"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    You can continue using Red Hat®  Ansible® Automation Platform in a nonproduction environment, but you won’t have access to trial updates and related content until you’re eligible to start a new trial on .
+                  </p>
+                </div>
+              </div>
+              <div
+                class="ans-c-trial__logo-wrapper pf-u-pl-lg"
+              >
+                <img
+                  alt="Ansible Automation Platform logo"
+                  class="ans-c-trial__ansible-logo"
+                  src="/apps/frontend-assets/platform-logos/ansible-automation-platform.svg"
+                />
+              </div>
+            </div>
+            <hr
+              class="pf-c-divider pf-u-my-lg"
+            />
+            <h2
+              class="pf-c-title pf-m-xl pf-u-mb-md"
+              data-ouia-component-id="OUIA-Generated-Title-45"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Ready to buy?
+            </h2>
+            <div
+              class="pf-u-display-flex pf-u-mb-md"
+            >
+              <div
+                class="pf-u-mr-md"
+              >
+                <pfe-icon
+                  icon="rh-icon-support"
+                  size="lg"
+                />
+              </div>
+              <div
+                style="flex-grow: 1; align-self: center;"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <p
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-101"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    Upgrading to a fully supported version of Red Hat Ansible Automation Platform gives you added security and the technical expertise of our engineers, who can guide you through planning, deployment, and operation. Read more about the 
+                    <a
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-102"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                      href="https://www.redhat.com/en/about/value-of-subscription"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      value of a subscription
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pf-l-grid pf-m-gutter"
+            >
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-23"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__title"
+                  >
+                    Sales
+                  </div>
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Get expert help selecting the right Red Hat Ansible Automation Platform option for your needs.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-primary"
+                      data-ouia-component-id="OUIA-Generated-Button-primary-6"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://www.redhat.com/en/contact"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Contact sales
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-24"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__title"
+                  >
+                    Partners
+                  </div>
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Have a particular infrastructure challenge? Need industry-specific expertise? Connect with a Red Hat partner.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-primary"
+                      data-ouia-component-id="OUIA-Generated-Button-primary-7"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://redhat.secure.force.com/finder/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Find a partner
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <hr
+              class="pf-c-divider pf-u-my-lg"
+            />
+            <div
+              class="pf-c-content"
+            >
+              <h2
+                class="pf-c-title pf-m-xl"
+                data-ouia-component-id="OUIA-Generated-Title-46"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Helpful resources
+              </h2>
+              <p
+                class="pf-u-mb-lg"
+                data-ouia-component-id="OUIA-Generated-Text-103"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                To make the most of your product trial, check out these resources.
+              </p>
+            </div>
+            <div
+              class="pf-l-grid pf-m-gutter"
+            >
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-25"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Get requirements and recommended steps for your installation.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-9"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Read the installation instructions 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-26"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Find release notes, planning recommendations, and other guidance for your trial.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-10"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Browse product documentation 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-27"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Find other versions and images of the Red Hat product you’re trying.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-11"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/downloads/content/480"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Access other downloads 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-28"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Get answers to questions about your trial or Red Hat products. (Note: Customer Service doesn't provide break/fix or triage support for self-supported product trials.)
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-12"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://www.redhat.com/en/contact?contact=customer-service#tab.contact-method.1"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Contact Customer Service 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div
+              class="pf-l-flex pf-m-justify-content-center pf-u-my-2xl"
+            >
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-tertiary"
+                  data-ouia-component-id="OUIA-Generated-Button-tertiary-5"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="https://www.redhat.com/en/products/trials/faqs"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  See product trial FAQs
+                  <span
+                    class="pf-c-button__icon pf-m-end"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-tertiary"
+                  data-ouia-component-id="OUIA-Generated-Button-tertiary-6"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="https://www.redhat.com/en/products/trials"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  See all product trials
+                  <span
+                    class="pf-c-button__icon pf-m-end"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Trial pages <Overview /> renders correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="pf-c-page__main-section pf-m-limit-width ans-c-marketing-banner ans-m-with-graphic  ans-m-graphic-right ans-m-light-1000 pf-m-light-1000 ans-m-full-bleed"
+    style="--ins-c-marketing-banner--graphic--width-on-md: 200px; --ins-c-marketing-banner--graphic--width-on-xl: 400px;"
+  >
+    <div
+      class="pf-c-page__main-body"
+    >
+      <div
+        class="pf-l-grid"
+      >
+        <div
+          class="pf-l-grid__item"
+        >
+          <div
+            class="pf-l-flex pf-m-column"
+          >
+            <div
+              class=""
+            >
+              <h1
+                class="pf-c-title pf-m-2xl"
+                data-ouia-component-id="OUIA-Generated-Title-1"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Overview
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="pf-c-page__main-section pf-u-pt-0 pf-u-mt-xs"
+  >
+    <div
+      class="pf-l-stack pf-m-gutter"
+    >
+      <div
+        class="pf-l-stack__item ans-c-trial__hero pf-u-pt-xl pf-u-pb-xl pf-u-pl-md pf-u-mb-0"
+      >
+        <h1
+          class="pf-c-title pf-m-xl pf-u-mb-md"
+          data-ouia-component-id="OUIA-Generated-Title-2"
+          data-ouia-component-type="PF4/Title"
+          data-ouia-safe="true"
+        >
+          Try Red Hat Ansible Automation Platform
+        </h1>
+        <div
+          class="pf-c-content pf-u-mb-lg ans-c-trial__hero__description"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-1"
+            data-ouia-component-type="PF4/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            See how your organization can benefit from scalable automation with a Red Hat® Ansible® Automation Platform trial.
+          </p>
+        </div>
+        <a
+          aria-disabled="false"
+          class="pf-c-button pf-m-primary pf-u-px-xl"
+          data-ouia-component-id="OUIA-Generated-Button-primary-1"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          href="https://www.redhat.com/en/technologies/management/ansible/console-trial"
+        >
+          Start your trial
+        </a>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-1"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            What you get with this product trial
+          </div>
+          <div
+            class="pf-c-card__body"
+          >
+            <div
+              class="pf-l-stack pf-m-gutter"
+            >
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-2"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      A single, 60-day, self-supported subscription to Red Hat® Ansible® Automation Platform for installation on Red Hat Enterprise Linux® (a subscription to Red Hat Enterprise Linux is included with this product trial, if not already installed)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-3"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      Access to Red Hat's award-winning Customer Portal, including documentation, helpful videos, discussions, and more
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-4"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      A single entitlement to all available versions of this product
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-5"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      Access to Red Hat Insights for Red Hat Ansible Automation Platform
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-6"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      Access to Red Hat Smart Management (included with Red Hat Enterprise Linux)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-u-mr-lg"
+                      fill="var(--pf-global--success-color--100)"
+                      height="2em"
+                      role="img"
+                      style="vertical-align: -0.25em;"
+                      viewBox="0 0 512 512"
+                      width="2em"
+                    >
+                      <path
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <p
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-7"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                    >
+                      Access to Red Hat Ansible Automation Platform hosted services on 
+                      <a
+                        class=""
+                        data-ouia-component-id="OUIA-Generated-Text-8"
+                        data-ouia-component-type="PF4/Text"
+                        data-ouia-safe="true"
+                        data-pf-content="true"
+                        href="http://console.redhat.com/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Red Hat Hybrid Cloud Console
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pf-c-card__footer"
+          >
+            <div
+              class="pf-c-content"
+            >
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-9"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                This product trial is not intended for production use. By proceeding, you agree to the 
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-10"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="https://www.redhat.com/en/about/agreements"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  product trial terms
+                </a>
+                .
+              </small>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-2"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__body"
+          >
+            <div
+              class="pf-c-content"
+            >
+              <h2
+                class="pf-c-title pf-m-lg pf-u-mb-lg"
+                data-ouia-component-id="OUIA-Generated-Title-3"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Requirements to get started
+              </h2>
+            </div>
+            <div
+              class="pf-l-stack"
+            >
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div
+                    class="pf-u-mr-md"
+                  >
+                    <pfe-icon
+                      icon="rh-icon-install"
+                      size="lg"
+                    />
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <div
+                      class="pf-c-content"
+                    >
+                      <h2
+                        class="pf-c-title pf-m-lg pf-u-mb-sm"
+                        data-ouia-component-id="OUIA-Generated-Title-4"
+                        data-ouia-component-type="PF4/Title"
+                        data-ouia-safe="true"
+                      >
+                        Install Red Hat Enterprise Linux
+                      </h2>
+                      You need to run Red Hat Enterprise Linux as your operating system for this product trial. We’ll provide next steps to download and install once your Ansible Automation Platform trial has been activated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div
+                    class="pf-u-mr-md"
+                  >
+                    <pfe-icon
+                      icon="rh-icon-clock-time-pass"
+                      size="lg"
+                    />
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <div
+                      class="pf-c-content"
+                    >
+                      <h2
+                        class="pf-c-title pf-m-lg pf-u-mb-sm"
+                        data-ouia-component-id="OUIA-Generated-Title-5"
+                        data-ouia-component-type="PF4/Title"
+                        data-ouia-safe="true"
+                      >
+                        Start the installation
+                      </h2>
+                      You may need to wait up to 30 minutes to access hosted services after the trial subscription is activated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-3"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            Frequently asked questions
+          </div>
+        </article>
+        <dl
+          aria-label=""
+          class="pf-c-accordion pf-m-bordered pf-m-display-lg"
+        >
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                What is a product trial? How is a Red Hat product trial different from a traditional licensed software trial?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                Red Hat® product trials offer all the benefits included in a Red Hat subscription. But Red Hat product trials are more than just access to the latest code. They provide access to all versions of the software, to patches and other software updates, and to our award-winning 
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-11"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="https://access.redhat.com/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Red Hat Customer Portal
+                </a>
+                .
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                May I run product trial software in a production environment?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                Product trials are not intended for production environments. Using product trials in a production environment is a violation of the product trial terms and conditions.
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                Do Red Hat product trials come with support? How do I know if my trial has support?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                <p
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-12"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Some product trials offer a level of support while others are self-supported (unsupported). There are several ways to determine the support level of your product trial:
+                </p>
+                
+
+                <ul
+                  class=""
+                  data-pf-content="true"
+                >
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    In the product trial name (e.g., 60 Day Self Support Red Hat Directory Server Evaluation). You’ll find this in the welcome email you receive when your product trial begins.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    On the Subscriptions page in Red Hat Customer Portal.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    By contacting Sales or Customer Service.
+                  </li>
+                  
+
+                </ul>
+                
+
+                <p
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-13"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Users with self-supported product trials have access to all 
+                  <a
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-14"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                    href="https://access.redhat.com/documentation/en-US/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    product documentation
+                  </a>
+                   as well as the vast Red Hat 
+                  <a
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-15"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                    href="https://access.redhat.com/search/#/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Knowledgebase
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                How do I download my product trial?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                Once your product trial subscription is active, we'll provide you with a download of the latest version on the "success" page (the page that opens after you click “Start my trial” and is also accessible from the confirmation email you’ll receive) or you can download the software from the Downloads section of Red Hat Customer Portal. However, some trials are accessed in the cloud rather than downloaded. In those instances, we’ll provide instructions to access your trial.
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                How long does a product trial last?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                Most product trials are 60 days, but exceptions may be made at the discretion of Red Hat Sales and Customer Service based on the user’s needs.
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                What technologies can I try through this program?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                Nearly all Red Hat technologies are available for a product trial. You can find a listing of available trials in the 
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-16"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="https://www.redhat.com/en/products/trials"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Red Hat product trial center
+                </a>
+                . If there is a product you'd like to try that isn’t listed, please 
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-17"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="http://www.redhat.com/en/about/contact/sales"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  contact Red Hat Sales
+                </a>
+                .
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                Why do I need to consult with a sales representative to obtain certain product trials?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                <p
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-18"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  There are several possible reasons:
+                </p>
+                
+
+                <ol
+                  class=""
+                  data-pf-content="true"
+                >
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    You’ve requested more than 1 product trial.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    Your product trial is not available via the web.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    You’ve requested multiple product trials as part of a bundled SKU.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    Your product trial requires additional approvals before being activated.
+                  </li>
+                  
+
+                </ol>
+                
+
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-19"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="http://www.redhat.com/en/about/contact/sales"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Contact Red Hat Sales
+                </a>
+                 to try these technologies.
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                Can I renew the product trial after it has expired?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                There are limits to how many product trials are allowed for each product over a given time period. If you need to extend your product trial or request more trials, please 
+                <a
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-20"
+                  data-ouia-component-type="PF4/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                  href="http://www.redhat.com/en/about/contact/sales"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  contact Red Hat Sales
+                </a>
+                .
+              </div>
+            </div>
+          </dd>
+          <dt>
+            <button
+              aria-expanded="false"
+              class="pf-c-accordion__toggle"
+              type="button"
+            >
+              <span
+                class="pf-c-accordion__toggle-text"
+              >
+                I’d like to use the product trial software after my trial has expired, or I’d like to use the software in a production environment. What are my options?
+              </span>
+              <span
+                class="pf-c-accordion__toggle-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </dt>
+          <dd
+            aria-label=""
+            class="pf-c-accordion__expanded-content"
+            hidden=""
+            id=""
+          >
+            <div
+              class="pf-c-accordion__expanded-content-body"
+            >
+              <div
+                class="pf-c-content"
+              >
+                <ul
+                  class=""
+                  data-pf-content="true"
+                >
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    Purchase a subscription.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    Renew the product trial after the expiry grace period has ended.
+                  </li>
+                  
+
+                  <li
+                    class=""
+                    data-pf-content="true"
+                  >
+                    <a
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-21"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                      href="http://www.redhat.com/en/about/contact/sales"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Contact Red Hat Sales
+                    </a>
+                     to determine if the product trial can be renewed sooner or if a similar product trial is available.
+                  </li>
+                  
+
+                </ul>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div
+        class="pf-l-stack__item pf-u-mt-md pf-u-p-md"
+      >
+        <h2
+          class="pf-c-title pf-m-xl pf-u-mb-lg"
+          data-ouia-component-id="OUIA-Generated-Title-6"
+          data-ouia-component-type="PF4/Title"
+          data-ouia-safe="true"
+        >
+          Product trial terms and conditions
+        </h2>
+        <div
+          class="pf-c-content pf-u-font-size-sm"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-22"
+            data-ouia-component-type="PF4/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            Red Hat is providing each Red Hat Product Trial Subscription for evaluation purposes subject to the terms of the Red Hat Enterprise Agreement. If you use the Red Hat Subscription for any purpose other than evaluation, you agree to pay Red Hat the Subscription Fee(s) for each Unit pursuant to the Enterprise Agreement, which is in addition to any and all other remedies available to Red Hat under applicable law.
+          </p>
+          
+
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-23"
+            data-ouia-component-type="PF4/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            Examples of situations where you would incur additional fees and be in violation of the Agreement include, but are not limited to:
+          </p>
+          
+
+          <ul
+            class="pf-u-ml-0"
+            data-pf-content="true"
+          >
+            
+
+            <li
+              class=""
+              data-pf-content="true"
+            >
+              Using the services provided under the trial program for a production installation,
+            </li>
+            
+
+            <li
+              class=""
+              data-pf-content="true"
+            >
+              Offering support services to third parties, or
+            </li>
+            
+
+            <li
+              class=""
+              data-pf-content="true"
+            >
+              Complementing or supplementing third-party support services with services received through the Red Hat Product Trial Subscription program.
+            </li>
+            
+
+          </ul>
+          
+
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-24"
+            data-ouia-component-type="PF4/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            By proceeding, you acknowledge that you've read and agree to the terms and conditions of the Red Hat Enterprise Agreement which governs your use.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Trial pages <Success /> renders correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="pf-l-page-header pf-c-page-header pf-l-page__main-section pf-c-page__main-section pf-m-light"
+    widget-type="InsightsPageHeader"
+  >
+    <nav
+      aria-label="Breadcrumb"
+      class="pf-c-breadcrumb"
+      data-ouia-component-id="OUIA-Generated-Breadcrumb-1"
+      data-ouia-component-type="PF4/Breadcrumb"
+      data-ouia-safe="true"
+    >
+      <ol
+        class="pf-c-breadcrumb__list"
+      >
+        <li
+          class="pf-c-breadcrumb__item"
+        >
+          <a
+            class="pf-c-breadcrumb__link"
+            href="/ansible-dashboard"
+          >
+            Overview
+          </a>
+        </li>
+        <li
+          class="pf-c-breadcrumb__item"
+        >
+          <span
+            class="pf-c-breadcrumb__item-divider"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 256 512"
+              width="1em"
+            >
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </span>
+          Download
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="pf-c-content"
+    >
+      <div
+        class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center"
+      >
+        <div
+          class=""
+        >
+          <svg
+            aria-hidden="true"
+            fill="var(--pf-global--success-color--100)"
+            height="1.5em"
+            role="img"
+            style="vertical-align: -0.1875em;"
+            viewBox="0 0 512 512"
+            width="1.5em"
+          >
+            <path
+              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+            />
+          </svg>
+        </div>
+        <div
+          class=""
+        >
+          <h2
+            class="pf-c-title pf-m-lg"
+            data-ouia-component-id="OUIA-Generated-Title-19"
+            data-ouia-component-type="PF4/Title"
+            data-ouia-safe="true"
+          >
+            Your product trial is underway
+          </h2>
+        </div>
+      </div>
+      <p
+        class="pf-u-mt-md"
+        data-ouia-component-id="OUIA-Generated-Text-73"
+        data-ouia-component-type="PF4/Text"
+        data-ouia-safe="true"
+        data-pf-content="true"
+      >
+        Your Red Hat® Ansible® Automation Platform product trial will last 60 days from your initial start date. (We’ve also emailed you this information for easy reference.)
+      </p>
+      <small
+        class=""
+        data-ouia-component-id="OUIA-Generated-Text-74"
+        data-ouia-component-type="PF4/Text"
+        data-ouia-safe="true"
+        data-pf-content="true"
+      >
+        This trial is not intended for production use. By proceeding, you agree to the 
+        <a
+          class=""
+          data-ouia-component-id="OUIA-Generated-Text-75"
+          data-ouia-component-type="PF4/Text"
+          data-ouia-safe="true"
+          data-pf-content="true"
+          href="https://www.redhat.com/en/about/agreements"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          product trial terms
+        </a>
+        .
+      </small>
+    </div>
+  </section>
+  <section
+    class="pf-c-page__main-section"
+  >
+    <div
+      class="pf-l-stack pf-m-gutter"
+    >
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-10"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__body"
+          >
+            <h2
+              class="pf-c-title pf-m-xl pf-u-mb-md"
+              data-ouia-component-id="OUIA-Generated-Title-20"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Installation
+            </h2>
+            <div
+              class="pf-u-display-flex"
+            >
+              <div
+                class="pf-u-mr-md"
+              >
+                <pfe-icon
+                  icon="rh-icon-install"
+                  size="lg"
+                />
+              </div>
+              <div
+                style="flex-grow: 1; align-self: center;"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <button
+                    aria-disabled="false"
+                    class="pf-c-button pf-m-primary pf-u-mb-md"
+                    data-ouia-component-id="OUIA-Generated-Button-primary-4"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-button__icon pf-m-start"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 512 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                        />
+                      </svg>
+                    </span>
+                    Start your download
+                  </button>
+                  <p
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-76"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    Looking for a previous version of this product? 
+                    <a
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-77"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                      href="https://access.redhat.com/downloads/content/480"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Start here
+                    </a>
+                    . 
+                  </p>
+                </div>
+              </div>
+              <div
+                class="ans-c-trial__logo-wrapper pf-u-pl-lg"
+              >
+                <img
+                  alt="Ansible Automation Platform logo"
+                  class="ans-c-trial__ansible-logo"
+                  src="/apps/frontend-assets/platform-logos/ansible-automation-platform.svg"
+                />
+              </div>
+            </div>
+            <hr
+              class="pf-c-divider pf-u-my-lg"
+            />
+            <div
+              class="pf-c-content"
+            >
+              <h2
+                class="pf-c-title pf-m-lg pf-u-mb-lg"
+                data-ouia-component-id="OUIA-Generated-Title-21"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Requirements to get started
+              </h2>
+            </div>
+            <div
+              class="pf-l-stack"
+            >
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div
+                    class="pf-u-mr-md"
+                  >
+                    <pfe-icon
+                      icon="rh-icon-install"
+                      size="lg"
+                    />
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <div
+                      class="pf-c-content"
+                    >
+                      <h2
+                        class="pf-c-title pf-m-lg pf-u-mb-sm"
+                        data-ouia-component-id="OUIA-Generated-Title-22"
+                        data-ouia-component-type="PF4/Title"
+                        data-ouia-safe="true"
+                      >
+                        Install Red Hat Enterprise Linux
+                      </h2>
+                      You need to run Red Hat Enterprise Linux® as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start your download now. This 
+                      <a
+                        class=""
+                        data-ouia-component-id="OUIA-Generated-Text-78"
+                        data-ouia-component-type="PF4/Text"
+                        data-ouia-safe="true"
+                        data-pf-content="true"
+                        href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_a_standard_rhel_installation/index"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        installation guide
+                      </a>
+                       provides step-by-step instructions.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pf-l-stack__item"
+              >
+                <div
+                  class="pf-u-display-flex"
+                >
+                  <div
+                    class="pf-u-mr-md"
+                  >
+                    <pfe-icon
+                      icon="rh-icon-clock-time-pass"
+                      size="lg"
+                    />
+                  </div>
+                  <div
+                    style="flex-grow: 1; align-self: center;"
+                  >
+                    <div
+                      class="pf-c-content"
+                    >
+                      <h2
+                        class="pf-c-title pf-m-lg pf-u-mb-sm"
+                        data-ouia-component-id="OUIA-Generated-Title-23"
+                        data-ouia-component-type="PF4/Title"
+                        data-ouia-safe="true"
+                      >
+                        Start the installation
+                      </h2>
+                      You may need to wait up to 30 minutes to access 
+                      <a
+                        class=""
+                        data-ouia-component-id="OUIA-Generated-Text-79"
+                        data-ouia-component-type="PF4/Text"
+                        data-ouia-safe="true"
+                        data-pf-content="true"
+                        href="https://console.redhat.com/ansible/automation-hub"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        automation hub
+                      </a>
+                       services after the trial subscription is activated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr
+              class="pf-c-divider pf-u-my-lg"
+            />
+            <div
+              class="pf-c-content"
+            >
+              <h2
+                class="pf-c-title pf-m-xl"
+                data-ouia-component-id="OUIA-Generated-Title-24"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Next steps
+              </h2>
+              <div
+                class="pf-u-display-flex pf-u-mb-lg"
+              >
+                <div
+                  class="pf-u-mr-md"
+                >
+                  <h2
+                    class="pf-c-title pf-m-2xl ans-c-trial__number"
+                    data-ouia-component-id="OUIA-Generated-Title-25"
+                    data-ouia-component-type="PF4/Title"
+                    data-ouia-safe="true"
+                  >
+                    1
+                  </h2>
+                </div>
+                <div
+                  style="flex-grow: 1; align-self: center;"
+                >
+                  <h2
+                    class="pf-c-title pf-m-xl"
+                    data-ouia-component-id="OUIA-Generated-Title-26"
+                    data-ouia-component-type="PF4/Title"
+                    data-ouia-safe="true"
+                  >
+                    Deploy Red Hat Ansible Automation Platform 
+                  </h2>
+                  <div
+                    class="pf-c-content"
+                  >
+                    <ul
+                      class="pf-u-ml-0"
+                      data-pf-content="true"
+                    >
+                      
+
+                      <li
+                        class="pf-u-mt-0"
+                        data-pf-content="true"
+                      >
+                        First, 
+                        <a
+                          class=""
+                          data-ouia-component-id="OUIA-Generated-Text-80"
+                          data-ouia-component-type="PF4/Text"
+                          data-ouia-safe="true"
+                          data-pf-content="true"
+                          href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          install
+                        </a>
+                         Ansible Automation Platform.
+                      </li>
+                      
+
+                      <li
+                        class="pf-u-mt-0"
+                        data-pf-content="true"
+                      >
+                        Then, 
+                        <a
+                          class=""
+                          data-ouia-component-id="OUIA-Generated-Text-81"
+                          data-ouia-component-type="PF4/Text"
+                          data-ouia-safe="true"
+                          data-pf-content="true"
+                          href="https://docs.ansible.com/automation-controller/latest/html/quickstart/index.html"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          create and launch
+                        </a>
+                         your first automation job.
+                      </li>
+                      
+
+                      <li
+                        class="pf-u-mt-0"
+                        data-pf-content="true"
+                      >
+                        Take the no-cost 
+                        <a
+                          class=""
+                          data-ouia-component-id="OUIA-Generated-Text-82"
+                          data-ouia-component-type="PF4/Text"
+                          data-ouia-safe="true"
+                          data-pf-content="true"
+                          href="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Ansible Basics: Automation Technical Overview
+                        </a>
+                         online course.
+                      </li>
+                      
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pf-u-display-flex"
+              >
+                <div
+                  class="pf-u-mr-md"
+                >
+                  <h2
+                    class="pf-c-title pf-m-2xl ans-c-trial__number"
+                    data-ouia-component-id="OUIA-Generated-Title-27"
+                    data-ouia-component-type="PF4/Title"
+                    data-ouia-safe="true"
+                  >
+                    2
+                  </h2>
+                </div>
+                <div
+                  style="flex-grow: 1; align-self: center;"
+                >
+                  <h2
+                    class="pf-c-title pf-m-xl"
+                    data-ouia-component-id="OUIA-Generated-Title-28"
+                    data-ouia-component-type="PF4/Title"
+                    data-ouia-safe="true"
+                  >
+                    Learn about Red Hat Ansible Automation Platform
+                  </h2>
+                  <div
+                    class="pf-c-content"
+                  >
+                    Read about 
+                    <a
+                      class=""
+                      data-ouia-component-id="OUIA-Generated-Text-83"
+                      data-ouia-component-type="PF4/Text"
+                      data-ouia-safe="true"
+                      data-pf-content="true"
+                      href="https://www.redhat.com/en/technologies/management/ansible/features#automation-execution-environments"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      portable execution environments
+                    </a>
+                    , a flexible foundation on which to build and deploy automation.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card"
+          data-ouia-component-id="OUIA-Generated-Card-11"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__body pf-u-pb-0"
+          >
+            <h2
+              class="pf-c-title pf-m-xl"
+              data-ouia-component-id="OUIA-Generated-Title-29"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Need support?
+            </h2>
+            <div
+              class="pf-u-display-flex"
+            >
+              <div
+                class="pf-u-mr-md"
+              >
+                <pfe-icon
+                  icon="rh-icon-support"
+                  size="lg"
+                />
+              </div>
+              <div
+                style="flex-grow: 1; align-self: center;"
+              >
+                <div
+                  class="pf-c-content"
+                >
+                  <p
+                    class=""
+                    data-ouia-component-id="OUIA-Generated-Text-84"
+                    data-ouia-component-type="PF4/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    If you have questions about your product trial, contact the support team at 888-RED-HAT-1 or 919-754-3700, then select the menu prompt for Customer Service.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr
+              class="pf-c-divider pf-u-my-lg"
+            />
+            <div
+              class="pf-c-content"
+            >
+              <h2
+                class="pf-c-title pf-m-xl"
+                data-ouia-component-id="OUIA-Generated-Title-30"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Helpful resources
+              </h2>
+              <p
+                class="pf-u-mb-lg"
+                data-ouia-component-id="OUIA-Generated-Text-85"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                To make the most of your product trial, check out these resources.
+              </p>
+            </div>
+            <div
+              class="pf-l-grid pf-m-gutter"
+            >
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-12"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Get requirements and recommended steps for your installation.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-1"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Read the installation instructions 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-13"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Find release notes, planning recommendations, and other guidance for your trial.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-2"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Browse product documentation 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-14"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Find other versions and images of the Red Hat product you’re trying.
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-3"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://access.redhat.com/downloads/content/480"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Access other downloads 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div
+                class="pf-l-grid__item pf-m-6-col-on-md"
+              >
+                <article
+                  class="pf-c-card pf-m-flat pf-u-px-md pf-u-h-100"
+                  data-ouia-component-id="OUIA-Generated-Card-15"
+                  data-ouia-component-type="PF4/Card"
+                  data-ouia-safe="true"
+                  id=""
+                >
+                  <div
+                    class="pf-c-card__body"
+                  >
+                    Get answers to questions about your trial or Red Hat products. (Note: Customer Service doesn't provide break/fix or triage support for self-supported product trials.)
+                  </div>
+                  <div
+                    class="pf-c-card__footer"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline pf-m-display-lg"
+                      data-ouia-component-id="OUIA-Generated-Button-link-4"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      href="https://www.redhat.com/en/contact?contact=customer-service#tab.contact-method.1"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Contact Customer Service 
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div
+              class="pf-l-flex pf-m-justify-content-center pf-u-my-2xl"
+            >
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-tertiary"
+                  data-ouia-component-id="OUIA-Generated-Button-tertiary-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="https://www.redhat.com/en/products/trials/faqs"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  See product trial FAQs
+                  <span
+                    class="pf-c-button__icon pf-m-end"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div
+                class=""
+              >
+                <a
+                  aria-disabled="false"
+                  class="pf-c-button pf-m-tertiary"
+                  data-ouia-component-id="OUIA-Generated-Button-tertiary-2"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  href="https://www.redhat.com/en/products/trials"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  See all product trials
+                  <span
+                    class="pf-c-button__icon pf-m-end"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

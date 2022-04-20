@@ -7,6 +7,8 @@ import { IntlProvider } from 'react-intl';
 import UserContext from './user-context';
 
 import './App.scss';
+import '@patternfly/pfe-icon';
+
 import AppPlaceholder from './components/shared/loader-placeholders';
 
 const pathName = window.location.pathname.split('/');
