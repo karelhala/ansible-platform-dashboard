@@ -11,6 +11,7 @@ import Success from '../../../components/trial/success';
 import Expired from '../../../components/trial/expired';
 import trialMessages from '../../../messages/trial.messages';
 import { BETA_TRIAL_PAGE, TRIAL_PAGE } from '../../../components/trial/constants';
+import * as downloadTrial from '../../../components/trial/download-trial';
 
 const ComponentWrapper = ({ initialEntries = [ '/ansible-dashboard' ], children }) => (
   <MemoryRouter initialEntries={ initialEntries }>
@@ -69,12 +70,27 @@ describe('Trial pages', () => {
     });
   });
 
-  it('<Success /> renders correctly', () => {
-    const { asFragment } = render(<ComponentWrapper>
-      <Success />
-    </ComponentWrapper>);
+  describe('<Success />', () => {
+    it('renders correctly', () => {
+      const { asFragment } = render(<ComponentWrapper>
+        <Success />
+      </ComponentWrapper>);
 
-    expect(asFragment()).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('starts download', () => {
+      // eslint-disable-next-line no-import-assign
+      downloadTrial.default = jest.fn();
+
+      render(<ComponentWrapper>
+        <Success />
+      </ComponentWrapper>);
+
+      userEvent.click(screen.getByText('Start your download'));
+
+      expect(downloadTrial.default).toHaveBeenCalled();
+    });
   });
 
   it('<Expired /> renders correctly', () => {
