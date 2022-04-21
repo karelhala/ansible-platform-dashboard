@@ -8,7 +8,7 @@ const { post } = getGraphqlInstance();
 
 const sourcesQuery = `
 query {
-  application_types (filter: { name: "/insights/platform/catalog" }) {
+  application_types (filter: { name: "name", operation: "eq", value: "/insights/platform/catalog" }) {
     id
     name
     sources {
