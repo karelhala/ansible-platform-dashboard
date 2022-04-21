@@ -5,4 +5,4 @@ export const AUTOMATION_HUB_BASE = `/api/automation-hub`;
 export const ANALYTICS_API_BASE_V1 = `/api/tower-analytics/v1`;
 export const ANALYTICS_API_BASE_V0 = `/api/tower-analytics/v0`;
 export const SOURCES_API_BASE = `/api/sources/v1.0`;
-export const CATALOG_INVENTORY_API_BASE = `/api/catalog-inventory/v1.0`;
+export const CATALOG_INVENTORY_API_BASE = `/api/catalog-inventory/v3.1`;
