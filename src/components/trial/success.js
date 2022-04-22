@@ -64,9 +64,7 @@ const Success = () => {
             { intl.formatMessage(successMessages.description) }
           </Text>
           <Text component='small'>
-            { intl.formatMessage(successMessages.titleFooter, {
-              a: (chunks) => <Link link="https://www.redhat.com/en/about/agreements">{ chunks }</Link>
-            }) }
+            { intl.formatMessage(successMessages.titleFooter) }
           </Text>
         </TextContent>
       </PageHeader>
