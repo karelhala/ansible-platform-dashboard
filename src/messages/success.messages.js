@@ -20,7 +20,7 @@ const successMessages = defineMessages({
   },
   titleFooter: {
     id: 'success.titleFooter',
-    defaultMessage: 'This trial is not intended for production use. By proceeding, you agree to the <a>product trial terms</a>.'
+    defaultMessage: 'This trial is not intended for production use. By proceeding, you agree to the product trial terms.'
   },
   installation: {
     id: 'success.installation',
