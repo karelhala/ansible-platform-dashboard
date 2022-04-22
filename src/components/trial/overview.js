@@ -98,7 +98,12 @@ const Overview = () => {
               <TextContent>
                 <Text component='small'>
                   { intl.formatMessage(trialMessages.adCardFooter, {
-                    a: (chunks) => <Link link="https://www.redhat.com/en/about/agreements">{ chunks }</Link>
+                    a: (chunks) => <Text
+                      component='a'
+                      href={ `${window.location.origin}${window.location.pathname}#trial-terms` }
+                    >
+                      { chunks }
+                    </Text>
                   }) }
                 </Text>
               </TextContent>
@@ -153,7 +158,7 @@ const Overview = () => {
           </Accordion>
         </StackItem>
         <StackItem className='pf-u-mt-md pf-u-p-md'>
-          <Title headingLevel="h2" size="xl" className='pf-u-mb-lg'>
+          <Title headingLevel="h2" size="xl" className='pf-u-mb-lg' id="trial-terms">
             { intl.formatMessage(trialMessages.footerTitle) }
           </Title>
           <TextContent className='pf-u-font-size-sm'>

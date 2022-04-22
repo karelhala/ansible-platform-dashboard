@@ -940,9 +940,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
                   data-ouia-component-type="PF4/Text"
                   data-ouia-safe="true"
                   data-pf-content="true"
-                  href="https://www.redhat.com/en/about/agreements"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  href="http://localhost/#trial-terms"
                 >
                   product trial terms
                 </a>
@@ -1730,6 +1728,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
           data-ouia-component-id="OUIA-Generated-Title-6"
           data-ouia-component-type="PF4/Title"
           data-ouia-safe="true"
+          id="trial-terms"
         >
           Product trial terms and conditions
         </h2>
