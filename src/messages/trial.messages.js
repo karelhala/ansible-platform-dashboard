@@ -25,7 +25,7 @@ const trialMessages = defineMessages({
 <li>A single entitlement to all available versions of this product</li>
 <li>Access to Red Hat Insights for Red Hat Ansible Automation Platform</li>
 <li>Access to Red Hat Smart Management (included with Red Hat Enterprise Linux)</li>
-<li>Access to Red Hat Ansible Automation Platform hosted services on <a>Red Hat Hybrid Cloud Console</a></li>`
+<li>Access to Red Hat Ansible Automation Platform hosted services on Red Hat Hybrid Cloud Console</li>`
   },
   adCardFooter: {
     id: 'trial.adCardFooter',
