@@ -1,5 +1,5 @@
 import downloadTrial from '../../../components/trial/download-trial';
-import { SHA_CHECKSUM } from '../../../components/trial/constants';
+import { ANSIBLE_CHECKSUM } from '../../../components/trial/constants';
 import * as axios from '../../../helpers/shared/user-login';
 
 describe('downloadTrial', () => {
@@ -21,11 +21,11 @@ describe('downloadTrial', () => {
       }
     };
 
-    await downloadTrial();
+    await downloadTrial(ANSIBLE_CHECKSUM);
 
     expect(getToken).toHaveBeenCalled();
     expect(get).toHaveBeenCalledWith(
-      `https://api.access.redhat.com/management/v1/images/${SHA_CHECKSUM}/download`,
+      `https://api.access.redhat.com/management/v1/images/${ANSIBLE_CHECKSUM}/download`,
       { headers: { Authorization: 'Bearer TOKEN123' }}
     );
   });

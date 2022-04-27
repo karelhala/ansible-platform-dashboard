@@ -10,7 +10,7 @@ import Overview from '../../../components/trial/overview';
 import Success from '../../../components/trial/success';
 import Expired from '../../../components/trial/expired';
 import trialMessages from '../../../messages/trial.messages';
-import { BETA_TRIAL_PAGE, TRIAL_PAGE } from '../../../components/trial/constants';
+import { ANSIBLE_CHECKSUM, BETA_TRIAL_PAGE, RHEL_CHECKSUM, TRIAL_PAGE } from '../../../components/trial/constants';
 import * as downloadTrial from '../../../components/trial/download-trial';
 
 const ComponentWrapper = ({ initialEntries = [ '/ansible-dashboard' ], children }) => (
@@ -79,7 +79,7 @@ describe('Trial pages', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
-    it('starts download', () => {
+    it('starts ANSIBLE download', () => {
       // eslint-disable-next-line no-import-assign
       downloadTrial.default = jest.fn();
 
@@ -89,7 +89,20 @@ describe('Trial pages', () => {
 
       userEvent.click(screen.getByText('Start your download'));
 
-      expect(downloadTrial.default).toHaveBeenCalled();
+      expect(downloadTrial.default).toHaveBeenCalledWith(ANSIBLE_CHECKSUM);
+    });
+
+    it('starts RHEL download', () => {
+      // eslint-disable-next-line no-import-assign
+      downloadTrial.default = jest.fn();
+
+      render(<ComponentWrapper>
+        <Success />
+      </ComponentWrapper>);
+
+      userEvent.click(screen.getByText('start your download now'));
+
+      expect(downloadTrial.default).toHaveBeenCalledWith(RHEL_CHECKSUM);
     });
   });
 
