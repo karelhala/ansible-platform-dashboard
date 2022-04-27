@@ -34,6 +34,7 @@ import Resources from './resources';
 import Logo from './logo';
 import Link from './link';
 import downloadTrial from './download-trial';
+import { ANSIBLE_CHECKSUM } from './constants';
 
 const Success = () => {
   const intl = useIntl();
@@ -82,7 +83,7 @@ const Success = () => {
                   </div>
                   <div style={ { flexGrow: 1, alignSelf: 'center' } }>
                     <TextContent>
-                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md" onClick={ downloadTrial }>
+                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md" onClick={ () => downloadTrial(ANSIBLE_CHECKSUM) }>
                         { intl.formatMessage(successMessages.startDownload) }
                       </Button>
                       <Text>

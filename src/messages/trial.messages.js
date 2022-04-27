@@ -25,7 +25,7 @@ const trialMessages = defineMessages({
 <li>A single entitlement to all available versions of this product</li>
 <li>Access to Red Hat Insights for Red Hat Ansible Automation Platform</li>
 <li>Access to Red Hat Smart Management (included with Red Hat Enterprise Linux)</li>
-<li>Access to Red Hat Ansible Automation Platform hosted services on <a>Red Hat Hybrid Cloud Console</a></li>`
+<li>Access to Red Hat Ansible Automation Platform hosted services on Red Hat Hybrid Cloud Console</li>`
   },
   adCardFooter: {
     id: 'trial.adCardFooter',
@@ -161,7 +161,7 @@ const trialMessages = defineMessages({
   },
   installRHETrial: {
     id: 'trial.installRHETrial',
-    defaultMessage: 'You need to run Red Hat Enterprise Linux® as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, start your download now. This <a1>installation guide</a1> provides step-by-step instructions.'
+    defaultMessage: 'You need to run Red Hat Enterprise Linux® as your operating system for this product trial. If you already have it, proceed to the next step. If you don’t, <button>start your download now</button>. This <a1>installation guide</a1> provides step-by-step instructions.'
   },
   startInstallTrial: {
     id: 'trial.startInstallTrial',

@@ -80,7 +80,6 @@ const Overview = () => {
             <CardBody>
               <Stack hasGutter>
                 { intl.formatMessage(trialMessages.adCardContent, {
-                  a: (chunks) => <Link link="http://console.redhat.com/">{ chunks }</Link>,
                   li: (chunks) => <StackItem>
                     <div className='pf-u-display-flex'>
                       <div>
