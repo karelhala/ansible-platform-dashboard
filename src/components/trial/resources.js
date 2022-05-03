@@ -14,9 +14,7 @@ import {
   CardFooter,
   Grid,
   GridItem,
-  Title,
-  Flex,
-  FlexItem
+  Title
 } from '@patternfly/react-core';
 
 import successMessages from '../../messages/success.messages';
