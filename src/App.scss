@@ -140,3 +140,11 @@
 .ans-c-trial__ansible-logo {
   height: 70px;
 }
+
+.ans-c-trial__resources-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: var(--pf-global--spacer--md);
+  column-gap: var(--pf-global--spacer--md);
+}
