@@ -78,7 +78,7 @@ const Success = () => {
                   { intl.formatMessage(successMessages.installation) }
                 </Title>
                 <div className='pf-u-display-flex pf-u-flex-wrap' style={ { rowGap: '16px' } }>
-                  <Flex className="pf-u-align-self-center pf-u-flex-grow-1">
+                  <Flex className="pf-u-align-self-center pf-u-flex-grow-1 pf-u-flex-nowrap">
                     <div className='pf-u-mr-md'>
                       <pfe-icon icon="rh-icon-install" size="lg" />
                     </div>

@@ -1924,7 +1924,7 @@ exports[`Trial pages <Success /> renders correctly 1`] = `
               style="row-gap: 16px;"
             >
               <div
-                class="pf-l-flex pf-u-align-self-center pf-u-flex-grow-1"
+                class="pf-l-flex pf-u-align-self-center pf-u-flex-grow-1 pf-u-flex-nowrap"
               >
                 <div
                   class="pf-u-mr-md"
