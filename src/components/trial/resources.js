@@ -83,18 +83,14 @@ const Resources = () => {
         </Card>
       </GridItem>
     </Grid>
-    <Flex className='pf-u-my-2xl' justifyContent={ { default: 'justifyContentCenter' } }>
-      <FlexItem>
-        <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials/faqs" target="_blank" rel="noopener noreferrer">
-          { intl.formatMessage(successMessages.faqLink) }
-        </Button>
-      </FlexItem>
-      <FlexItem>
-        <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials" target="_blank" rel="noopener noreferrer">
-          { intl.formatMessage(successMessages.allTrials) }
-        </Button>
-      </FlexItem>
-    </Flex>
+    <div className='pf-u-my-2xl ans-c-trial__resources-button'>
+      <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials/faqs" target="_blank" rel="noopener noreferrer">
+        { intl.formatMessage(successMessages.faqLink) }
+      </Button>
+      <Button variant="tertiary" icon={ <ExternalLinkIcon /> } iconPosition="right" component="a" href="https://www.redhat.com/en/products/trials" target="_blank" rel="noopener noreferrer">
+        { intl.formatMessage(successMessages.allTrials) }
+      </Button>
+    </div>
   </React.Fragment>;
 };
 

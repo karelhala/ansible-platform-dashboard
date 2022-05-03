@@ -77,22 +77,24 @@ const Success = () => {
                 <Title headingLevel="h2" size="xl" className='pf-u-mb-md'>
                   { intl.formatMessage(successMessages.installation) }
                 </Title>
-                <div className='pf-u-display-flex'>
-                  <div className='pf-u-mr-md'>
-                    <pfe-icon icon="rh-icon-install" size="lg" />
-                  </div>
-                  <div style={ { flexGrow: 1, alignSelf: 'center' } }>
-                    <TextContent>
-                      <Button icon={ <DownloadIcon /> } className="pf-u-mb-md" onClick={ () => downloadTrial(ANSIBLE_CHECKSUM) }>
-                        { intl.formatMessage(successMessages.startDownload) }
-                      </Button>
-                      <Text>
-                        { intl.formatMessage(successMessages.downloadNote, {
-                          a: (chunks) => <Link link="https://access.redhat.com/downloads/content/480">{ chunks }</Link>
-                        }) }
-                      </Text>
-                    </TextContent>
-                  </div>
+                <div className='pf-u-display-flex pf-u-flex-wrap' style={ { rowGap: '16px' } }>
+                  <Flex className="pf-u-align-self-center pf-u-flex-grow-1">
+                    <div className='pf-u-mr-md'>
+                      <pfe-icon icon="rh-icon-install" size="lg" />
+                    </div>
+                    <div className='pf-u-align-self-center pf-u-flex-grow-1'>
+                      <TextContent>
+                        <Button icon={ <DownloadIcon /> } className="pf-u-mb-md" onClick={ () => downloadTrial(ANSIBLE_CHECKSUM) }>
+                          { intl.formatMessage(successMessages.startDownload) }
+                        </Button>
+                        <Text>
+                          { intl.formatMessage(successMessages.downloadNote, {
+                            a: (chunks) => <Link link="https://access.redhat.com/downloads/content/480">{ chunks }</Link>
+                          }) }
+                        </Text>
+                      </TextContent>
+                    </div>
+                  </Flex>
                   <Logo />
                 </div>
                 <Divider className='pf-u-my-lg'/>
