@@ -111,7 +111,7 @@ const AnalyticsCard = () => {
   const renderAnalyticsInfo = () => {
     return (
       <Fragment>
-        <Flex className="automation-analytics_info">
+        <Flex className=" ans-l-flex ans-l-flex-automation-analytics-info">
           <FlexItem>
             <Text>
               { intl.formatMessage(messages.hubCardDescription) }
@@ -185,7 +185,7 @@ const AnalyticsCard = () => {
       return (
         <Flex direction={ { default: 'column' } }>
           <FlexItem>
-            <Flex className="automation-analytics_card">
+            <Flex className="ans-l-flex ans-l-flex-automation-analytics-card">
               <FlexItem>
                 { renderAnalyticsInfo() }
               </FlexItem>
@@ -209,7 +209,7 @@ const AnalyticsCard = () => {
     !isAnalyticsAvailable ?
       <ConfigureAnalyticsCard/> :
       <Fragment>
-        <Card className='ins-c-dashboard__card'>
+        <Card className='ans-c-card-dashboard'>
           <CardTitle>
             <Title headingLevel="h3">
               { intl.formatMessage(messages.analyticsTitle) }

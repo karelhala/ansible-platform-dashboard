@@ -7,7 +7,7 @@ import MarketingBanner from './marketing-banner';
 const DashboardHeader = ({ title, description, renderButtons }) => {
   const intl = useIntl();
 
-  return (<React.Fragment>
+  return (
     <MarketingBanner
       hasGraphic
       graphicRight
@@ -31,21 +31,21 @@ const DashboardHeader = ({ title, description, renderButtons }) => {
                 <p className='ins-c-text--black-400'>{ description }</p>
               </div>
             </FlexItem> }
-            { renderButtons ? <FlexItem>
+            { renderButtons && <FlexItem>
               { renderButtons(intl) }
-            </FlexItem> : null
+            </FlexItem>
             }
           </Flex>
         </GridItem>
       </Grid>
     </MarketingBanner>
-  </React.Fragment>);
+  );
 };
 
 DashboardHeader.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  renderButtons: PropTypes.func.isRequired
+  renderButtons: PropTypes.func
 };
 
 export default DashboardHeader;

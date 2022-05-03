@@ -9,11 +9,11 @@ const MarketingBanner = ({ className, hasGraphic, graphicRight, light1000, fullB
 
   const MarketingBannerSectionClasses = classNames(
     className,
-    'ins-c-marketing-banner',
-    { [`ins-m-with-graphic `]: hasGraphic },
-    { [`ins-m-graphic-right`]: graphicRight },
-    { [`ins-m-light-1000 pf-m-light-1000`]: light1000 },
-    { [`ins-m-full-bleed`]: fullBleed }
+    'ans-c-marketing-banner',
+    { [`ans-m-with-graphic `]: hasGraphic },
+    { [`ans-m-graphic-right`]: graphicRight },
+    { [`ans-m-light-1000 pf-m-light-1000`]: light1000 },
+    { [`ans-m-full-bleed`]: fullBleed }
   );
 
   return <PageSection

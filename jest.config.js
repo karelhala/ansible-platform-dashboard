@@ -1,21 +1,22 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/**/*.js",
-    "!src/**/stories/*"
+    'src/**/*.js',
+    '!src/**/stories/*'
   ],
-  coverageDirectory: "./coverage/",
+  coverageDirectory: './coverage/',
   moduleNameMapper: {
-    "\\.(css|scss)$": "identity-obj-proxy"
+    '\\.(css|scss)$': 'identity-obj-proxy'
   },
   roots: [
-    "<rootDir>/src/"
+    '<rootDir>/src/'
   ],
-  setupFiles: [
-    "<rootDir>/config/setupTests.js"
+  setupFilesAfterEnv: [
+    '<rootDir>/config/setupTests.js'
   ],
   transformIgnorePatterns: [
-    "/node_modules/(?!@redhat-cloud-services)",
-    "/node_modules/(?!@patternfly)"
-  ],
+    '/node_modules/(?!@redhat-cloud-services)',
+    '/node_modules/(?!@patternfly)'
+  ]
 };

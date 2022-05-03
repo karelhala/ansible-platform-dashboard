@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { render, waitFor, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -11,19 +11,21 @@ import hubReducer, { hubInitialState } from '../../../redux/reducers/hub-reducer
 import Dashboard from '../../../components/dashboard/dashboard';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
+import UserContext from '../../../user-context';
 
 const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
-  <IntlProvider locale="en">
-    <Provider store={ store } >
-      <MemoryRouter initialEntries={ initialEntries }>
-        <IntlProvider locale="en">
+  <Provider store={ store } >
+    <MemoryRouter initialEntries={ initialEntries }>
+      <IntlProvider locale="en">
+        <UserContext.Provider
+          value={ { permissions: []} }
+        >
           { children }
-        </IntlProvider>
-      </MemoryRouter>
-    </Provider>
-  </IntlProvider>
+        </UserContext.Provider>
+      </IntlProvider>
+    </MemoryRouter>
+  </Provider>
 );
 
 describe('<Dashboard />', () => {
@@ -61,19 +63,16 @@ describe('<Dashboard />', () => {
       catalogReducer: applyReducerHash(catalogReducer, catalogInitialState),
       hubReducer: applyReducerHash(hubReducer, hubInitialState) });
 
-    let wrapper;
-    await act(async () => {
-      wrapper = shallow(<ComponentWrapper store={ store }><Dashboard { ...initialProps } /></ComponentWrapper>);
-    });
-    wrapper.update();
+    const { asFragment } = render(<ComponentWrapper store={ store }><Dashboard { ...initialProps } /></ComponentWrapper>);
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly in loading state', () => {
     const store = mockStore(initialState);
-    let wrapper;
-    shallow(<ComponentWrapper store={ store }><Dashboard { ...initialProps } isLoading={ true } /></ComponentWrapper>);
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    const { asFragment } = render(<ComponentWrapper store={ store }><Dashboard { ...initialProps } isLoading={ true } /></ComponentWrapper>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

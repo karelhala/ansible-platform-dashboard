@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { render, waitFor, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -8,17 +8,20 @@ import notificationsMiddleware from '@redhat-cloud-services/frontend-components-
 import catalogReducer, { catalogInitialState } from '../../../redux/reducers/catalog-reducer';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import { shallowToJson } from 'enzyme-to-json';
 import { applyReducerHash, ReducerRegistry } from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
 import CatalogCard from '../../../components/catalog/catalog-card';
+import UserContext from '../../../user-context';
+import '../../../helpers/shared/__mocks__/user-login';
 
 const ComponentWrapper = ({ store, initialEntries = [ '/ansible-dashboard' ], children }) => (
   <IntlProvider locale="en">
     <Provider store={ store } >
       <MemoryRouter initialEntries={ initialEntries }>
-        <IntlProvider locale="en">
+        <UserContext.Provider
+          value={ { permissions: []} }
+        >
           { children }
-        </IntlProvider>
+        </UserContext.Provider>
       </MemoryRouter>
     </Provider>
   </IntlProvider>
@@ -46,7 +49,8 @@ describe('<AnalyticsCard />', () => {
       i18nReducer: {
         formatMessage: ({ defaultMessage }) => defaultMessage
       },
-      analyticsReducer: { ...catalogInitialState, isLoading: false }
+      analyticsReducer: { ...catalogInitialState, isLoading: false },
+      catalogReducer: { ...catalogInitialState, isLoading: false }
     };
   });
 
@@ -55,19 +59,20 @@ describe('<AnalyticsCard />', () => {
     const registry = new ReducerRegistry({}, [ thunk, promiseMiddleware ]);
     registry.register({ analyticsReducer: applyReducerHash(catalogReducer, catalogInitialState) });
 
-    let wrapper;
-    await act(async () => {
-      wrapper = shallow(<ComponentWrapper store={ store }><CatalogCard { ...initialProps } /></ComponentWrapper>);
-    });
-    wrapper.update();
+    const { asFragment } = render(<ComponentWrapper store={ store }><CatalogCard { ...initialProps } /></ComponentWrapper>);
 
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly in loading state', () => {
+  it('should render correctly in loading state', async () => {
     const store = mockStore(initialState);
-    let wrapper;
-    shallow(<ComponentWrapper store={ store }><CatalogCard { ...initialProps } isLoading={ true } /></ComponentWrapper>);
-    expect(shallowToJson(wrapper)).toMatchSnapshot();
+
+    const { asFragment } = render(<ComponentWrapper store={ store }><CatalogCard { ...initialProps } isLoading={ true } /></ComponentWrapper>);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    await waitFor(() => expect(() => screen.getByLabelText('Contents')).toThrow());
   });
 });

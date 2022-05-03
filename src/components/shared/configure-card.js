@@ -10,11 +10,11 @@ import {
   StackItem,
   Title
 } from '@patternfly/react-core';
-import Truncate from 'react-truncate';
+import LinesEllipsis from 'react-lines-ellipsis';
 
 const ConfigureCard = ({ title, description, renderButtons }) => {
   return (
-    <Card className='config_card' >
+    <Card className='ans-c-card-config' >
       <CardTitle>
         <Title headingLevel="h3">
           { title }
@@ -23,9 +23,7 @@ const ConfigureCard = ({ title, description, renderButtons }) => {
       <CardBody className={ 'pf-u-mb-0-pb-0' }>
         <Stack>
           <StackItem isFilled>
-            <Truncate lines={ 3 } ellipsis={ <span>... </span> }>
-              { description }
-            </Truncate>
+            <LinesEllipsis maxLine={ 3 } text={ description } />
           </StackItem>
           <StackItem style={ { marginBottom: 0, paddingBottom: 0 } }>
             <Bullseye>

@@ -4,7 +4,7 @@ cache:
   directories:
     - "$HOME/.npm"
 node_js:
-  - '12'
+  - '16'
 install:
   - npm install
   - npm install -g codecov

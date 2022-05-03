@@ -7,6 +7,8 @@ import { IntlProvider } from 'react-intl';
 import UserContext from './user-context';
 
 import './App.scss';
+import '@patternfly/pfe-icon';
+
 import AppPlaceholder from './components/shared/loader-placeholders';
 
 const pathName = window.location.pathname.split('/');
@@ -43,7 +45,7 @@ const App = () => {
         <IntlProvider locale="en">
           <React.Fragment>
             <NotificationsPortal />
-            <Main className="ins-c-ansible-dashboard pf-u-p-0 pf-u-ml-0">
+            <Main className="ans-c-dashboard pf-u-p-0 pf-u-ml-0">
               <Routes />
             </Main>
           </React.Fragment>

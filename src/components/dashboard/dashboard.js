@@ -1,10 +1,6 @@
 import React from 'react';
 import PlatformPage from './platform-page';
 
-const Dashboard = () => {
-  return <React.Fragment>
-    <PlatformPage />
-  </React.Fragment>;
-};
+const Dashboard = () => <PlatformPage />;
 
 export default Dashboard;

@@ -1,48 +1,417 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dashboard /> should render correctly 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en"
-  formats={Object {}}
-  locale="en"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <Provider
-    store={
-      Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+<DocumentFragment>
+  <section
+    class="pf-c-page__main-section pf-m-limit-width ans-c-marketing-banner ans-m-with-graphic  ans-m-graphic-right ans-m-light-1000 pf-m-light-1000 ans-m-full-bleed"
+    style="--ins-c-marketing-banner--graphic--width-on-md: 200px; --ins-c-marketing-banner--graphic--width-on-xl: 400px;"
   >
-    <MemoryRouter
-      initialEntries={
-        Array [
-          "/ansible-dashboard",
-        ]
-      }
+    <div
+      class="pf-c-page__main-body"
     >
-      <IntlProvider
-        defaultFormats={Object {}}
-        defaultLocale="en"
-        formats={Object {}}
-        locale="en"
-        messages={Object {}}
-        onError={[Function]}
-        textComponent={Symbol(react.fragment)}
+      <div
+        class="pf-l-grid"
       >
-        <Dashboard />
-      </IntlProvider>
-    </MemoryRouter>
-  </Provider>
-</IntlProvider>
+        <div
+          class="pf-l-grid__item"
+        >
+          <div
+            class="pf-l-flex pf-m-column"
+          >
+            <div
+              class=""
+            >
+              <h1
+                class="pf-c-title pf-m-2xl"
+                data-ouia-component-id="OUIA-Generated-Title-1"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Overview
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="pf-c-page__main-section"
+  >
+    <div
+      class="pf-l-stack pf-m-gutter"
+    >
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-1"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-2"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Insights Ansible Automation Platform
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body pf-u-pb-sm"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-2"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-3"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Automation Hub
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-3"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-4"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Automation Services Catalog
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
-exports[`<Dashboard /> should render correctly in loading state 1`] = `null`;
+exports[`<Dashboard /> should render correctly in loading state 1`] = `
+<DocumentFragment>
+  <section
+    class="pf-c-page__main-section pf-m-limit-width ans-c-marketing-banner ans-m-with-graphic  ans-m-graphic-right ans-m-light-1000 pf-m-light-1000 ans-m-full-bleed"
+    style="--ins-c-marketing-banner--graphic--width-on-md: 200px; --ins-c-marketing-banner--graphic--width-on-xl: 400px;"
+  >
+    <div
+      class="pf-c-page__main-body"
+    >
+      <div
+        class="pf-l-grid"
+      >
+        <div
+          class="pf-l-grid__item"
+        >
+          <div
+            class="pf-l-flex pf-m-column"
+          >
+            <div
+              class=""
+            >
+              <h1
+                class="pf-c-title pf-m-2xl"
+                data-ouia-component-id="OUIA-Generated-Title-5"
+                data-ouia-component-type="PF4/Title"
+                data-ouia-safe="true"
+              >
+                Overview
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="pf-c-page__main-section"
+  >
+    <div
+      class="pf-l-stack pf-m-gutter"
+    >
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-4"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-6"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Insights Ansible Automation Platform
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body pf-u-pb-sm"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-5"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-7"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Automation Hub
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+      <div
+        class="pf-l-stack__item"
+      >
+        <article
+          class="pf-c-card ans-c-card-dashboard"
+          data-ouia-component-id="OUIA-Generated-Card-6"
+          data-ouia-component-type="PF4/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-c-card__title"
+          >
+            <h3
+              class="pf-c-title pf-m-lg"
+              data-ouia-component-id="OUIA-Generated-Title-8"
+              data-ouia-component-type="PF4/Title"
+              data-ouia-safe="true"
+            >
+              Automation Services Catalog
+            </h3>
+          </div>
+          <div
+            class="pf-c-card__body"
+          >
+            <section
+              class=""
+              style="background-color: white; min-height: 100%;"
+            >
+               
+              <div
+                class="pf-l-bullseye"
+              >
+                <svg
+                  aria-label="Contents"
+                  aria-valuetext="Loading..."
+                  class="pf-c-spinner pf-m-xl"
+                  role="progressbar"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="pf-c-spinner__path"
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    r="45"
+                  />
+                </svg>
+              </div>
+               
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
