@@ -4,7 +4,6 @@ import { PageSection, Stack, StackItem } from '@patternfly/react-core';
 import { useIntl } from 'react-intl';
 import messages from '../../messages/messages';
 import HubCard from '../automation-hub/hub-card';
-import CatalogCard from '../catalog/catalog-card';
 import AnalyticsCard from '../analytics/analytics-card';
 import { useSelector } from 'react-redux';
 import ConfigureAppPage from './configure-app-page';
@@ -28,19 +27,11 @@ const PlatformPage = () => {
     }) => ({ isHubAvailable })
   );
 
-  const { isCatalogAvailable } = useSelector(
-    ({
-      catalogReducer: {
-        isCatalogAvailable
-      }
-    }) => ({ isCatalogAvailable })
-  );
-
-  if (!isAnalyticsAvailable && !isHubAvailable && !isCatalogAvailable) {
+  if (!isAnalyticsAvailable && !isHubAvailable) {
     return <NoAppState/>;
   }
 
-  if (isHubAvailable && !isAnalyticsAvailable && !isCatalogAvailable) {
+  if (isHubAvailable && !isAnalyticsAvailable) {
     return <ConfigureAppPage/>;
   }
 
@@ -54,9 +45,6 @@ const PlatformPage = () => {
         </StackItem>
         <StackItem>
           <HubCard/>
-        </StackItem>
-        <StackItem>
-          <CatalogCard/>
         </StackItem>
       </Stack>
     </PageSection>

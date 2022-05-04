@@ -6,7 +6,6 @@ import { notificationsReducer } from '@redhat-cloud-services/frontend-components
 import notificationsMiddleware from '@redhat-cloud-services/frontend-components-notifications/notificationsMiddleware';
 
 import thunk from 'redux-thunk';
-import catalogReducer, { catalogInitialState } from '../redux/reducers/catalog-reducer';
 import hubReducer, { hubInitialState } from '../redux/reducers/hub-reducer';
 import analyticsReducer, { analyticsInitialState } from '../redux/reducers/analytics-reducer';
 
@@ -31,7 +30,6 @@ const getStore = (middlewares = []) => {
   ]);
 
   registry.register({
-    catalogReducer: applyReducerHash(catalogReducer, catalogInitialState),
     analyticsReducer: applyReducerHash(analyticsReducer, analyticsInitialState),
     hubReducer: applyReducerHash(hubReducer, hubInitialState),
     notifications: notificationsReducer

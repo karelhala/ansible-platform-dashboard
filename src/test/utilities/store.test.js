@@ -5,7 +5,6 @@ describe('Redux store', () => {
     const dashboardStore = store();
     const expectedState = {
       analyticsReducer: expect.any(Object),
-      catalogReducer: expect.any(Object),
       hubReducer: expect.any(Object),
       notifications: []
     };

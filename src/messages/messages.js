@@ -56,30 +56,6 @@ const messages = defineMessages({
     id: 'analytics.warning',
     defaultMessage: 'Warnings'
   },
-  catalogTitle: {
-    id: 'catalog.title',
-    defaultMessage: 'Automation Services Catalog'
-  },
-  catalogCardDescription: {
-    id: 'catalog.description',
-    defaultMessage: 'Collect and distribute automation content, govern content by approval processes and assure sign-off by assigned groups.'
-  },
-  products: {
-    id: 'catalog.products',
-    defaultMessage: 'Products'
-  },
-  portfolios: {
-    id: 'catalog.portfolios',
-    defaultMessage: 'Portfolios'
-  },
-  platforms: {
-    id: 'catalog.platforms',
-    defaultMessage: 'Platforms'
-  },
-  latestOrderTitle: {
-    id: 'catalog.latestOrder',
-    defaultMessage: 'Latest orders'
-  },
   hubTitle: {
     id: 'hub.title',
     defaultMessage: 'Automation Hub'
@@ -179,23 +155,6 @@ const messages = defineMessages({
     defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics, ' +
         'calculate your return on investment, and explore automation processes details'
   },
-  configureCatalogTitle: {
-    id: 'configure.catalog.title',
-    defaultMessage: 'Connect Automation Services Catalog'
-  },
-  configureCatalogDescription: {
-    id: 'configure.catalog.description',
-    defaultMessage: 'Use Automation Services Catalog to collect and distribute automation content, govern your content by designing ' +
-        'and attaching approval processes, and ensure required sign-off is obtained by assigned organizational groups.'
-  },
-  catalogCardLatestOrdersTitle: {
-    id: 'catalog.card.orders.title',
-    defaultMessage: 'Latest orders'
-  },
-  catalogCardFeaturedProduct: {
-    id: 'catalog.card.featured.title',
-    defaultMessage: 'Latest created product'
-  },
   viewMore: {
     id: 'labels.view.more',
     defaultMessage: 'View more'
@@ -204,10 +163,6 @@ const messages = defineMessages({
     id: 'configure.analytics.link',
     defaultMessage: 'Configure Insights Ansible Automation Platform'
   },
-  configureCatalogLink: {
-    id: 'configure.catalog.link',
-    defaultMessage: 'Configure Automation Services Catalog'
-  }
 });
 
 export default messages;
