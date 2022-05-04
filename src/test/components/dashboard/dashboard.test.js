@@ -6,7 +6,6 @@ import promiseMiddleware from 'redux-promise-middleware';
 import { MemoryRouter } from 'react-router-dom';
 import notificationsMiddleware from '@redhat-cloud-services/frontend-components-notifications/notificationsMiddleware';
 import analyticsReducer, { analyticsInitialState } from '../../../redux/reducers/analytics-reducer';
-import catalogReducer, { catalogInitialState } from '../../../redux/reducers/catalog-reducer';
 import hubReducer, { hubInitialState } from '../../../redux/reducers/hub-reducer';
 import Dashboard from '../../../components/dashboard/dashboard';
 import { Provider } from 'react-redux';
@@ -51,7 +50,6 @@ describe('<Dashboard />', () => {
         formatMessage: ({ defaultMessage }) => defaultMessage
       },
       analyticsReducer: { ...analyticsInitialState, isLoading: false },
-      catalogReducer: { ...catalogInitialState, isLoading: false },
       hubReducer: { ...hubInitialState, isLoading: false }
     };
   });
@@ -60,7 +58,6 @@ describe('<Dashboard />', () => {
     const store = mockStore(initialState);
     const registry = new ReducerRegistry({}, [ thunk, promiseMiddleware ]);
     registry.register({ analyticsReducer: applyReducerHash(analyticsReducer, analyticsInitialState),
-      catalogReducer: applyReducerHash(catalogReducer, catalogInitialState),
       hubReducer: applyReducerHash(hubReducer, hubInitialState) });
 
     const { asFragment } = render(<ComponentWrapper store={ store }><Dashboard { ...initialProps } /></ComponentWrapper>);

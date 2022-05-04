@@ -1,16 +1,4 @@
 /**
- * Ansible catalog actions
- */
-
-export const FETCH_ORDERS = 'FETCH_ORDERS';
-export const FETCH_PORTFOLIOS = 'FETCH_PORTFOLIOS';
-export const FETCH_PLATFORMS = 'FETCH_PLATFORMS';
-export const FETCH_PORTFOLIO_ITEMS = 'FETCH_PORTFOLIO_ITEMS';
-export const SET_CATALOG_LOADING_STATE = 'SET_LOADING_STATE';
-export const SET_CATALOG_AVAILABILITY = 'SET_CATALOG_AVAILABILITY';
-export const SET_CATALOG_ERROR = 'SET_CATALOG_ERROR';
-
-/**
  * Automation hub actions
  */
 export const FETCH_COLLECTION = 'FETCH_COLLECTION';
