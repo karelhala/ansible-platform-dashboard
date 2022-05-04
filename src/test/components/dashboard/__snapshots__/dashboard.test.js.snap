@@ -149,60 +149,6 @@ exports[`<Dashboard /> should render correctly 1`] = `
           </div>
         </article>
       </div>
-      <div
-        class="pf-l-stack__item"
-      >
-        <article
-          class="pf-c-card ans-c-card-dashboard"
-          data-ouia-component-id="OUIA-Generated-Card-3"
-          data-ouia-component-type="PF4/Card"
-          data-ouia-safe="true"
-          id=""
-        >
-          <div
-            class="pf-c-card__title"
-          >
-            <h3
-              class="pf-c-title pf-m-lg"
-              data-ouia-component-id="OUIA-Generated-Title-4"
-              data-ouia-component-type="PF4/Title"
-              data-ouia-safe="true"
-            >
-              Automation Services Catalog
-            </h3>
-          </div>
-          <div
-            class="pf-c-card__body"
-          >
-            <section
-              class=""
-              style="background-color: white; min-height: 100%;"
-            >
-               
-              <div
-                class="pf-l-bullseye"
-              >
-                <svg
-                  aria-label="Contents"
-                  aria-valuetext="Loading..."
-                  class="pf-c-spinner pf-m-xl"
-                  role="progressbar"
-                  viewBox="0 0 100 100"
-                >
-                  <circle
-                    class="pf-c-spinner__path"
-                    cx="50"
-                    cy="50"
-                    fill="none"
-                    r="45"
-                  />
-                </svg>
-              </div>
-               
-            </section>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 </DocumentFragment>
@@ -231,7 +177,7 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
             >
               <h1
                 class="pf-c-title pf-m-2xl"
-                data-ouia-component-id="OUIA-Generated-Title-5"
+                data-ouia-component-id="OUIA-Generated-Title-4"
                 data-ouia-component-type="PF4/Title"
                 data-ouia-safe="true"
               >
@@ -254,7 +200,7 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
       >
         <article
           class="pf-c-card ans-c-card-dashboard"
-          data-ouia-component-id="OUIA-Generated-Card-4"
+          data-ouia-component-id="OUIA-Generated-Card-3"
           data-ouia-component-type="PF4/Card"
           data-ouia-safe="true"
           id=""
@@ -264,7 +210,7 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
           >
             <h3
               class="pf-c-title pf-m-lg"
-              data-ouia-component-id="OUIA-Generated-Title-6"
+              data-ouia-component-id="OUIA-Generated-Title-5"
               data-ouia-component-type="PF4/Title"
               data-ouia-safe="true"
             >
@@ -308,7 +254,7 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
       >
         <article
           class="pf-c-card ans-c-card-dashboard"
-          data-ouia-component-id="OUIA-Generated-Card-5"
+          data-ouia-component-id="OUIA-Generated-Card-4"
           data-ouia-component-type="PF4/Card"
           data-ouia-safe="true"
           id=""
@@ -318,65 +264,11 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
           >
             <h3
               class="pf-c-title pf-m-lg"
-              data-ouia-component-id="OUIA-Generated-Title-7"
+              data-ouia-component-id="OUIA-Generated-Title-6"
               data-ouia-component-type="PF4/Title"
               data-ouia-safe="true"
             >
               Automation Hub
-            </h3>
-          </div>
-          <div
-            class="pf-c-card__body"
-          >
-            <section
-              class=""
-              style="background-color: white; min-height: 100%;"
-            >
-               
-              <div
-                class="pf-l-bullseye"
-              >
-                <svg
-                  aria-label="Contents"
-                  aria-valuetext="Loading..."
-                  class="pf-c-spinner pf-m-xl"
-                  role="progressbar"
-                  viewBox="0 0 100 100"
-                >
-                  <circle
-                    class="pf-c-spinner__path"
-                    cx="50"
-                    cy="50"
-                    fill="none"
-                    r="45"
-                  />
-                </svg>
-              </div>
-               
-            </section>
-          </div>
-        </article>
-      </div>
-      <div
-        class="pf-l-stack__item"
-      >
-        <article
-          class="pf-c-card ans-c-card-dashboard"
-          data-ouia-component-id="OUIA-Generated-Card-6"
-          data-ouia-component-type="PF4/Card"
-          data-ouia-safe="true"
-          id=""
-        >
-          <div
-            class="pf-c-card__title"
-          >
-            <h3
-              class="pf-c-title pf-m-lg"
-              data-ouia-component-id="OUIA-Generated-Title-8"
-              data-ouia-component-type="PF4/Title"
-              data-ouia-safe="true"
-            >
-              Automation Services Catalog
             </h3>
           </div>
           <div
