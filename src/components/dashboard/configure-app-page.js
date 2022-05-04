@@ -39,23 +39,6 @@ const renderAnalyticsConfigButton = (intl) => (
   </Flex>
 );
 
-const renderCatalogConfigButton = (intl) => (
-  <Flex>
-    <FlexItem>
-      <Button
-        component='a'
-        variant='link'
-        target="_blank"
-        rel="noopener noreferrer"
-        href={ `https://access.redhat.com/documentation/en-us/` +
-          `red_hat_ansible_automation_platform/1.2/html/getting_started_with_automation_services_catalog/index` }>
-        { intl.formatMessage(messages.configureCatalogLink) }&nbsp;
-        <ExternalLinkAltIcon />
-      </Button>
-    </FlexItem>
-  </Flex>
-);
-
 const ConfigureAppPage = () => {
   const intl = useIntl();
 
@@ -67,17 +50,11 @@ const ConfigureAppPage = () => {
       <Stack hasGutter="md">
         <StackItem>
           <Grid hasGutter="xl">
-            <GridItem md={ 6 } sm={ 12 } >
+            <GridItem md={ 12 } sm={ 12 } >
               <ConfigureCard
                 title={ intl.formatMessage(messages.configureAnalyticsTitle) }
                 description={ intl.formatMessage(messages.configureAnalyticsDescription) }
                 renderButtons={ () => renderAnalyticsConfigButton(intl) }/>
-            </GridItem>
-            <GridItem md={ 6 } sm={ 12 } >
-              <ConfigureCard
-                title={ intl.formatMessage(messages.configureCatalogTitle) }
-                description={ intl.formatMessage(messages.configureCatalogDescription) }
-                renderButtons={ () => renderCatalogConfigButton(intl) }/>
             </GridItem>
           </Grid>
         </StackItem>
