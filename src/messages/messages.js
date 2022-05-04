@@ -162,7 +162,7 @@ const messages = defineMessages({
   configureAnalyticsLink: {
     id: 'configure.analytics.link',
     defaultMessage: 'Configure Insights Ansible Automation Platform'
-  },
+  }
 });
 
 export default messages;
