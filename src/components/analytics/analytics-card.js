@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Bullseye,
@@ -7,8 +8,6 @@ import {
   CardTitle, Divider,
   DescriptionList,
   DescriptionListDescription,
-  DescriptionListGroup,
-  DescriptionListTerm,
   Flex,
   FlexItem,
   Label,
@@ -67,43 +66,38 @@ const AnalyticsCard = () => {
 
   const renderAnalyticsNotifications = () => {
     return <React.Fragment>
-      <Title headingLevel="h4">
-        { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
-      </Title>
-      <br/>
       <DescriptionList className="pf-c-description-list.pf-m-vertical" columnModifier={ {
         default: '2Col'
       } }>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { errorNotifications?.payload?.meta?.count || 0 }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
-            <Label
-              color="red"
-              icon={ <InfoCircleIcon/> }
-              isTruncated
-              href={ `${release}ansible/automation-analytics/notifications` }
-            >
-              { intl.formatMessage(messages.critical) }
-            </Label>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
-        <DescriptionListGroup>
-          <DescriptionListTerm>
-            { warningNotifications?.payload?.meta?.count || 0 }
-          </DescriptionListTerm>
-          <DescriptionListDescription>
-            <Label
-              color="orange"
-              icon={ <WarningTriangleIcon/> }
-              isTruncated
-              href={ `${release}ansible/automation-analytics/notifications` }
-            >
-              { intl.formatMessage(messages.warning) }
-            </Label>
-          </DescriptionListDescription>
-        </DescriptionListGroup>
+        <Title headingLevel="h4">
+          { intl.formatMessage(messages.analyticsCardNotificationsTitle) }
+        </Title>
+        <br/>
+        <DescriptionListDescription>
+          { errorNotifications?.payload?.meta?.count || 0 }
+          <p />
+          <Label
+            className={ 'pf-m-small' }
+            color="red"
+            icon={ <InfoCircleIcon/> }
+            isTruncated
+            href={ `${release}ansible/automation-analytics/notifications?default.severity=error` }
+          >
+            { intl.formatMessage(messages.critical) }
+          </Label>
+        </DescriptionListDescription>
+        <DescriptionListDescription>
+          { warningNotifications?.payload?.meta?.count || 0 }
+          <p />
+          <Label
+            color="orange"
+            icon={ <WarningTriangleIcon/> }
+            isTruncated
+            href={ `${release}ansible/automation-analytics/notifications?default.severity=warning` }
+          >
+            { intl.formatMessage(messages.warning) }
+          </Label>
+        </DescriptionListDescription>
       </DescriptionList>
     </React.Fragment>;
   };
@@ -114,31 +108,24 @@ const AnalyticsCard = () => {
         <Flex className=" ans-l-flex ans-l-flex-automation-analytics-info">
           <FlexItem>
             <Text>
-              { intl.formatMessage(messages.hubCardDescription) }
+              { intl.formatMessage(messages.analyticsCardDescription) }
             </Text>
             <br/>
           </FlexItem>
           <FlexItem>
-            <Title headingLevel="h4">
-              { intl.formatMessage(messages.clusterTitle) }
-            </Title>
-            <br/>
             <DescriptionList className="pf-c-description-list.pf-m-vertical" columnModifier={ {
               default: '1Col'
             } }>
-              <DescriptionListGroup>
-                <DescriptionListTerm>
-                  { clusters?.payload?.templates?.length || 0 }
-                </DescriptionListTerm>
-                <DescriptionListDescription>
-                  <Button
-                    component='a'
-                    variant='link'
-                    href={ `${release}ansible/insights/clusters` }>
-                    { intl.formatMessage(messages.totalClusters) }
-                  </Button>
-                </DescriptionListDescription>
-              </DescriptionListGroup>
+              <Title headingLevel="h4">
+                { intl.formatMessage(messages.clusterTitle) }
+              </Title>
+              <DescriptionListDescription>
+                { clusters?.payload?.templates?.length || 0 }
+                <br />
+                <Link to={ `${release}ansible/insights/clusters` }>
+                  { intl.formatMessage(messages.totalClusters) }
+                </Link>
+              </DescriptionListDescription>
             </DescriptionList>
           </FlexItem>
         </Flex>
