@@ -60,7 +60,7 @@ exports[`<Dashboard /> should render correctly 1`] = `
               data-ouia-component-type="PF4/Title"
               data-ouia-safe="true"
             >
-              Insights Ansible Automation Platform
+              Automation Analytics
             </h3>
           </div>
           <div
@@ -214,7 +214,7 @@ exports[`<Dashboard /> should render correctly in loading state 1`] = `
               data-ouia-component-type="PF4/Title"
               data-ouia-safe="true"
             >
-              Insights Ansible Automation Platform
+              Automation Analytics
             </h3>
           </div>
           <div
