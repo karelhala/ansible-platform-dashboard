@@ -257,27 +257,26 @@ const HubCard = () => {
               </Title>
             </StackItem>
             <StackItem>
-              <TextContent>
-                <Text component={ TextVariants.p }>
-                  { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
-                </Text>
-              </TextContent>
+              <Text component={ TextVariants.p }>
+                { intl.formatMessage(messages.hubCardCertifiedCollectionDescription) }
+              </Text>
+            </StackItem>
+            <StackItem>
+              <Text className="pf-u-text-align-center">
+                <br /><br />
+                <Button
+                  component='a'
+                  variant='link'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html` +
+                  `/managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
+                  { intl.formatMessage(messages.learnMoreButton) }&nbsp;
+                  <ExternalLinkAltIcon />
+                </Button>
+              </Text>
             </StackItem>
           </Stack>
-        </FlexItem>
-        <FlexItem>
-          <Bullseye>
-            <Button
-              component='a'
-              variant='link'
-              target="_blank"
-              rel="noopener noreferrer"
-              href={ `https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.2/html` +
-              `/managing_red_hat_certified_and_ansible_galaxy_collections_in_automation_hub/index` }>
-              { intl.formatMessage(messages.learnMoreButton) }&nbsp;
-              <ExternalLinkAltIcon />
-            </Button>
-          </Bullseye>
         </FlexItem>
       </Flex>);
   };

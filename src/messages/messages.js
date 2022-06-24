@@ -13,12 +13,12 @@ const messages = defineMessages({
   },
   analyticsTitle: {
     id: 'analytics.title',
-    defaultMessage: 'Insights Ansible Automation Platform'
+    defaultMessage: 'Automation Analytics'
   },
   analyticsCardDescription: {
     id: 'analytics.description',
-    defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics calculate ' +
-        'your return on investment and explore automation processes details.'
+    defaultMessage: 'Gain insights into your deployments through visual dashboards and organization statistics, calculate your return on investment' +
+      ', and explore automation processes details.'
   },
   analyticsJobTitle: {
     id: 'analytics.jobs.title',
@@ -74,7 +74,7 @@ const messages = defineMessages({
   },
   hubCardCertifiedCollectionTitle: {
     id: 'hub.certified.title',
-    defaultMessage: 'Certified Ansible Collections'
+    defaultMessage: 'On-premise collections download'
   },
   hubCardCertifiedCollectionDescription: {
     id: 'hub.certified.description',
