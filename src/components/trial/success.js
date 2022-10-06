@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-
 import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
 
 import { PageHeader } from '@redhat-cloud-services/frontend-components/PageHeader';
+import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
 import {
   TextContent,
   Text,
@@ -38,6 +39,17 @@ import { ANSIBLE_CHECKSUM } from './constants';
 
 const Success = () => {
   const intl = useIntl();
+  const { setAnsibleTrialFlag, isAnsibleTrialFlagActive } = useChrome();
+  useEffect(() => {
+    // check chromeAPI for functions
+    if (isAnsibleTrialFlagActive && setAnsibleTrialFlag) {
+      const trialActive = isAnsibleTrialFlagActive();
+      // set flag only if the local storage is empty or trial has expired
+      if (trialActive === undefined || trialActive === false) {
+        setAnsibleTrialFlag();
+      }
+    }
+  }, []);
 
   return (
     <React.Fragment>

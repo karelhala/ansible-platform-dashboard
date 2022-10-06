@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Link as RouterLink } from 'react-router-dom';
 
 import ExclamationIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
 
 import { PageHeader } from '@redhat-cloud-services/frontend-components/PageHeader';
 import {
@@ -36,6 +37,12 @@ import Link from './link';
 
 const Expired = () => {
   const intl = useIntl();
+  const { clearAnsibleTrialFlag } = useChrome();
+  useEffect(() => {
+    if (clearAnsibleTrialFlag) {
+      clearAnsibleTrialFlag();
+    }
+  }, []);
 
   return (
     <React.Fragment>
