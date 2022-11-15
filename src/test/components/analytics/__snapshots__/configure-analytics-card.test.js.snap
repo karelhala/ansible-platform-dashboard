@@ -50,12 +50,8 @@ exports[`<ConfigureAnalyticsCard /> should render correctly 1`] = `
               <div
                 class=""
               >
-                <a
-                  aria-disabled="false"
-                  class="pf-c-button pf-m-link"
-                  data-ouia-component-id="OUIA-Generated-Button-link-1"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
+                <button
+                  component="a"
                   href="https://docs.ansible.com/ansible-tower/latest/html/administration/usability_data_collection.html"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -74,7 +70,24 @@ exports[`<ConfigureAnalyticsCard /> should render correctly 1`] = `
                       d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
                     />
                   </svg>
-                </a>
+                </button>
+                <p>
+                  variant: link
+                </p>
+                <p
+                  id="labelling-id"
+                >
+                  Test label
+                </p>
+                <p>
+                  isInline: undefined
+                </p>
+                <p>
+                  iconPosition: undefined
+                </p>
+                <div
+                  data-testid="icon"
+                />
               </div>
             </div>
           </div>

@@ -86,16 +86,29 @@ exports[`<AnalyticsCard /> should render correctly 1`] = `
                         <div
                           class="pf-c-description-list__text"
                         >
-                          <a
-                            aria-disabled="false"
-                            class="pf-c-button pf-m-link"
-                            data-ouia-component-id="OUIA-Generated-Button-link-1"
-                            data-ouia-component-type="PF4/Button"
-                            data-ouia-safe="true"
+                          <button
+                            component="a"
                             href="/ansible/insights/clusters"
                           >
                             Total clusters
-                          </a>
+                          </button>
+                          <p>
+                            variant: link
+                          </p>
+                          <p
+                            id="labelling-id"
+                          >
+                            Test label
+                          </p>
+                          <p>
+                            isInline: undefined
+                          </p>
+                          <p>
+                            iconPosition: undefined
+                          </p>
+                          <div
+                            data-testid="icon"
+                          />
                         </div>
                       </dd>
                     </div>
@@ -755,16 +768,29 @@ A 0 0 0 0 1, 976.8297785154242, 165
                 <div
                   class="pf-l-bullseye"
                 >
-                  <a
-                    aria-disabled="false"
-                    class="pf-c-button pf-m-link"
-                    data-ouia-component-id="OUIA-Generated-Button-link-2"
-                    data-ouia-component-type="PF4/Button"
-                    data-ouia-safe="true"
+                  <button
+                    component="a"
                     href="/ansible/insights/job-explorer"
                   >
                     View Job Explorer
-                  </a>
+                  </button>
+                  <p>
+                    variant: link
+                  </p>
+                  <p
+                    id="labelling-id"
+                  >
+                    Test label
+                  </p>
+                  <p>
+                    isInline: undefined
+                  </p>
+                  <p>
+                    iconPosition: undefined
+                  </p>
+                  <div
+                    data-testid="icon"
+                  />
                 </div>
               </div>
             </div>
