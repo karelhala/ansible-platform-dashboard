@@ -16,8 +16,7 @@ const renderButtons = (intl) => (
         variant='primary'
         target="_blank"
         rel="noopener noreferrer"
-        href={ `https://access.redhat.com/documentation/en-us/' + 
-        'red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/index` }>
+        href={ `https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html` }>
         { intl.formatMessage(messages.configureLink) }
       </Button>
     </FlexItem>
