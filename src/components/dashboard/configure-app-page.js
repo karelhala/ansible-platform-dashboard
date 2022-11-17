@@ -6,7 +6,8 @@ import messages from '../../messages/messages';
 import ConfigureCard from '../shared/configure-card';
 import HubCard from '../automation-hub/hub-card';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-
+const url = 'https://access.redhat.com/documentation/en-us';
+const extendedUrl = 'red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/index';
 const renderButtons = (intl) => (
   <Flex>
     <FlexItem>
@@ -16,8 +17,7 @@ const renderButtons = (intl) => (
         variant='primary'
         target="_blank"
         rel="noopener noreferrer"
-        href={ `https://access.redhat.com/documentation/en-us/' + 
-        'red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/index` }>
+        href={ `${url}/${extendedUrl}` }>
         { intl.formatMessage(messages.configureLink) }
       </Button>
     </FlexItem>

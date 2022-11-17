@@ -920,7 +920,7 @@ exports[`Trial pages <Overview /> renders correctly 1`] = `
                   data-ouia-component-type="PF4/Text"
                   data-ouia-safe="true"
                   data-pf-content="true"
-                  href="http://localhost/#trial-terms"
+                  href="http://localhost:4000/beta/ansible/ansible-dashboard#trial-terms"
                 >
                   product trial terms
                 </a>
