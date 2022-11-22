@@ -45,7 +45,7 @@ const successMessages = defineMessages({
   deployAnsibleText: {
     id: 'success.deployAnsibleText',
     defaultMessage: `<ul>
-<li>First, <a>install</a> Ansible Automation Platform.</li>
+<li>First, <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/index">install</a> Ansible Automation Platform.</li>
 <li>Then, <a1>create and launch</a1> your first automation job.</li>
 <li>Take the no-cost <a2>Ansible Basics: Automation Technical Overview</a2> online course.</li>
 </ul>`
