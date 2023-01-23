@@ -165,7 +165,7 @@ const trialMessages = defineMessages({
   },
   startInstallTrial: {
     id: 'trial.startInstallTrial',
-    defaultMessage: 'You may need to wait up to 30 minutes to access <a>automation hub</a> services after the trial subscription is activated.'
+    defaultMessage: 'You may need to wait up to 30 minutes to access <a href="https://cloud.redhat.com/ansible/automation-hub">automation hub</a> services after the trial subscription is activated.'
   }
 });
 
