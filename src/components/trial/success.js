@@ -131,7 +131,7 @@ const Success = () => {
                           {
                             ul: (chunks) => <TextList className='pf-u-ml-0'>{ chunks }</TextList>,
                             li: (chunks) => <TextListItem className='pf-u-mt-0' >{ chunks }</TextListItem>,
-                            a: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index">{ chunks }</Link>,
+                            a: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4/html/red_hat_ansible_automation_platform_installation_guide/index">{ chunks }</Link>,
                             a1: (chunks) => <Link link="https://docs.ansible.com/automation-controller/latest/html/quickstart/index.html">{ chunks }</Link>,
                             a2: (chunks) => <Link link="https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview">{ chunks }</Link>
                           })

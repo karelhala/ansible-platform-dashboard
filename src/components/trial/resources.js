@@ -38,7 +38,7 @@ const Resources = () => {
             { intl.formatMessage(successMessages.instructionsText) }
           </CardBody>
           <CardFooter>
-            <Button variant="link" isLarge isInline component="a" href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/index" target="_blank" rel="noopener noreferrer">
+            <Button variant="link" isLarge isInline component="a" href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4/html/red_hat_ansible_automation_platform_installation_guide/index" target="_blank" rel="noopener noreferrer">
               { intl.formatMessage(successMessages.instructionsLink) } <ArrowRightIcon />
             </Button>
           </CardFooter>
@@ -50,7 +50,7 @@ const Resources = () => {
             { intl.formatMessage(successMessages.documentationText) }
           </CardBody>
           <CardFooter>
-            <Button variant="link" isLarge isInline component="a" href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1" target="_blank" rel="noopener noreferrer">
+            <Button variant="link" isLarge isInline component="a" href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4" target="_blank" rel="noopener noreferrer">
               { intl.formatMessage(successMessages.documentationLink) } <ArrowRightIcon />
             </Button>
           </CardFooter>

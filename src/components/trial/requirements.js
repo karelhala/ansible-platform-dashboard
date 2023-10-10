@@ -40,7 +40,7 @@ const Requirements = ({ afterTrial }) => {
                 { intl.formatMessage(trialMessages.reqCardRHELTitle) }
               </Title>
               { intl.formatMessage(installText, {
-                a1: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_a_standard_rhel_installation/index">{ chunks }</Link>,
+                a1: (chunks) => <Link link="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/performing_a_standard_rhel_9_installation/index">{ chunks }</Link>,
                 button: (chunks) => <Button isInline variant='link' onClick={ () => downloadTrial(RHEL_CHECKSUM) }>{ chunks }</Button>
               }) }
             </TextContent>
